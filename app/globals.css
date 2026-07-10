@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* ARS palette — black/ivory base, gold signature accent, silver support */
+  --color-ink: #101014;
+  --color-ink-soft: #26262c;
+  --color-paper: #faf8f4;
+  --color-paper-raised: #ffffff;
+  --color-gold: #8a6d1f;
+  --color-gold-bright: #c6a44a;
+  --color-gold-faint: #f3ecd9;
+  --color-silver: #6e6e73;
+  --color-hairline: #e5e1d8;
+  --color-hairline-dark: #3a3a40;
+
+  /* semantic (product indicators only, desaturated) */
+  --color-ok: #3d6b4f;
+  --color-risk: #a3542e;
+  --color-nc: #8c3a3a;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-archivo), system-ui, sans-serif;
+  --font-data: var(--font-plex-mono), ui-monospace, monospace;
+
+  --breakpoint-xs: 23.4375rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold-faint);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Readiness ruler — signature element */
+@keyframes ruler-sweep {
+  from {
+    width: 0%;
+  }
+}
+
+.ruler-fill {
+  animation: ruler-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
