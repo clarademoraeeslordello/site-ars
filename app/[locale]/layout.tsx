@@ -41,7 +41,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(baseUrl),
     title: {
-      default: t("title"),
+      default: t("shortTitle"),
       template: `%s | Audit Readiness Score`,
     },
     description: t("description"),

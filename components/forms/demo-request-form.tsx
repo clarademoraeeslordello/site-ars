@@ -3,22 +3,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { submitDemoRequest } from "@/app/actions/demo-request";
+import { demoRequestSchema, type DemoRequestData } from "@/lib/validations/demo-request";
 
-const schema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  company: z.string().min(2),
-  role: z.string().min(2),
-  employees: z.string().min(1),
-  country: z.string().min(2),
-  frameworks: z.array(z.string()).min(1),
-  message: z.string().optional(),
-});
-
-type FormData = z.infer<typeof schema>;
+const schema = demoRequestSchema;
+type FormData = DemoRequestData;
 
 const inputClass =
   "w-full rounded-sm border border-hairline bg-paper-raised px-3 py-2.5 text-sm text-ink placeholder:text-silver focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold";
@@ -26,6 +17,7 @@ const inputClass =
 export function DemoRequestForm() {
   const t = useTranslations("demo.form");
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -40,11 +32,13 @@ export function DemoRequestForm() {
   const frameworkOptions = t.raw("frameworkOptions") as string[];
 
   async function onSubmit(data: FormData) {
-    // Integration point: POST to the demo-request endpoint once it exists.
-    // No backend is wired yet by design — see docs/README for the handoff notes.
-    console.info("demo-request payload", data);
-    await new Promise((r) => setTimeout(r, 400));
-    setSubmitted(true);
+    setSubmitError(false);
+    const result = await submitDemoRequest(data);
+    if (result.ok) {
+      setSubmitted(true);
+    } else {
+      setSubmitError(true);
+    }
   }
 
   if (submitted) {
@@ -214,6 +208,12 @@ export function DemoRequestForm() {
           {...register("message")}
         />
       </div>
+
+      {submitError && (
+        <p role="alert" className="text-sm text-nc">
+          {t("errors.generic")}
+        </p>
+      )}
 
       <button
         type="submit"
