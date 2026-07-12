@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!--
+    ARS CALIBRE — Símbolo compacto
+    Grade: 32×32u | Pivô: (16, 24)
+    Variante: Monocromatica Preta
+    Hierarquia por espessura: base=1, ticks normais=0.8, gold arc=2.5
+    Versão: símbolo solo
+  -->
+
+  <!-- Arco base -->
+  <path d="M4 24 A12 12 0 0 1 28 24" stroke="#101014" stroke-width="1" fill="none"/>
+
+  <!-- Tick 20% -->
+  <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#101014" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- Tick 40% -->
+  <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#101014" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- Tick 60% (mais espesso que menores) -->
+  <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#101014" stroke-width="1" opacity="0.6"/>
+
+  <!-- Tick 80% -->
+  <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#101014" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- Tick 85% (mais espesso, hierarquia máxima em mono) -->
+  <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#101014" stroke-width="1.4"/>
+
+  <!-- Arco Audit Ready: hierarquia só por espessura -->
+  <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#101014" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Ponteiro -->
+  <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#101014" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Pivô -->
+  <circle cx="16" cy="24" r="1.8" fill="#101014"/>
+  <circle cx="16" cy="24" r="0.7" fill="#ffffff"/>
+
+  <!-- A -->
+  <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!--
+    ARS CALIBRE — Símbolo compacto
+    Grade: 32×32u | Pivô: (16, 24)
+    Variante: Full Color · Fundo Claro
+    Versão: símbolo solo
+  -->
+
+  <!-- Arco base: r=12, centro=(16,24), 180° (esquerda→direita) -->
+  <path d="M4 24 A12 12 0 0 1 28 24" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+
+  <!-- Tick menor 20%: ângulo=144°, cos=-0.809, sin=0.588 -->
+  <!-- base: (6.6, 17.1) → outer: (5.3, 15.3) -->
+  <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+
+  <!-- Tick menor 40%: ângulo=108°, cos=-0.309, sin=0.951 -->
+  <!-- base: (12.3, 12.6) → outer: (11.5, 11.0) -->
+  <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+
+  <!-- Tick 60% (silver): ângulo=72°, cos=0.309, sin=0.951 -->
+  <!-- base: (19.7, 12.6) → outer (r=13.2): (20.1, 11.4) -->
+  <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8"/>
+
+  <!-- Tick menor 80%: ângulo=36°, cos=0.809, sin=0.588 -->
+  <!-- base: (25.4, 17.1) → outer: (26.7, 15.3) -->
+  <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+
+  <!-- Tick 85% (gold): ângulo=27°, cos=0.891, sin=0.454 -->
+  <!-- base r=12: (26.7, 18.5) → outer r=13.5: (28.0, 17.9) -->
+  <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#8a6d1f" stroke-width="1.2"/>
+
+  <!-- Arco Audit Ready (85%→100°): ângulo 27°→0° -->
+  <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#8a6d1f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Ponteiro em 87%: ângulo=23.4°, cos=0.918, sin=0.397 -->
+  <!-- tip r=10.5: (25.6, 19.8) -->
+  <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#8a6d1f" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Pivô: círculo gold (r=1.8) + eye (r=0.7) -->
+  <circle cx="16" cy="24" r="1.8" fill="#8a6d1f"/>
+  <circle cx="16" cy="24" r="0.7" fill="#faf8f4"/>
+
+  <!-- A: apex em (16,24)=pivô, pernas ±25°, crossbar y=28 -->
+  <!-- perna esq toca base em x=11, y=31 | perna dir em x=21, y=31 -->
+  <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- crossbar em y≈28: x=13 a x=19 -->
+  <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARS CALIBRE — Sistema Completo de Logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #101014;
+  --paper: #faf8f4;
+  --paper-raised: #ffffff;
+  --gold: #8a6d1f;
+  --gold-bright: #c6a44a;
+  --gold-faint: #f3ecd9;
+  --silver: #6e6e73;
+  --hairline: #e5e1d8;
+  --hairline-dark: #3a3a40;
+  --ok: #3d6b4f;
+}
+html { background: var(--paper); color: var(--ink); font-family: 'Archivo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+.page { max-width: 1160px; margin: 0 auto; padding: 72px 48px 120px; }
+.section { padding: 64px 0; border-top: 1px solid var(--hairline); }
+.section:first-child { border-top: none; padding-top: 0; }
+.eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 10px; }
+.title { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 36px; }
+.label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--silver); display: block; margin-bottom: 8px; }
+.note { font-size: 0.78rem; color: var(--silver); line-height: 1.6; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--hairline); }
+.cell { background: var(--paper); padding: 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.cell.dark { background: var(--ink); }
+.cell.white { background: var(--paper-raised); }
+
+/* ── Logo cells ── */
+.logo-cell { border: 1px solid var(--hairline); border-radius: 2px; padding: 56px 48px; display: flex; align-items: center; justify-content: center; position: relative; }
+.logo-cell.dark { background: var(--ink); border-color: var(--hairline-dark); }
+.cell-tag { position: absolute; top: 12px; left: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--silver); }
+.cell-tag.on-dark { color: var(--hairline-dark); }
+
+/* ── Favicon strip ── */
+.favicon-strip { display: flex; align-items: center; gap: 48px; padding: 40px; background: var(--ink); border-radius: 2px; border: 1px solid var(--hairline-dark); }
+.favicon-item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.favicon-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hairline-dark); text-align: center; }
+
+/* ── OG preview ── */
+.og-preview { border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; }
+
+/* ── Spec table ── */
+table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+th { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--silver); text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--hairline); }
+td { padding: 10px 16px; border-bottom: 1px solid var(--hairline); color: var(--ink); vertical-align: top; line-height: 1.5; }
+td:first-child { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--gold); }
+tr:last-child td { border-bottom: none; }
+
+/* ── Token chips ── */
+.chip { display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; background: var(--paper-raised); border: 1px solid var(--hairline); border-radius: 2px; padding: 4px 10px; margin: 3px; }
+.chip-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+/* ── Status badge ── */
+.badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; padding: 5px 12px; border-radius: 2px; }
+.badge.approved { background: #f0f6f3; color: var(--ok); border: 1px solid #b8d4c4; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="section" style="border-top:none;padding-top:0;padding-bottom:48px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:flex-end;">
+    <div>
+      <p class="eyebrow">Etapa E — Sistema Completo</p>
+      <h1 class="title" style="margin-bottom:12px;">CALIBRE · Sistema de Logo</h1>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--silver);letter-spacing:0.1em;">ARS · Audit Readiness Score · Julho 2026</p>
+    </div>
+    <span class="badge approved">Aprovado para producao</span>
+  </div>
+
+  <!-- INVENTÁRIO DE ARQUIVOS -->
+  <div class="section">
+    <p class="eyebrow">00 — Inventário</p>
+    <h2 class="title">Todos os arquivos do sistema</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Arquivo</th>
+          <th>Variante</th>
+          <th>Canvas</th>
+          <th>Uso primário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>symbol-32.svg</td><td>Full Color · Claro</td><td>32×32u</td><td>Badge UI, avatar, watermark</td></tr>
+        <tr><td>symbol-dark-32.svg</td><td>Full Color · Escuro</td><td>32×32u</td><td>App icon, fundo dark</td></tr>
+        <tr><td>symbol-mono-black-32.svg</td><td>Monocromatica Preta</td><td>32×32u</td><td>Impressao 1 cor, bordado</td></tr>
+        <tr><td>symbol-mono-white-32.svg</td><td>Monocromatica Branca</td><td>32×32u</td><td>Sobre ink, hot-stamping branco</td></tr>
+        <tr><td>symbol-mono-gold-32.svg</td><td>Monocromatica Gold</td><td>32×32u</td><td>Hot-stamping dourado</td></tr>
+        <tr><td>logo-horizontal-light.svg</td><td>Full Color · Claro</td><td>220×48</td><td>Header, e-mail, documentos</td></tr>
+        <tr><td>logo-horizontal-dark.svg</td><td>Full Color · Escuro</td><td>220×48</td><td>Footer, fundo ink</td></tr>
+        <tr><td>logo-vertical-light.svg</td><td>Full Color · Claro</td><td>120×110</td><td>Slides, relatórios, cartao</td></tr>
+        <tr><td>logo-vertical-dark.svg</td><td>Full Color · Escuro</td><td>120×110</td><td>Cartao fundo escuro, poster</td></tr>
+        <tr><td>favicon-16.svg</td><td>Simplificado · Escuro</td><td>16×16</td><td>Browser tab favicon</td></tr>
+        <tr><td>favicon-32.svg</td><td>Padrão · Escuro</td><td>32×32</td><td>Retina favicon, PWA icon sm</td></tr>
+        <tr><td>favicon-64.svg</td><td>Completo · Escuro</td><td>64×64</td><td>PWA icon md, Apple touch</td></tr>
+        <tr><td>open-graph-1200x630.svg</td><td>Full Color · Escuro</td><td>1200×630</td><td>OG tags, preview cards, social</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LOGOS HORIZONTAIS -->
+  <div class="section">
+    <p class="eyebrow">01 — Logo Horizontal</p>
+    <h2 class="title">Versao principal</h2>
+
+    <div class="grid-2">
+      <!-- Claro -->
+      <div>
+        <span class="label">Full Color · Fundo Claro · logo-horizontal-light.svg</span>
+        <div class="logo-cell">
+          <span class="cell-tag">Principal</span>
+          <svg viewBox="0 0 220 48" fill="none" style="width:100%;max-width:280px;">
+            <g transform="translate(0,0) scale(1.5)">
+              <path d="M4 24 A12 12 0 0 1 28 24" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+              <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+              <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+              <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8"/>
+              <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+              <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#8a6d1f" stroke-width="1.2"/>
+              <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#8a6d1f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#8a6d1f" stroke-width="1" stroke-linecap="round"/>
+              <circle cx="16" cy="24" r="1.8" fill="#8a6d1f"/>
+              <circle cx="16" cy="24" r="0.7" fill="#faf8f4"/>
+              <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+              <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="62" y="36" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="28" letter-spacing="-0.28" fill="#101014">ARS</text>
+            <text x="63" y="45" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="7.5" letter-spacing="1.2" fill="#6e6e73">AUDIT READINESS SCORE</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Escuro -->
+      <div>
+        <span class="label">Full Color · Fundo Escuro · logo-horizontal-dark.svg</span>
+        <div class="logo-cell dark">
+          <span class="cell-tag on-dark">Fundo Ink</span>
+          <svg viewBox="0 0 220 48" fill="none" style="width:100%;max-width:280px;">
+            <g transform="translate(0,0) scale(1.5)">
+              <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="1" fill="none"/>
+              <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+              <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+              <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8" opacity="0.6"/>
+              <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+              <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1.2"/>
+              <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+              <circle cx="16" cy="24" r="1.8" fill="#c6a44a"/>
+              <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+              <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+              <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="62" y="36" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="28" letter-spacing="-0.28" fill="#faf8f4">ARS</text>
+            <text x="63" y="45" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="7.5" letter-spacing="1.2" fill="#6e6e73">AUDIT READINESS SCORE</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS VERTICAIS -->
+  <div class="section">
+    <p class="eyebrow">02 — Logo Vertical</p>
+    <h2 class="title">Versao empilhada</h2>
+
+    <div class="grid-2">
+      <div>
+        <span class="label">Full Color · Fundo Claro · logo-vertical-light.svg</span>
+        <div class="logo-cell" style="padding:56px;">
+          <svg viewBox="0 0 120 110" fill="none" style="width:160px;">
+            <g transform="translate(28,0) scale(2)">
+              <path d="M4 24 A12 12 0 0 1 28 24" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+              <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+              <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+              <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8"/>
+              <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+              <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#8a6d1f" stroke-width="1.2"/>
+              <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#8a6d1f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#8a6d1f" stroke-width="1" stroke-linecap="round"/>
+              <circle cx="16" cy="24" r="1.8" fill="#8a6d1f"/>
+              <circle cx="16" cy="24" r="0.7" fill="#faf8f4"/>
+              <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+              <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="60" y="86" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="28" letter-spacing="-0.28" fill="#101014" text-anchor="middle">ARS</text>
+            <text x="60" y="98" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="6.8" letter-spacing="1.1" fill="#6e6e73" text-anchor="middle">AUDIT READINESS SCORE</text>
+          </svg>
+        </div>
+      </div>
+
+      <div>
+        <span class="label">Full Color · Fundo Escuro · logo-vertical-dark.svg</span>
+        <div class="logo-cell dark" style="padding:56px;">
+          <svg viewBox="0 0 120 110" fill="none" style="width:160px;">
+            <g transform="translate(28,0) scale(2)">
+              <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="1" fill="none"/>
+              <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+              <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+              <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8" opacity="0.6"/>
+              <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+              <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1.2"/>
+              <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+              <circle cx="16" cy="24" r="1.8" fill="#c6a44a"/>
+              <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+              <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+              <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="60" y="86" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="28" letter-spacing="-0.28" fill="#faf8f4" text-anchor="middle">ARS</text>
+            <text x="60" y="98" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="6.8" letter-spacing="1.1" fill="#6e6e73" text-anchor="middle">AUDIT READINESS SCORE</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÍMBOLOS SOLO -->
+  <div class="section">
+    <p class="eyebrow">03 — Símbolo Solo</p>
+    <h2 class="title">Cinco variacoes de cor</h2>
+
+    <div class="grid-5" style="border:1px solid var(--hairline);border-radius:2px;overflow:hidden;">
+
+      <!-- Full Color Claro -->
+      <div class="cell white">
+        <span class="label" style="margin:0;font-size:0.5rem;">FC Claro</span>
+        <svg width="80" height="80" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+          <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+          <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8"/>
+          <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#8a6d1f" stroke-width="1.2"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#8a6d1f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#8a6d1f" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#8a6d1f"/>
+          <circle cx="16" cy="24" r="0.7" fill="#faf8f4"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Full Color Escuro -->
+      <div class="cell dark">
+        <span class="label" style="margin:0;font-size:0.5rem;color:#3a3a40;">FC Escuro</span>
+        <svg width="80" height="80" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="1" fill="none"/>
+          <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+          <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8" opacity="0.6"/>
+          <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#3a3a40" stroke-width="0.6" opacity="0.7"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1.2"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#c6a44a"/>
+          <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Mono Preto -->
+      <div class="cell white">
+        <span class="label" style="margin:0;font-size:0.5rem;">Mono Preto</span>
+        <svg width="80" height="80" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#101014" stroke-width="1" fill="none"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#101014" stroke-width="1" opacity="0.6"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#101014" stroke-width="1.4"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#101014" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#101014" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#101014"/>
+          <circle cx="16" cy="24" r="0.7" fill="#ffffff"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Mono Branco -->
+      <div class="cell dark">
+        <span class="label" style="margin:0;font-size:0.5rem;color:#3a3a40;">Mono Branco</span>
+        <svg width="80" height="80" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#fff" stroke-width="1" fill="none" opacity="0.35"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#fff" stroke-width="1" opacity="0.55"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#fff" stroke-width="1.4"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#fff" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#fff"/>
+          <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#fff" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Mono Gold -->
+      <div class="cell dark">
+        <span class="label" style="margin:0;font-size:0.5rem;color:#3a3a40;">Mono Gold</span>
+        <svg width="80" height="80" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1" fill="none" opacity="0.28"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#c6a44a" stroke-width="1" opacity="0.5"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1.4"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#c6a44a"/>
+          <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#c6a44a" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#c6a44a" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:16px;">Na versao monocromatica, a hierarquia entre arco base e arco Audit Ready e mantida exclusivamente por espessura de traco: base=1u, AU Ready=2.5u. Funciona em bordado, carimbo, hot-stamping e gravacao a laser.</p>
+  </div>
+
+  <!-- FAVICONS -->
+  <div class="section">
+    <p class="eyebrow">04 — Favicons</p>
+    <h2 class="title">16 · 32 · 64px</h2>
+
+    <div class="favicon-strip">
+
+      <!-- 16px — simplificado -->
+      <div class="favicon-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect width="16" height="16" rx="3" fill="#101014"/>
+          <path d="M2 12 A6 6 0 0 1 14 12" stroke="#3a3a40" stroke-width="0.8" fill="none"/>
+          <path d="M13.4 9.3 A6 6 0 0 1 14 12" stroke="#c6a44a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <line x1="8" y1="12" x2="12.8" y2="9.9" stroke="#c6a44a" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="8" cy="12" r="1.2" fill="#c6a44a"/>
+        </svg>
+        <span class="favicon-label">16px<br>Simplificado<br>Sem A</span>
+      </div>
+
+      <!-- 24px simulado (32 redimensionado para 24) -->
+      <div class="favicon-item">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="4" fill="#101014"/>
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="1" fill="none"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1.2"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#c6a44a"/>
+          <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        <span class="favicon-label">24px<br>Sem ticks<br>menores</span>
+      </div>
+
+      <!-- 32px -->
+      <div class="favicon-item">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="4" fill="#101014"/>
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="1" fill="none"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8" opacity="0.5"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1.2"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.8" fill="#c6a44a"/>
+          <circle cx="16" cy="24" r="0.7" fill="#101014"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        <span class="favicon-label">32px<br>favicon-32.svg<br>Retina</span>
+      </div>
+
+      <!-- 48px simulado -->
+      <div class="favicon-item">
+        <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+          <rect width="64" height="64" rx="8" fill="#101014"/>
+          <g transform="scale(2)">
+            <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="0.9" fill="none"/>
+            <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#3a3a40" stroke-width="0.5" opacity="0.7"/>
+            <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#3a3a40" stroke-width="0.5" opacity="0.7"/>
+            <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.7" opacity="0.6"/>
+            <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#3a3a40" stroke-width="0.5" opacity="0.7"/>
+            <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1"/>
+            <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="0.85" stroke-linecap="round"/>
+            <circle cx="16" cy="24" r="1.6" fill="#c6a44a"/>
+            <circle cx="16" cy="24" r="0.65" fill="#101014"/>
+            <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="favicon-label">64px<br>favicon-64.svg<br>PWA / Apple</span>
+      </div>
+
+      <!-- 96px simulado -->
+      <div class="favicon-item">
+        <svg width="96" height="96" viewBox="0 0 64 64" fill="none">
+          <rect width="64" height="64" rx="8" fill="#101014"/>
+          <g transform="scale(2)">
+            <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="0.9" fill="none"/>
+            <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#3a3a40" stroke-width="0.5" opacity="0.7"/>
+            <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#3a3a40" stroke-width="0.5" opacity="0.7"/>
+            <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.7" opacity="0.6"/>
+            <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#3a3a40" stroke-width="0.5" opacity="0.7"/>
+            <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="1"/>
+            <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="0.85" stroke-linecap="round"/>
+            <circle cx="16" cy="24" r="1.6" fill="#c6a44a"/>
+            <circle cx="16" cy="24" r="0.65" fill="#101014"/>
+            <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="1" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="favicon-label">96px<br>Visualizacao<br>ampliada</span>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px;">Regra de simplificacao: abaixo de 24px, o A e os ticks menores sao removidos. O ponteiro, o arco Audit Ready e o pivô permanecem em qualquer tamanho — sao os portadores de significado primario do símbolo.</p>
+  </div>
+
+  <!-- OPEN GRAPH -->
+  <div class="section">
+    <p class="eyebrow">05 — Open Graph</p>
+    <h2 class="title">1200 × 630px</h2>
+    <span class="label">open-graph-1200x630.svg · Preview em escala reduzida</span>
+    <div class="og-preview">
+      <svg viewBox="0 0 1200 630" fill="none" style="width:100%;display:block;">
+        <rect width="1200" height="630" fill="#101014"/>
+        <line x1="0" y1="315" x2="1200" y2="315" stroke="#3a3a40" stroke-width="0.5" opacity="0.4"/>
+        <line x1="600" y1="0" x2="600" y2="630" stroke="#3a3a40" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="600" cy="315" r="280" stroke="#3a3a40" stroke-width="0.5" opacity="0.18" fill="none"/>
+        <circle cx="600" cy="315" r="200" stroke="#3a3a40" stroke-width="0.5" opacity="0.12" fill="none"/>
+        <g transform="translate(480,60) scale(7.5)">
+          <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" stroke-width="0.9" fill="none"/>
+          <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#3a3a40" stroke-width="0.5" opacity="0.5"/>
+          <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#3a3a40" stroke-width="0.5" opacity="0.5"/>
+          <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.7" opacity="0.7"/>
+          <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#3a3a40" stroke-width="0.5" opacity="0.5"/>
+          <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#c6a44a" stroke-width="0.9"/>
+          <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" stroke-width="0.75" stroke-linecap="round"/>
+          <circle cx="16" cy="24" r="1.5" fill="#c6a44a"/>
+          <circle cx="16" cy="24" r="0.6" fill="#101014"/>
+          <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" stroke-width="1.1" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="13" y1="28" x2="19" y2="28" stroke="#faf8f4" stroke-width="0.9" stroke-linecap="round"/>
+        </g>
+        <text x="600" y="410" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="96" letter-spacing="-2" fill="#faf8f4" text-anchor="middle">ARS</text>
+        <text x="600" y="455" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="18" letter-spacing="4" fill="#6e6e73" text-anchor="middle">AUDIT READINESS SCORE</text>
+        <line x1="480" y1="470" x2="720" y2="470" stroke="#3a3a40" stroke-width="1" opacity="0.6"/>
+        <text x="600" y="530" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="14" letter-spacing="2.5" fill="#c6a44a" text-anchor="middle" opacity="0.7">COMPLIANCE INTELLIGENCE PLATFORM</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- TOKENS DE COR NO SISTEMA -->
+  <div class="section">
+    <p class="eyebrow">06 — Tokens do Sistema</p>
+    <h2 class="title">Cores usadas no sistema de logo</h2>
+
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;">
+      <span class="chip"><span class="chip-dot" style="background:#101014;border:1px solid #e5e1d8;"></span>--color-ink #101014</span>
+      <span class="chip"><span class="chip-dot" style="background:#faf8f4;border:1px solid #e5e1d8;"></span>--color-paper #faf8f4</span>
+      <span class="chip"><span class="chip-dot" style="background:#8a6d1f;"></span>--color-gold #8a6d1f</span>
+      <span class="chip"><span class="chip-dot" style="background:#c6a44a;"></span>--color-gold-bright #c6a44a</span>
+      <span class="chip"><span class="chip-dot" style="background:#6e6e73;"></span>--color-silver #6e6e73</span>
+      <span class="chip"><span class="chip-dot" style="background:#e5e1d8;border:1px solid #d0ccc3;"></span>--color-hairline #e5e1d8</span>
+      <span class="chip"><span class="chip-dot" style="background:#3a3a40;"></span>--color-hairline-dark #3a3a40</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Token CSS</th>
+          <th>Hex</th>
+          <th>Uso no símbolo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>--color-ink</td><td>#101014</td><td>A (fundo claro), eye do pivô (escuro), fundo favicon/OG</td></tr>
+        <tr><td>--color-paper</td><td>#faf8f4</td><td>Eye do pivô (claro), A (escuro), texto wordmark em fundo escuro</td></tr>
+        <tr><td>--color-gold</td><td>#8a6d1f</td><td>Tick 85°, arco Audit Ready, ponteiro, pivô (fundo claro)</td></tr>
+        <tr><td>--color-gold-bright</td><td>#c6a44a</td><td>Idem, mas em fundo escuro (mais legível no contraste)</td></tr>
+        <tr><td>--color-silver</td><td>#6e6e73</td><td>Tick 60°, tagline do wordmark</td></tr>
+        <tr><td>--color-hairline</td><td>#e5e1d8</td><td>Arco base e ticks menores (fundo claro)</td></tr>
+        <tr><td>--color-hairline-dark</td><td>#3a3a40</td><td>Arco base e ticks menores (fundo escuro)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="padding:40px 0 0;border-top:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;">
+    <svg viewBox="0 0 220 48" fill="none" style="width:180px;opacity:0.7;">
+      <g transform="translate(0,0) scale(1.5)">
+        <path d="M4 24 A12 12 0 0 1 28 24" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+        <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#8a6d1f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#8a6d1f" stroke-width="1" stroke-linecap="round"/>
+        <circle cx="16" cy="24" r="1.8" fill="#8a6d1f"/>
+        <circle cx="16" cy="24" r="0.7" fill="#faf8f4"/>
+        <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+      </g>
+      <text x="62" y="36" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="28" letter-spacing="-0.28" fill="#101014">ARS</text>
+      <text x="63" y="45" font-family="IBM Plex Mono,monospace" font-weight="400" font-size="7.5" letter-spacing="1.2" fill="#6e6e73">AUDIT READINESS SCORE</text>
+    </svg>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:0.58rem;color:var(--silver);letter-spacing:0.1em;">Etapa E — Sistema Completo · CALIBRE · Julho 2026</p>
+  </div>
+
+</div>
+</body>
+</html>

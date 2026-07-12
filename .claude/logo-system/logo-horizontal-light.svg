@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" fill="none">
+  <!--
+    ARS CALIBRE — Logo horizontal
+    Variante: Full Color · Fundo Claro
+    Canvas: 220×48
+    Símbolo: 48×48 (viewBox 32×32 escalado ×1.5)
+    Wordmark: Fraunces 600, ARS 28px + tagline IBM Plex Mono 7.5px
+    Zona de proteção: mínimo 8px ao redor do bounding box externo
+  -->
+
+  <!-- ── Símbolo (escalado 1.5×, deslocado para alinhar ao baseline) ── -->
+  <g transform="translate(0, 0) scale(1.5)">
+    <!-- Arco base -->
+    <path d="M4 24 A12 12 0 0 1 28 24" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+
+    <!-- Tick 20% -->
+    <line x1="6.6" y1="17.1" x2="5.3" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+
+    <!-- Tick 40% -->
+    <line x1="12.3" y1="12.6" x2="11.5" y2="11.0" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+
+    <!-- Tick 60% -->
+    <line x1="19.7" y1="12.6" x2="20.4" y2="11.0" stroke="#6e6e73" stroke-width="0.8"/>
+
+    <!-- Tick 80% -->
+    <line x1="25.4" y1="17.1" x2="26.7" y2="15.3" stroke="#e5e1d8" stroke-width="0.6" opacity="0.45"/>
+
+    <!-- Tick 85% -->
+    <line x1="26.7" y1="18.5" x2="28.2" y2="17.8" stroke="#8a6d1f" stroke-width="1.2"/>
+
+    <!-- Arco Audit Ready -->
+    <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#8a6d1f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+    <!-- Ponteiro 87% -->
+    <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#8a6d1f" stroke-width="1" stroke-linecap="round"/>
+
+    <!-- Pivô -->
+    <circle cx="16" cy="24" r="1.8" fill="#8a6d1f"/>
+    <circle cx="16" cy="24" r="0.7" fill="#faf8f4"/>
+
+    <!-- A -->
+    <path d="M11 31 L16 24 L21 31" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="13" y1="28" x2="19" y2="28" stroke="#101014" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── Separador vertical (opcional — só visual) ── -->
+  <!-- Sem separador: limpo e direto -->
+
+  <!-- ── Wordmark ── -->
+  <!-- ARS: Fraunces 600, 28px, ink, baseline y=36 -->
+  <text
+    x="62"
+    y="36"
+    font-family="Fraunces, Georgia, serif"
+    font-weight="600"
+    font-size="28"
+    letter-spacing="-0.28"
+    fill="#101014"
+  >ARS</text>
+
+  <!-- Tagline: IBM Plex Mono, 7.5px, uppercase, silver -->
+  <text
+    x="63"
+    y="45"
+    font-family="IBM Plex Mono, ui-monospace, monospace"
+    font-weight="400"
+    font-size="7.5"
+    letter-spacing="1.2"
+    fill="#6e6e73"
+    text-anchor="start"
+  >AUDIT READINESS SCORE</text>
+</svg>

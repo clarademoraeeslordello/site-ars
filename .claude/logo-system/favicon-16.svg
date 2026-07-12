@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <!--
+    ARS CALIBRE — Favicon 16px
+    Variante: Fundo Escuro (ink #101014)
+    Simplificação para 16px:
+    - Sem ticks menores (colapsam)
+    - Sem A (ilegível)
+    - Sem tick 60% (colapsaria com arco)
+    - Manter: arco base + tick 85° + arco Audit Ready + ponteiro + pivô
+    Tudo escalado de 32→16 (÷2)
+  -->
+
+  <!-- Fundo ink -->
+  <rect width="16" height="16" rx="3" fill="#101014"/>
+
+  <!-- Arco base (simplificado — r=6, centro=(8,12)) -->
+  <path d="M2 12 A6 6 0 0 1 14 12" stroke="#3a3a40" stroke-width="0.8" fill="none"/>
+
+  <!-- Arco Audit Ready destaque -->
+  <path d="M13.4 9.3 A6 6 0 0 1 14 12" stroke="#c6a44a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+
+  <!-- Ponteiro 87% -->
+  <line x1="8" y1="12" x2="12.8" y2="9.9" stroke="#c6a44a" stroke-width="0.8" stroke-linecap="round"/>
+
+  <!-- Pivô -->
+  <circle cx="8" cy="12" r="1.2" fill="#c6a44a"/>
+</svg>

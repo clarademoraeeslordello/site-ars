@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARS — Brand Visual Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ─── Reset & Base ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:            #101014;
+    --ink-soft:       #26262c;
+    --paper:          #faf8f4;
+    --paper-raised:   #ffffff;
+    --gold:           #8a6d1f;
+    --gold-bright:    #c6a44a;
+    --gold-faint:     #f3ecd9;
+    --silver:         #6e6e73;
+    --hairline:       #e5e1d8;
+    --hairline-dark:  #3a3a40;
+    --ok:             #3d6b4f;
+    --risk:           #a3542e;
+    --nc:             #8c3a3a;
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body:    'Archivo', system-ui, sans-serif;
+    --font-data:    'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  html { background: var(--paper); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+
+  /* ─── Layout ─── */
+  .page { max-width: 1200px; margin: 0 auto; padding: 80px 48px; }
+
+  .chapter {
+    padding: 80px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .chapter:first-child { border-top: none; padding-top: 0; }
+
+  .chapter-label {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .chapter-title {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 48px;
+  }
+
+  /* ─── Cover ─── */
+  .cover {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 48px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 80px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .cover-content { position: relative; z-index: 1; }
+
+  .cover-eyebrow {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 16px;
+  }
+
+  .cover-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.0;
+    color: var(--paper);
+  }
+
+  .cover-subtitle {
+    font-family: var(--font-data);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-top: 12px;
+  }
+
+  .cover-meta {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+  }
+
+  .cover-date {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    color: var(--silver);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── Palette ─── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .swatch {
+    background: var(--paper-raised);
+    padding: 0;
+  }
+
+  .swatch-color {
+    height: 100px;
+    width: 100%;
+  }
+
+  .swatch-info {
+    padding: 12px 14px 14px;
+    background: var(--paper-raised);
+  }
+
+  .swatch-name {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--silver);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .swatch-hex {
+    font-family: var(--font-data);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .swatch-role {
+    font-size: 0.7rem;
+    color: var(--silver);
+    line-height: 1.4;
+  }
+
+  .palette-section-label {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--silver);
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  .palette-section-label:first-of-type { margin-top: 0; }
+
+  /* ─── Typography ─── */
+  .type-specimen {
+    border-left: 2px solid var(--gold);
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  .type-label {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--silver);
+    margin-bottom: 8px;
+  }
+
+  .type-sample-display {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .type-sample-display-sm {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .type-sample-body {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 600px;
+  }
+
+  .type-sample-body-sm {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 560px;
+  }
+
+  .type-sample-mono {
+    font-family: var(--font-data);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: -0.01em;
+  }
+
+  .type-sample-mono-label {
+    font-family: var(--font-data);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--silver);
+  }
+
+  .type-meta {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    color: var(--silver);
+    margin-top: 6px;
+    letter-spacing: 0.06em;
+  }
+
+  .type-pairing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  /* ─── Logo Concepts ─── */
+  .concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  .concept-card {
+    background: var(--paper-raised);
+    padding: 40px 32px;
+  }
+
+  .concept-card.dark {
+    background: var(--ink);
+  }
+
+  .concept-name {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .concept-card.dark .concept-name {
+    color: var(--gold-bright);
+  }
+
+  .concept-svg-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    margin-bottom: 28px;
+  }
+
+  .concept-desc {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--silver);
+    border-top: 1px solid var(--hairline);
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+
+  .concept-card.dark .concept-desc {
+    color: rgba(250,248,244,0.5);
+    border-top-color: var(--hairline-dark);
+  }
+
+  /* Logo wordmarks */
+  .wordmark-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .wordmark-ars {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .wordmark-ars.light { color: var(--paper); }
+
+  .wordmark-tag {
+    font-family: var(--font-data);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--silver);
+  }
+
+  /* ─── Ruler Component ─── */
+  .ruler-demo {
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 32px 36px;
+    margin-bottom: 40px;
+  }
+
+  .ruler-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .ruler-label {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--silver);
+  }
+
+  .ruler-value {
+    font-family: var(--font-data);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--gold);
+  }
+
+  .ruler-track {
+    height: 12px;
+    background: var(--hairline);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ruler-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 999px;
+    width: 87%;
+    animation: sweep 1.4s cubic-bezier(0.22,1,0.36,1) both;
+  }
+
+  @keyframes sweep { from { width: 0%; } }
+
+  .ruler-ticks {
+    position: relative;
+    height: 8px;
+    margin-top: 2px;
+  }
+
+  .ruler-tick {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 8px;
+  }
+
+  .ruler-tick.mid { background: rgba(110,110,115,0.5); left: 60%; }
+  .ruler-tick.high { background: var(--gold); left: 85%; }
+
+  .ruler-bands {
+    display: flex;
+    font-family: var(--font-data);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    color: var(--silver);
+  }
+
+  .ruler-bands span:last-child { color: var(--gold); text-align: right; }
+
+  /* ─── UI Components ─── */
+  .components-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .comp-group { }
+
+  .comp-group-label {
+    font-family: var(--font-data);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--silver);
+    margin-bottom: 16px;
+  }
+
+  .comp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .comp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .comp-btn-gold {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--gold-bright);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .comp-btn-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gold);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0;
+    margin-right: 16px;
+  }
+
+  .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+  .badge {
+    font-family: var(--font-data);
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border-radius: 2px;
+    border: 1px solid var(--hairline);
+    background: var(--paper-raised);
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+
+  .badge.gold-active {
+    border-color: var(--gold);
+    background: var(--gold-faint);
+  }
+
+  .comp-input {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--ink);
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    outline: none;
+    margin-bottom: 10px;
+  }
+
+  .comp-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(138,109,31,0.15);
+  }
+
+  .comp-input-error {
+    border-color: var(--nc);
+  }
+
+  .comp-input-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .comp-error-msg {
+    font-size: 0.7rem;
+    color: var(--nc);
+    margin-top: -6px;
+    margin-bottom: 10px;
+  }
+
+  /* ─── Semantic Colors ─── */
+  .semantic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .semantic-swatch {
+    background: var(--paper-raised);
+    padding: 24px;
+  }
+
+  .semantic-bar {
+    height: 6px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .semantic-label {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--silver);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .semantic-hex {
+    font-family: var(--font-data);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .semantic-role {
+    font-size: 0.7rem;
+    color: var(--silver);
+    margin-top: 4px;
+  }
+
+  /* ─── Dark Sections ─── */
+  .dark-band {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 64px 48px;
+    margin: 0 -48px;
+  }
+
+  /* ─── Score Bands ─── */
+  .bands-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .band-card {
+    background: var(--paper-raised);
+    padding: 28px;
+  }
+
+  .band-range {
+    font-family: var(--font-data);
+    font-size: 0.75rem;
+    color: var(--silver);
+    margin-bottom: 8px;
+  }
+
+  .band-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .band-name.audit-ready { color: var(--gold); }
+
+  .band-bar {
+    height: 4px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .band-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--silver);
+  }
+
+  /* ─── Feature List ─── */
+  .feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    margin-top: 32px;
+  }
+
+  .feature-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+  }
+
+  .feature-num {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .feature-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .feature-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  /* ─── Concept Detail ─── */
+  .concept-detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    padding: 40px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .concept-detail-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .concept-detail-body { }
+
+  .concept-detail-name {
+    font-family: var(--font-data);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .concept-detail-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .concept-detail-text {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .attribute-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    font-family: var(--font-data);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--hairline);
+    color: var(--silver);
+  }
+
+  .pill.strong {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-faint);
+  }
+
+  /* ─── Table ─── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.825rem;
+  }
+
+  .data-table th {
+    font-family: var(--font-data);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--silver);
+    text-align: left;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--hairline);
+    font-weight: 500;
+  }
+
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--hairline);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+
+  .data-table td:first-child {
+    font-family: var(--font-data);
+    font-size: 0.8rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  /* ─── Spacing ─── */
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .mt-32 { margin-top: 32px; }
+  .mt-48 { margin-top: 48px; }
+
+  .divider { border: none; border-top: 1px solid var(--hairline); margin: 40px 0; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* ─── Footnote / nav ─── */
+  .page-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(250,248,244,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline);
+    z-index: 100;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    height: 52px;
+    gap: 32px;
+  }
+
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-right: 16px;
+  }
+
+  .nav-link {
+    font-family: var(--font-data);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--silver);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .nav-link:hover { color: var(--ink); }
+
+  body { padding-top: 52px; }
+
+  /* ─── Inline color boxes ─── */
+  .color-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* ─── Concept logos inline ─── */
+  .logo-variants {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 24px;
+  }
+
+  .logo-variant-cell {
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--paper-raised);
+  }
+
+  .logo-variant-cell.dark-bg {
+    background: var(--ink);
+  }
+
+  .logo-variant-cell.gold-bg {
+    background: var(--gold-faint);
+  }
+
+  .logo-variant-label {
+    font-family: var(--font-data);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--silver);
+  }
+
+  .logo-variant-cell.dark-bg .logo-variant-label {
+    color: var(--hairline-dark);
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="page-nav">
+  <span class="nav-brand">ARS</span>
+  <a href="#paleta" class="nav-link">Paleta</a>
+  <a href="#tipografia" class="nav-link">Tipografia</a>
+  <a href="#score" class="nav-link">Score</a>
+  <a href="#conceitos" class="nav-link">Conceitos de Logo</a>
+  <a href="#componentes" class="nav-link">Componentes</a>
+  <a href="#recomendacao" class="nav-link">Recomendacao</a>
+</nav>
+
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover" style="margin: 0 -48px 0;">
+    <div class="cover-bg">
+      <svg width="400" height="400" viewBox="0 0 400 400" fill="none">
+        <circle cx="200" cy="200" r="160" stroke="white" stroke-width="1"/>
+        <ellipse cx="200" cy="200" rx="70" ry="160" stroke="white" stroke-width="1"/>
+        <path d="M40 200h320" stroke="white" stroke-width="0.8"/>
+        <path d="M64 120h272" stroke="white" stroke-width="0.8"/>
+        <path d="M64 280h272" stroke="white" stroke-width="0.8"/>
+        <path d="M200 40a160 160 0 0 1 131 236" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="cover-content">
+      <p class="cover-eyebrow">Audit Readiness Score</p>
+      <h1 class="cover-title">Brand Visual<br>Reference</h1>
+      <p class="cover-subtitle">Paleta · Tipografia · Logo · Componentes</p>
+    </div>
+    <div class="cover-meta">
+      <p class="cover-date">Julho 2026</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 1 — PALETA
+  ═══════════════════════════════════ -->
+  <div class="chapter" id="paleta">
+    <p class="chapter-label">01 — Paleta de Cores</p>
+    <h2 class="chapter-title">O sistema cromático da ARS</h2>
+
+    <p class="palette-section-label">Cores Primárias</p>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#101014;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">ink</span>
+          <span class="swatch-hex">#101014</span>
+          <span class="swatch-role">Texto principal, fundos escuros, CTA primário, rodapé</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#26262c;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">ink-soft</span>
+          <span class="swatch-hex">#26262c</span>
+          <span class="swatch-role">Texto secundário, hover de elementos escuros</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#faf8f4; border-bottom: 1px solid #e5e1d8;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">paper</span>
+          <span class="swatch-hex">#faf8f4</span>
+          <span class="swatch-role">Fundo geral do site. Tom creme, não branco puro</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#ffffff; border-bottom: 1px solid #e5e1d8;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">paper-raised</span>
+          <span class="swatch-hex">#ffffff</span>
+          <span class="swatch-role">Superfícies elevadas: cards, inputs, badges</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8a6d1f;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">gold</span>
+          <span class="swatch-hex">#8a6d1f</span>
+          <span class="swatch-role">Accent primário. Bordas ativas, barras, links, scale</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#c6a44a;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">gold-bright</span>
+          <span class="swatch-hex">#c6a44a</span>
+          <span class="swatch-role">Dourado luminoso. Eyebrows e texto em fundos escuros</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f3ecd9; border-bottom: 1px solid #e5e1d8;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">gold-faint</span>
+          <span class="swatch-hex">#f3ecd9</span>
+          <span class="swatch-role">Hover, selecionado, success state, highlight suave</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#6e6e73;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">silver</span>
+          <span class="swatch-hex">#6e6e73</span>
+          <span class="swatch-role">Labels de suporte, texto terciário, metadados</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#e5e1d8;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">hairline</span>
+          <span class="swatch-hex">#e5e1d8</span>
+          <span class="swatch-role">Linhas divisórias em fundos claros. Tom areia</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#3a3a40;"></div>
+        <div class="swatch-info">
+          <span class="swatch-name">hairline-dark</span>
+          <span class="swatch-hex">#3a3a40</span>
+          <span class="swatch-role">Linhas divisórias em fundos escuros</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="palette-section-label" style="margin-top:40px;">Cores Semânticas — Indicadores de Produto</p>
+    <div class="semantic-grid">
+      <div class="semantic-swatch">
+        <div class="semantic-bar" style="background:#3d6b4f;"></div>
+        <span class="semantic-label">ok</span>
+        <span class="semantic-hex" style="color:#3d6b4f;">#3d6b4f</span>
+        <p class="semantic-role">Verde dessaturado. Status positivo, evidência aprovada, Audit Ready</p>
+      </div>
+      <div class="semantic-swatch">
+        <div class="semantic-bar" style="background:#a3542e;"></div>
+        <span class="semantic-label">risk</span>
+        <span class="semantic-hex" style="color:#a3542e;">#a3542e</span>
+        <p class="semantic-role">Laranja-ferrugem. Risco moderado, 60–84% de score</p>
+      </div>
+      <div class="semantic-swatch">
+        <div class="semantic-bar" style="background:#8c3a3a;"></div>
+        <span class="semantic-label">nc</span>
+        <span class="semantic-hex" style="color:#8c3a3a;">#8c3a3a</span>
+        <p class="semantic-role">Vermelho escuro. NC Maior, erro de formulário, score crítico</p>
+      </div>
+    </div>
+
+    <div class="mt-48">
+      <p class="palette-section-label">Princípio cromático</p>
+      <div class="two-col">
+        <div>
+          <p style="font-size:0.875rem; line-height:1.7; color:var(--ink-soft);">
+            A paleta é inteiramente <strong style="color:var(--ink);">quente</strong> — nenhum tom azul, nenhum cinza frio, nenhum roxo. O paper (<code style="font-family:var(--font-data); font-size:0.8em; color:var(--gold);">#faf8f4</code>) tem subtom creme, não branco neutro. O hairline (<code style="font-family:var(--font-data); font-size:0.8em; color:var(--gold);">#e5e1d8</code>) tem subtom areia. Isso cria coerência cromática que distingue a ARS de qualquer concorrente de GRC — que invariavelmente usam azul corporativo.
+          </p>
+        </div>
+        <div>
+          <p style="font-size:0.875rem; line-height:1.7; color:var(--ink-soft);">
+            O <strong style="color:var(--gold);">gold</strong> é o único accent. Ele tem duas versões: <code style="font-family:var(--font-data); font-size:0.8em;">gold</code> para fundos claros (saturação plena, bom contraste) e <code style="font-family:var(--font-data); font-size:0.8em;">gold-bright</code> para fundos escuros (mais luminoso). As cores semânticas — ok, risk, nc — são intencionalmente dessaturadas para não competir com o gold.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 2 — TIPOGRAFIA
+  ═══════════════════════════════════ -->
+  <div class="chapter" id="tipografia">
+    <p class="chapter-label">02 — Tipografia</p>
+    <h2 class="chapter-title">O trio tipográfico da ARS</h2>
+
+    <div class="type-specimen">
+      <p class="type-label">Display — Fraunces · Serif Óptico Variable</p>
+      <p class="type-sample-display">Audit Ready.</p>
+      <p class="type-meta">Fraunces · opsz variável · weight 600 · letter-spacing -0.02em · line-height 1.08</p>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-label">Display — Fraunces · Peso Regular</p>
+      <p class="type-sample-display-sm" style="font-weight:400;">Uma plataforma que mede prontidão com precisão determinística.</p>
+      <p class="type-meta">Fraunces · weight 400 · h2 secundário, subtítulos, citações em destaque</p>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-label">Body — Archivo · Sans Expanded</p>
+      <p class="type-sample-body">A ARS transforma o compliance de um projeto pontual de alto estresse em uma capacidade organizacional contínua.</p>
+      <p class="type-meta">Archivo · weight 400 · size 1.125rem · leading-relaxed · corpo principal</p>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-label">Body Small — Archivo · Texto de Suporte</p>
+      <p class="type-sample-body-sm">Compliance não é um projeto com início, meio e fim. É uma operação viva. O Score de Audit Readiness é um indicador vivo que sobe com a adição de evidências aprovadas e cai quando documentos vencem.</p>
+      <p class="type-meta">Archivo · weight 400 · size 0.875rem · leading 1.65 · descrições, labels, conteúdo de suporte</p>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-label">Data — IBM Plex Mono · Score Display</p>
+      <p class="type-sample-mono">87%</p>
+      <p class="type-meta">IBM Plex Mono · weight 500 · size 2.5–4rem · valores de score, métricas, dados instrumentais</p>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-label">Data — IBM Plex Mono · Labels e Eyebrows</p>
+      <p class="type-sample-mono-label">Audit Readiness Score · 01 · 02 · 03</p>
+      <p class="type-meta">IBM Plex Mono · weight 400 · size 0.6–0.75rem · uppercase · tracking-[0.18–0.22em] · labels de seção, numeração, eyebrows</p>
+    </div>
+
+    <hr class="divider">
+
+    <p style="font-family:var(--font-data); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--silver); margin-bottom:24px;">Combinações típicas do site</p>
+
+    <div class="feature-list" style="margin-top:0;">
+      <div class="feature-item">
+        <p class="feature-num">PADRÃO 01</p>
+        <p class="feature-title">Seção Editorial</p>
+        <p class="feature-text">Eyebrow Mono + H2 Fraunces + Body Archivo. O padrão mais usado em seções de produto.</p>
+        <div style="margin-top:12px; padding:16px; background:var(--paper-raised); border:1px solid var(--hairline); border-radius:2px;">
+          <p style="font-family:var(--font-data); font-size:0.6rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold); margin-bottom:6px;">Plataforma</p>
+          <p style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; margin-bottom:6px;">Central de Comando de Compliance</p>
+          <p style="font-size:0.8rem; color:var(--silver);">Saiba exatamente o que precisa ser feito a seguir.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <p class="feature-num">PADRÃO 02</p>
+        <p class="feature-title">Instrumento / Dado</p>
+        <p class="feature-text">Label Mono + Valor Mono grande. Usado para scores, métricas, valores calculados.</p>
+        <div style="margin-top:12px; padding:16px; background:var(--paper-raised); border:1px solid var(--hairline); border-radius:2px;">
+          <p style="font-family:var(--font-data); font-size:0.6rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--silver); margin-bottom:4px;">Audit Readiness Score</p>
+          <p style="font-family:var(--font-data); font-size:2rem; font-weight:500; color:var(--gold);">87%</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <p class="feature-num">PADRÃO 03</p>
+        <p class="feature-title">Lista Numerada</p>
+        <p class="feature-text">Número Mono + Título Fraunces + Texto Archivo. Usado em steps e features.</p>
+        <div style="margin-top:12px; padding:16px; background:var(--paper-raised); border:1px solid var(--hairline); border-radius:2px; border-left:2px solid var(--gold);">
+          <p style="font-family:var(--font-data); font-size:0.6rem; color:var(--gold);">01</p>
+          <p style="font-family:var(--font-display); font-size:1rem; font-weight:600; margin-bottom:4px;">Guided Compliance</p>
+          <p style="font-size:0.75rem; color:var(--silver);">Jornada guiada do onboarding à auditoria.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <p class="feature-num">PADRÃO 04</p>
+        <p class="feature-title">Profile / Role Label</p>
+        <p class="feature-text">Role em Mono uppercase gold + Texto Archivo. Usado em grids de personas.</p>
+        <div style="margin-top:12px; padding:16px; background:var(--paper-raised); border:1px solid var(--hairline); border-radius:2px;">
+          <p style="font-family:var(--font-data); font-size:0.6rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold); margin-bottom:6px;">Compliance Officer</p>
+          <p style="font-size:0.78rem; color:var(--silver);">Operação central, rastreável e escalável sem planilhas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 3 — AUDIT READINESS SCORE
+  ═══════════════════════════════════ -->
+  <div class="chapter" id="score">
+    <p class="chapter-label">03 — Audit Readiness Score</p>
+    <h2 class="chapter-title">O elemento-assinatura do produto</h2>
+
+    <div class="ruler-demo">
+      <div class="ruler-header">
+        <span class="ruler-label">Audit Readiness Score</span>
+        <span class="ruler-value">87%</span>
+      </div>
+      <div class="ruler-track">
+        <div class="ruler-fill"></div>
+      </div>
+      <div class="ruler-ticks">
+        <span class="ruler-tick mid"></span>
+        <span class="ruler-tick high"></span>
+      </div>
+      <div class="ruler-bands">
+        <span style="width:60%;">Nao Auditavel</span>
+        <span style="width:25%;">Risco Moderado</span>
+        <span style="flex:1; text-align:right;">Audit Ready</span>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem; color:var(--silver); margin-bottom:32px;">
+      O ReadinessRuler é o elemento-assinatura do site. Escala horizontal com 3 faixas: Não Auditável (0–59%), Risco Moderado (60–84%), Audit Ready (85–100%). Tick marks nos thresholds de 60% e 85%. Label em IBM Plex Mono, valor em IBM Plex Mono gold, preenchimento em gold com animação única de entrada.
+    </p>
+
+    <div class="bands-grid">
+      <div class="band-card">
+        <p class="band-range">0 — 59%</p>
+        <div class="band-bar" style="background:var(--nc); width:59%;"></div>
+        <p class="band-name">Nao Auditavel</p>
+        <p class="band-text">Lacunas críticas que resultariam em reprovação imediata. Controles fundamentais descobertos. Não agendar auditoria externa.</p>
+      </div>
+      <div class="band-card">
+        <p class="band-range">60 — 84%</p>
+        <div class="band-bar" style="background:var(--risk); width:72%;"></div>
+        <p class="band-name">Risco Moderado</p>
+        <p class="band-text">Base sólida, mas existem lacunas relevantes. Possível agendar com risco calculado. Resolver gaps de alto impacto primeiro.</p>
+      </div>
+      <div class="band-card">
+        <p class="band-range">85 — 100%</p>
+        <div class="band-bar" style="background:var(--ok); width:90%;"></div>
+        <p class="band-name audit-ready">Audit Ready</p>
+        <p class="band-text">Condições de receber auditoria com expectativa razoável de aprovação. O processo interno foi conduzido com rigor.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 4 — CONCEITOS DE LOGO
+  ═══════════════════════════════════ -->
+  <div class="chapter" id="conceitos">
+    <p class="chapter-label">04 — Conceitos de Logo</p>
+    <h2 class="chapter-title">Três propostas para o símbolo da ARS</h2>
+
+    <!-- Overview grid -->
+    <div class="concepts-grid">
+
+      <!-- CALIBRE — light -->
+      <div class="concept-card">
+        <span class="concept-name">Proposta 01 — Calibre</span>
+        <div class="concept-svg-wrap">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Semicircle arc — instrument scale -->
+            <path d="M14 90 A66 66 0 0 1 146 90" stroke="#e5e1d8" stroke-width="1" fill="none"/>
+            <!-- Tick marks — minor -->
+            <g stroke="#6e6e73" stroke-width="0.8" opacity="0.5">
+              <line x1="14" y1="90" x2="18.4" y2="82.4" transform="rotate(0,14,90)"/>
+            </g>
+            <!-- Scale ticks at various positions -->
+            <!-- 0% = left end (14,90) angle = 180deg from right -->
+            <!-- 100% = right end (146,90) -->
+            <!-- Ticks drawn at intervals around the arc -->
+            <g stroke="#6e6e73" stroke-width="0.7" opacity="0.4">
+              <!-- roughly every 10% -->
+              <line x1="80" y1="24" x2="80" y2="32"/>
+              <!-- 90deg top -->
+              <line x1="14" y1="90" x2="20" y2="90"/>
+              <!-- 180deg left -->
+              <line x1="146" y1="90" x2="140" y2="90"/>
+              <!-- 0deg right -->
+            </g>
+            <!-- Arc subdivisions, calculated from center (80,90) r=66 -->
+            <!-- 10% = 18deg from 180 = 162deg. Let's place tick marks around the arc -->
+            <!-- Major ticks at 60% and 85% -->
+            <!-- 60% = 180 + 60*(180/100) = 180+108 = 288deg from positive x-axis?
+                 Actually: 0% is at angle 180deg (left), 100% is at 0deg (right)
+                 So position = 180 - percentage*1.8 degrees
+                 60% = 180 - 108 = 72deg
+                 85% = 180 - 153 = 27deg -->
+            <!-- 60% tick: angle=72deg from pos-x. x=80+66*cos(72)=80+20.4=100.4, y=90-66*sin(72)=90-62.8=27.2 -->
+            <!-- Outer: x=80+72*cos(72)=80+22.2=102.2, y=90-72*sin(72)=90-68.5=21.5 -->
+            <line x1="100.4" y1="27.2" x2="104.2" y2="20.5" stroke="#6e6e73" stroke-width="1" opacity="0.6"/>
+            <!-- 85% tick: angle=27deg. x=80+66*cos(27)=80+58.8=138.8, y=90-66*sin(27)=90-29.95=60.05 -->
+            <!-- Outer tick -->
+            <line x1="138.8" y1="60.1" x2="143.5" y2="56.8" stroke="#8a6d1f" stroke-width="1.5"/>
+
+            <!-- Band: from 85% to 100%, highlighted arc -->
+            <!-- 85% angle = 27deg, 100% angle = 0deg (1.5,90) wait that's not right -->
+            <!-- Let me recalc: center (80,90), r=66 -->
+            <!-- 0% at left: angle=180, point=(14,90) -->
+            <!-- 100% at right: angle=0, point=(146,90) -->
+            <!-- 85%: angle = 180 - 85*1.8 = 180-153 = 27deg -->
+            <!-- arc from 27deg to 0deg, small arc CW -->
+            <path d="M138.8 60.1 A66 66 0 0 1 146 90" stroke="#8a6d1f" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+            <!-- Needle/pointer to 87% position -->
+            <!-- 87%: angle = 180-87*1.8 = 180-156.6 = 23.4deg -->
+            <!-- tip: x=80+62*cos(23.4)=80+56.9=136.9, y=90-62*sin(23.4)=90-24.6=65.4 -->
+            <line x1="80" y1="90" x2="136" y2="66" stroke="#8a6d1f" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Pivot dot -->
+            <circle cx="80" cy="90" r="3.5" fill="#8a6d1f"/>
+            <circle cx="80" cy="90" r="1.5" fill="#faf8f4"/>
+
+            <!-- Center base: "A" letterform suggestion -->
+            <path d="M72 98 L80 80 L88 98" stroke="#101014" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+            <line x1="75" y1="93" x2="85" y2="93" stroke="#101014" stroke-width="1.2"/>
+
+            <!-- Labels -->
+            <text x="11" y="100" font-family="'IBM Plex Mono',monospace" font-size="6" fill="#6e6e73" text-anchor="middle">0</text>
+            <text x="149" y="100" font-family="'IBM Plex Mono',monospace" font-size="6" fill="#6e6e73" text-anchor="middle">100</text>
+            <text x="104" y="18" font-family="'IBM Plex Mono',monospace" font-size="5.5" fill="#6e6e73">60</text>
+            <text x="143" y="54" font-family="'IBM Plex Mono',monospace" font-size="5.5" fill="#8a6d1f">85</text>
+          </svg>
+        </div>
+        <div class="wordmark-row">
+          <span class="wordmark-ars">ARS</span>
+          <span class="wordmark-tag">Audit Readiness Score</span>
+        </div>
+        <p class="concept-desc">Semicírculo como escala de instrumento analógico. Ponteiro em 87% (Audit Ready). Tick marks nas faixas 60% e 85%. Arco de destaque no setor Audit Ready. Base: letra A em Fraunces ancorando o instrumento. Metáfora direta do produto.</p>
+      </div>
+
+      <!-- CALIBRE — dark -->
+      <div class="concept-card dark">
+        <span class="concept-name">Proposta 01 — Calibre · Fundo Escuro</span>
+        <div class="concept-svg-wrap">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 90 A66 66 0 0 1 146 90" stroke="#3a3a40" stroke-width="1" fill="none"/>
+            <line x1="100.4" y1="27.2" x2="104.2" y2="20.5" stroke="#6e6e73" stroke-width="1" opacity="0.7"/>
+            <line x1="138.8" y1="60.1" x2="143.5" y2="56.8" stroke="#c6a44a" stroke-width="1.5"/>
+            <path d="M138.8 60.1 A66 66 0 0 1 146 90" stroke="#c6a44a" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="80" y1="90" x2="136" y2="66" stroke="#c6a44a" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="80" cy="90" r="3.5" fill="#c6a44a"/>
+            <circle cx="80" cy="90" r="1.5" fill="#101014"/>
+            <path d="M72 98 L80 80 L88 98" stroke="#faf8f4" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+            <line x1="75" y1="93" x2="85" y2="93" stroke="#faf8f4" stroke-width="1.2"/>
+            <text x="11" y="100" font-family="'IBM Plex Mono',monospace" font-size="6" fill="#6e6e73" text-anchor="middle">0</text>
+            <text x="149" y="100" font-family="'IBM Plex Mono',monospace" font-size="6" fill="#6e6e73" text-anchor="middle">100</text>
+            <text x="143" y="54" font-family="'IBM Plex Mono',monospace" font-size="5.5" fill="#c6a44a">85</text>
+          </svg>
+        </div>
+        <div class="wordmark-row">
+          <span class="wordmark-ars light">ARS</span>
+          <span class="wordmark-tag">Audit Readiness Score</span>
+        </div>
+        <p class="concept-desc">Versão escura: arc e needle em gold-bright (#c6a44a), estrutura em hairline-dark, base A em paper. Mesmo símbolo, contexto invertido — máximo contraste.</p>
+      </div>
+
+      <!-- COBERTURA -->
+      <div class="concept-card">
+        <span class="concept-name">Proposta 02 — Cobertura</span>
+        <div class="concept-svg-wrap">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 5x5 grid, 20x20 cells with 1px gap -->
+            <!-- Cell size = (100 - 4gaps) / 5 = 96/5 = 19.2, gap = 1 -->
+            <!-- 22 filled, 3 empty -->
+            <g>
+              <!-- Row 1: all filled -->
+              <rect x="0" y="0" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="20" y="0" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="40" y="0" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="60" y="0" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="80" y="0" width="20" height="19" fill="#8a6d1f"/>
+              <!-- Row 2: all filled -->
+              <rect x="0" y="20" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="20" y="20" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="40" y="20" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="60" y="20" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="80" y="20" width="20" height="19" fill="#8a6d1f"/>
+              <!-- Row 3: 4 filled, 1 empty (col 3) -->
+              <rect x="0" y="40" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="20" y="40" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="40" y="40" width="19" height="19" fill="none" stroke="#e5e1d8" stroke-width="1"/>
+              <rect x="60" y="40" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="80" y="40" width="20" height="19" fill="#8a6d1f"/>
+              <!-- Row 4: 4 filled, 1 empty (col 5) -->
+              <rect x="0" y="60" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="20" y="60" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="40" y="60" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="60" y="60" width="19" height="19" fill="#8a6d1f"/>
+              <rect x="80" y="60" width="20" height="19" fill="none" stroke="#e5e1d8" stroke-width="1"/>
+              <!-- Row 5: 4 filled, 1 empty (col 4) -->
+              <rect x="0" y="80" width="19" height="20" fill="#8a6d1f"/>
+              <rect x="20" y="80" width="19" height="20" fill="#8a6d1f"/>
+              <rect x="40" y="80" width="19" height="20" fill="#8a6d1f"/>
+              <rect x="60" y="80" width="19" height="20" fill="none" stroke="#e5e1d8" stroke-width="1"/>
+              <rect x="80" y="80" width="20" height="20" fill="#8a6d1f"/>
+            </g>
+          </svg>
+        </div>
+        <div class="wordmark-row" style="margin-top:8px;">
+          <span class="wordmark-ars">ARS</span>
+          <span class="wordmark-tag">Audit Readiness Score</span>
+        </div>
+        <p class="concept-desc">Grade 5×5 de 25 módulos. 22 preenchidos (88% — Audit Ready), 3 vazios posicionados de forma rastreável. Cada módulo é um controle. Visualização direta do conceito de Coverage. Conecta ao padrão gap-px do site.</p>
+      </div>
+
+    </div>
+
+    <!-- Limiar e variantes -->
+    <div class="concepts-grid" style="grid-template-columns:1fr 1fr; margin-top:1px;">
+
+      <!-- LIMIAR -->
+      <div class="concept-card">
+        <span class="concept-name">Proposta 03 — Limiar</span>
+        <div class="concept-svg-wrap">
+          <svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Threshold line (85%) -->
+            <line x1="10" y1="52" x2="190" y2="52" stroke="#e5e1d8" stroke-width="1"/>
+            <!-- Arc trajectory: starts below line, crosses it, ends above -->
+            <!-- Below: from (30,72) arc to (170,22), crossing threshold at about x=145 -->
+            <path d="M30 72 Q80 78 120 52 Q145 38 170 22" stroke="#8a6d1f" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Crossing emphasis -->
+            <circle cx="120" cy="52" r="3.5" fill="#8a6d1f"/>
+            <!-- Start point -->
+            <circle cx="30" cy="72" r="2" fill="#6e6e73"/>
+            <!-- End point (above threshold) -->
+            <circle cx="170" cy="22" r="2.5" fill="#8a6d1f"/>
+            <!-- Labels -->
+            <text x="10" y="48" font-family="'IBM Plex Mono',monospace" font-size="6" fill="#6e6e73">85%</text>
+            <text x="17" y="78" font-family="'IBM Plex Mono',monospace" font-size="5.5" fill="#6e6e73">início</text>
+            <text x="155" y="18" font-family="'IBM Plex Mono',monospace" font-size="5.5" fill="#8a6d1f">ready</text>
+          </svg>
+        </div>
+        <div class="wordmark-row">
+          <span class="wordmark-ars">ARS</span>
+          <span class="wordmark-tag">Audit Readiness Score</span>
+        </div>
+        <p class="concept-desc">Linha horizontal = threshold de 85%. Arco = trajetória da organização. O ponto de cruzamento marca o momento Audit Ready. Forma minimalista: apenas 2 elementos lineares. Alta distinção, metáfora de progressão e prontidão.</p>
+      </div>
+
+      <!-- Favicon / miniatura comparison -->
+      <div class="concept-card">
+        <span class="concept-name">Comparativo — Miniatura 32px</span>
+        <div class="concept-svg-wrap" style="gap:24px; flex-direction:row; align-items:center;">
+          <!-- CALIBRE favicon -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div style="width:32px;height:32px;background:#101014;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M3 19 A8 8 0 0 1 19 19" stroke="#3a3a40" stroke-width="0.8" fill="none"/>
+                <path d="M16 12.5 A8 8 0 0 1 19 19" stroke="#c6a44a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <line x1="11" y1="19" x2="17.5" y2="12" stroke="#c6a44a" stroke-width="1" stroke-linecap="round"/>
+                <circle cx="11" cy="19" r="1.5" fill="#c6a44a"/>
+              </svg>
+            </div>
+            <span style="font-family:var(--font-data);font-size:0.55rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;">Calibre</span>
+          </div>
+          <!-- COBERTURA favicon -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div style="width:32px;height:32px;background:#101014;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <g>
+                  <rect x="0" y="0" width="5.5" height="5.5" fill="#c6a44a"/>
+                  <rect x="7" y="0" width="5.5" height="5.5" fill="#c6a44a"/>
+                  <rect x="14" y="0" width="6" height="5.5" fill="#c6a44a"/>
+                  <rect x="0" y="7" width="5.5" height="5.5" fill="#c6a44a"/>
+                  <rect x="7" y="7" width="5.5" height="5.5" fill="none" stroke="#3a3a40" stroke-width="0.8"/>
+                  <rect x="14" y="7" width="6" height="5.5" fill="#c6a44a"/>
+                  <rect x="0" y="14" width="5.5" height="6" fill="#c6a44a"/>
+                  <rect x="7" y="14" width="5.5" height="6" fill="#c6a44a"/>
+                  <rect x="14" y="14" width="6" height="6" fill="none" stroke="#3a3a40" stroke-width="0.8"/>
+                </g>
+              </svg>
+            </div>
+            <span style="font-family:var(--font-data);font-size:0.55rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;">Cobertura</span>
+          </div>
+          <!-- LIMIAR favicon -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div style="width:32px;height:32px;background:#101014;border-radius:4px;display:flex;align-items:center;justify-content:center;">
+              <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                <line x1="0" y1="10" x2="20" y2="10" stroke="#3a3a40" stroke-width="0.8"/>
+                <path d="M2 14 Q7 15 10 10 Q13 6 18 2" stroke="#c6a44a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <circle cx="10" cy="10" r="1.5" fill="#c6a44a"/>
+              </svg>
+            </div>
+            <span style="font-family:var(--font-data);font-size:0.55rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.1em;">Limiar</span>
+          </div>
+        </div>
+        <p class="concept-desc">Leitura em 32×32px com fundo ink. Calibre mantém a identidade de instrumento mesmo em miniatura. Cobertura lê como padrão/grade. Limiar lê como curva de progressão. Todos funcionam — Calibre tem maior identidade única.</p>
+      </div>
+
+    </div>
+
+    <!-- Concept detail: CALIBRE -->
+    <div class="concept-detail">
+      <div class="concept-detail-symbol">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+          <!-- Background circle hint -->
+          <circle cx="100" cy="130" r="90" stroke="#f3ecd9" stroke-width="0.5"/>
+          <!-- Scale arc -->
+          <path d="M17 173 A83 83 0 0 1 183 173" stroke="#e5e1d8" stroke-width="1.5" fill="none"/>
+          <!-- Finer tick marks (every ~20%) -->
+          <!-- Approximate positions on arc; center=(100,173), r=83 -->
+          <!-- 20%: 180-36=144deg. x=100+83*cos(144)=100-67.2=32.8, y=173-83*sin(144)=173-48.8=124.2 -->
+          <!-- outer: r=88 -->
+          <line x1="32.8" y1="124.2" x2="29.7" y2="119.2" stroke="#e5e1d8" stroke-width="1"/>
+          <!-- 40%: 180-72=108deg. x=100+83*cos(108)=100-25.7=74.3, y=173-83*sin(108)=173-78.9=94.1 -->
+          <line x1="74.3" y1="94.1" x2="71.8" y2="88.6" stroke="#e5e1d8" stroke-width="1"/>
+          <!-- 60%: 180-108=72deg. x=100+83*cos(72)=100+25.7=125.7, y=173-83*sin(72)=173-78.9=94.1 -->
+          <line x1="125.7" y1="94.1" x2="128.2" y2="88.6" stroke="#6e6e73" stroke-width="1.2"/>
+          <!-- 80%: 180-144=36deg. x=100+83*cos(36)=100+67.2=167.2, y=173-83*sin(36)=173-48.8=124.2 -->
+          <line x1="167.2" y1="124.2" x2="170.3" y2="119.2" stroke="#e5e1d8" stroke-width="1"/>
+          <!-- 85% threshold tick: 180-153=27deg. x=100+83*cos(27)=100+73.9=173.9, y=173-83*sin(27)=173-37.7=135.3 -->
+          <!-- outer r=90 -->
+          <line x1="173.9" y1="135.3" x2="178.3" y2="131.3" stroke="#8a6d1f" stroke-width="2"/>
+          <!-- Audit Ready arc highlight 85-100% -->
+          <path d="M173.9 135.3 A83 83 0 0 1 183 173" stroke="#8a6d1f" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Needle: 87% = 180-156.6=23.4deg -->
+          <!-- tip at r=76: x=100+76*cos(23.4)=100+69.8=169.8, y=173-76*sin(23.4)=173-30.2=142.8 -->
+          <line x1="100" y1="173" x2="169" y2="144" stroke="#8a6d1f" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Pivot -->
+          <circle cx="100" cy="173" r="5" fill="#8a6d1f"/>
+          <circle cx="100" cy="173" r="2" fill="#faf8f4"/>
+          <!-- A letterform base -->
+          <path d="M88 188 L100 156 L112 188" stroke="#101014" stroke-width="2" fill="none" stroke-linejoin="round"/>
+          <line x1="92.5" y1="180" x2="107.5" y2="180" stroke="#101014" stroke-width="1.8"/>
+          <!-- Value label -->
+          <text x="100" y="118" font-family="'IBM Plex Mono',monospace" font-size="16" font-weight="500" fill="#8a6d1f" text-anchor="middle">87%</text>
+          <!-- Scale labels -->
+          <text x="12" y="184" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#6e6e73">0</text>
+          <text x="185" y="184" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#6e6e73">100</text>
+          <text x="175" y="129" font-family="'IBM Plex Mono',monospace" font-size="7" fill="#8a6d1f">85</text>
+          <text x="119" y="86" font-family="'IBM Plex Mono',monospace" font-size="7" fill="#6e6e73">60</text>
+        </svg>
+      </div>
+      <div class="concept-detail-body">
+        <span class="concept-detail-name">Proposta 01 — Recomendada</span>
+        <h3 class="concept-detail-title">CALIBRE</h3>
+        <p class="concept-detail-text">
+          Um semicírculo de 180 graus construído como escala de instrumento analógico. Tick marks posicionados nas faixas exatas do produto: 0, 60% (Risco Moderado) e 85% (threshold Audit Ready). O setor entre 85% e 100% é destacado em gold — é o único setor que importa.
+        </p>
+        <p class="concept-detail-text">
+          Um ponteiro fino parte do centro em direção ao valor 87% — dentro da faixa Audit Ready. A base do instrumento é a letra <strong>A</strong> em Fraunces, ancorando o símbolo e conectando ao nome da marca. O conjunto lê como um medidor de precisão, como um galvanômetro ou voltímetro de alta qualidade.
+        </p>
+        <p class="concept-detail-text">
+          Nenhuma outra empresa de GRC/compliance tem este símbolo. É visualmente único, semanticamente preciso e escalável para todos os contextos da marca.
+        </p>
+        <div class="attribute-pills">
+          <span class="pill strong">Precisão</span>
+          <span class="pill strong">Instrumentalidade</span>
+          <span class="pill strong">Clareza</span>
+          <span class="pill strong">Prontidão</span>
+          <span class="pill">Maturidade</span>
+          <span class="pill">Confiabilidade</span>
+          <span class="pill">Calculado</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 5 — COMPONENTES
+  ═══════════════════════════════════ -->
+  <div class="chapter" id="componentes">
+    <p class="chapter-label">05 — Componentes de UI</p>
+    <h2 class="chapter-title">A linguagem de interface da ARS</h2>
+
+    <div class="components-grid">
+      <div class="comp-group">
+        <p class="comp-group-label">Botões</p>
+        <div>
+          <button class="comp-btn-primary">Solicitar Demonstracao</button>
+          <button class="comp-btn-secondary">Ver Plataforma</button>
+        </div>
+        <div style="margin-top:4px;">
+          <button class="comp-btn-gold">Audit Ready</button>
+          <button class="comp-btn-link">Ver todos →</button>
+        </div>
+        <p style="font-size:0.7rem;color:var(--silver);margin-top:12px;line-height:1.5;">
+          Todos os botões usam <code style="font-family:var(--font-data);font-size:0.8em;">border-radius: 2px</code> (rounded-sm). Sem ícones, sem sombras. O botão gold-bright aparece apenas no CTA final da página (CtaBand) sobre fundo ink.
+        </p>
+      </div>
+
+      <div class="comp-group">
+        <p class="comp-group-label">Badges e Etiquetas de Framework</p>
+        <div class="badge-row">
+          <span class="badge">ISO 27001</span>
+          <span class="badge">ISO 9001</span>
+          <span class="badge gold-active">LGPD</span>
+          <span class="badge">ISO 22301</span>
+          <span class="badge">ISO 27701</span>
+        </div>
+        <p style="font-size:0.7rem;color:var(--silver);margin-top:8px;line-height:1.5;">
+          IBM Plex Mono · 0.7rem · rounded-sm · Estado ativo: border-gold + bg-gold-faint.
+        </p>
+
+        <p class="comp-group-label" style="margin-top:24px;">Formulário — Inputs</p>
+        <label class="comp-input-label">Nome completo</label>
+        <input class="comp-input" type="text" placeholder="Clara Moraes" value="Clara Moraes">
+        <label class="comp-input-label">Email corporativo</label>
+        <input class="comp-input comp-input-error" type="email" placeholder="email@empresa.com">
+        <p class="comp-error-msg">Campo obrigatório</p>
+        <p style="font-size:0.7rem;color:var(--silver);margin-top:4px;line-height:1.5;">
+          Focus state: border-gold + ring 2px gold/15% opacidade. Error: border-nc (#8c3a3a).
+        </p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p style="font-family:var(--font-data); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--silver); margin-bottom:24px;">Padrão de Cards — Grid com Bordas por Gap</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:4px;overflow:hidden;">
+      <div style="background:var(--paper-raised);padding:24px;">
+        <p style="font-family:var(--font-data);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;">CEO · Fundador</p>
+        <p style="font-size:0.8rem;line-height:1.6;color:var(--ink-soft);">Visibilidade do estado de conformidade em tempo real, sem depender de consultores para interpretar.</p>
+      </div>
+      <div style="background:var(--paper-raised);padding:24px;">
+        <p style="font-family:var(--font-data);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;">Compliance Officer</p>
+        <p style="font-size:0.8rem;line-height:1.6;color:var(--ink-soft);">Plataforma central que distribui responsabilidades, automatiza cobranças e gera relatórios auditáveis.</p>
+      </div>
+      <div style="background:var(--paper-raised);padding:24px;">
+        <p style="font-family:var(--font-data);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);margin-bottom:8px;">DPO · LGPD</p>
+        <p style="font-size:0.8rem;line-height:1.6;color:var(--ink-soft);">ROPA, RIPD, gestão de incidentes e direitos dos titulares integrados ao modelo de cobertura geral.</p>
+      </div>
+    </div>
+
+    <p style="font-size:0.7rem;color:var(--silver);margin-top:12px;line-height:1.5;">
+      Técnica gap-px: o container tem <code style="font-family:var(--font-data);font-size:0.8em;">gap: 1px; background: hairline</code>. As células têm <code style="font-family:var(--font-data);font-size:0.8em;">background: paper-raised</code>. A borda de 1px entre células é o próprio background do container exposto pelo gap — sem border individuais.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 6 — TOKENS COMPLETOS
+  ═══════════════════════════════════ -->
+  <div class="chapter">
+    <p class="chapter-label">06 — Tokens de Design</p>
+    <h2 class="chapter-title">Referência completa de variáveis CSS</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Valor</th>
+          <th>Uso Principal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>--color-ink</td>
+          <td><span class="color-dot" style="background:#101014;"></span>#101014</td>
+          <td>Texto principal, botão primário, fundo escuro, footer</td>
+        </tr>
+        <tr>
+          <td>--color-ink-soft</td>
+          <td><span class="color-dot" style="background:#26262c;"></span>#26262c</td>
+          <td>Texto secundário, hover de ink, subtítulos</td>
+        </tr>
+        <tr>
+          <td>--color-paper</td>
+          <td><span class="color-dot" style="background:#faf8f4; border:1px solid #e5e1d8;"></span>#faf8f4</td>
+          <td>Fundo de página. Tom creme quente</td>
+        </tr>
+        <tr>
+          <td>--color-paper-raised</td>
+          <td><span class="color-dot" style="background:#ffffff; border:1px solid #e5e1d8;"></span>#ffffff</td>
+          <td>Cards, inputs, badges. Superfície elevada</td>
+        </tr>
+        <tr>
+          <td>--color-gold</td>
+          <td><span class="color-dot" style="background:#8a6d1f;"></span>#8a6d1f</td>
+          <td>Accent em fundos claros. Barras, bordas ativas, links</td>
+        </tr>
+        <tr>
+          <td>--color-gold-bright</td>
+          <td><span class="color-dot" style="background:#c6a44a;"></span>#c6a44a</td>
+          <td>Accent em fundos escuros. Eyebrows, texto de destaque no footer</td>
+        </tr>
+        <tr>
+          <td>--color-gold-faint</td>
+          <td><span class="color-dot" style="background:#f3ecd9; border:1px solid #e5e1d8;"></span>#f3ecd9</td>
+          <td>Hover, selecionado, success state, selection highlight</td>
+        </tr>
+        <tr>
+          <td>--color-silver</td>
+          <td><span class="color-dot" style="background:#6e6e73;"></span>#6e6e73</td>
+          <td>Labels de suporte, texto terciário, metadados</td>
+        </tr>
+        <tr>
+          <td>--color-hairline</td>
+          <td><span class="color-dot" style="background:#e5e1d8; border:1px solid #ccc;"></span>#e5e1d8</td>
+          <td>Bordas e divisores em fundos claros. Tom areia</td>
+        </tr>
+        <tr>
+          <td>--color-hairline-dark</td>
+          <td><span class="color-dot" style="background:#3a3a40;"></span>#3a3a40</td>
+          <td>Bordas e divisores em fundos escuros</td>
+        </tr>
+        <tr>
+          <td>--color-ok</td>
+          <td><span class="color-dot" style="background:#3d6b4f;"></span>#3d6b4f</td>
+          <td>Verde dessaturado. Aprovado, Audit Ready, status positivo</td>
+        </tr>
+        <tr>
+          <td>--color-risk</td>
+          <td><span class="color-dot" style="background:#a3542e;"></span>#a3542e</td>
+          <td>Laranja ferrugem. Risco moderado, 60–84%</td>
+        </tr>
+        <tr>
+          <td>--color-nc</td>
+          <td><span class="color-dot" style="background:#8c3a3a;"></span>#8c3a3a</td>
+          <td>Vermelho escuro. NC Major, erro de formulário, crítico</td>
+        </tr>
+        <tr>
+          <td>--font-display</td>
+          <td>Fraunces, Georgia, serif</td>
+          <td>Headings H1–H3, citações em destaque, wordmark ARS</td>
+        </tr>
+        <tr>
+          <td>--font-body</td>
+          <td>Archivo, system-ui, sans-serif</td>
+          <td>Todo texto de corpo, botões, labels de formulário, navegação</td>
+        </tr>
+        <tr>
+          <td>--font-data</td>
+          <td>IBM Plex Mono, ui-monospace, monospace</td>
+          <td>Scores, eyebrows, labels de instrumento, numeração, códigos de norma</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       CAPÍTULO 7 — RECOMENDAÇÃO
+  ═══════════════════════════════════ -->
+  <div class="chapter" id="recomendacao">
+    <div style="background:var(--ink);color:var(--paper);padding:64px;margin:0 -48px;border-radius:0;">
+      <p style="font-family:var(--font-data);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:16px;">07 — Recomendacao</p>
+      <h2 style="font-family:var(--font-display);font-size:2.5rem;font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin-bottom:32px;max-width:700px;">
+        Proposta recomendada: CALIBRE
+      </h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+        <div>
+          <p style="font-size:0.875rem;line-height:1.7;color:rgba(250,248,244,0.75);margin-bottom:20px;">
+            O conceito CALIBRE é o único que resolve simultaneamente os três desafios da logo ARS: representa o produto de forma única e precisa, formaliza o que o site já diz (ReadinessRuler, tick marks, gold accent), e escala para o brand system completo.
+          </p>
+          <p style="font-size:0.875rem;line-height:1.7;color:rgba(250,248,244,0.75);">
+            Um medidor com escala de 0–100%, faixas interpretativas e ponteiro em posição Audit Ready não tem precedente em identidades de GRC/compliance. É visualmente único e semanticamente preciso.
+          </p>
+        </div>
+        <div>
+          <p style="font-family:var(--font-data);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--silver);margin-bottom:16px;">O que deve ser preservado, independente da escolha</p>
+          <ul style="list-style:none;font-size:0.8rem;line-height:1.8;color:rgba(250,248,244,0.65);">
+            <li style="border-left:2px solid var(--gold-bright);padding-left:12px;margin-bottom:8px;">Paleta ink / paper / gold — inegociável, sem azul</li>
+            <li style="border-left:2px solid var(--gold-bright);padding-left:12px;margin-bottom:8px;">Trio tipográfico Fraunces + Archivo + IBM Plex Mono</li>
+            <li style="border-left:2px solid var(--gold-bright);padding-left:12px;margin-bottom:8px;">rounded-sm como padrão geométrico (angular preciso)</li>
+            <li style="border-left:2px solid var(--gold-bright);padding-left:12px;margin-bottom:8px;">IBM Plex Mono para dados, eyebrows e labels</li>
+            <li style="border-left:2px solid var(--gold-bright);padding-left:12px;">Animação de entrada única, sem loop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="padding:40px 0;border-top:1px solid var(--hairline);margin-top:0;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <p style="font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--ink);">ARS</p>
+      <p style="font-family:var(--font-data);font-size:0.6rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--gold);margin-top:2px;">Audit Readiness Score</p>
+    </div>
+    <p style="font-family:var(--font-data);font-size:0.6rem;color:var(--silver);letter-spacing:0.08em;">Brand Visual Reference · Julho 2026</p>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
