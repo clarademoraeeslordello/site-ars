@@ -5,30 +5,38 @@ metadata:
   type: project
 ---
 
-Lote de 12 peças produzido em julho 2026 como piloto orgânico de duas semanas para o Instagram da ARS.
+Piloto redefinido em julho 2026. Composição final: 2 carrosséis + 2 posts estáticos/verticais + 2 Reels + 6 sequências de Stories.
 
 **Why:** Primeira produção de conteúdo social da ARS. Objetivo: estabelecer presença editorial no Instagram com conteúdo validado contra o product-context e alinhado ao brand system.
 
-**How to apply:** Quando a usuária aprovar o lote, gravar os arquivos em `C:\Users\clara\Desktop\Empresa\site-ars\.claude\organic-strategy\pilot-content\`. Não gravar antes da aprovação explícita.
+**How to apply:** Quando a usuária aprovar o lote, os arquivos já estão em `C:\Users\clara\Desktop\Empresa\site-ars\.claude\organic-strategy\pilot\`. Não fazer commit sem aprovação explícita.
 
-## Composição do lote
+## Composição final do piloto (arquivos em .claude/organic-strategy/pilot/)
 
-- Peça 01: Carrossel 1 — "Estamos prontos para auditoria?" (PRONTIDÃO, Educação/Descoberta, 8 slides)
-- Peça 02: Carrossel 2 — "A armadilha do sprint pré-auditoria" (CONTINUIDADE, Educação, 8 slides)
-- Peça 03: Post estático/vertical — "O que não está documentado não aconteceu" (RASTREABILIDADE, Identificação)
-- Peça 04: Post estático/vertical — "Os 5 níveis de maturidade de compliance" (MATURIDADE, Consideração)
-- Peça 05: Reel 1 — "Seu cliente pediu ISO 27001. E agora?" (COMPLIANCE COMO NEGÓCIO, Descoberta, 25s)
-- Peça 06: Reel 2 — "O Decay Effect — seu score cai enquanto você dorme" (CONTINUIDADE, Educação, 30s)
-- Peça 07: Stories 1 — "As 5 perguntas que definem uma auditoria" (PRONTIDÃO, Educação, 5 stories, enquete)
-- Peça 08: Stories 2 — "Guia rápido: validade de evidências" (CONTINUIDADE, Educação, 4 stories)
-- Peça 09: Stories 3 — "FAQ sobre a ARS" (PRODUTO, Conversão, 5 stories, caixa de perguntas)
-- Peça 10: Stories 4 — "Qual é o score de prontidão da sua empresa?" (PRONTIDÃO/PRODUTO, Consideração/Conversão, 4 stories, slider)
-- Peça 11: Stories 5 — "LGPD: o que é ROPA" (CLAREZA, Educação, 5 stories)
-- Peça 12: Stories 6 — "Conhecendo a ARS" (PRODUTO, Conversão, 5 stories)
+**2 Carrosséis (existentes, não retrabalhar):**
+- `semana-1-segunda-carrossel.md` — "Estamos prontos para auditoria?" (PRONTIDÃO, ToFu, 8 slides) — aprovado como referência de qualidade máxima
+- `semana-1-quarta-carrossel.md` — "Decay Effect" (CONTINUIDADE, MoFu, 10 slides)
 
-## Itens para validação antes de publicar
+**2 Reels (existentes, não retrabalhar):**
+- `semana-1-terca-reel.md` — Reel Semana 1
+- `semana-2-terca-reel.md` — Reel Semana 2
 
-1. Peça 07, Story 1 — afirmação qualitativa sobre maioria das empresas (suavizar ou remover)
-2. Peça 11, Story 2 — "ANPD pode pedir em qualquer fiscalização" (verificar com especialista LGPD)
-3. Peça 11, Story 3 — 6 campos do ROPA (verificar alinhamento com texto legal vigente)
-4. Peça 04 — "maioria entre nível 1 e 2" (considerar suavizar)
+**2 Posts estáticos/verticais (PRODUZIDOS em julho 2026 — readaptações de carrosséis existentes):**
+- `final-post-estatico-iso27001-60s.md` — "ISO 27001 em 60 segundos" (CLAREZA, ToFu, 4:5) — readaptação de semana-2-segunda-carrossel.md; insight escolhido: os 3 elementos exigidos (Slide 4 do original)
+- `final-post-estatico-planilha-limitacoes.md` — "Planilha: o que ela não consegue fazer" (PRODUTO suave, BoFu, 4:5) — readaptação de semana-1-sexta-carrossel.md; URL do CTA como placeholder [LINK NA BIO — URL A CONFIRMAR PELA USUÁRIA]
+
+**6 Sequências de Stories (6 produzidas no total — 4 anteriores + 2 novas):**
+- `final-stories-capa.md` — Stories autônoma CAPA/ciclo de NC (CLAREZA, MoFu, 5 frames, enquete) — PRODUZIDO
+- `final-stories-auditor-externo.md` — Stories auditor externo (PRONTIDÃO, BoFu, 5 frames, quiz+slider, URL placeholder) — PRODUZIDO
+- `final-stories-teaser-prontidao.md` — Teaser carrossel "Estamos prontos?" (PRONTIDÃO, ToFu, 3 frames, slider+post sticker) — PRODUZIDO
+- `final-stories-teaser-decay-effect.md` — Teaser "Decay Effect" (CONTINUIDADE, MoFu, 3 frames, enquete+post sticker) — PRODUZIDO
+- `final-stories-quiz-maturidade.md` — Quiz CMM-ARS (MATURIDADE, MoFu, 5 frames, poll+quiz sticker) — PRODUZIDO em julho 2026
+- `final-stories-soa.md` — SOA Statement of Applicability (RASTREABILIDADE, MoFu, 5 frames, poll sticker) — PRODUZIDO em julho 2026
+
+## Itens para confirmar antes de publicar
+
+1. `final-stories-auditor-externo.md`, Frame 5 — URL do link sticker como [LINK NA BIO — URL A CONFIRMAR PELA USUÁRIA]. Confirmar antes de publicar.
+2. `final-post-estatico-planilha-limitacoes.md`, CTA e legenda — URL do link da bio como [LINK NA BIO — URL A CONFIRMAR PELA USUÁRIA]. Confirmar antes de publicar.
+3. `final-stories-soa.md`, Frame 5 — link sticker condicional: adicionar URL se houver recurso confirmado sobre SOA; não publicar placeholder.
+4. Todos os post stickers dos teasers dependem de os carrosséis correspondentes estarem publicados no feed primeiro.
+5. Os arquivos de carrossel semana-1 e semana-2 contêm validação de produto documentada em cada arquivo.
