@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Fraunces, Archivo, IBM_Plex_Mono } from "next/font/google";
-import { routing } from "@/i18n/routing";
+import { routing, htmlLang, type Locale } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/site";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
@@ -16,6 +17,7 @@ const fraunces = Fraunces({
 
 const archivo = Archivo({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-archivo",
 });
 
@@ -36,33 +38,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.auditreadinessscore.com";
+  // Canonical, hreflang and per-page Open Graph are built page by page in step 4 (SEO).
   return {
-    metadataBase: new URL(baseUrl),
+    metadataBase: new URL(SITE_URL),
     title: {
-      default: t("shortTitle"),
-      template: `%s | Audit Readiness Score`,
+      default: t("title"),
+      template: "%s | Audit Cockpits",
     },
     description: t("description"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        "pt-BR": "/pt-br",
-        en: "/en",
-        es: "/es",
-        "x-default": "/pt-br",
-      },
-    },
     openGraph: {
       type: "website",
-      siteName: "Audit Readiness Score",
+      siteName: "Audit Cockpits",
       title: t("title"),
       description: t("description"),
-      locale: locale === "pt-br" ? "pt_BR" : locale,
+      locale: ogLocale[locale as Locale] ?? "pt_BR",
     },
   };
 }
+
+const ogLocale: Record<Locale, string> = { "pt-br": "pt_BR", en: "en_US", es: "es_ES" };
 
 export default async function LocaleLayout({
   children,
@@ -79,7 +73,7 @@ export default async function LocaleLayout({
 
   return (
     <html
-      lang={locale === "pt-br" ? "pt-BR" : locale}
+      lang={htmlLang[locale]}
       className={`${fraunces.variable} ${archivo.variable} ${plexMono.variable}`}
     >
       <body>
