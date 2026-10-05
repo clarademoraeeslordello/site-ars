@@ -29,7 +29,7 @@ export default function ScorePage({
 
 function Content() {
   const t = useTranslations("score");
-  const th = useTranslations("home");
+  const th = useTranslations("legacyHome");
   const bands = t.raw("bands") as { range: string; name: string; text: string }[];
 
   return (

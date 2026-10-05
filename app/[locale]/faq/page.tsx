@@ -28,7 +28,7 @@ export default function FaqPage({
 
 function Content() {
   const t = useTranslations("faq");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const items = t.raw("items") as { q: string; a: string }[];
 
   return (

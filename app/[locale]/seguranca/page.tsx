@@ -28,7 +28,7 @@ export default function SecurityPage({
 
 function Content() {
   const t = useTranslations("security");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const sections = t.raw("sections") as { title: string; text: string }[];
 
   return (

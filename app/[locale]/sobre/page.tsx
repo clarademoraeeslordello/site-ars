@@ -28,7 +28,7 @@ export default function AboutPage({
 
 function Content() {
   const t = useTranslations("about");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const paragraphs = t.raw("paragraphs") as string[];
   const principles = t.raw("principles") as { title: string; text: string }[];
 

@@ -47,196 +47,385 @@
     "talkToExpert": "Talk to an expert"
   },
   "home": {
-    "hero": {
-      "eyebrow": "Compliance Intelligence Platform",
-      "title": "Are we ready for the audit?",
-      "subtitle": "ARS answers that question with a number, not a feeling. A readiness score calculated in real time, traceable evidence, and a guided journey your own team can run.",
-      "rulerLabel": "Audit Readiness Score",
-      "rulerBandLow": "Not auditable",
-      "rulerBandMid": "Moderate risk",
-      "rulerBandHigh": "Audit Ready"
+    "meta": {
+      "title": "ARS · Audit Readiness Platform · Audit Cockpits",
+      "description": "ARS brings requirements, controls, evidence and actions together in one place, so your team reaches the audit knowing exactly where the company stands."
     },
-    "problem": {
-      "eyebrow": "The problem",
-      "title": "Compliance run on spreadsheets does not survive an audit",
+    "hero": {
+      "eyebrow": "Audit readiness as a continuous operation",
+      "title": "Walk into your audit knowing exactly where your company stands.",
+      "lead": "ARS brings requirements, controls, evidence and actions together in one place. Your team stops hunting for files and rebuilding history every cycle, and spends its time fixing what is actually missing.",
+      "ctaDemo": "Book a demo",
+      "ctaHow": "See how it works"
+    },
+    "live": {
+      "aria": "This week's activity in ARS, with demo data",
+      "label": "This week · ISO 27001",
+      "live": "live",
+      "scoreLabel": "Audit Readiness Score",
+      "target": "readiness target: 85%",
+      "foot": "Every completed action shows up in the score right away.",
       "items": [
         {
-          "title": "Scattered evidence",
-          "text": "Documents live on servers, in inboxes, and in people's heads. When the auditor arrives, nobody knows where the current version is."
+          "t": "Evidence attached",
+          "m": "A.5.11 · Inventory of returned assets",
+          "s": "Submitted"
         },
         {
-          "title": "Zero visibility",
-          "text": "No leader can say precisely how far the organization is from being ready, until the answer arrives as a failed audit."
+          "t": "Action completed",
+          "m": "A.8.2 · Privileged access review",
+          "s": "Completed"
         },
         {
-          "title": "Reactive preparation",
-          "text": "Months of concentrated effort right before the audit, dependence on external consultants, and a dossier that goes stale the day it's finished."
+          "t": "Renewal scheduled",
+          "m": "A.8.13 · Backup policy v3",
+          "s": "12 days"
         },
         {
-          "title": "Silent expirations",
-          "text": "Policies, trainings, and contracts expire without warning. Hard-won compliance quietly falls apart."
+          "t": "Control approved",
+          "m": "A.5.11 · Return of assets",
+          "s": "Approved"
+        }
+      ]
+    },
+    "appMock": {
+      "aria": "ARS home screen, recreated with demo data",
+      "caption": "The ARS home screen, recreated with demo data.",
+      "tabs": [
+        "Home",
+        "Journeys",
+        "Work",
+        "Controls",
+        "Risks",
+        "Evidence",
+        "Audits"
+      ],
+      "priority": {
+        "label": "Priority now · critical path",
+        "title": "ISO 27001 · Certification Readiness",
+        "sub": "ISO 27001 · 2022 · Planning",
+        "dates": [
+          {
+            "l": "Preparation ends",
+            "v": "30 Jun 2026"
+          },
+          {
+            "l": "Audit starts",
+            "v": "1 Sep 2026"
+          },
+          {
+            "l": "Audit ends",
+            "v": "30 Sep 2026"
+          }
+        ],
+        "cta": "Continue journey →"
+      },
+      "score": {
+        "label": "Audit Readiness Score",
+        "badge": "High risk",
+        "meta": "Target: 85% · checked at 00:20"
+      },
+      "kpis": [
+        {
+          "t": "My work",
+          "v": "43",
+          "d": "46 overdue"
+        },
+        {
+          "t": "Evidence",
+          "v": "47",
+          "d": "3 in review · 0 expiring"
+        },
+        {
+          "t": "Critical risks",
+          "v": "11",
+          "d": "46 gaps in total"
         }
       ]
     },
     "questions": {
-      "eyebrow": "The five questions",
-      "title": "Every audit comes down to five questions. ARS answers all five, in real time.",
+      "title": "An audit does not start on audit day. It starts with the questions you ask every week.",
+      "lead": "Anyone who works in compliance knows the scene: the document exists, but nobody remembers which control it proves. The answer is out there, scattered across spreadsheets, folders and chats. Every question turns into a search, an email or a meeting.",
+      "head": {
+        "q": "The question",
+        "before": "How it usually goes",
+        "after": "With ARS"
+      },
       "items": [
         {
-          "q": "Where do we stand?",
-          "a": "Readiness score and coverage by framework, area, and control."
+          "q": "Which control does this document prove?",
+          "before": "Open the control spreadsheet and hope it is up to date.",
+          "after": "The evidence already sits inside the control it proves."
         },
         {
-          "q": "What's missing?",
-          "a": "Gaps prioritized by score impact, with AI-assisted analysis."
+          "q": "What expires before the audit?",
+          "before": "Check dates file by file, or find out on the day.",
+          "after": "The renewal queue shows what has expired and what is about to."
         },
         {
-          "q": "Who needs to act?",
-          "a": "Every open item has a named owner and a defined deadline."
-        },
-        {
-          "q": "When does something expire?",
-          "a": "Early expiration alerts before the score drops."
+          "q": "Who is behind on a fix?",
+          "before": "A round of emails and a follow-up meeting.",
+          "after": "Every gap becomes an action with an owner, a deadline and a status."
         },
         {
           "q": "Are we ready?",
-          "a": "A calculated number, not an opinion. Verifiable by any auditor."
+          "before": "An opinion put together in a rush during audit week.",
+          "after": "A current score from 0 to 100%, with what weighs most against it."
+        },
+        {
+          "q": "Where did we stop last cycle?",
+          "before": "Rebuild the history from old folders.",
+          "after": "History, versions and audit trail are kept."
         }
       ]
     },
-    "journey": {
-      "eyebrow": "How it works",
-      "title": "From your first framework to the auditor's report: one continuous journey",
-      "steps": [
+    "how": {
+      "title": "Everything connected, from requirement to score.",
+      "p1": "Each requirement of the standard becomes a control; each control has the evidence that proves it. When something is missing, the gap becomes an action with an owner and a deadline, and the score shows the effect.",
+      "p2": "The journey has seven stages, each with an exit condition that the system itself checks. You do not find out the day before that an earlier phase was left incomplete.",
+      "chain": [
         {
-          "title": "Choose your frameworks",
-          "text": "30+ ISO standards plus LGPD in a catalog structured by requirements and controls."
+          "t": "Requirement",
+          "v": "ISO 27001 · A.5.11"
         },
         {
-          "title": "Run the diagnostic",
-          "text": "The guided diagnostic identifies gaps and automatically generates your activity plan."
+          "t": "Control",
+          "v": "Return of assets"
         },
         {
-          "title": "Execute the activities",
-          "text": "Every gap becomes a task with an owner, deadline, and priority, in an inbox or kanban view."
+          "t": "Evidence",
+          "v": "Inventory of returned assets"
         },
         {
-          "title": "Attach evidence",
-          "text": "Uploads with approval, versioning, and controlled renewal. Every piece of evidence linked to a control."
+          "t": "Gap",
+          "v": "Independent review pending"
         },
         {
-          "title": "Track the score",
-          "text": "The Audit Readiness Score rises with approved evidence and falls when something expires. Always honest."
+          "t": "Action",
+          "v": "Owner and deadline set"
         },
         {
-          "title": "Run audits",
-          "text": "Internal audits with findings, non-conformities, and CAPA, plus temporary access for the external auditor."
+          "t": "Score",
+          "v": "Weighs the control by criticality"
+        }
+      ],
+      "journey": {
+        "aria": "ISO 27001 journey in ARS, recreated with demo data",
+        "back": "← BACK TO AUDITS",
+        "label": "ISO 27001 · 2022",
+        "title": "ISO 27001 · Certification Readiness",
+        "sub": "Stages completed 1/7 · 1 Sep 2026 → 30 Sep 2026",
+        "stages": [
+          {
+            "t": "Assessment",
+            "d": "Completed on 13 Sep 2026"
+          },
+          {
+            "t": "Planning",
+            "d": "Started on 13 Sep 2026"
+          },
+          {
+            "t": "Implementation",
+            "d": "Waiting"
+          },
+          {
+            "t": "Verification",
+            "d": "Waiting"
+          },
+          {
+            "t": "Pre-audit",
+            "d": "Waiting"
+          },
+          {
+            "t": "Certification",
+            "d": "Waiting"
+          },
+          {
+            "t": "Ongoing maintenance",
+            "d": "Waiting"
+          }
+        ],
+        "status": {
+          "done": "Completed",
+          "now": "In progress",
+          "todo": "Not started"
+        }
+      }
+    },
+    "time": {
+      "title": "Where your team gets time back.",
+      "lead": "The gain does not come from doing the audit faster. It comes from not redoing, every cycle, the work that has already been done.",
+      "evidence": {
+        "title": "No more hunting for evidence",
+        "text": "Each piece of evidence lives in the control it proves, with an owner, a status and an expiry date.",
+        "control": "Return of assets · A.5.11",
+        "items": [
+          {
+            "t": "Inventory of returned assets.csv",
+            "m": "Rafael Moura · until 1 Oct 2027",
+            "s": "Submitted"
+          },
+          {
+            "t": "Asset management policy v4.pdf",
+            "m": "Rafael Moura · until 1 Oct 2027",
+            "s": "Submitted"
+          },
+          {
+            "t": "Signed offboarding checklist",
+            "m": "until 1 Oct 2027",
+            "s": "Draft"
+          }
+        ]
+      },
+      "renewal": {
+        "title": "No expiry surprises",
+        "text": "Expired evidence goes into a renewal queue with a 15-day grace period, before the control is left uncovered.",
+        "label": "EVIDENCE · RENEWAL",
+        "item": "Asset management policy v4",
+        "badge": "12 DAYS",
+        "note": "Controls under renewal count in the internal score, but not in what the external auditor sees."
+      },
+      "report": {
+        "title": "No assembling a package for the auditor",
+        "text": "Readiness, SOA, Evidence and Maturity reports come out ready, in PDF or Excel.",
+        "heading": "Audit Readiness Score",
+        "code": "ARS-RDN-20261003",
+        "label": "READINESS REPORT",
+        "disclaimer": "INTERNAL USE, NOT A CERTIFICATE OF CONFORMITY"
+      },
+      "moreLabel": "Also in the platform",
+      "more": [
+        "Assessment by requirement",
+        "Plans and actions",
+        "SOA and applicability",
+        "Audits and CAPA",
+        "Risk register",
+        "LGPD and ROPA",
+        "Audit trail"
+      ]
+    },
+    "about": {
+      "eyebrow": "Why we built Audit Cockpits",
+      "quote": "An audit should not mean a scramble. Yet for many companies it is exactly when missing documents, lost evidence, outdated controls and untracked risks come to light.",
+      "text": "After living through this challenge first-hand, our founder created Audit Cockpits to help companies keep their compliance organized and ready for audits, not only when an audit arrives."
+    },
+    "market": {
+      "eyebrow": "Why it matters",
+      "title": "Certification has become a common language between companies, and between countries.",
+      "text": "It is the fastest way for a buyer to trust a supplier it has never audited. Earning the certificate opens doors; keeping it alive, cycle after cycle, is where the team's time goes.",
+      "stats": [
+        {
+          "v": "1.47 M",
+          "t": "valid ISO 9001 certificates worldwide in 2024."
+        },
+        {
+          "v": "96,709",
+          "t": "ISO/IEC 27001 certificates in 2024, about 2.7 times the 2019 figure.¹"
+        },
+        {
+          "v": "18,536",
+          "t": "ISO 9001 certificates in Brazil, the second highest number in the Americas."
+        }
+      ],
+      "globeTitle": "Globe showing the countries with the most ISO/IEC 27001 certificates",
+      "globeLoading": "Loading the globe",
+      "rankingLabel": "Where the ISO/IEC 27001 certificates are",
+      "countries": {
+        "china": "China",
+        "india": "India",
+        "japan": "Japan",
+        "uk": "United Kingdom",
+        "usa": "USA",
+        "italy": "Italy",
+        "turkiye": "Türkiye",
+        "germany": "Germany",
+        "brazil": "Brazil"
+      },
+      "rankingNote": "Brazil highlighted on the globe: 18,536 ISO 9001 certificates. Drag the globe to rotate it. Source: ISO Survey 2024.",
+      "bids": {
+        "label": "Public tenders in Brazil",
+        "title": "Certification earns points and, when justified, can be required.",
+        "text": "Brazil's Federal Court of Accounts (TCU) accepts scoring certifications in technique-and-price tenders. Under Law 14.133/2021, the court has found it lawful to require ISO certification at qualification when the need is technically demonstrated (Ruling 1091/2025). The general rule is still not to restrict competition."
+      },
+      "intl": {
+        "label": "International markets",
+        "title": "Foreign customers ask for proof, not promises.",
+        "text": "In the European Union, NIS2 requires entities to manage supply chain security (art. 21). In the United Kingdom, central government requires Cyber Essentials from suppliers on contracts involving personal data or IT systems."
+      },
+      "sources": {
+        "label": "Sources",
+        "survey": "ISO Survey 2024 (ISO/IAF CertSearch), published in September 2025, <link>iso.org/the-iso-survey</link>. ¹ The 2024 edition moved to the IAF CertSearch database; part of the growth reflects better data coverage.",
+        "tcu": "TCU, Licitações e Contratos, Habilitação técnica; Ruling 1091/2025-Plenary, <link>licitacoesecontratos.tcu.gov.br</link>",
+        "nis2": "Directive (EU) 2022/2555 (NIS2), art. 21(2)(d), supply chain security.",
+        "ppn": "UK Cabinet Office, Procurement Policy Note 014, Cyber Essentials Scheme, <link>gov.uk</link>"
+      }
+    },
+    "cert": {
+      "eyebrow": "After certification",
+      "title": "Certification does not end the work. It starts the next cycle.",
+      "text": "After preparation come the external audit, recording the result, maintenance and renewal. The external auditor can have their own access, and each cycle's history is kept for the next one.",
+      "callout": "The certification body decides on certification. ARS organizes, records and tracks.",
+      "aria": "Certification and maintenance stages in ARS, recreated with demo data",
+      "auditor": {
+        "title": "Readiness score (auditor view)",
+        "badge": "Below minimum",
+        "text": "42.0% external readiness; the minimum to certify is 85%.",
+        "value": "42.0%",
+        "min": "minimum 85%"
+      },
+      "cycle": {
+        "title": "Compliance cycle",
+        "badge": "Active",
+        "text": "ISO 27001 · Cycle 2026/2027 · valid until 3 Oct 2027",
+        "note": "Active cycle, the journey can be completed."
+      }
+    },
+    "coverage": {
+      "eyebrow": "Coverage",
+      "title": "37 standards and frameworks. 706 requirements.",
+      "text": "Information security, privacy, quality, continuity, environment and artificial intelligence.",
+      "soc2": "SOC 2 is an attestation report, not a certification."
+    },
+    "radar": {
+      "eyebrow": "Monthly bulletin",
+      "title": "ISO Radar",
+      "text": "When a standard changes, we explain what changed, who is affected and what to watch, always with a link to the official source. One short issue a month.",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "locale": "Language",
+        "consent": "I want to receive ISO Radar and I have read the <link>Privacy Policy</link>.",
+        "submit": "Get ISO Radar",
+        "success": "Done. We sent you a link to confirm your subscription.",
+        "soon": "Subscriptions open soon."
+      },
+      "source": "ISO.org",
+      "articles": [
+        {
+          "status": "Published",
+          "tone": "ok",
+          "std": "ISO 9001",
+          "t": "ISO 9001:2026 is out: what changes and how to plan the transition"
+        },
+        {
+          "status": "In transition",
+          "tone": "warn",
+          "std": "ISO 14001",
+          "t": "ISO 14001:2026: new edition, transition deadlines to be confirmed"
+        },
+        {
+          "status": "Published",
+          "tone": "ok",
+          "std": "ISO 9000",
+          "t": "ISO 9000:2026: the vocabulary that comes with the new 9001"
         }
       ]
     },
-    "capabilities": {
-      "eyebrow": "Capabilities",
-      "title": "What the platform delivers",
-      "items": [
-        {
-          "title": "Catalog of 30+ frameworks",
-          "text": "ISO standards and LGPD with structured requirements, search, and filters."
-        },
-        {
-          "title": "Controls and SOA",
-          "text": "Declare applicability, justify exclusions, and keep the Statement of Applicability always current."
-        },
-        {
-          "title": "Activity management",
-          "text": "Personal inbox and kanban view. Every open item has an owner and a deadline."
-        },
-        {
-          "title": "Traceable evidence",
-          "text": "Approval, rejection with justification, versioning, and validity control."
-        },
-        {
-          "title": "Score and coverage",
-          "text": "Criticality-weighted calculation, with history and trend over time."
-        },
-        {
-          "title": "Audits and CAPA",
-          "text": "The full cycle: findings, non-conformities, and corrective action plans."
-        },
-        {
-          "title": "LGPD module",
-          "text": "ROPA, DPIA, privacy incidents, and data subject rights, integrated into the coverage model."
-        },
-        {
-          "title": "AI gap analysis",
-          "text": "AI identifies and prioritizes gaps. Decisions are always human."
-        },
-        {
-          "title": "Exportable reports",
-          "text": "Audit Readiness, SOA, and consolidated evidence, ready to hand to the auditor."
-        }
-      ]
-    },
-    "profiles": {
-      "eyebrow": "For every role",
-      "title": "An answer for every seat at the table",
-      "items": [
-        {
-          "role": "Executive leadership",
-          "text": "A real-time score and consolidated view, without waiting for a consultant's translation."
-        },
-        {
-          "role": "Compliance and GRC",
-          "text": "A single hub that assigns ownership, chases deadlines, and measures coverage by area."
-        },
-        {
-          "role": "DPO",
-          "text": "ROPA, DPIA, and incidents in the same coverage model as every other framework."
-        },
-        {
-          "role": "IT and Security",
-          "text": "A personal activity queue and alerts before evidence expires."
-        },
-        {
-          "role": "Human Resources",
-          "text": "Controlled renewal of trainings and contracts: the platform reopens the activity for the owner."
-        },
-        {
-          "role": "Consultancies",
-          "text": "Every client in a single environment, with traceability and automated reporting."
-        }
-      ]
-    },
-    "trust": {
-      "eyebrow": "Verifiable trust",
-      "title": "Built to be verified, not just used",
-      "items": [
-        {
-          "title": "Immutable audit trail",
-          "text": "Append-only records with chained hashes. Who did it, when, and with what justification."
-        },
-        {
-          "title": "Evidence chain of custody",
-          "text": "Submission, approval, and version: every link recorded and verifiable."
-        },
-        {
-          "title": "External auditor access",
-          "text": "Temporary, scoped access with a maximum validity of 72 hours."
-        },
-        {
-          "title": "Per-organization isolation",
-          "text": "Data fully isolated per tenant, with enterprise authentication and signed evidence URLs."
-        }
-      ]
-    },
-    "frameworks": {
-      "eyebrow": "Frameworks",
-      "title": "The standards that move your market",
-      "text": "ISO 27001, ISO 9001, ISO 20000-1, ISO 22301, ISO 27701, and LGPD as anchor standards, within a catalog of 30+ normative frameworks.",
-      "viewAll": "View the full catalog"
-    },
-    "finalCta": {
-      "title": "Stop estimating. Start measuring.",
-      "text": "See, in a guided demo, how your organization can operate in a permanent state of readiness."
+    "cta": {
+      "title": "Shall we look at your readiness together?",
+      "text": "In the demo, we show how ARS turns requirements, evidence and actions into a continuous view of readiness, using the standard that matters to you.",
+      "button": "Book a demo",
+      "contact": "Or talk to us directly:"
     }
   },
   "platform": {
@@ -804,5 +993,17 @@
     "title": "Page not found",
     "text": "The address you are looking for doesn't exist or has been moved.",
     "back": "Back to the homepage"
+  },
+  "legacyHome": {
+    "finalCta": {
+      "title": "Stop estimating. Start measuring.",
+      "text": "See, in a guided demo, how your organization can operate in a permanent state of readiness."
+    },
+    "hero": {
+      "rulerLabel": "Audit Readiness Score",
+      "rulerBandLow": "Not auditable",
+      "rulerBandMid": "Moderate risk",
+      "rulerBandHigh": "Audit Ready"
+    }
   }
 }
