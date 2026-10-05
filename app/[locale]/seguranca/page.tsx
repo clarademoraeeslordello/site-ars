@@ -1,41 +1,41 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { use } from "react";
-import { PageHero } from "@/components/marketing/page-hero";
-import { FeatureSections } from "@/components/marketing/feature-sections";
-import { CtaBand } from "@/components/marketing/cta-band";
+import { PageIntro } from "@/components/marketing/page-intro";
+import { CtaFinal, ContactLine } from "@/components/marketing/cta-final";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "security" });
-  return { title: t("title"), description: t("heroText") };
+  const t = await getTranslations({ locale, namespace: "pages.security.meta" });
+  return { title: t("title"), description: t("description") };
 }
 
-export default function SecurityPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = use(params);
+export default async function SecurityPage({ params }: Props) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  return <Content />;
-}
-
-function Content() {
-  const t = useTranslations("security");
-  const th = useTranslations("legacyHome.finalCta");
-  const sections = t.raw("sections") as { title: string; text: string }[];
+  const t = await getTranslations({ locale, namespace: "pages.security" });
+  const items = t.raw("items") as { t: string; d: string }[];
 
   return (
     <>
-      <PageHero eyebrow={t("title")} title={t("heroTitle")} text={t("heroText")} />
-      <FeatureSections sections={sections} />
-      <CtaBand title={th("title")} text={th("text")} />
+      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+
+      <section aria-label={t("eyebrow")} className="container-site section-space">
+        <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-x-10 gap-y-0 border-t border-line p-0">
+          {items.map((item) => (
+            <li key={item.t} className="flex flex-col gap-1.5 border-b border-divider py-6">
+              <h2 className="m-0 font-display text-h3 font-medium">{item.t}</h2>
+              <p className="m-0 text-[15px] leading-[1.6] text-body">{item.d}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mb-0 mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-[15px] text-body">
+          {t("note")} <ContactLine light />
+        </p>
+      </section>
+
+      <CtaFinal />
     </>
   );
 }

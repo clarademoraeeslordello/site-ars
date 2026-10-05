@@ -1,83 +1,51 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { use } from "react";
-import { PageHero } from "@/components/marketing/page-hero";
-import { Section, SectionTitle } from "@/components/marketing/section";
-import { CtaBand } from "@/components/marketing/cta-band";
-import { FrameworkCatalogAccordion } from "@/components/marketing/framework-catalog-accordion";
+import { Link } from "@/i18n/navigation";
+import { PageIntro } from "@/components/marketing/page-intro";
+import { CtaFinal } from "@/components/marketing/cta-final";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "frameworks" });
-  return { title: t("title"), description: t("heroText") };
+  const t = await getTranslations({ locale, namespace: "pages.frameworks.meta" });
+  return { title: t("title"), description: t("description") };
 }
 
-export default function FrameworksPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = use(params);
+export default async function FrameworksPage({ params }: Props) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  return <Content />;
-}
-
-function Content() {
-  const t = useTranslations("frameworks");
-  const th = useTranslations("legacyHome.finalCta");
-  const anchors = t.raw("anchors") as { code: string; name: string; text: string }[];
-  const catalogColumns = t.raw("catalogTableColumns") as {
-    code: string;
-    version: string;
-    areas: string;
-  };
-  const catalogGroups = t.raw("catalogTable") as {
-    area: string;
-    items: { code: string; version: string; areas: string }[];
-  }[];
+  const t = await getTranslations({ locale, namespace: "pages.frameworks" });
+  const groups = t.raw("groups") as { t: string; items: string[] }[];
 
   return (
     <>
-      <PageHero eyebrow={t("title")} title={t("heroTitle")} text={t("heroText")} />
+      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 
-      <Section className="pb-10 sm:pb-12">
-        <SectionTitle className="mt-0">{t("anchorTitle")}</SectionTitle>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-md border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-          {anchors.map((a) => (
-            <div key={a.code} className="bg-paper p-6 sm:p-8">
-              <p className="font-data text-sm font-medium text-gold">{a.code}</p>
-              <h3 className="mt-1 font-display text-lg font-semibold">{a.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{a.text}</p>
-            </div>
+      <section aria-label={t("eyebrow")} className="container-site section-space">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-[18px]">
+          {groups.map((g) => (
+            <article key={g.t} className="flex flex-col gap-4 rounded-card border border-line bg-card p-[26px]">
+              <h2 className="m-0 font-display text-h3 font-medium">{g.t}</h2>
+              <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+                {g.items.map((f) => (
+                  <li key={f} className="rounded-full border border-line bg-well px-[13px] py-[7px] text-[13px] font-medium">
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
-
-        <div className="mt-14 border-t border-hairline pt-14">
-          <SectionTitle className="mt-0">{t("catalogTitle")}</SectionTitle>
-          <p className="mt-4 max-w-3xl leading-relaxed text-ink-soft">
-            {t("catalogText")}
-          </p>
-        </div>
-
-        <div className="mt-14 border-t border-hairline pt-14">
-          <SectionTitle className="mt-0">{t("catalogTableTitle")}</SectionTitle>
-          <FrameworkCatalogAccordion groups={catalogGroups} columns={catalogColumns} />
-        </div>
-      </Section>
-
-      <Section dark>
-        <SectionTitle className="mt-0">{t("multiTitle")}</SectionTitle>
-        <p className="mt-4 max-w-3xl leading-relaxed text-paper/80">
-          {t("multiText")}
+        <p className="mb-0 mt-5 text-[13px] text-muted">{t("soc2")}</p>
+        <p className="mb-0 mt-2 text-[15px] text-body">
+          <Link href="/demonstracao" className="text-gold underline-offset-4 hover:underline">
+            {t("more")}
+          </Link>
         </p>
-      </Section>
+      </section>
 
-      <CtaBand title={th("title")} text={th("text")} />
+      <CtaFinal />
     </>
   );
 }

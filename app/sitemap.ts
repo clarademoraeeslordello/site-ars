@@ -9,13 +9,9 @@ const PATHS: AppPathname[] = [
   "/plataforma",
   "/como-funciona",
   "/frameworks",
-  "/lgpd",
   "/certificacao-e-manutencao",
   "/seguranca",
-  "/solucoes",
-  "/consultorias",
   "/sobre",
-  "/faq",
   "/demonstracao",
 ];
 

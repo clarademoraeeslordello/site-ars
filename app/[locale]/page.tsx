@@ -19,7 +19,7 @@ import { Globe } from "@/components/market/globe";
 import { CountryRanking } from "@/components/market/country-ranking";
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { features } from "@/lib/features";
-import { CONTACT } from "@/lib/site";
+import { CtaFinal } from "@/components/marketing/cta-final";
 
 const FRAMEWORKS = [
   "ISO 27001", "ISO 27701", "ISO 9001", "ISO 14001", "ISO 22301", "ISO 42001", "ISO 20000-1",
@@ -295,38 +295,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* 10 · CTA final */}
-      <section
-        id="demonstracao"
-        aria-labelledby="cta-title"
-        className="container-site mt-[clamp(88px,10vw,128px)] scroll-mt-20"
-      >
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-end gap-x-16 gap-y-6 rounded-card bg-dark p-[clamp(32px,5vw,64px)] text-dark-ink">
-          <div className="flex flex-col gap-3.5">
-            <h2 id="cta-title" className="m-0 font-display text-[clamp(28px,3.6vw,44px)] font-medium leading-[1.12]">
-              {t("cta.title")}
-            </h2>
-            <p className="m-0 text-base leading-[1.6] text-dark-body">{t("cta.text")}</p>
-          </div>
-          <div className="flex flex-col items-start gap-3">
-            <Link
-              href="/demonstracao"
-              className={buttonClasses({ className: "hover:bg-gold-light hover:text-dark" })}
-            >
-              {t("cta.button")}
-            </Link>
-            <span className="text-sm leading-[1.6] text-dark-muted">
-              {t("cta.contact")}{" "}
-              <a href={`mailto:${CONTACT.email}`} className="whitespace-nowrap text-gold-light hover:underline">
-                {CONTACT.email}
-              </a>{" "}
-              ·{" "}
-              <a href={CONTACT.phoneHref} className="whitespace-nowrap text-gold-light hover:underline">
-                {CONTACT.phone}
-              </a>
-            </span>
-          </div>
-        </div>
-      </section>
+      <CtaFinal />
     </>
   );
 }

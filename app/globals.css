@@ -85,16 +85,6 @@
   --color-crit: var(--st-crit);
   --color-crit-bg: var(--st-crit-bg);
 
-  /* Legado: usados pelas páginas antigas até a etapa 3. Não usar em código novo. */
-  --color-ink-soft: var(--tx2);
-  --color-paper-raised: var(--card);
-  --color-gold-bright: var(--gold-light);
-  --color-gold-faint: var(--head);
-  --color-silver: var(--mut);
-  --color-hairline: var(--bd);
-  --color-hairline-dark: var(--dark-bd);
-  --font-data: var(--font-plex-mono), ui-monospace, monospace;
-
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-sans: var(--font-archivo), system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
