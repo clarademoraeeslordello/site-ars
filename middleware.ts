@@ -17,6 +17,14 @@ export default function middleware(request: NextRequest) {
     const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
     return NextResponse.redirect(`${APP_ORIGIN}${path}${search}`, 308);
   }
+  // Old /pt-br prefix (PT is unprefixed now): permanent redirect. next-intl would answer 307,
+  // which search engines treat as temporary. Lowercase only: /pt-BR belongs to the app (above).
+  if (pathname === "/pt-br" || pathname.startsWith("/pt-br/")) {
+    const rest = pathname.slice("/pt-br".length) || "/";
+    // Public host from the proxy headers (request.url carries the container's internal host).
+    const proto = request.headers.get("x-forwarded-proto") ?? request.nextUrl.protocol.replace(":", "");
+    return NextResponse.redirect(`${proto}://${host}${rest}${search}`, 308);
+  }
   // The site's own API routes are not localized.
   if (pathname.startsWith("/api/")) return NextResponse.next();
   const response = intl(request);
