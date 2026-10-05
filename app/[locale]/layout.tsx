@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Fraunces, Archivo, IBM_Plex_Mono } from "next/font/google";
 import { routing, htmlLang, type Locale } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/site";
@@ -70,6 +70,15 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+  const messages = await getMessages();
+  // Only the namespaces used by client components reach the browser. Server-rendered copy
+  // (including content behind feature flags, such as the public tender text) never ships
+  // in the page payload.
+  const clientMessages = {
+    nav: messages.nav,
+    demo: { form: (messages.demo as Record<string, unknown>)?.form },
+    home: { radar: { form: ((messages.home as Record<string, Record<string, unknown>>)?.radar)?.form } },
+  };
 
   return (
     <html
@@ -77,7 +86,7 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${archivo.variable} ${plexMono.variable}`}
     >
       <body>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />
