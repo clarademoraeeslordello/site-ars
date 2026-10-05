@@ -69,6 +69,12 @@ ${message.text}`);
 export const emailSender: EmailSender =
   process.env.EMAIL_TRANSPORT === "log" && process.env.NODE_ENV !== "production" ? new LogSender() : new ResendSender();
 
+/**
+ * The newsletter goes live only with a verified sender: without RESEND_FROM_EMAIL the provider's
+ * sandbox address delivers only to the account owner, so subscribers would never get the
+ * confirmation email. The log transport (local tests) is always enabled.
+ */
 export function newsletterEnabled() {
-  return emailSender.configured && Boolean(process.env.DATABASE_URL);
+  const hasSender = process.env.EMAIL_TRANSPORT === "log" || Boolean(process.env.RESEND_FROM_EMAIL);
+  return emailSender.configured && hasSender && Boolean(process.env.DATABASE_URL);
 }
