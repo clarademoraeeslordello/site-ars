@@ -47,7 +47,7 @@ export default async function PlatformPage({ params }: Props) {
       <JsonLd data={softwareApplication(locale as Locale, absoluteUrl("/plataforma", locale as Locale), t("meta.description"))} />
       <PageIntro href="/plataforma" eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")}>
         <div className="flex flex-wrap gap-2.5 pt-1">
-          <Link href="/demonstracao" className={buttonClasses()}>
+          <Link href="/demonstracao" data-track="cta_demo_click" data-track-location="platform_intro" className={buttonClasses()}>
             {th("hero.ctaDemo")}
           </Link>
           <Link href="/como-funciona" className={buttonClasses({ variant: "secondary" })}>

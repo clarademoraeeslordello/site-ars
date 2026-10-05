@@ -40,7 +40,15 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           <NextLink
             key={locale}
             href={localizedHref(locale)}
+            // Keep the query string (e.g. the newsletter token) when switching language.
+            onClick={(e) => {
+              if (!window.location.search || e.metaKey || e.ctrlKey || e.shiftKey) return;
+              e.preventDefault();
+              window.location.assign(`${localizedHref(locale)}${window.location.search}`);
+            }}
             hrefLang={locale === "pt-br" ? "pt-BR" : locale}
+            data-track={active ? undefined : "language_switch"}
+            data-track-location={`${current}>${locale}`}
             aria-current={active ? "page" : undefined}
             className={cn(
               "transition-colors hover:text-ink",

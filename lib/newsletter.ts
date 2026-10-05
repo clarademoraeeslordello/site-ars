@@ -1,233 +1,219 @@
 import "server-only";
-import { createHash, createHmac, randomBytes, randomUUID } from "node:crypto";
-import { and, eq, gt, gte, inArray, lt, sql } from "drizzle-orm";
-import { headers } from "next/headers";
+import { and, eq, gt, sql } from "drizzle-orm";
+import { getTranslations } from "next-intl/server";
 import { getDb } from "@/db/client";
-import { consentEvents, newsletterEditions, newsletterSubscribers, radarArticles } from "@/db/schema";
-import { requestIpHash } from "@/lib/admin/auth";
-import { escapeHtml, sendEditionReady, sendNewsletterEdition, sendSubscriptionConfirm } from "@/lib/email";
-import { DB_LOCALES, type DbLocale } from "@/lib/radar/content";
-import { SITE_URL } from "@/lib/site";
+import { consentEvents, newsletterSubscribers } from "@/db/schema";
+import { NEWSLETTER_CONSENT_VERSION, dbLocale, routeLocale } from "@/lib/consent";
+import { emailSender } from "@/lib/email/sender";
+import { emailLayout, emailText } from "@/lib/email/templates";
+import { absoluteUrl } from "@/lib/seo";
+import { clientIp, hashIp, hashToken, newToken, userAgent } from "@/lib/security";
 
-/** Version of the consent text shown next to the signup form; stored with every consent event. */
-export const CONSENT_TEXT_VERSION = "iso-radar-2026-10";
-const CONFIRM_HOURS = 72;
+const CONFIRM_TTL_MS = 48 * 60 * 60 * 1000;
 
-const sha256 = (v: string) => createHash("sha256").update(v).digest("hex");
+type Event = "subscribe_requested" | "confirmed" | "preferences_updated" | "unsubscribed";
 
-function tokenSecret() {
-  const s = process.env.NEWSLETTER_TOKEN_SECRET ?? process.env.ADMIN_SESSION_SECRET;
-  if (!s) throw new Error("NEWSLETTER_TOKEN_SECRET (or ADMIN_SESSION_SECRET) must be set");
-  return s;
-}
-
-/**
- * The manage (unsubscribe) token is derived from the subscriber id with a server secret, so
- * every edition can carry a working link while the database only keeps its hash.
- */
-function manageToken(subscriberId: string) {
-  return createHmac("sha256", tokenSecret()).update(`manage:${subscriberId}`).digest("base64url");
-}
-
-export function routeLocale(locale: string): "pt-br" | "en" | "es" {
-  return locale === "en" || locale === "es" ? locale : "pt-br";
-}
-
-export function articleUrl(locale: string, slug: string) {
-  const l = routeLocale(locale);
-  return `${SITE_URL}${l === "pt-br" ? "" : `/${l}`}/iso-radar/${slug}/`;
-}
-
-async function logConsent(event: string, row: { id: string; email: string; locale: string; sourcePath?: string | null }) {
-  const h = await headers();
+async function logConsent(e: {
+  subscriberId: string;
+  email: string;
+  event: Event;
+  locale: string;
+  sourcePath?: string | null;
+  consentTextVersion?: string | null;
+}) {
+  const ip = await clientIp();
   await getDb()
     .insert(consentEvents)
     .values({
-      subscriberId: row.id,
-      email: row.email,
-      event,
-      consentTextVersion: CONSENT_TEXT_VERSION,
-      locale: row.locale,
-      sourcePath: row.sourcePath ?? null,
-      ipHash: await requestIpHash(),
-      userAgent: h.get("user-agent")?.slice(0, 300) ?? null,
+      subscriberId: e.subscriberId,
+      email: e.email,
+      event: e.event,
+      locale: e.locale,
+      sourcePath: e.sourcePath ?? null,
+      consentTextVersion: e.consentTextVersion ?? null,
+      ipHash: hashIp(ip),
+      userAgent: await userAgent(),
     });
 }
 
-export async function subscribe(input: { name: string; email: string; locale: DbLocale; sourcePath?: string }) {
+/**
+ * Subscription request (double opt-in). Always answers the same way whether or not the email
+ * already exists, so the form cannot be used to find out who is subscribed.
+ */
+export async function requestSubscription(input: {
+  name: string;
+  email: string;
+  locale: string; // route locale chosen in the form
+  source: string;
+  sourcePath: string | null;
+}): Promise<{ ok: boolean }> {
   const db = getDb();
-  const email = input.email.trim().toLowerCase();
+  const email = input.email.trim();
+  const locale = dbLocale(input.locale);
+  const confirmToken = newToken();
+  const now = new Date();
+
   const [existing] = await db
     .select()
     .from(newsletterSubscribers)
-    .where(sql`lower(${newsletterSubscribers.email}) = ${email}`)
+    .where(sql`lower(${newsletterSubscribers.email}) = lower(${email})`)
     .limit(1);
-  if (existing?.status === "active") return; // already in: send nothing new
 
-  const id = existing?.id ?? randomUUID();
-  const confirmToken = randomBytes(24).toString("base64url");
-  const now = new Date();
+  // Already confirmed: nothing to do, same answer as a new subscription.
+  if (existing?.status === "active") return { ok: true };
+
   const values = {
     name: input.name.trim(),
-    locale: input.locale,
-    status: "pending",
-    consentTextVersion: CONSENT_TEXT_VERSION,
+    locale,
+    status: "pending" as const,
+    consentTextVersion: NEWSLETTER_CONSENT_VERSION,
     consentAt: now,
-    confirmTokenHash: sha256(confirmToken),
-    confirmTokenExpiresAt: new Date(now.getTime() + CONFIRM_HOURS * 3_600_000),
-    manageTokenHash: sha256(manageToken(id)),
-    source: "iso_radar",
-    sourcePath: input.sourcePath ?? null,
+    confirmTokenHash: hashToken(confirmToken),
+    confirmTokenExpiresAt: new Date(now.getTime() + CONFIRM_TTL_MS),
+    source: input.source,
+    sourcePath: input.sourcePath,
     unsubscribedAt: null,
     updatedAt: now,
   };
-  if (existing) await db.update(newsletterSubscribers).set(values).where(eq(newsletterSubscribers.id, id));
-  else await db.insert(newsletterSubscribers).values({ id, email, ...values });
 
-  await logConsent("subscribe_requested", { id, email, locale: input.locale, sourcePath: input.sourcePath });
-  await sendSubscriptionConfirm(email, routeLocale(input.locale), confirmToken);
+  let id: string;
+  if (existing) {
+    await db.update(newsletterSubscribers).set(values).where(eq(newsletterSubscribers.id, existing.id));
+    id = existing.id;
+  } else {
+    const [row] = await db
+      .insert(newsletterSubscribers)
+      .values({ ...values, email, manageTokenHash: hashToken(newToken()) })
+      .returning({ id: newsletterSubscribers.id });
+    id = row.id;
+  }
+
+  await logConsent({
+    subscriberId: id,
+    email,
+    event: "subscribe_requested",
+    locale,
+    sourcePath: input.sourcePath,
+    consentTextVersion: NEWSLETTER_CONSENT_VERSION,
+  });
+
+  const sent = await sendConfirmationEmail(email, input.name.trim(), routeLocale(locale), confirmToken);
+  return { ok: sent };
 }
 
-export async function confirmSubscription(token: string) {
-  const [row] = await getDb()
-    .update(newsletterSubscribers)
-    .set({ status: "active", confirmedAt: new Date(), confirmTokenHash: null, confirmTokenExpiresAt: null, updatedAt: new Date() })
+async function sendConfirmationEmail(to: string, name: string, locale: "pt-br" | "en" | "es", token: string) {
+  const t = await getTranslations({ locale, namespace: "emails.confirm" });
+  const url = `${absoluteUrl("/newsletter/confirmar", locale)}?token=${encodeURIComponent(token)}`;
+  const paragraphs = [t("hello", { name }), t("p1"), t("p2")];
+  const cta = { label: t("cta"), url };
+  const footer = [t("ignore"), t("footer")];
+  const result = await emailSender.send({
+    to,
+    subject: t("subject"),
+    html: emailLayout({ preheader: t("preheader"), heading: t("heading"), paragraphs, cta, footer }),
+    text: emailText(t("heading"), paragraphs, cta, footer),
+    tag: "newsletter_confirmation",
+  });
+  return result.ok;
+}
+
+export type ConfirmResult = { ok: true; manageToken: string; locale: string } | { ok: false };
+
+/**
+ * Confirms a pending subscription. Called from a button (POST), not from the email link itself,
+ * so link scanners in mail servers cannot confirm on the person's behalf.
+ */
+export async function confirmSubscription(token: string): Promise<ConfirmResult> {
+  const db = getDb();
+  const [sub] = await db
+    .select()
+    .from(newsletterSubscribers)
     .where(
       and(
-        eq(newsletterSubscribers.confirmTokenHash, sha256(token)),
+        eq(newsletterSubscribers.confirmTokenHash, hashToken(token)),
         gt(newsletterSubscribers.confirmTokenExpiresAt, new Date())
       )
     )
-    .returning();
-  if (row) await logConsent("confirmed", row);
-  return row ?? null;
-}
+    .limit(1);
+  if (!sub) return { ok: false };
 
-export async function unsubscribe(token: string) {
-  const [row] = await getDb()
+  // A fresh manage token is issued on confirmation and shown on the success page.
+  const manageToken = newToken();
+  const now = new Date();
+  await db
     .update(newsletterSubscribers)
-    .set({ status: "unsubscribed", unsubscribedAt: new Date(), updatedAt: new Date() })
-    .where(eq(newsletterSubscribers.manageTokenHash, sha256(token)))
-    .returning();
-  if (row) await logConsent("unsubscribed", row);
-  return row ?? null;
+    .set({
+      status: "active",
+      confirmedAt: now,
+      confirmTokenHash: null,
+      confirmTokenExpiresAt: null,
+      manageTokenHash: hashToken(manageToken),
+      updatedAt: now,
+    })
+    .where(eq(newsletterSubscribers.id, sub.id));
+
+  await logConsent({
+    subscriberId: sub.id,
+    email: sub.email,
+    event: "confirmed",
+    locale: sub.locale,
+    sourcePath: sub.sourcePath,
+    consentTextVersion: sub.consentTextVersion,
+  });
+  return { ok: true, manageToken, locale: sub.locale };
 }
 
-function previousMonth(now = new Date()) {
-  const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 1, 1));
-  const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1));
-  const period = `${start.getUTCFullYear()}-${String(start.getUTCMonth() + 1).padStart(2, "0")}`;
-  return { start, end, period };
-}
-
-const EDITION_COPY: Record<DbLocale, { title: (p: string) => string; intro: string; read: string; source: string; unsubscribe: string }> = {
-  "pt-BR": {
-    title: (p) => `ISO Radar · ${p}`,
-    intro: "As mudanças nas normas que monitoramos neste mês, com o link da fonte oficial.",
-    read: "Ler o artigo",
-    source: "Fonte oficial",
-    unsubscribe: "Cancelar inscrição",
-  },
-  en: {
-    title: (p) => `ISO Radar · ${p}`,
-    intro: "This month's changes to the standards we monitor, with a link to the official source.",
-    read: "Read the article",
-    source: "Official source",
-    unsubscribe: "Unsubscribe",
-  },
-  es: {
-    title: (p) => `ISO Radar · ${p}`,
-    intro: "Los cambios de este mes en las normas que monitoreamos, con el enlace a la fuente oficial.",
-    read: "Leer el artículo",
-    source: "Fuente oficial",
-    unsubscribe: "Cancelar suscripción",
-  },
-};
-
-/** Runs on the 1st: one draft edition per language with last month's published articles. */
-export async function buildMonthlyEdition() {
-  const db = getDb();
-  const { start, end, period } = previousMonth();
-  const exists = await db.select({ id: newsletterEditions.id }).from(newsletterEditions).where(eq(newsletterEditions.period, period)).limit(1);
-  if (exists.length) return { period, created: false, count: 0 };
-
-  const rows = await db
-    .selectDistinct({ groupId: radarArticles.groupId })
-    .from(radarArticles)
-    .where(and(eq(radarArticles.status, "published"), gte(radarArticles.publishedAt, start), lt(radarArticles.publishedAt, end)));
-  if (!rows.length) return { period, created: false, count: 0 };
-
-  const groupIds = rows.map((r) => r.groupId);
-  await db.insert(newsletterEditions).values(
-    DB_LOCALES.map((locale) => ({
-      locale,
-      period,
-      title: EDITION_COPY[locale].title(period),
-      intro: EDITION_COPY[locale].intro,
-      articleGroupIds: groupIds,
-    }))
-  );
-  await sendEditionReady(period, groupIds.length).catch((err) => console.error("[newsletter] notify failed", err));
-  return { period, created: true, count: groupIds.length };
-}
-
-/** Sends every draft edition of a period, each to the active subscribers of its language. */
-export async function sendPeriod(period: string) {
-  const db = getDb();
-  // Claim the drafts first so a double click cannot send them twice.
-  const editions = await db
-    .update(newsletterEditions)
-    .set({ status: "approved", updatedAt: new Date() })
-    .where(and(eq(newsletterEditions.period, period), eq(newsletterEditions.status, "draft")))
-    .returning();
-  if (!editions.length) throw new Error("No draft edition for this period");
-
-  let sent = 0;
-  for (const edition of editions) {
-    const locale = edition.locale as DbLocale;
-    const c = EDITION_COPY[locale] ?? EDITION_COPY["pt-BR"];
-    const articles = edition.articleGroupIds.length
-      ? await db
-          .select()
-          .from(radarArticles)
-          .where(and(inArray(radarArticles.groupId, edition.articleGroupIds), eq(radarArticles.locale, locale), eq(radarArticles.status, "published")))
-      : [];
-    const recipients = await db
-      .select()
-      .from(newsletterSubscribers)
-      .where(and(eq(newsletterSubscribers.status, "active"), eq(newsletterSubscribers.locale, locale)));
-
-    const items = articles
-      .map(
-        (a) =>
-          `<h3 style="font-family:Georgia,serif;margin:24px 0 6px">${escapeHtml(a.title)}</h3><p style="margin:0 0 6px">${escapeHtml(a.summary)}</p><p style="margin:0;font-size:13px"><a href="${articleUrl(locale, a.slug)}">${c.read}</a> · <a href="${escapeHtml(a.sourceUrl)}">${c.source}</a></p>`
+/** Looks up a confirm token without consuming it (to show the confirm button or an error). */
+export async function isConfirmTokenValid(token: string) {
+  const [row] = await getDb()
+    .select({ id: newsletterSubscribers.id })
+    .from(newsletterSubscribers)
+    .where(
+      and(
+        eq(newsletterSubscribers.confirmTokenHash, hashToken(token)),
+        gt(newsletterSubscribers.confirmTokenExpiresAt, new Date())
       )
-      .join("");
-
-    for (const r of recipients) {
-      const unsubscribeUrl = `${SITE_URL}/api/newsletter/unsubscribe/?token=${encodeURIComponent(manageToken(r.id))}`;
-      try {
-        await sendNewsletterEdition({
-          to: r.email,
-          subject: edition.title,
-          html: `${r.name ? `<p>${escapeHtml(r.name)},</p>` : ""}<p>${escapeHtml(edition.intro ?? c.intro)}</p>${items}<p style="margin-top:28px;font-size:12px"><a href="${unsubscribeUrl}" style="color:#6e6e73">${c.unsubscribe}</a></p>`,
-          unsubscribeUrl,
-        });
-        sent++;
-      } catch (err) {
-        console.error(`[newsletter] send failed for subscriber ${r.id}`, err);
-      }
-    }
-    await db
-      .update(newsletterEditions)
-      .set({ status: "sent", sentAt: new Date(), updatedAt: new Date() })
-      .where(eq(newsletterEditions.id, edition.id));
-  }
-  return sent;
+    )
+    .limit(1);
+  return Boolean(row);
 }
 
-export async function discardPeriod(period: string) {
+export async function findByManageToken(token: string) {
+  const [sub] = await getDb()
+    .select({
+      id: newsletterSubscribers.id,
+      email: newsletterSubscribers.email,
+      locale: newsletterSubscribers.locale,
+      status: newsletterSubscribers.status,
+    })
+    .from(newsletterSubscribers)
+    .where(eq(newsletterSubscribers.manageTokenHash, hashToken(token)))
+    .limit(1);
+  return sub ?? null;
+}
+
+export async function updatePreferences(token: string, locale: string): Promise<boolean> {
+  const sub = await findByManageToken(token);
+  if (!sub || sub.status === "unsubscribed") return false;
+  const next = dbLocale(locale);
   await getDb()
-    .delete(newsletterEditions)
-    .where(and(eq(newsletterEditions.period, period), eq(newsletterEditions.status, "draft")));
+    .update(newsletterSubscribers)
+    .set({ locale: next, updatedAt: new Date() })
+    .where(eq(newsletterSubscribers.id, sub.id));
+  await logConsent({ subscriberId: sub.id, email: sub.email, event: "preferences_updated", locale: next });
+  return true;
+}
+
+/** Unsubscribes; idempotent (a second call is a no-op that still answers ok). */
+export async function unsubscribe(token: string): Promise<boolean> {
+  const sub = await findByManageToken(token);
+  if (!sub) return false;
+  if (sub.status === "unsubscribed") return true;
+  const now = new Date();
+  await getDb()
+    .update(newsletterSubscribers)
+    .set({ status: "unsubscribed", unsubscribedAt: now, confirmTokenHash: null, confirmTokenExpiresAt: null, updatedAt: now })
+    .where(eq(newsletterSubscribers.id, sub.id));
+  await logConsent({ subscriberId: sub.id, email: sub.email, event: "unsubscribed", locale: sub.locale });
+  return true;
 }

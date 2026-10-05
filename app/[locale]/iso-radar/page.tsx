@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { htmlLang, type Locale } from "@/i18n/routing";
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { RadarList, type RadarListItem } from "@/components/radar/radar-list";
-import { NewsletterNotice } from "@/components/radar/newsletter-notice";
 import { RADAR_CATALOG } from "@/lib/radar/catalog";
-import { hasDb, listPublished } from "@/lib/radar/queries";
+import { listPublished } from "@/lib/radar/queries";
+import { newsletterEnabled } from "@/lib/email/sender";
 import { buildMetadata } from "@/lib/seo";
 import type { Lifecycle } from "@/components/radar/format";
 
@@ -43,9 +42,6 @@ export default async function IsoRadarPage({ params }: Props) {
           <h1 className="m-0 font-display text-h2 font-medium">{t("title")}</h1>
           <p className="m-0 max-w-[640px] text-base leading-[1.65] text-body">{t("text")}</p>
         </header>
-        <Suspense>
-          <NewsletterNotice />
-        </Suspense>
         <RadarList items={items} dateLocale={htmlLang[locale as Locale]} />
       </div>
 
@@ -54,7 +50,7 @@ export default async function IsoRadarPage({ params }: Props) {
           <h2 id="radar-subscribe" className="m-0 font-display text-h3 font-medium">
             {t("subscribeTitle")}
           </h2>
-          <NewsletterSignup enabled={hasDb()} />
+          <NewsletterSignup enabled={newsletterEnabled()} />
         </section>
         <section aria-labelledby="radar-monitoring" className="flex flex-col gap-3">
           <h2 id="radar-monitoring" className="eyebrow m-0">

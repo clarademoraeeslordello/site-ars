@@ -5,7 +5,7 @@ import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { getDb } from "@/db/client";
 import { adminLoginTokens } from "@/db/schema";
-import { adminEmails, sendMagicLink } from "@/lib/email";
+import { adminEmails, sendMagicLink } from "@/lib/email/radar";
 import { SITE_URL } from "@/lib/site";
 
 const COOKIE = "ars_admin";

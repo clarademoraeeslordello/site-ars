@@ -48,7 +48,7 @@ export default async function HomePage({ params }: Props) {
             </h1>
             <p className="m-0 max-w-[640px] text-lg leading-[1.6] text-pretty text-body">{t("hero.lead")}</p>
             <div className="flex flex-wrap gap-2.5 pt-1">
-              <Link href="/demonstracao" className={buttonClasses()}>
+              <Link href="/demonstracao" data-track="cta_demo_click" data-track-location="hero" className={buttonClasses()}>
                 {t("hero.ctaDemo")}
               </Link>
               <a href="#como-funciona" className={buttonClasses({ variant: "secondary" })}>

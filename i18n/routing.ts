@@ -37,6 +37,10 @@ export const routing = defineRouting({
       es: "/preparacion-para-auditoria",
     },
     "/certificacao-iso": { "pt-br": "/certificacao-iso", en: "/iso-certification", es: "/certificacion-iso" },
+    // Newsletter token pages (noindex, blocked in robots.txt)
+    "/newsletter/confirmar": { "pt-br": "/newsletter/confirmar", en: "/newsletter/confirm", es: "/newsletter/confirmar" },
+    "/newsletter/preferencias": { "pt-br": "/newsletter/preferencias", en: "/newsletter/preferences", es: "/newsletter/preferencias" },
+    "/newsletter/cancelar": { "pt-br": "/newsletter/cancelar", en: "/newsletter/unsubscribe", es: "/newsletter/cancelar" },
 
   },
 });

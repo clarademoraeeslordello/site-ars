@@ -1,22 +1,12 @@
-import { NextResponse } from "next/server";
 import { unsubscribe } from "@/lib/newsletter";
-import { radarPageUrl } from "@/lib/radar/urls";
 
+// One-click unsubscribe (RFC 8058) for the List-Unsubscribe-Post header of each edition.
+// Mail providers POST here with the token in the query string.
 export const dynamic = "force-dynamic";
 
-function token(request: Request) {
-  return new URL(request.url).searchParams.get("token") ?? "";
-}
-
-export async function GET(request: Request) {
-  const t = token(request);
-  const row = t ? await unsubscribe(t) : null;
-  return NextResponse.redirect(radarPageUrl(row?.locale, row ? "unsubscribed" : "invalid"), 303);
-}
-
-/** One-click unsubscribe from the mail client (RFC 8058). */
 export async function POST(request: Request) {
-  const t = token(request);
-  if (t) await unsubscribe(t);
+  const token = new URL(request.url).searchParams.get("token") ?? "";
+  if (token.length < 20 || token.length > 100) return new Response(null, { status: 400 });
+  await unsubscribe(token);
   return new Response(null, { status: 200 });
 }

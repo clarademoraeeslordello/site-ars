@@ -10,6 +10,7 @@ import { absoluteUrl } from "@/lib/seo";
 import { JsonLd, siteGraph } from "@/components/seo/json-ld";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { ConsentBanner } from "@/components/analytics/consent-banner";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -72,6 +73,8 @@ export default async function LocaleLayout({
     demo: { form: (messages.demo as Record<string, unknown>)?.form },
     home: { radar: { form: ((messages.home as Record<string, Record<string, unknown>>)?.radar)?.form } },
     radarPage: messages.radarPage,
+    newsletter: { form: (messages.newsletter as Record<string, unknown>)?.form },
+    consentBanner: messages.consentBanner,
   };
 
   return (
@@ -85,6 +88,7 @@ export default async function LocaleLayout({
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />
+          <ConsentBanner />
         </NextIntlClientProvider>
       </body>
     </html>

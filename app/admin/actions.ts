@@ -7,7 +7,7 @@ import { z } from "zod";
 import { getDb } from "@/db/client";
 import { radarArticles } from "@/db/schema";
 import { consumeMagicLink, endSession, requestMagicLink, requireAdmin } from "@/lib/admin/auth";
-import { buildMonthlyEdition, discardPeriod, sendPeriod } from "@/lib/newsletter";
+import { buildMonthlyEdition, discardPeriod, sendPeriod } from "@/lib/newsletter-editions";
 import { DB_LOCALES } from "@/lib/radar/content";
 import { runScan } from "@/lib/radar/scan";
 

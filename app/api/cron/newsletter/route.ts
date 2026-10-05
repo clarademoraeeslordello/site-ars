@@ -1,5 +1,5 @@
 import { isCronRequest } from "@/lib/cron-auth";
-import { buildMonthlyEdition } from "@/lib/newsletter";
+import { buildMonthlyEdition } from "@/lib/newsletter-editions";
 
 export const dynamic = "force-dynamic";
 

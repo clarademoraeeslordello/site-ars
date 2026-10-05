@@ -380,8 +380,7 @@
         "consent": "I want to receive ISO Radar and I have read the <link>Privacy Policy</link>.",
         "submit": "Get ISO Radar",
         "success": "Done. We sent you a link to confirm your subscription.",
-        "soon": "Subscriptions open soon.",
-        "error": "We could not complete your subscription. Please try again shortly."
+        "soon": "Subscriptions open soon."
       },
       "source": "ISO.org",
       "articles": [
@@ -451,7 +450,8 @@
         "countryRequired": "Enter your country.",
         "frameworksRequired": "Select at least one framework.",
         "generic": "We couldn't send your request. Check the fields and try again."
-      }
+      },
+      "privacy": "We use this data only to answer your request. See the <link>Privacy Policy</link>."
     }
   },
   "legal": {
@@ -771,6 +771,65 @@
       "contactTitle": "Prefer to talk directly?"
     }
   },
+  "newsletter": {
+    "confirm": {
+      "metaTitle": "Confirm subscription",
+      "title": "Confirm your ISO Radar subscription",
+      "text": "One step left. Click the button below to confirm you want to receive ISO Radar at this email address.",
+      "button": "Confirm subscription",
+      "doneTitle": "Subscription confirmed",
+      "doneText": "Done. You will receive the next ISO Radar issue. You can change the language or unsubscribe at any time.",
+      "manage": "Manage preferences",
+      "invalidTitle": "Invalid or expired link",
+      "invalidText": "This confirmation link is no longer valid. It lasts 48 hours. Subscribe again to get a new link.",
+      "back": "Back to the home page"
+    },
+    "preferences": {
+      "metaTitle": "ISO Radar preferences",
+      "title": "ISO Radar preferences",
+      "text": "Choose the language you want to receive ISO Radar in.",
+      "locale": "Language",
+      "save": "Save preferences",
+      "saved": "Preferences saved.",
+      "unsubscribeTitle": "No longer want to receive it?",
+      "unsubscribe": "Unsubscribe",
+      "invalidTitle": "Invalid link",
+      "invalidText": "We could not find a subscription for this link."
+    },
+    "unsubscribe": {
+      "metaTitle": "Unsubscribe",
+      "title": "Unsubscribe from ISO Radar",
+      "text": "You will stop receiving ISO Radar at this email address.",
+      "button": "Unsubscribe",
+      "doneTitle": "Unsubscribed",
+      "doneText": "You will no longer receive ISO Radar. If you change your mind, just subscribe again."
+    },
+    "form": {
+      "error": "We could not complete this right now. Please try again in a few minutes.",
+      "invalid": "Please check the name, email and consent.",
+      "sending": "Sending…"
+    }
+  },
+  "emails": {
+    "confirm": {
+      "subject": "Confirm your ISO Radar subscription",
+      "preheader": "One click left to receive ISO Radar.",
+      "heading": "Confirm your subscription",
+      "hello": "Hello, {name}.",
+      "p1": "We received a request to send ISO Radar to this email address: one short issue a month about changes to standards, always with a link to the official source.",
+      "p2": "To confirm, use the button below. The link is valid for 48 hours.",
+      "cta": "Confirm subscription",
+      "ignore": "If you did not request this subscription, ignore this email. Nothing will be sent without confirmation.",
+      "footer": "Audit Cockpits · auditcockpits.com"
+    }
+  },
+  "consentBanner": {
+    "text": "We use analytics cookies (Google Analytics) to understand how the site is used. They are only turned on with your permission.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "policy": "Privacy Policy",
+    "manage": "Cookie preferences"
+  },
   "radarPage": {
     "metaDescription": "Changes to ISO management system standards, with dates, the official stage and a link to the source. Updated from ISO Open Data.",
     "eyebrow": "Standards monitoring",
@@ -812,11 +871,6 @@
     "back": "All ISO Radar articles",
     "dataNote": "Data: ISO Open Data, published by ISO under the ODC-BY licence. This content summarises and adds context; it does not reproduce the text of the standards.",
     "subscribeTitle": "Get the monthly edition",
-    "notice": {
-      "confirmed": "Subscription confirmed. You will receive the next ISO Radar edition.",
-      "unsubscribed": "You have unsubscribed. You will no longer receive ISO Radar.",
-      "invalid": "This link is no longer valid."
-    },
     "monitoring": "Monitored standards"
   }
 }

@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/components/ui/button";
 import { submitDemoRequest } from "@/app/actions/demo-request";
@@ -17,6 +19,8 @@ const inputClass =
 
 export function DemoRequestForm() {
   const t = useTranslations("demo.form");
+  const locale = useLocale();
+  const pathname = usePathname();
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
@@ -34,9 +38,10 @@ export function DemoRequestForm() {
 
   async function onSubmit(data: FormData) {
     setSubmitError(false);
-    const result = await submitDemoRequest(data);
+    const result = await submitDemoRequest(data, { locale, sourcePath: pathname });
     if (result.ok) {
       setSubmitted(true);
+      trackEvent("form_submit", { form: "demo" });
     } else {
       setSubmitError(true);
     }
@@ -209,6 +214,24 @@ export function DemoRequestForm() {
           {...register("message")}
         />
       </div>
+
+      {/* Honeypot: hidden from people and assistive tech; bots tend to fill it. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label>
+          Website
+          <input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
+        </label>
+      </div>
+
+      <p className="m-0 text-[13px] leading-normal text-muted">
+        {t.rich("privacy", {
+          link: (chunks) => (
+            <Link href="/privacidade" className="text-ink underline underline-offset-2">
+              {chunks}
+            </Link>
+          ),
+        })}
+      </p>
 
       {submitError && (
         <p role="alert" className="text-sm text-crit">

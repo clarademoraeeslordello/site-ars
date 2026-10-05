@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import { and, desc, eq, gt, inArray } from "drizzle-orm";
 import { getDb } from "@/db/client";
 import { radarArticles, radarDeliverables, radarScans, radarStandards } from "@/db/schema";
-import { sendReviewDigest } from "@/lib/email";
+import { sendReviewDigest } from "@/lib/email/radar";
 import { RADAR_CATALOG, catalogByKey } from "./catalog";
 import { DB_LOCALES, toMarkdown } from "./content";
 import { writeDraft } from "./draft";
