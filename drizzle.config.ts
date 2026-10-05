@@ -1,11 +1,11 @@
 import { defineConfig } from "drizzle-kit";
 
+// Migrations are generated locally (pnpm db:generate, no database needed) and applied on
+// Railway before each deploy (scripts/migrate.mjs), inside the private network.
 export default defineConfig({
   dialect: "postgresql",
-  schema: "./lib/db/schema.ts",
-  out: "./drizzle",
+  schema: "./db/schema.ts",
+  out: "./db/migrations",
   dbCredentials: { url: process.env.DATABASE_URL ?? "" },
-  // Only this site's tables: the database may also hold tables owned by other services.
-  tablesFilter: ["radar_*", "newsletter_*", "admin_*"],
-  migrations: { table: "__site_migrations" },
+  strict: true,
 });

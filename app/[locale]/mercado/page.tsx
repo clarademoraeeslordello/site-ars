@@ -5,6 +5,7 @@ import { htmlLang, type Locale } from "@/i18n/routing";
 import { Globe } from "@/components/market/globe";
 import { CountryRanking } from "@/components/market/country-ranking";
 import { features } from "@/lib/features";
+import { buildMetadata } from "@/lib/seo";
 
 const SOURCE_LINKS = {
   survey: "https://www.iso.org/the-iso-survey.html",
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.market" });
   const nav = await getTranslations({ locale, namespace: "nav" });
-  return { title: nav("market"), description: t("text") };
+  return buildMetadata({ locale, href: "/mercado", title: nav("market"), description: t("text") });
 }
 
 export default async function MarketPage({ params }: Props) {

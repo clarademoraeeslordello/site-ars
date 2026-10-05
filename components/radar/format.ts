@@ -1,10 +1,11 @@
 import type { Tone } from "@/components/ui/status-badge";
 
-export type Lifecycle = "published" | "under_review" | "transition" | "withdrawn";
+/** radar_articles.standard_status */
+export type Lifecycle = "published" | "under_review" | "in_transition" | "withdrawn";
 
 export const LIFECYCLE_TONE: Record<Lifecycle, Tone> = {
   published: "ok",
-  transition: "warn",
+  in_transition: "warn",
   under_review: "neutral",
   withdrawn: "neutral",
 };

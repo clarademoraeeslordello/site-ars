@@ -20,8 +20,8 @@ O site da ISO.org bloqueia robôs com uma verificação do Cloudflare. Por isso 
 
 ## Colocar no ar (Railway)
 
-1. **Variáveis no serviço do site** (veja `.env.example`): `DATABASE_URL`, `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `NEWSLETTER_FROM_EMAIL`, `ADMIN_EMAILS`, `ADMIN_SESSION_SECRET`, `CRON_SECRET`, `SITE_URL`.
-2. **Tabelas**: `pnpm start` roda `scripts/migrate.mjs` antes do `next start`. As tabelas usam os prefixos `radar_`, `newsletter_` e `admin_`, e as migrações ficam registradas em `__site_migrations`, então convivem com outras tabelas no mesmo banco.
+1. **Variáveis no serviço do site** (veja `.env.example`): `DATABASE_URL`, `NEWSLETTER_TOKEN_SECRET` (opcional; usa `ADMIN_SESSION_SECRET` se não existir), `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `NEWSLETTER_FROM_EMAIL`, `ADMIN_EMAILS`, `ADMIN_SESSION_SECRET`, `CRON_SECRET`, `SITE_URL`.
+2. **Tabelas**: o esquema fica em `db/schema.ts` e as migrações em `db/migrations`. O `pnpm start` roda `scripts/migrate.mjs` antes do `next start`. O Radar automático usa `radar_deliverables` (o estado de cada documento da ISO), `radar_standards`, `radar_scans` e `radar_articles` (uma linha por idioma, ligadas por `group_id`). A newsletter usa `newsletter_subscribers`, `newsletter_editions` (uma por idioma e mês) e `consent_events` (registro LGPD que só aceita inclusões).
 3. **Dois serviços de cron no Railway** (o horário do Railway é UTC):
    - Radar, diário: agendamento `0 9 * * *`, comando
      `curl -fsS -X POST -H "Authorization: Bearer $CRON_SECRET" https://auditcockpits.com/api/cron/radar/`
@@ -31,5 +31,5 @@ O site da ISO.org bloqueia robôs com uma verificação do Cloudflare. Por isso 
 
 ## Comandos
 
-- `pnpm db:generate`: gera uma nova migração depois de alterar `lib/db/schema.ts`.
+- `pnpm db:generate`: gera uma nova migração depois de alterar `db/schema.ts`.
 - `pnpm db:migrate`: aplica as migrações pendentes (usa `DATABASE_URL`).

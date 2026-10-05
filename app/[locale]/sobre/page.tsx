@@ -1,67 +1,48 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { use } from "react";
-import { PageHero } from "@/components/marketing/page-hero";
-import { Section, SectionTitle } from "@/components/marketing/section";
-import { CtaBand } from "@/components/marketing/cta-band";
+import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { CtaFinal } from "@/components/marketing/cta-final";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "about" });
-  return { title: t("title"), description: t("missionText") };
+  const t = await getTranslations({ locale, namespace: "pages.about.meta" });
+  return buildMetadata({ locale, href: "/sobre", title: t("title"), description: t("description") });
 }
 
-export default function AboutPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = use(params);
+export default async function AboutPage({ params }: Props) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  return <Content />;
-}
-
-function Content() {
-  const t = useTranslations("about");
-  const th = useTranslations("legacyHome.finalCta");
-  const paragraphs = t.raw("paragraphs") as string[];
-  const principles = t.raw("principles") as { title: string; text: string }[];
+  const t = await getTranslations({ locale, namespace: "pages.about" });
 
   return (
     <>
-      <PageHero eyebrow={t("title")} title={t("heroTitle")} />
-      <Section>
-        <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-soft">
-          {paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+      <section aria-labelledby="page-title" className="container-site pt-[clamp(32px,5vw,56px)]">
+        <Breadcrumb items={[{ label: t("eyebrow"), href: "/sobre" }]} />
+        <div className="mt-[clamp(32px,5vw,56px)] flex flex-col gap-[18px] rounded-card border border-line bg-card p-[clamp(28px,4.5vw,56px)]">
+          <span className="eyebrow">{t("eyebrow")}</span>
+          <h1 id="page-title" className="m-0 font-display text-h2 font-medium">
+            {t("title")}
+          </h1>
+          <p className="m-0 max-w-[860px] font-display text-[clamp(22px,2.4vw,30px)] font-normal leading-[1.4] text-pretty">
+            {t("quote")}
+          </p>
+          <p className="m-0 max-w-[760px] text-base leading-[1.65] text-body">{t("text")}</p>
         </div>
-      </Section>
-      <Section dark>
-        <SectionTitle className="mt-0">{t("missionTitle")}</SectionTitle>
-        <p className="mt-4 max-w-3xl font-display text-2xl leading-relaxed text-gold-bright">
-          {t("missionText")}
-        </p>
-      </Section>
-      <Section>
-        <SectionTitle className="mt-0">{t("principlesTitle")}</SectionTitle>
-        <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {principles.map((p) => (
-            <div key={p.title} className="border-t border-gold pt-4">
-              <h3 className="font-semibold">{p.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                {p.text}
-              </p>
-            </div>
-          ))}
+      </section>
+
+      <section aria-labelledby="names-title" className="container-site section-space">
+        <div className="flex max-w-[760px] flex-col gap-4">
+          <h2 id="names-title" className="m-0 font-display text-h2 font-medium">
+            {t("namesTitle")}
+          </h2>
+          <p className="m-0 text-base leading-[1.65] text-body">{t("names")}</p>
         </div>
-      </Section>
-      <CtaBand title={th("title")} text={th("text")} />
+      </section>
+
+      <CtaFinal />
     </>
   );
 }

@@ -16,6 +16,9 @@ export const MAIN_NAV: { key: string; href: Href }[] = [
 export const FOOTER_NAV: { key: string; href: Href }[] = [
   { key: "howItWorks", href: "/como-funciona" },
   { key: "platform", href: "/plataforma" },
+  { key: "certification", href: "/certificacao-e-manutencao" },
+  { key: "frameworks", href: "/frameworks" },
+  { key: "security", href: "/seguranca" },
   { key: "about", href: "/sobre" },
   { key: "privacy", href: "/privacidade" },
   { key: "terms", href: "/termos" },

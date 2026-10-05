@@ -1,20 +1,27 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { buttonClasses } from "@/components/ui/button";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("notFound");
+  return { title: t("title") };
+}
 
 export default function NotFound() {
   const t = useTranslations("notFound");
 
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-24 text-center">
-      <p className="font-data text-sm text-gold">404</p>
-      <h1 className="mt-3 font-display text-3xl font-semibold">{t("title")}</h1>
-      <p className="mt-3 max-w-md text-ink-soft">{t("text")}</p>
-      <Link
-        href="/"
-        className="mt-8 rounded-sm bg-ink px-6 py-3 font-medium text-paper hover:bg-ink-soft"
-      >
+    <section aria-labelledby="nf-title" className="container-site flex min-h-[60vh] flex-col items-start justify-center gap-4 py-24">
+      <span className="eyebrow">404</span>
+      <h1 id="nf-title" className="m-0 font-display text-h1 font-medium">
+        {t("title")}
+      </h1>
+      <p className="m-0 max-w-md text-lg leading-[1.6] text-body">{t("text")}</p>
+      <Link href="/" className={buttonClasses({ className: "mt-4" })}>
         {t("back")}
       </Link>
-    </div>
+    </section>
   );
 }

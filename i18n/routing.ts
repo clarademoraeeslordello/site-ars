@@ -38,11 +38,6 @@ export const routing = defineRouting({
     },
     "/certificacao-iso": { "pt-br": "/certificacao-iso", en: "/iso-certification", es: "/certificacion-iso" },
 
-    // Legacy pages, consolidated into the new sitemap in step 3 (then removed with 301s).
-    "/lgpd": "/lgpd",
-    "/solucoes": "/solucoes",
-    "/consultorias": "/consultorias",
-    "/faq": "/faq",
   },
 });
 

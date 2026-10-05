@@ -5,9 +5,10 @@ import { htmlLang, type Locale } from "@/i18n/routing";
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { RadarList, type RadarListItem } from "@/components/radar/radar-list";
 import { NewsletterNotice } from "@/components/radar/newsletter-notice";
-import { hasDb } from "@/lib/db";
 import { RADAR_CATALOG } from "@/lib/radar/catalog";
-import { listPublished, toArticleLocale } from "@/lib/radar/queries";
+import { hasDb, listPublished } from "@/lib/radar/queries";
+import { buildMetadata } from "@/lib/seo";
+import type { Lifecycle } from "@/components/radar/format";
 
 // Rebuilt at most every 5 minutes; publishing in /admin also revalidates it right away.
 export const revalidate = 300;
@@ -17,23 +18,21 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "radarPage" });
-  return { title: t("title"), description: t("metaDescription") };
+  return buildMetadata({ locale, href: "/iso-radar", title: t("title"), description: t("metaDescription") });
 }
 
 export default async function IsoRadarPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "radarPage" });
-  const lang = toArticleLocale(locale);
-
-  const items: RadarListItem[] = (await listPublished()).map((a) => ({
+  const items: RadarListItem[] = (await listPublished(locale)).map((a) => ({
     slug: a.slug,
-    standard: a.standard,
-    lifecycle: a.lifecycle,
-    title: a.content[lang].title,
-    summary: a.content[lang].summary,
+    standard: a.standards[0] ?? a.reference ?? "ISO",
+    lifecycle: a.standardStatus as Lifecycle,
+    title: a.title,
+    summary: a.summary,
     sourceDate: a.sourceDate,
-    lastVerifiedAt: a.lastVerifiedAt.toISOString(),
+    lastVerifiedAt: (a.verifiedAt ?? a.updatedAt).toISOString(),
   }));
 
   return (

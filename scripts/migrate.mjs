@@ -1,18 +1,22 @@
-// Applies pending SQL migrations from ./drizzle before `next start`.
-// Plain JS on purpose: it runs in production, where dev tools (drizzle-kit, tsx) may be pruned.
-import { drizzle } from "drizzle-orm/node-postgres";
-import { migrate } from "drizzle-orm/node-postgres/migrator";
-import pg from "pg";
+// Applies pending migrations from db/migrations. Runs at service start (pnpm start), before
+// next start: a failed migration stops the new deploy and the previous version keeps serving.
+import { drizzle } from "drizzle-orm/postgres-js";
+import { migrate } from "drizzle-orm/postgres-js/migrator";
+import postgres from "postgres";
 
-if (!process.env.DATABASE_URL) {
-  console.warn("[migrate] DATABASE_URL is not set; skipping migrations.");
-  process.exit(0);
+const url = process.env.DATABASE_URL;
+if (!url) {
+  console.error("DATABASE_URL is not set");
+  process.exit(1);
 }
 
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const client = postgres(url, { max: 1, onnotice: () => {} });
 try {
-  await migrate(drizzle(pool), { migrationsFolder: "./drizzle", migrationsTable: "__site_migrations" });
-  console.log("[migrate] done");
+  await migrate(drizzle(client), { migrationsFolder: "./db/migrations" });
+  console.log("migrations applied");
+} catch (err) {
+  console.error("migration failed:", err);
+  process.exitCode = 1;
 } finally {
-  await pool.end();
+  await client.end();
 }

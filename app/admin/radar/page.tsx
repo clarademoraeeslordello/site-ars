@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { desc, eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
+import { getDb } from "@/db/client";
+import { radarArticles } from "@/db/schema";
 import { requireAdmin } from "@/lib/admin/auth";
-import { getDb, schema } from "@/lib/db";
-import type { RadarArticle } from "@/lib/db/schema";
 import { latestScan } from "@/lib/radar/scan";
 import { formatStage } from "@/lib/radar/stages";
 import { AdminShell, btn } from "../admin-shell";
@@ -19,25 +19,32 @@ const CHANGE_LABEL: Record<string, string> = {
   confirmed: "Confirmada",
 };
 
-const LIFECYCLE_LABEL: Record<RadarArticle["lifecycle"], string> = {
+const STATUS_LABEL: Record<string, string> = {
   published: "Publicado",
   under_review: "Em revisão",
-  transition: "Em transição",
+  in_transition: "Em transição",
   withdrawn: "Retirado",
 };
 
 const when = (d: Date) =>
   new Intl.DateTimeFormat("pt-BR", { dateStyle: "short", timeStyle: "short", timeZone: "America/Sao_Paulo" }).format(d);
 
-export default async function RadarQueuePage({ searchParams }: { searchParams: Promise<{ varredura?: string; ok?: string; erro?: string }> }) {
+export default async function RadarQueuePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ varredura?: string; ok?: string; erro?: string }>;
+}) {
   const email = await requireAdmin();
   const { varredura, ok, erro } = await searchParams;
   const db = getDb();
-  const [drafts, published, scan] = await Promise.all([
-    db.select().from(schema.radarArticles).where(eq(schema.radarArticles.status, "draft")).orderBy(desc(schema.radarArticles.detectedAt)),
-    db.select().from(schema.radarArticles).where(eq(schema.radarArticles.status, "published")).orderBy(desc(schema.radarArticles.publishedAt)),
-    latestScan(),
-  ]);
+  // The PT row stands for its article group (PT, EN and ES share group_id and status).
+  const byStatus = (status: string) =>
+    db
+      .select()
+      .from(radarArticles)
+      .where(and(eq(radarArticles.status, status), eq(radarArticles.locale, "pt-BR")))
+      .orderBy(desc(status === "published" ? radarArticles.publishedAt : radarArticles.createdAt));
+  const [drafts, published, scan] = await Promise.all([byStatus("draft"), byStatus("published"), latestScan()]);
   const scanResult = varredura?.split("-").map(Number);
 
   return (
@@ -47,7 +54,7 @@ export default async function RadarQueuePage({ searchParams }: { searchParams: P
           <h1 className="m-0 font-display text-[30px] font-medium">Fila de revisão</h1>
           <p className="m-0 text-sm text-muted">
             {scan
-              ? `Última varredura: ${when(scan.startedAt)} · ${scan.checked} documentos verificados · ${scan.changes} mudanças${scan.ok === false ? ` · falhou: ${scan.error}` : ""}`
+              ? `Última varredura: ${when(scan.startedAt)} · ${scan.standardsChecked} documentos verificados · ${scan.changesFound} mudanças${scan.status === "failed" ? ` · falhou: ${scan.error}` : scan.status === "running" ? " · em andamento" : ""}`
               : "Nenhuma varredura ainda."}
           </p>
         </div>
@@ -79,38 +86,40 @@ export default async function RadarQueuePage({ searchParams }: { searchParams: P
         <h2 className="m-0 text-sm font-semibold uppercase tracking-[0.08em] text-muted">Para revisar · {drafts.length}</h2>
         {drafts.length === 0 && <p className="m-0 text-[15px] text-body">Nada para revisar. Quando a ISO mudar algo, o rascunho aparece aqui.</p>}
         {drafts.map((a) => (
-          <article key={a.id} className="flex flex-col gap-3 rounded-card border border-line bg-card p-5">
+          <article key={a.groupId} className="flex flex-col gap-3 rounded-card border border-line bg-card p-5">
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
-              <span className="rounded-full border border-line px-2 py-0.5">{a.standard}</span>
-              <span>{CHANGE_LABEL[a.changeKind] ?? a.changeKind}</span>
-              <span>
-                · {a.stageFrom != null ? `${formatStage(a.stageFrom)} → ` : ""}
-                {formatStage(a.stageTo)}
-              </span>
-              <span>· {LIFECYCLE_LABEL[a.lifecycle]}</span>
+              <span className="rounded-full border border-line px-2 py-0.5">{a.standards.join(", ")}</span>
+              {a.changeKind && <span>{CHANGE_LABEL[a.changeKind] ?? a.changeKind}</span>}
+              {a.stageTo != null && (
+                <span>
+                  · {a.stageFrom != null ? `${formatStage(a.stageFrom)} → ` : ""}
+                  {formatStage(a.stageTo)}
+                </span>
+              )}
+              <span>· {STATUS_LABEL[a.standardStatus] ?? a.standardStatus}</span>
             </div>
-            <h3 className="m-0 font-display text-xl font-medium">{a.content["pt-br"].title}</h3>
-            <p className="m-0 text-sm text-body">{a.content["pt-br"].summary}</p>
+            <h3 className="m-0 font-display text-xl font-medium">{a.title}</h3>
+            <p className="m-0 text-sm text-body">{a.summary}</p>
             <p className="m-0 text-xs text-muted">
               Fonte:{" "}
               <a href={a.sourceUrl} className="underline" rel="noopener" target="_blank">
-                {a.reference} na ISO.org
+                {a.sourceTitle ?? a.sourceUrl}
               </a>{" "}
-              · Detectado {when(a.detectedAt)} · PT · EN · ES prontos
-              {!a.transitionDeadline && a.lifecycle === "transition" ? " · prazo de transição a confirmar" : ""}
+              · Detectado {when(a.createdAt)} · PT · EN · ES prontos
+              {!a.transitionDeadline && a.standardStatus === "in_transition" ? " · prazo de transição a confirmar" : ""}
             </p>
             <div className="flex flex-wrap gap-2 pt-1">
               <form action={publishAction}>
-                <input type="hidden" name="id" value={a.id} />
+                <input type="hidden" name="groupId" value={a.groupId} />
                 <button type="submit" className={btn.primary}>
                   Aprovar e publicar
                 </button>
               </form>
-              <Link href={`/admin/radar/${a.id}`} className={btn.secondary}>
+              <Link href={`/admin/radar/${a.groupId}`} className={btn.secondary}>
                 Editar rascunho
               </Link>
               <form action={discardAction}>
-                <input type="hidden" name="id" value={a.id} />
+                <input type="hidden" name="groupId" value={a.groupId} />
                 <button type="submit" className={btn.danger}>
                   Descartar
                 </button>
@@ -124,21 +133,22 @@ export default async function RadarQueuePage({ searchParams }: { searchParams: P
         <h2 className="m-0 text-sm font-semibold uppercase tracking-[0.08em] text-muted">Publicados · {published.length}</h2>
         <ul className="m-0 flex list-none flex-col border-t border-line p-0">
           {published.map((a) => (
-            <li key={a.id} className="flex flex-wrap items-center justify-between gap-3 border-b border-line py-3">
+            <li key={a.groupId} className="flex flex-wrap items-center justify-between gap-3 border-b border-line py-3">
               <div className="flex min-w-0 flex-col">
                 <a href={`/iso-radar/${a.slug}/`} target="_blank" className="font-medium hover:text-gold-deep">
-                  {a.content["pt-br"].title}
+                  {a.title}
                 </a>
                 <span className="text-xs text-muted">
-                  {a.standard} · publicado {a.publishedAt ? when(a.publishedAt) : ""} · verificado {when(a.lastVerifiedAt)}
+                  {a.standards.join(", ")} · publicado {a.publishedAt ? when(a.publishedAt) : ""}
+                  {a.verifiedAt ? ` · verificado ${when(a.verifiedAt)}` : ""}
                 </span>
               </div>
               <div className="flex gap-2">
-                <Link href={`/admin/radar/${a.id}`} className={btn.secondary}>
+                <Link href={`/admin/radar/${a.groupId}`} className={btn.secondary}>
                   Editar
                 </Link>
                 <form action={unpublishAction}>
-                  <input type="hidden" name="id" value={a.id} />
+                  <input type="hidden" name="groupId" value={a.groupId} />
                   <button type="submit" className={btn.secondary}>
                     Despublicar
                   </button>

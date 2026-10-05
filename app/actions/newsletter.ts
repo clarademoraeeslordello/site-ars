@@ -1,7 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { hasDb } from "@/lib/db";
+import { hasDb } from "@/lib/radar/queries";
+import { toDbLocale } from "@/lib/radar/content";
 import { subscribe } from "@/lib/newsletter";
 
 const schema = z.object({
@@ -19,7 +20,8 @@ export async function subscribeToRadar(input: z.input<typeof schema>): Promise<S
   if (!parsed.success) return { ok: false, error: "invalid" };
   if (!hasDb()) return { ok: false, error: "unavailable" };
   try {
-    await subscribe(parsed.data);
+    const { name, email, locale, sourcePage } = parsed.data;
+    await subscribe({ name, email, locale: toDbLocale(locale), sourcePath: sourcePage });
     return { ok: true };
   } catch (err) {
     console.error("[newsletter] subscribe failed", err);

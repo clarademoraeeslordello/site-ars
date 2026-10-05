@@ -1,9 +1,10 @@
 import "server-only";
 import { createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { and, eq, gt, isNull } from "drizzle-orm";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { getDb, schema } from "@/lib/db";
+import { getDb } from "@/db/client";
+import { adminLoginTokens } from "@/db/schema";
 import { adminEmails, sendMagicLink } from "@/lib/email";
 import { SITE_URL } from "@/lib/site";
 
@@ -26,8 +27,8 @@ export async function requestMagicLink(rawEmail: string) {
   if (!adminEmails().includes(email)) return;
   const token = randomBytes(32).toString("base64url");
   await getDb()
-    .insert(schema.adminLoginTokens)
-    .values({ tokenHash: sha256(token), email, expiresAt: new Date(Date.now() + LINK_MINUTES * 60_000) });
+    .insert(adminLoginTokens)
+    .values({ tokenHash: sha256(token), email, expiresAt: new Date(Date.now() + LINK_MINUTES * 60_000), ipHash: await requestIpHash() });
   // The link opens a confirmation page; the token is only spent by its POST, so mail scanners
   // that prefetch links cannot use it up.
   await sendMagicLink(email, `${SITE_URL}/admin/login/verify?token=${encodeURIComponent(token)}`);
@@ -37,16 +38,16 @@ export async function requestMagicLink(rawEmail: string) {
 export async function consumeMagicLink(token: string) {
   const db = getDb();
   const [row] = await db
-    .update(schema.adminLoginTokens)
+    .update(adminLoginTokens)
     .set({ usedAt: new Date() })
     .where(
       and(
-        eq(schema.adminLoginTokens.tokenHash, sha256(token)),
-        isNull(schema.adminLoginTokens.usedAt),
-        gt(schema.adminLoginTokens.expiresAt, new Date())
+        eq(adminLoginTokens.tokenHash, sha256(token)),
+        isNull(adminLoginTokens.usedAt),
+        gt(adminLoginTokens.expiresAt, new Date())
       )
     )
-    .returning({ email: schema.adminLoginTokens.email });
+    .returning({ email: adminLoginTokens.email });
   if (!row || !adminEmails().includes(row.email)) return false;
 
   const exp = Date.now() + SESSION_DAYS * 86_400_000;
@@ -59,6 +60,13 @@ export async function consumeMagicLink(token: string) {
     expires: new Date(exp),
   });
   return true;
+}
+
+/** Client IP, hashed with the server secret (raw IPs are never stored). */
+export async function requestIpHash() {
+  const h = await headers();
+  const ip = h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip");
+  return ip ? createHmac("sha256", secret()).update(ip).digest("hex") : null;
 }
 
 export async function getAdminEmail(): Promise<string | null> {

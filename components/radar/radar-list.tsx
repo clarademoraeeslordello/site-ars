@@ -40,7 +40,7 @@ export function RadarList({ items, dateLocale }: { items: RadarListItem[]; dateL
 
   const standards = useMemo(() => [...new Set(items.map((i) => i.standard))].sort(), [items]);
   const statuses = useMemo(
-    () => (["published", "transition", "under_review", "withdrawn"] as const).filter((s) => items.some((i) => i.lifecycle === s)),
+    () => (["published", "in_transition", "under_review", "withdrawn"] as const).filter((s) => items.some((i) => i.lifecycle === s)),
     [items]
   );
   const visible = items.filter((i) => (!standard || i.standard === standard) && (!status || i.lifecycle === status));

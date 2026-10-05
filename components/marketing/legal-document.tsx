@@ -1,22 +1,23 @@
 import { getTranslations } from "next-intl/server";
-import { PageHero } from "@/components/marketing/page-hero";
-import { Section } from "@/components/marketing/section";
+import { PageIntro } from "@/components/marketing/page-intro";
 
 /** Legal page shell. The text stays a placeholder until the legal review is done. */
 export async function LegalDocument({
   locale,
   titleKey,
+  href,
 }: {
   locale: string;
   titleKey: "privacyTitle" | "termsTitle";
+  href: "/privacidade" | "/termos";
 }) {
   const t = await getTranslations({ locale, namespace: "legal" });
   return (
     <>
-      <PageHero eyebrow="Audit Cockpits" title={t(titleKey)} />
-      <Section>
-        <p className="max-w-3xl leading-relaxed text-body">{t("placeholder")}</p>
-      </Section>
+      <PageIntro href={href} eyebrow="Audit Cockpits" crumb={t(titleKey)} title={t(titleKey)} />
+      <section className="container-site pt-10">
+        <p className="m-0 max-w-3xl leading-relaxed text-body">{t("placeholder")}</p>
+      </section>
     </>
   );
 }

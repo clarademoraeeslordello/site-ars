@@ -2,7 +2,7 @@ import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod/v4";
-import type { ArticleBody, ArticleLocale } from "@/lib/db/schema";
+import type { DraftBody } from "./content";
 import { formatStage, stageName } from "./stages";
 import { isoStandardUrl, type IsoDeliverable } from "./iso-open-data";
 
@@ -67,7 +67,7 @@ function factsFor(input: DraftInput) {
 
 let client: Anthropic | null = null;
 
-export async function writeDraft(input: DraftInput): Promise<Record<ArticleLocale, ArticleBody>> {
+export async function writeDraft(input: DraftInput): Promise<Record<"pt-br" | "en" | "es", DraftBody>> {
   client ??= new Anthropic();
   const response = await client.beta.messages.parse({
     model: MODEL,

@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Fraunces, Archivo, IBM_Plex_Mono } from "next/font/google";
-import { routing, htmlLang, type Locale } from "@/i18n/routing";
+import { routing, htmlLang } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/site";
+import { absoluteUrl } from "@/lib/seo";
+import { JsonLd, siteGraph } from "@/components/seo/json-ld";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
@@ -38,25 +40,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  // Canonical, hreflang and per-page Open Graph are built page by page in step 4 (SEO).
+  // Canonical, hreflang, Open Graph and Twitter are set per page through lib/seo.ts.
   return {
     metadataBase: new URL(SITE_URL),
-    title: {
-      default: t("title"),
-      template: "%s | Audit Cockpits",
-    },
+    title: { default: t("title"), template: "%s | Audit Cockpits" },
     description: t("description"),
-    openGraph: {
-      type: "website",
-      siteName: "Audit Cockpits",
-      title: t("title"),
-      description: t("description"),
-      locale: ogLocale[locale as Locale] ?? "pt_BR",
-    },
+    applicationName: "Audit Cockpits",
+    formatDetection: { telephone: false, email: false, address: false },
   };
 }
-
-const ogLocale: Record<Locale, string> = { "pt-br": "pt_BR", en: "en_US", es: "es_ES" };
 
 export default async function LocaleLayout({
   children,
@@ -71,6 +63,7 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tMeta = await getTranslations({ locale, namespace: "meta" });
   // Only the namespaces used by client components reach the browser. Server-rendered copy
   // (including content behind feature flags, such as the public tender text) never ships
   // in the page payload.
@@ -87,6 +80,7 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${archivo.variable} ${plexMono.variable}`}
     >
       <body>
+        <JsonLd data={siteGraph(locale, absoluteUrl("/", locale), tMeta("description"))} />
         <NextIntlClientProvider messages={clientMessages}>
           <SiteHeader />
           <main id="main">{children}</main>

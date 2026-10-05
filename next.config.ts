@@ -49,6 +49,23 @@ const MOVED: { from: LocalizedPath; to: LocalizedPath }[] = [
     from: { pt: "/frameworks", en: "/frameworks", es: "/frameworks" },
     to: { pt: "/frameworks", en: "/frameworks", es: "/marcos" },
   },
+  // Pages retired in step 3, consolidated into Frameworks, Plataforma and Como funciona.
+  {
+    from: { pt: "/lgpd", en: "/lgpd", es: "/lgpd" },
+    to: { pt: "/frameworks", en: "/frameworks", es: "/marcos" },
+  },
+  {
+    from: { pt: "/solucoes", en: "/solucoes", es: "/solucoes" },
+    to: { pt: "/plataforma", en: "/platform", es: "/plataforma" },
+  },
+  {
+    from: { pt: "/consultorias", en: "/consultorias", es: "/consultorias" },
+    to: { pt: "/plataforma", en: "/platform", es: "/plataforma" },
+  },
+  {
+    from: { pt: "/faq", en: "/faq", es: "/faq" },
+    to: { pt: "/como-funciona", en: "/how-it-works", es: "/como-funciona" },
+  },
 ];
 
 function movedRedirects() {

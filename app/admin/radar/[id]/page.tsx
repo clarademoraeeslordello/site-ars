@@ -1,27 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { eq } from "drizzle-orm";
+import { getDb } from "@/db/client";
+import { radarArticles } from "@/db/schema";
 import { requireAdmin } from "@/lib/admin/auth";
-import { getDb, schema } from "@/lib/db";
-import type { ArticleBody, ArticleLocale } from "@/lib/db/schema";
+import { DB_LOCALES } from "@/lib/radar/content";
 import { formatStage } from "@/lib/radar/stages";
 import { AdminShell, btn } from "../../admin-shell";
 import { saveArticleAction } from "../../actions";
 
-const LOCALES: { key: ArticleLocale; label: string }[] = [
-  { key: "pt-br", label: "Português" },
-  { key: "en", label: "English" },
-  { key: "es", label: "Español" },
-];
-
-const FIELDS: { key: keyof ArticleBody; label: string; rows: number }[] = [
-  { key: "title", label: "Título", rows: 1 },
-  { key: "summary", label: "Resumo", rows: 2 },
-  { key: "whatHappened", label: "O que aconteceu", rows: 4 },
-  { key: "whatChanged", label: "O que mudou", rows: 5 },
-  { key: "impact", label: "Impacto (análise marcada como tal)", rows: 5 },
-  { key: "watch", label: "O que observar", rows: 4 },
-];
+const LOCALE_LABEL = { "pt-BR": "Português", en: "English", es: "Español" } as const;
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 const input = "w-full rounded-control border border-line bg-well px-3 py-2 text-[15px] leading-[1.55]";
 
@@ -35,8 +24,11 @@ export default async function EditArticlePage({
   const email = await requireAdmin();
   const { id } = await params;
   const { ok } = await searchParams;
-  const [a] = await getDb().select().from(schema.radarArticles).where(eq(schema.radarArticles.id, Number(id))).limit(1);
-  if (!a) notFound();
+  if (!UUID.test(id)) notFound();
+  const rows = await getDb().select().from(radarArticles).where(eq(radarArticles.groupId, id));
+  const pt = rows.find((r) => r.locale === "pt-BR") ?? rows[0];
+  if (!pt) notFound();
+  const byLocale = new Map(rows.map((r) => [r.locale, r]));
 
   return (
     <AdminShell email={email} active="radar">
@@ -44,13 +36,14 @@ export default async function EditArticlePage({
         ← Fila de revisão
       </Link>
       <header className="flex flex-col gap-1">
-        <h1 className="m-0 font-display text-[28px] font-medium">{a.content["pt-br"].title}</h1>
+        <h1 className="m-0 font-display text-[28px] font-medium">{pt.title}</h1>
         <p className="m-0 text-sm text-muted">
-          {a.reference} · estágio {formatStage(a.stageTo)} ·{" "}
-          <a href={a.sourceUrl} className="underline" target="_blank" rel="noopener">
+          {pt.reference ?? pt.standards.join(", ")}
+          {pt.stageTo != null ? ` · estágio ${formatStage(pt.stageTo)}` : ""} ·{" "}
+          <a href={pt.sourceUrl} className="underline" target="_blank" rel="noopener">
             fonte oficial
           </a>{" "}
-          · {a.status === "published" ? "publicado" : a.status === "draft" ? "rascunho" : "descartado"}
+          · {pt.status === "published" ? "publicado" : pt.status === "draft" ? "rascunho" : pt.status}
         </p>
       </header>
       {ok === "salvo" && (
@@ -60,52 +53,55 @@ export default async function EditArticlePage({
       )}
 
       <form action={saveArticleAction} className="flex flex-col gap-8">
-        <input type="hidden" name="id" value={a.id} />
+        <input type="hidden" name="groupId" value={id} />
 
         <fieldset className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4 rounded-card border border-line bg-card p-5">
           <legend className="px-1 text-sm font-semibold">Status e transição</legend>
           <label className="flex flex-col gap-1.5 text-sm font-medium">
             Status no site
-            <select name="lifecycle" defaultValue={a.lifecycle} className={input}>
+            <select name="standardStatus" defaultValue={pt.standardStatus} className={input}>
               <option value="published">Publicado</option>
               <option value="under_review">Em revisão</option>
-              <option value="transition">Em transição</option>
+              <option value="in_transition">Em transição</option>
               <option value="withdrawn">Retirado</option>
             </select>
           </label>
           <label className="flex flex-col gap-1.5 text-sm font-medium">
             Prazo de transição (vazio = a confirmar)
-            <input type="date" name="transitionDeadline" defaultValue={a.transitionDeadline ?? ""} className={input} />
+            <input type="date" name="transitionDeadline" defaultValue={pt.transitionDeadline ?? ""} className={input} />
           </label>
           <label className="flex flex-col gap-1.5 text-sm font-medium">
             Fonte do prazo (link, ex.: IAF)
-            <input type="url" name="transitionSource" defaultValue={a.transitionSource ?? ""} className={input} />
+            <input type="url" name="transitionSource" defaultValue={pt.transitionSource ?? ""} className={input} />
           </label>
         </fieldset>
 
-        {LOCALES.map((l) => (
-          <fieldset key={l.key} className="flex flex-col gap-4 rounded-card border border-line bg-card p-5">
-            <legend className="px-1 text-sm font-semibold">{l.label}</legend>
-            {FIELDS.map((f) => (
-              <label key={f.key} className="flex flex-col gap-1.5 text-sm font-medium">
-                {f.label}
-                <textarea
-                  name={`${l.key}.${f.key}`}
-                  defaultValue={a.content[l.key][f.key]}
-                  rows={f.rows}
-                  required
-                  className={input}
-                />
+        {DB_LOCALES.map((locale) => {
+          const row = byLocale.get(locale);
+          return (
+            <fieldset key={locale} className="flex flex-col gap-4 rounded-card border border-line bg-card p-5">
+              <legend className="px-1 text-sm font-semibold">{LOCALE_LABEL[locale]}</legend>
+              <label className="flex flex-col gap-1.5 text-sm font-medium">
+                Título
+                <input name={`${locale}.title`} defaultValue={row?.title ?? ""} required className={input} />
               </label>
-            ))}
-          </fieldset>
-        ))}
+              <label className="flex flex-col gap-1.5 text-sm font-medium">
+                Resumo
+                <textarea name={`${locale}.summary`} defaultValue={row?.summary ?? ""} rows={2} required className={input} />
+              </label>
+              <label className="flex flex-col gap-1.5 text-sm font-medium">
+                Texto (cada seção começa com &quot;## &quot;; a análise fica marcada como tal)
+                <textarea name={`${locale}.bodyMd`} defaultValue={row?.bodyMd ?? ""} rows={16} required className={`${input} font-mono text-[13px]`} />
+              </label>
+            </fieldset>
+          );
+        })}
 
         <div className="flex flex-wrap gap-2">
           <button type="submit" name="intent" value="save" className={btn.secondary}>
             Salvar
           </button>
-          {a.status !== "published" && (
+          {pt.status !== "published" && (
             <button type="submit" name="intent" value="publish" className={btn.primary}>
               Salvar e publicar
             </button>
