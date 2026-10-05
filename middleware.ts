@@ -7,6 +7,11 @@ const intl = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+  // One canonical host: www.auditcockpits.com → auditcockpits.com (avoids duplicate content).
+  const host = request.headers.get("x-forwarded-host") ?? request.headers.get("host") ?? "";
+  if (host.startsWith("www.")) {
+    return NextResponse.redirect(`https://${host.slice(4)}${pathname}${search}`, 308);
+  }
   // Old ARS app links on the apex domain go to app.auditcockpits.com (path and query kept).
   if (isAppPath(pathname)) {
     const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
