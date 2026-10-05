@@ -1,5 +1,5 @@
-// Applies pending migrations from db/migrations. Runs as Railway's pre-deploy command, so a
-// failed migration stops the deploy and the previous version keeps serving.
+// Applies pending migrations from db/migrations. Runs at service start (pnpm start), before
+// next start: a failed migration stops the new deploy and the previous version keeps serving.
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
