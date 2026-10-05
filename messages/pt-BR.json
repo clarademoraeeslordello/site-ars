@@ -397,7 +397,8 @@
         "consent": "Quero receber o ISO Radar e li a <link>Política de Privacidade</link>.",
         "submit": "Receber o ISO Radar",
         "success": "Pronto. Enviamos um link para confirmar sua inscrição.",
-        "soon": "As inscrições abrem em breve."
+        "soon": "As inscrições abrem em breve.",
+        "error": "Não foi possível concluir a inscrição. Tente de novo em instantes."
       },
       "source": "ISO.org",
       "articles": [
@@ -1005,5 +1006,53 @@
       "rulerBandMid": "Risco moderado",
       "rulerBandHigh": "Audit Ready"
     }
+  },
+  "radarPage": {
+    "metaDescription": "Mudanças nas normas ISO de gestão, com data, estágio oficial e link para a fonte. Atualizado a partir dos dados abertos da ISO.",
+    "eyebrow": "Monitoramento de normas",
+    "title": "ISO Radar",
+    "text": "Todo dia conferimos os dados oficiais da ISO para as normas que monitoramos. Quando algo muda, explicamos o que aconteceu, quem é afetado e o que observar, sempre com a data e o link da fonte.",
+    "filters": {
+      "label": "Filtrar artigos",
+      "standard": "Norma",
+      "status": "Status",
+      "all": "Todas",
+      "allStatuses": "Todos"
+    },
+    "status": {
+      "published": "Publicado",
+      "under_review": "Em revisão",
+      "transition": "Em transição",
+      "withdrawn": "Retirado"
+    },
+    "count": "{count, plural, =0 {Nenhum artigo} one {# artigo} other {# artigos}}",
+    "empty": "Ainda não há artigos publicados. Assim que a próxima mudança for revisada, ela aparece aqui.",
+    "emptyFiltered": "Nenhum artigo com esses filtros.",
+    "clear": "Limpar filtros",
+    "source": "Fonte",
+    "sourceDate": "Data da fonte",
+    "lastVerified": "Última verificação",
+    "detected": "Detectado em",
+    "stage": "Estágio ISO",
+    "document": "Documento",
+    "transition": "Prazo de transição",
+    "toConfirm": "A confirmar",
+    "toConfirmNote": "Prazos de transição são definidos pelos organismos de acreditação (IAF), não pela ISO. Atualizamos quando houver fonte.",
+    "officialPage": "Ver a página oficial na ISO.org",
+    "sections": {
+      "whatHappened": "O que aconteceu",
+      "whatChanged": "O que mudou",
+      "impact": "Impacto",
+      "watch": "O que observar"
+    },
+    "back": "Todos os artigos do ISO Radar",
+    "dataNote": "Dados: ISO Open Data, publicados pela ISO sob licença ODC-BY. Este conteúdo resume e contextualiza; não reproduz o texto das normas.",
+    "subscribeTitle": "Receba a edição mensal",
+    "notice": {
+      "confirmed": "Inscrição confirmada. Você vai receber a próxima edição do ISO Radar.",
+      "unsubscribed": "Inscrição cancelada. Você não vai mais receber o ISO Radar.",
+      "invalid": "Este link não é mais válido."
+    },
+    "monitoring": "Normas monitoradas"
   }
 }

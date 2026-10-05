@@ -78,6 +78,7 @@ export default async function LocaleLayout({
     nav: messages.nav,
     demo: { form: (messages.demo as Record<string, unknown>)?.form },
     home: { radar: { form: ((messages.home as Record<string, Record<string, unknown>>)?.radar)?.form } },
+    radarPage: messages.radarPage,
   };
 
   return (

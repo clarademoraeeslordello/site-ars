@@ -38,7 +38,7 @@ export function SiteHeader() {
       >
         {t("skipToContent")}
       </a>
-      <div className="container-site grid grid-cols-[minmax(0,1fr)_auto] items-center gap-[clamp(14px,2.4vw,32px)] py-3 nav:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+      <div className="container-site grid grid-cols-[minmax(0,1fr)_auto] items-center gap-[clamp(14px,2.4vw,32px)] py-3 nav:grid-cols-[auto_minmax(0,1fr)_auto]">
         <Link
           href="/"
           aria-label={t("homeLabel")}
@@ -57,7 +57,7 @@ export function SiteHeader() {
 
         <nav
           aria-label={t("mainLabel")}
-          className="hidden justify-self-center gap-[clamp(14px,2vw,26px)] whitespace-nowrap text-[15px] nav:flex"
+          className="hidden justify-self-start gap-[clamp(14px,2vw,26px)] pl-[clamp(16px,3vw,48px)] whitespace-nowrap text-[15px] nav:flex"
         >
           {MAIN_NAV.map((item) => (
             <Link

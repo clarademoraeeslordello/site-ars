@@ -17,8 +17,8 @@ export default function middleware(request: NextRequest) {
     const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
     return NextResponse.redirect(`${APP_ORIGIN}${path}${search}`, 308);
   }
-  // The site's own API routes are not localized.
-  if (pathname.startsWith("/api/")) return NextResponse.next();
+  // The site's own API routes and the /admin panel are not localized.
+  if (pathname.startsWith("/api/") || pathname === "/admin" || pathname.startsWith("/admin/")) return NextResponse.next();
   return intl(request);
 }
 

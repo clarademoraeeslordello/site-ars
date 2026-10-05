@@ -397,7 +397,8 @@
         "consent": "I want to receive ISO Radar and I have read the <link>Privacy Policy</link>.",
         "submit": "Get ISO Radar",
         "success": "Done. We sent you a link to confirm your subscription.",
-        "soon": "Subscriptions open soon."
+        "soon": "Subscriptions open soon.",
+        "error": "We could not complete your subscription. Please try again shortly."
       },
       "source": "ISO.org",
       "articles": [
@@ -1005,5 +1006,53 @@
       "rulerBandMid": "Moderate risk",
       "rulerBandHigh": "Audit Ready"
     }
+  },
+  "radarPage": {
+    "metaDescription": "Changes to ISO management system standards, with dates, the official stage and a link to the source. Updated from ISO Open Data.",
+    "eyebrow": "Standards monitoring",
+    "title": "ISO Radar",
+    "text": "Every day we check ISO's official data for the standards we monitor. When something changes, we explain what happened, who is affected and what to watch, always with the date and a link to the source.",
+    "filters": {
+      "label": "Filter articles",
+      "standard": "Standard",
+      "status": "Status",
+      "all": "All",
+      "allStatuses": "All"
+    },
+    "status": {
+      "published": "Published",
+      "under_review": "Under review",
+      "transition": "In transition",
+      "withdrawn": "Withdrawn"
+    },
+    "count": "{count, plural, =0 {No articles} one {# article} other {# articles}}",
+    "empty": "No articles published yet. As soon as the next change is reviewed, it shows up here.",
+    "emptyFiltered": "No articles match these filters.",
+    "clear": "Clear filters",
+    "source": "Source",
+    "sourceDate": "Source date",
+    "lastVerified": "Last verified",
+    "detected": "Detected on",
+    "stage": "ISO stage",
+    "document": "Document",
+    "transition": "Transition deadline",
+    "toConfirm": "To be confirmed",
+    "toConfirmNote": "Transition deadlines are set by accreditation bodies (IAF), not by ISO. We update this once there is a source.",
+    "officialPage": "See the official page on ISO.org",
+    "sections": {
+      "whatHappened": "What happened",
+      "whatChanged": "What changed",
+      "impact": "Impact",
+      "watch": "What to watch"
+    },
+    "back": "All ISO Radar articles",
+    "dataNote": "Data: ISO Open Data, published by ISO under the ODC-BY licence. This content summarises and adds context; it does not reproduce the text of the standards.",
+    "subscribeTitle": "Get the monthly edition",
+    "notice": {
+      "confirmed": "Subscription confirmed. You will receive the next ISO Radar edition.",
+      "unsubscribed": "You have unsubscribed. You will no longer receive ISO Radar.",
+      "invalid": "This link is no longer valid."
+    },
+    "monitoring": "Monitored standards"
   }
 }
