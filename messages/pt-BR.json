@@ -450,7 +450,8 @@
         "countryRequired": "Informe o país.",
         "frameworksRequired": "Selecione ao menos um framework.",
         "generic": "Não foi possível enviar. Verifique os campos e tente novamente."
-      }
+      },
+      "privacy": "Usamos estes dados só para responder ao seu pedido. Veja a <link>Política de Privacidade</link>."
     }
   },
   "legal": {
@@ -769,5 +770,64 @@
       ],
       "contactTitle": "Prefere falar direto?"
     }
+  },
+  "newsletter": {
+    "confirm": {
+      "metaTitle": "Confirmar inscrição",
+      "title": "Confirme sua inscrição no ISO Radar",
+      "text": "Falta um passo. Clique no botão abaixo para confirmar que você quer receber o ISO Radar neste e-mail.",
+      "button": "Confirmar inscrição",
+      "doneTitle": "Inscrição confirmada",
+      "doneText": "Pronto. Você vai receber a próxima edição do ISO Radar. Pode mudar o idioma ou cancelar quando quiser.",
+      "manage": "Gerenciar preferências",
+      "invalidTitle": "Link inválido ou expirado",
+      "invalidText": "Este link de confirmação não é mais válido. Ele vale por 48 horas. Faça a inscrição de novo para receber um link novo.",
+      "back": "Voltar para a página inicial"
+    },
+    "preferences": {
+      "metaTitle": "Preferências do ISO Radar",
+      "title": "Preferências do ISO Radar",
+      "text": "Escolha o idioma em que quer receber o ISO Radar.",
+      "locale": "Idioma",
+      "save": "Salvar preferências",
+      "saved": "Preferências salvas.",
+      "unsubscribeTitle": "Não quer mais receber?",
+      "unsubscribe": "Cancelar inscrição",
+      "invalidTitle": "Link inválido",
+      "invalidText": "Não encontramos uma inscrição para este link."
+    },
+    "unsubscribe": {
+      "metaTitle": "Cancelar inscrição",
+      "title": "Cancelar a inscrição no ISO Radar",
+      "text": "Você vai deixar de receber o ISO Radar neste e-mail.",
+      "button": "Cancelar inscrição",
+      "doneTitle": "Inscrição cancelada",
+      "doneText": "Você não vai mais receber o ISO Radar. Se mudar de ideia, é só se inscrever de novo."
+    },
+    "form": {
+      "error": "Não foi possível concluir agora. Tente de novo em alguns minutos.",
+      "invalid": "Confira o nome, o e-mail e o consentimento.",
+      "sending": "Enviando…"
+    }
+  },
+  "emails": {
+    "confirm": {
+      "subject": "Confirme sua inscrição no ISO Radar",
+      "preheader": "Falta um clique para receber o ISO Radar.",
+      "heading": "Confirme sua inscrição",
+      "hello": "Olá, {name}.",
+      "p1": "Recebemos um pedido para enviar o ISO Radar a este e-mail: uma edição por mês, curta, sobre mudanças nas normas, sempre com o link da fonte oficial.",
+      "p2": "Para confirmar, use o botão abaixo. O link vale por 48 horas.",
+      "cta": "Confirmar inscrição",
+      "ignore": "Se você não pediu esta inscrição, ignore este e-mail. Nada será enviado sem a confirmação.",
+      "footer": "Audit Cockpits · auditcockpits.com"
+    }
+  },
+  "consentBanner": {
+    "text": "Usamos cookies de análise (Google Analytics) para entender como o site é usado. Eles só são ativados com a sua permissão.",
+    "accept": "Aceitar",
+    "reject": "Recusar",
+    "policy": "Política de Privacidade",
+    "manage": "Preferências de cookies"
   }
 }

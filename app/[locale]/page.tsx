@@ -19,6 +19,7 @@ import { Globe } from "@/components/market/globe";
 import { CountryRanking } from "@/components/market/country-ranking";
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { features } from "@/lib/features";
+import { newsletterEnabled } from "@/lib/email/sender";
 import { CtaFinal } from "@/components/marketing/cta-final";
 import { buildMetadata } from "@/lib/seo";
 
@@ -69,7 +70,7 @@ export default async function HomePage({ params }: Props) {
             </h1>
             <p className="m-0 max-w-[640px] text-lg leading-[1.6] text-pretty text-body">{t("hero.lead")}</p>
             <div className="flex flex-wrap gap-2.5 pt-1">
-              <Link href="/demonstracao" className={buttonClasses()}>
+              <Link href="/demonstracao" data-track="cta_demo_click" data-track-location="hero" className={buttonClasses()}>
                 {t("hero.ctaDemo")}
               </Link>
               <a href="#como-funciona" className={buttonClasses({ variant: "secondary" })}>
@@ -279,7 +280,7 @@ export default async function HomePage({ params }: Props) {
             {t("radar.title")}
           </h2>
           <p className="m-0 text-[15px] leading-[1.6] text-body">{t("radar.text")}</p>
-          <NewsletterSignup />
+          <NewsletterSignup enabled={newsletterEnabled()} />
         </div>
         {/* Article pages arrive with the ISO Radar (steps 6 and 7); until then the titles are not links. */}
         <ul className="m-0 flex list-none flex-col p-0">

@@ -17,7 +17,12 @@ export async function CtaFinal({ showButton = true }: { showButton?: boolean }) 
         </div>
         <div className="flex flex-col items-start gap-3">
           {showButton && (
-            <Link href="/demonstracao" className={buttonClasses({ className: "hover:bg-gold-light hover:text-dark" })}>
+            <Link
+              href="/demonstracao"
+              data-track="cta_demo_click"
+              data-track-location="cta_final"
+              className={buttonClasses({ className: "hover:bg-gold-light hover:text-dark" })}
+            >
               {t("button")}
             </Link>
           )}

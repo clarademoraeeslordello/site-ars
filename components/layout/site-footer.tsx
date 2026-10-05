@@ -4,6 +4,7 @@ import { BrandIcon } from "@/components/brand/brand-icon";
 import { LanguageSwitcher } from "./language-switcher";
 import { FOOTER_NAV } from "./nav-items";
 import { APP_URL, COMPANY_NAME } from "@/lib/site";
+import { CookiePreferencesButton } from "@/components/analytics/consent-banner";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -29,9 +30,10 @@ export function SiteFooter() {
               {item.key === "privacy" || item.key === "terms" ? t(item.key) : tn(item.key)}
             </Link>
           ))}
-          <a href={APP_URL} className="whitespace-nowrap text-body hover:text-ink">
+          <a href={APP_URL} data-track="app_login_click" data-track-location="footer" className="whitespace-nowrap text-body hover:text-ink">
             {t("loginApp")}
           </a>
+          <CookiePreferencesButton />
         </nav>
         <LanguageSwitcher />
       </div>

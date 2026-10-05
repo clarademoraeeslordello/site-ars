@@ -74,12 +74,16 @@ export function SiteHeader() {
           <LanguageSwitcher className="hidden sm:flex" />
           <a
             href={APP_URL}
+            data-track="app_login_click"
+            data-track-location="header"
             className="hidden text-sm font-medium text-ink hover:text-gold-deep sm:inline"
           >
             {t("login")}
           </a>
           <Link
             href="/demonstracao"
+            data-track="cta_demo_click"
+            data-track-location="header"
             className={buttonClasses({ size: "sm", className: "hidden sm:inline-flex" })}
           >
             {t("bookDemo")}
@@ -129,10 +133,10 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="mt-4 flex flex-col gap-3 border-t border-divider pt-4 sm:hidden">
-            <Link href="/demonstracao" className={buttonClasses({ className: "w-full" })}>
+            <Link href="/demonstracao" data-track="cta_demo_click" data-track-location="mobile_menu" className={buttonClasses({ className: "w-full" })}>
               {t("bookDemo")}
             </Link>
-            <a href={APP_URL} className={buttonClasses({ variant: "secondary", className: "w-full" })}>
+            <a href={APP_URL} data-track="app_login_click" data-track-location="mobile_menu" className={buttonClasses({ variant: "secondary", className: "w-full" })}>
               {t("login")}
             </a>
             <LanguageSwitcher className="justify-center gap-5 py-2 text-sm" />
