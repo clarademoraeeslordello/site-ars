@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/marketing/page-intro";
 import { CtaFinal, ContactLine } from "@/components/marketing/cta-final";
 
@@ -8,7 +9,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.security.meta" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({ locale, href: "/seguranca", title: t("title"), description: t("description") });
 }
 
 export default async function SecurityPage({ params }: Props) {
@@ -19,7 +20,7 @@ export default async function SecurityPage({ params }: Props) {
 
   return (
     <>
-      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageIntro href="/seguranca" eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 
       <section aria-label={t("eyebrow")} className="container-site section-space">
         <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-x-10 gap-y-0 border-t border-line p-0">

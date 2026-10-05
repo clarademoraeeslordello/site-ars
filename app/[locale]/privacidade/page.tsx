@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 import { LegalDocument } from "@/components/marketing/legal-document";
 
 export async function generateMetadata({
@@ -10,7 +11,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal" });
   // noindex while the text is a placeholder pending legal review.
-  return { title: t("privacyTitle"), robots: { index: false } };
+  return buildMetadata({ locale, href: "/privacidade", title: t("privacyTitle"), description: t("privacyTitle"), noindex: true });
 }
 
 export default async function PrivacyPage({
@@ -20,5 +21,5 @@ export default async function PrivacyPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <LegalDocument locale={locale} titleKey="privacyTitle" />;
+  return <LegalDocument locale={locale} titleKey="privacyTitle" href="/privacidade" />;
 }

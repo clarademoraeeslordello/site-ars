@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
+import { JsonLd, softwareApplication } from "@/components/seo/json-ld";
 import { Link } from "@/i18n/navigation";
 import { PageIntro } from "@/components/marketing/page-intro";
 import { CtaFinal } from "@/components/marketing/cta-final";
@@ -13,7 +16,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.platform.meta" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({ locale, href: "/plataforma", title: t("title"), description: t("description") });
 }
 
 export default async function PlatformPage({ params }: Props) {
@@ -41,7 +44,8 @@ export default async function PlatformPage({ params }: Props) {
 
   return (
     <>
-      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")}>
+      <JsonLd data={softwareApplication(locale as Locale, absoluteUrl("/plataforma", locale as Locale), t("meta.description"))} />
+      <PageIntro href="/plataforma" eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")}>
         <div className="flex flex-wrap gap-2.5 pt-1">
           <Link href="/demonstracao" className={buttonClasses()}>
             {th("hero.ctaDemo")}

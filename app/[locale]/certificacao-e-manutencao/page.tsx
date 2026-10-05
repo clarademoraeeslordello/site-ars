@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/marketing/page-intro";
 import { CtaFinal } from "@/components/marketing/cta-final";
 import { CertificationMock } from "@/components/product/product-mocks";
@@ -9,7 +10,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.cert.meta" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({ locale, href: "/certificacao-e-manutencao", title: t("title"), description: t("description") });
 }
 
 export default async function CertificationPage({ params }: Props) {
@@ -22,7 +23,7 @@ export default async function CertificationPage({ params }: Props) {
 
   return (
     <>
-      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")}>
+      <PageIntro href="/certificacao-e-manutencao" eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")}>
         <p className="m-0 max-w-[680px] rounded-control border border-tint-line bg-tint px-4 py-3.5 text-[15px] font-medium leading-[1.6]">
           {t("callout")}
         </p>

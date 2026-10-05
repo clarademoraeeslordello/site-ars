@@ -20,6 +20,7 @@ import { CountryRanking } from "@/components/market/country-ranking";
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { features } from "@/lib/features";
 import { CtaFinal } from "@/components/marketing/cta-final";
+import { buildMetadata } from "@/lib/seo";
 
 const FRAMEWORKS = [
   "ISO 27001", "ISO 27701", "ISO 9001", "ISO 14001", "ISO 22301", "ISO 42001", "ISO 20000-1",
@@ -37,7 +38,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home.meta" });
-  return { title: { absolute: t("title") }, description: t("description") };
+  return buildMetadata({ locale, href: "/", title: t("title"), description: t("description"), absoluteTitle: true });
 }
 
 export default async function HomePage({ params }: Props) {

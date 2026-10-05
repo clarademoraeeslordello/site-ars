@@ -19,11 +19,14 @@ export default function middleware(request: NextRequest) {
   }
   // The site's own API routes are not localized.
   if (pathname.startsWith("/api/")) return NextResponse.next();
-  return intl(request);
+  const response = intl(request);
+  // Preview hosts (*.up.railway.app) must not compete with auditcockpits.com in search.
+  if (host.endsWith(".up.railway.app")) response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return response;
 }
 
 export const config = {
   // Skip Next internals, files with an extension and metadata routes without one.
   // /api is included only for the app's API paths handled above.
-  matcher: ["/((?!api|_next|_vercel|apple-icon|opengraph-image|.*\\..*).*)", "/api/:path*"],
+  matcher: ["/((?!api|_next|_vercel|apple-icon|og/|.*\\..*).*)", "/api/:path*"],
 };

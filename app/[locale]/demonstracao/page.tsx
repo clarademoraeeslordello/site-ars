@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/marketing/page-intro";
 import { ContactLine } from "@/components/marketing/cta-final";
 import { DemoRequestForm } from "@/components/forms/demo-request-form";
@@ -9,7 +10,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.demo.meta" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({ locale, href: "/demonstracao", title: t("title"), description: t("description") });
 }
 
 export default async function DemoPage({ params }: Props) {
@@ -20,7 +21,7 @@ export default async function DemoPage({ params }: Props) {
 
   return (
     <>
-      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageIntro href="/demonstracao" eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 
       <section aria-label={t("eyebrow")} className="container-site pt-[clamp(48px,6vw,72px)]">
         <div className="grid grid-cols-[minmax(0,1fr)] items-start gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">

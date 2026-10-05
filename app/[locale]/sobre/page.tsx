@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { CtaFinal } from "@/components/marketing/cta-final";
 
@@ -8,7 +9,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.about.meta" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({ locale, href: "/sobre", title: t("title"), description: t("description") });
 }
 
 export default async function AboutPage({ params }: Props) {
@@ -19,7 +20,7 @@ export default async function AboutPage({ params }: Props) {
   return (
     <>
       <section aria-labelledby="page-title" className="container-site pt-[clamp(32px,5vw,56px)]">
-        <Breadcrumb items={[{ label: t("eyebrow") }]} />
+        <Breadcrumb items={[{ label: t("eyebrow"), href: "/sobre" }]} />
         <div className="mt-[clamp(32px,5vw,56px)] flex flex-col gap-[18px] rounded-card border border-line bg-card p-[clamp(28px,4.5vw,56px)]">
           <span className="eyebrow">{t("eyebrow")}</span>
           <h1 id="page-title" className="m-0 font-display text-h2 font-medium">

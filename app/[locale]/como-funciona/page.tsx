@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
+import { JsonLd, faqPage } from "@/components/seo/json-ld";
 import { PageIntro } from "@/components/marketing/page-intro";
 import { CtaFinal } from "@/components/marketing/cta-final";
 import { JourneyMock } from "@/components/product/product-mocks";
@@ -9,7 +11,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.how.meta" });
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({ locale, href: "/como-funciona", title: t("title"), description: t("description") });
 }
 
 export default async function HowItWorksPage({ params }: Props) {
@@ -24,7 +26,7 @@ export default async function HowItWorksPage({ params }: Props) {
 
   return (
     <>
-      <PageIntro eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageIntro href="/como-funciona" eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 
       {/* The chain */}
       <section aria-labelledby="chain-title" className="container-site section-space">
@@ -71,7 +73,8 @@ export default async function HowItWorksPage({ params }: Props) {
         </div>
       </section>
 
-      {/* FAQ (visible, so FAQPage structured data can be added in step 4) */}
+      {/* FAQ: visible on the page, so it can carry FAQPage structured data */}
+      <JsonLd data={faqPage(faq)} />
       <section aria-labelledby="faq-title" className="container-site section-space">
         <h2 id="faq-title" className="m-0 font-display text-h2 font-medium">
           {t("faqTitle")}
