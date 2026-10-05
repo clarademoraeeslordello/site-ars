@@ -188,6 +188,15 @@ export const radarArticles = pgTable(
     seoTitle: text("seo_title"),
     seoDescription: text("seo_description"),
     scanId: uuid("scan_id").references(() => radarScans.id, { onDelete: "set null" }),
+    // Automated radar: which ISO Open Data document and stage change the article is about.
+    isoId: integer("iso_id"),
+    reference: text("reference"), // e.g. ISO/DIS 45001
+    changeKind: text("change_kind"), // new_project | stage_change | published | withdrawn | to_be_revised | confirmed
+    stageFrom: integer("stage_from"), // harmonized stage code as an integer, 4060 = 40.60
+    stageTo: integer("stage_to"),
+    // Set by accreditation bodies (IAF), not by ISO: null means "to be confirmed".
+    transitionDeadline: date("transition_deadline"),
+    transitionSource: text("transition_source"),
     publishedAt: timestamp("published_at", { withTimezone: true }),
     createdAt: createdAt(),
     updatedAt: updatedAt(),
@@ -195,6 +204,7 @@ export const radarArticles = pgTable(
   (t) => [
     uniqueIndex("radar_articles_locale_slug_uq").on(t.locale, t.slug),
     uniqueIndex("radar_articles_group_locale_uq").on(t.groupId, t.locale),
+    index("radar_articles_iso_stage_idx").on(t.isoId, t.stageTo),
     index("radar_articles_status_published_idx").on(t.status, t.publishedAt),
     check("radar_articles_locale_ck", sql`${t.locale} in ('pt-BR','en','es')`),
     check("radar_articles_status_ck", sql`${t.status} in ('draft','in_review','published','archived')`),
@@ -207,6 +217,28 @@ export const radarArticles = pgTable(
       sql`${t.standardStatus} in ('published','under_review','in_transition','withdrawn')`
     ),
   ]
+);
+
+/**
+ * Last known state of every ISO deliverable the radar watches (one row per ISO Open Data id).
+ * The daily scan diffs ISO Open Data against this table to detect stage changes.
+ */
+export const radarDeliverables = pgTable(
+  "radar_deliverables",
+  {
+    isoId: integer("iso_id").primaryKey(),
+    family: text("family").notNull(), // catalog key, e.g. iso-9001
+    reference: text("reference").notNull(), // e.g. ISO 9001:2026
+    titleEn: text("title_en"),
+    stage: integer("stage").notNull(),
+    publicationDate: date("publication_date"),
+    edition: integer("edition"),
+    replaces: integer("replaces").array().notNull().default(sql`'{}'::integer[]`),
+    replacedBy: integer("replaced_by").array().notNull().default(sql`'{}'::integer[]`),
+    firstSeenAt: createdAt(),
+    lastCheckedAt: timestamp("last_checked_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("radar_deliverables_family_idx").on(t.family)]
 );
 
 // ── Admin (magic link) ──────────────────────────────────────────────────────

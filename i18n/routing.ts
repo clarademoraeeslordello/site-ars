@@ -24,6 +24,7 @@ export const routing = defineRouting({
     "/demonstracao": { "pt-br": "/demonstracao", en: "/demo", es: "/demostracion" },
     "/privacidade": { "pt-br": "/privacidade", en: "/privacy", es: "/privacidad" },
     "/termos": { "pt-br": "/termos", en: "/terms", es: "/terminos" },
+    "/mercado": { "pt-br": "/mercado", en: "/market", es: "/mercado" },
     "/iso-radar": "/iso-radar",
     "/iso-radar/[slug]": "/iso-radar/[slug]",
     "/recursos": { "pt-br": "/recursos", en: "/resources", es: "/recursos" },

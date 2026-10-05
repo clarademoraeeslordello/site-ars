@@ -15,6 +15,13 @@
       "when": 1791228029069,
       "tag": "0001_consent_events_append_only",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791230358907,
+      "tag": "0002_radar_automation",
+      "breakpoints": true
     }
   ]
 }

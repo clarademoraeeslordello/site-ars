@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { htmlLang, type Locale } from "@/i18n/routing";
 import { buttonClasses } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { StatusBadge, type Tone } from "@/components/ui/status-badge";
 import { HeroLiveCard } from "@/components/product/hero-live-card";
 import {
   AppHomeMock,
@@ -15,11 +13,6 @@ import {
   RenewalMock,
   ReportCoverMock,
 } from "@/components/product/product-mocks";
-import { Globe } from "@/components/market/globe";
-import { CountryRanking } from "@/components/market/country-ranking";
-import { NewsletterSignup } from "@/components/forms/newsletter-signup";
-import { features } from "@/lib/features";
-import { newsletterEnabled } from "@/lib/email/sender";
 import { CtaFinal } from "@/components/marketing/cta-final";
 import { buildMetadata } from "@/lib/seo";
 
@@ -28,11 +21,6 @@ const FRAMEWORKS = [
   "ISO 13485", "ISO 17025", "LGPD", "NIS2", "DORA", "Cyber Essentials", "SOC 2",
 ];
 
-const SOURCE_LINKS = {
-  survey: "https://www.iso.org/the-iso-survey.html",
-  tcu: "https://licitacoesecontratos.tcu.gov.br/5-5-2-habilitacao-tecnica/",
-  ppn: "https://assets.publishing.service.gov.uk/media/67af78c8a75f02dffca29bd8/PPN_014_Cyber_essentials_scheme.pdf",
-};
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -46,17 +34,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "home" });
-  const numberLocale = htmlLang[locale as Locale];
 
-  const sourceLink = (href: string) =>
-    function SourceLink(chunks: ReactNode) {
-      return (
-        <a href={href} className="text-gold-light underline-offset-2 hover:underline" rel="noopener">
-          {chunks}
-        </a>
-      );
-    };
-  const countries = t.raw("market.countries") as Record<string, string>;
 
   return (
     <>
@@ -170,64 +148,6 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* 6 · Mercado */}
-      <section
-        id="mercado"
-        aria-labelledby="mercado-title"
-        className="mt-[clamp(88px,10vw,128px)] scroll-mt-16 bg-dark text-dark-ink"
-      >
-        <div className="container-site flex flex-col gap-12 py-[clamp(64px,8vw,104px)]">
-          <div className="flex max-w-[780px] flex-col gap-4">
-            <span className="eyebrow text-gold-cta">{t("market.eyebrow")}</span>
-            <h2 id="mercado-title" className="m-0 font-display text-[clamp(28px,3.4vw,44px)] font-medium leading-[1.12]">
-              {t("market.title")}
-            </h2>
-            <p className="m-0 text-base leading-[1.65] text-dark-body">{t("market.text")}</p>
-          </div>
-
-          <dl className="m-0 grid grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] border-t border-dark-line-2">
-            {(t.raw("market.stats") as { v: string; t: string }[]).map((s) => (
-              <div key={s.v} className="flex flex-col-reverse gap-2 pb-2 pr-6 pt-6">
-                <dt className="text-sm leading-normal text-dark-body">{s.t}</dt>
-                <dd className="m-0 font-display text-[clamp(36px,4vw,48px)] font-medium leading-none text-gold-light">
-                  {s.v}
-                </dd>
-              </div>
-            ))}
-          </dl>
-
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] items-center gap-x-14 gap-y-8">
-            <Globe
-              title={t("market.globeTitle")}
-              loadingLabel={t("market.globeLoading")}
-              names={countries}
-              numberLocale={numberLocale}
-            />
-            <div className="flex flex-col gap-4">
-              <CountryRanking label={t("market.rankingLabel")} names={countries} numberLocale={numberLocale} />
-              <span className="text-[13px] leading-[1.55] text-dark-muted">{t("market.rankingNote")}</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-4">
-            {features.licitacoes && (
-              <MarketCard label={t("market.bids.label")} title={t("market.bids.title")} text={t("market.bids.text")} />
-            )}
-            <MarketCard label={t("market.intl.label")} title={t("market.intl.title")} text={t("market.intl.text")} />
-          </div>
-
-          <details className="text-xs leading-[1.6] text-dark-subtle">
-            <summary className="cursor-pointer text-dark-body">{t("market.sources.label")}</summary>
-            <ol className="mb-0 mt-2.5 flex flex-col gap-1 pl-[18px]">
-              <li>{t.rich("market.sources.survey", { link: sourceLink(SOURCE_LINKS.survey) })}</li>
-              {features.licitacoes && <li>{t.rich("market.sources.tcu", { link: sourceLink(SOURCE_LINKS.tcu) })}</li>}
-              <li>{t("market.sources.nis2")}</li>
-              <li>{t.rich("market.sources.ppn", { link: sourceLink(SOURCE_LINKS.ppn) })}</li>
-            </ol>
-          </details>
-        </div>
-      </section>
-
       {/* 7 · Depois da certificação */}
       <section
         id="certificacao"
@@ -266,34 +186,6 @@ export default async function HomePage({ params }: Props) {
           </ul>
           <p className="m-0 text-[13px] text-muted">{t("coverage.soc2")}</p>
         </div>
-      </section>
-
-      {/* 9 · ISO Radar */}
-      <section
-        id="iso-radar"
-        aria-labelledby="radar-title"
-        className="container-site section-space grid scroll-mt-20 grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] gap-x-16 gap-y-7"
-      >
-        <div className="flex flex-col gap-3">
-          <span className="eyebrow">{t("radar.eyebrow")}</span>
-          <h2 id="radar-title" className="m-0 font-display text-[clamp(26px,3vw,36px)] font-medium leading-[1.15]">
-            {t("radar.title")}
-          </h2>
-          <p className="m-0 text-[15px] leading-[1.6] text-body">{t("radar.text")}</p>
-          <NewsletterSignup enabled={newsletterEnabled()} />
-        </div>
-        {/* Article pages arrive with the ISO Radar (steps 6 and 7); until then the titles are not links. */}
-        <ul className="m-0 flex list-none flex-col p-0">
-          {(t.raw("radar.articles") as { status: string; tone: Tone; std: string; t: string }[]).map((a) => (
-            <li key={a.t} className="flex flex-col gap-2 border-b border-line py-[18px]">
-              <span className="flex items-center gap-2.5 font-mono text-xs text-muted">
-                <StatusBadge tone={a.tone}>{a.status}</StatusBadge>
-                {a.std} · {t("radar.source")}
-              </span>
-              <span className="font-display text-[19px] font-medium leading-[1.3]">{a.t}</span>
-            </li>
-          ))}
-        </ul>
       </section>
 
       {/* 10 · CTA final */}
@@ -349,12 +241,3 @@ function FeatureCard({ title, text, children }: { title: string; text: string; c
   );
 }
 
-function MarketCard({ label, title, text }: { label: string; title: string; text: string }) {
-  return (
-    <article className="flex flex-col gap-2.5 rounded-card border border-dark-line bg-dark-card p-[26px]">
-      <span className="card-label text-gold-cta">{label}</span>
-      <h3 className="m-0 font-display text-h3 font-medium leading-[1.3]">{title}</h3>
-      <p className="m-0 text-sm leading-[1.6] text-dark-body">{text}</p>
-    </article>
-  );
-}

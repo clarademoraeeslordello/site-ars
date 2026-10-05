@@ -25,8 +25,8 @@ export default function middleware(request: NextRequest) {
     const proto = request.headers.get("x-forwarded-proto") ?? request.nextUrl.protocol.replace(":", "");
     return NextResponse.redirect(`${proto}://${host}${rest}${search}`, 308);
   }
-  // The site's own API routes are not localized.
-  if (pathname.startsWith("/api/")) return NextResponse.next();
+  // The site's own API routes and the /admin panel are not localized.
+  if (pathname.startsWith("/api/") || pathname === "/admin" || pathname.startsWith("/admin/")) return NextResponse.next();
   const response = intl(request);
   // Preview hosts (*.up.railway.app) must not compete with auditcockpits.com in search.
   if (host.endsWith(".up.railway.app")) response.headers.set("X-Robots-Tag", "noindex, nofollow");

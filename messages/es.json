@@ -829,5 +829,48 @@
     "reject": "Rechazar",
     "policy": "Política de Privacidad",
     "manage": "Preferencias de cookies"
+  },
+  "radarPage": {
+    "metaDescription": "Cambios en las normas ISO de sistemas de gestión, con fecha, etapa oficial y enlace a la fuente. Actualizado con los datos abiertos de ISO.",
+    "eyebrow": "Monitoreo de normas",
+    "title": "ISO Radar",
+    "text": "Cada día revisamos los datos oficiales de ISO para las normas que monitoreamos. Cuando algo cambia, explicamos qué pasó, a quién afecta y qué observar, siempre con la fecha y el enlace a la fuente.",
+    "filters": {
+      "label": "Filtrar artículos",
+      "standard": "Norma",
+      "status": "Estado",
+      "all": "Todas",
+      "allStatuses": "Todos"
+    },
+    "status": {
+      "published": "Publicada",
+      "under_review": "En revisión",
+      "in_transition": "En transición",
+      "withdrawn": "Retirada"
+    },
+    "count": "{count, plural, =0 {Ningún artículo} one {# artículo} other {# artículos}}",
+    "empty": "Todavía no hay artículos publicados. En cuanto se revise el próximo cambio, aparecerá aquí.",
+    "emptyFiltered": "Ningún artículo con estos filtros.",
+    "clear": "Limpiar filtros",
+    "source": "Fuente",
+    "sourceDate": "Fecha de la fuente",
+    "lastVerified": "Última verificación",
+    "detected": "Detectado el",
+    "stage": "Etapa ISO",
+    "document": "Documento",
+    "transition": "Plazo de transición",
+    "toConfirm": "Por confirmar",
+    "toConfirmNote": "Los plazos de transición los definen los organismos de acreditación (IAF), no ISO. Lo actualizamos cuando haya fuente.",
+    "officialPage": "Ver la página oficial en ISO.org",
+    "sections": {
+      "whatHappened": "Qué pasó",
+      "whatChanged": "Qué cambió",
+      "impact": "Impacto",
+      "watch": "Qué observar"
+    },
+    "back": "Todos los artículos de ISO Radar",
+    "dataNote": "Datos: ISO Open Data, publicados por ISO con licencia ODC-BY. Este contenido resume y contextualiza; no reproduce el texto de las normas.",
+    "subscribeTitle": "Recibe la edición mensual",
+    "monitoring": "Normas monitoreadas"
   }
 }

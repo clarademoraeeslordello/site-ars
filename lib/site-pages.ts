@@ -10,6 +10,8 @@ export const SITE_PAGES: { href: AppPathname; index: boolean; priority: number }
   { href: "/plataforma", index: true, priority: 0.9 },
   { href: "/como-funciona", index: true, priority: 0.9 },
   { href: "/certificacao-e-manutencao", index: true, priority: 0.8 },
+  { href: "/mercado", index: true, priority: 0.7 },
+  { href: "/iso-radar", index: true, priority: 0.8 },
   { href: "/frameworks", index: true, priority: 0.8 },
   { href: "/seguranca", index: true, priority: 0.6 },
   { href: "/sobre", index: true, priority: 0.6 },
