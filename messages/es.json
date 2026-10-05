@@ -1,8 +1,8 @@
 {
   "meta": {
-    "shortTitle": "Audit Readiness Score",
-    "title": "Audit Readiness Score: Compliance Intelligence Platform",
-    "description": "La plataforma que responde, en tiempo real, si su organización está lista para ser auditada, con un score calculado, evidencias trazables y un recorrido guiado de cumplimiento."
+    "shortTitle": "ARS · Audit Readiness Platform",
+    "title": "ARS · Audit Readiness Platform · Audit Cockpits",
+    "description": "ARS reúne requisitos, controles, evidencias y acciones en un solo lugar y muestra, en cualquier momento, cuánto falta para la meta de preparación para la auditoría."
   },
   "nav": {
     "platform": "Plataforma",
@@ -19,18 +19,26 @@
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú",
     "languageLabel": "Idioma",
-    "skipToContent": "Ir al contenido"
+    "skipToContent": "Ir al contenido",
+    "howItWorks": "Cómo funciona",
+    "market": "Mercado",
+    "isoRadar": "ISO Radar",
+    "resources": "Recursos",
+    "login": "Iniciar sesión",
+    "bookDemo": "Agendar una demostración",
+    "homeLabel": "ARS, inicio",
+    "mainLabel": "Principal"
   },
   "footer": {
-    "tagline": "Compliance Intelligence Platform",
     "product": "Producto",
     "company": "Empresa",
     "legal": "Legal",
-    "privacy": "Política de Privacidad",
-    "cookies": "Política de Cookies",
-    "terms": "Términos de Uso",
+    "privacy": "Privacidad",
+    "terms": "Términos",
     "contact": "Contacto",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "label": "Pie de página",
+    "loginApp": "Entrar en ARS"
   },
   "cta": {
     "requestDemo": "Solicitar una demostración",
@@ -39,106 +47,385 @@
     "talkToExpert": "Hablar con un especialista"
   },
   "home": {
-    "hero": {
-      "eyebrow": "Compliance Intelligence Platform",
-      "title": "¿Estamos listos para la auditoría?",
-      "subtitle": "ARS responde esa pregunta con un número, no con una percepción. Un score de preparación calculado en tiempo real, evidencias trazables y un recorrido guiado que su propio equipo puede conducir.",
-      "rulerLabel": "Audit Readiness Score",
-      "rulerBandLow": "No auditable",
-      "rulerBandMid": "Riesgo moderado",
-      "rulerBandHigh": "Audit Ready"
+    "meta": {
+      "title": "ARS · Audit Readiness Platform · Audit Cockpits",
+      "description": "ARS reúne requisitos, controles, evidencias y acciones en un solo lugar, para que su equipo llegue a la auditoría sabiendo exactamente dónde está la empresa."
     },
-    "problem": {
-      "eyebrow": "El problema",
-      "title": "El cumplimiento gestionado en hojas de cálculo no sobrevive a una auditoría",
+    "hero": {
+      "eyebrow": "La preparación para auditorías como operación continua",
+      "title": "Llegue a la auditoría sabiendo exactamente dónde está su empresa.",
+      "lead": "ARS reúne requisitos, controles, evidencias y acciones en un solo lugar. Su equipo deja de buscar archivos y de reconstruir el historial en cada ciclo, y dedica el tiempo a corregir lo que realmente falta.",
+      "ctaDemo": "Agendar una demostración",
+      "ctaHow": "Ver cómo funciona"
+    },
+    "live": {
+      "aria": "Actividad de la semana en ARS, con datos de demostración",
+      "label": "Esta semana · ISO 27001",
+      "live": "en vivo",
+      "scoreLabel": "Audit Readiness Score",
+      "target": "meta de preparación: 85%",
+      "foot": "Cada acción completada se refleja en el score al instante.",
       "items": [
         {
-          "title": "Evidencias dispersas",
-          "text": "Documentos en servidores, correos y en la memoria de las personas. Cuando llega el auditor, nadie sabe dónde está la versión vigente."
+          "t": "Evidencia adjuntada",
+          "m": "A.5.11 · Inventario de activos devueltos",
+          "s": "Enviada"
         },
         {
-          "title": "Visibilidad cero",
-          "text": "Ningún directivo puede decir con precisión cuánto falta para estar listos, hasta que la respuesta llega como una auditoría reprobada."
+          "t": "Acción completada",
+          "m": "A.8.2 · Revisión de accesos privilegiados",
+          "s": "Completada"
         },
         {
-          "title": "Preparación reactiva",
-          "text": "Meses de esfuerzo concentrado justo antes de la auditoría, dependencia de consultores externos y un expediente que envejece el mismo día en que se termina."
+          "t": "Renovación programada",
+          "m": "A.8.13 · Política de backup v3",
+          "s": "12 días"
         },
         {
-          "title": "Vencimientos silenciosos",
-          "text": "Políticas, capacitaciones y contratos vencen sin aviso. El cumplimiento conquistado con esfuerzo se deshace en silencio."
+          "t": "Control aprobado",
+          "m": "A.5.11 · Devolución de activos",
+          "s": "Aprobado"
+        }
+      ]
+    },
+    "appMock": {
+      "aria": "Pantalla de inicio de ARS, recreada con datos de demostración",
+      "caption": "La pantalla de inicio de ARS, recreada con datos de demostración.",
+      "tabs": [
+        "Inicio",
+        "Jornadas",
+        "Trabajo",
+        "Controles",
+        "Riesgos",
+        "Evidencias",
+        "Auditorías"
+      ],
+      "priority": {
+        "label": "Prioridad ahora · camino crítico",
+        "title": "ISO 27001 · Preparación para la Certificación",
+        "sub": "ISO 27001 · 2022 · Planificación",
+        "dates": [
+          {
+            "l": "Fin de la preparación",
+            "v": "30/06/2026"
+          },
+          {
+            "l": "Inicio de la auditoría",
+            "v": "01/09/2026"
+          },
+          {
+            "l": "Fin de la auditoría",
+            "v": "30/09/2026"
+          }
+        ],
+        "cta": "Continuar la jornada →"
+      },
+      "score": {
+        "label": "Audit Readiness Score",
+        "badge": "Riesgo alto",
+        "meta": "Meta: 85% · verificado a las 00:20"
+      },
+      "kpis": [
+        {
+          "t": "Mi trabajo",
+          "v": "43",
+          "d": "46 atrasadas"
+        },
+        {
+          "t": "Evidencias",
+          "v": "47",
+          "d": "3 en revisión · 0 por vencer"
+        },
+        {
+          "t": "Riesgos críticos",
+          "v": "11",
+          "d": "46 brechas en total"
         }
       ]
     },
     "questions": {
-      "eyebrow": "Las cinco preguntas",
-      "title": "Toda auditoría se decide en cinco preguntas. ARS responde las cinco, en tiempo real.",
+      "title": "La auditoría no empieza el día de la auditoría. Empieza con las preguntas de cada semana.",
+      "lead": "Quien trabaja en cumplimiento conoce la escena: el documento existe, pero nadie recuerda qué control demuestra. La respuesta existe, repartida entre hojas de cálculo, carpetas y conversaciones. Cada pregunta se convierte en una búsqueda, un correo o una reunión.",
+      "head": {
+        "q": "La pregunta",
+        "before": "Cómo suele ser",
+        "after": "Con ARS"
+      },
       "items": [
-        { "q": "¿Dónde estamos?", "a": "Score de preparación y cobertura por norma, área y control." },
-        { "q": "¿Qué falta?", "a": "Brechas priorizadas por impacto en el score, con análisis asistido por IA." },
-        { "q": "¿Quién debe actuar?", "a": "Cada pendiente tiene un responsable con nombre y un plazo definido." },
-        { "q": "¿Cuándo vence algo?", "a": "Alertas anticipadas de vencimiento antes de que el score caiga." },
-        { "q": "¿Estamos listos?", "a": "Un número calculado, no una opinión. Verificable por cualquier auditor." }
+        {
+          "q": "¿Qué control demuestra este documento?",
+          "before": "Abrir la hoja de control y esperar que esté actualizada.",
+          "after": "La evidencia ya está dentro del control que demuestra."
+        },
+        {
+          "q": "¿Qué vence antes de la auditoría?",
+          "before": "Revisar fechas archivo por archivo, o enterarse en el momento.",
+          "after": "La cola de renovación muestra lo que venció y lo que está por vencer."
+        },
+        {
+          "q": "¿Quién tiene la corrección atrasada?",
+          "before": "Una ronda de correos y una reunión de seguimiento.",
+          "after": "Cada brecha se convierte en una acción con responsable, plazo y estado."
+        },
+        {
+          "q": "¿Estamos preparados?",
+          "before": "Una opinión armada a toda prisa en la semana de la auditoría.",
+          "after": "Un score de 0 a 100%, actualizado, con lo que más pesa en contra."
+        },
+        {
+          "q": "¿Dónde nos quedamos en el ciclo anterior?",
+          "before": "Reconstruir el historial a partir de carpetas antiguas.",
+          "after": "Historial, versiones y pista de auditoría guardados."
+        }
       ]
     },
-    "journey": {
-      "eyebrow": "Cómo funciona",
-      "title": "De la primera norma al informe del auditor: un recorrido continuo",
-      "steps": [
-        { "title": "Elija los frameworks", "text": "Más de 30 normas ISO y la LGPD en un catálogo estructurado por requisitos y controles." },
-        { "title": "Realice el diagnóstico", "text": "El diagnóstico guiado identifica brechas y genera automáticamente el plan de actividades." },
-        { "title": "Ejecute las actividades", "text": "Cada brecha se convierte en una tarea con responsable, plazo y prioridad, en bandeja o kanban." },
-        { "title": "Adjunte evidencias", "text": "Carga con aprobación, versionado y renovación controlada. Cada evidencia vinculada a un control." },
-        { "title": "Siga el score", "text": "El Audit Readiness Score sube con evidencias aprobadas y baja cuando algo vence. Siempre honesto." },
-        { "title": "Conduzca auditorías", "text": "Auditorías internas con hallazgos, no conformidades y CAPA, y acceso temporal para el auditor externo." }
+    "how": {
+      "title": "Todo conectado, del requisito al score.",
+      "p1": "Cada requisito de la norma se convierte en un control; cada control tiene la evidencia que lo demuestra. Cuando falta algo, la brecha se convierte en una acción con responsable y plazo, y el score muestra el efecto.",
+      "p2": "La jornada tiene siete etapas, cada una con una condición de paso que el propio sistema verifica. No descubre la víspera que una fase anterior quedó incompleta.",
+      "chain": [
+        {
+          "t": "Requisito",
+          "v": "ISO 27001 · A.5.11"
+        },
+        {
+          "t": "Control",
+          "v": "Devolución de activos"
+        },
+        {
+          "t": "Evidencia",
+          "v": "Inventario de activos devueltos"
+        },
+        {
+          "t": "Brecha",
+          "v": "Revisión independiente pendiente"
+        },
+        {
+          "t": "Acción",
+          "v": "Responsable y plazo definidos"
+        },
+        {
+          "t": "Score",
+          "v": "Refleja el control por criticidad"
+        }
+      ],
+      "journey": {
+        "aria": "Jornada ISO 27001 en ARS, recreada con datos de demostración",
+        "back": "← VOLVER A AUDITORÍAS",
+        "label": "ISO 27001 · 2022",
+        "title": "ISO 27001 · Preparación para la Certificación",
+        "sub": "Etapas completadas 1/7 · 01/09/2026 → 30/09/2026",
+        "stages": [
+          {
+            "t": "Diagnóstico",
+            "d": "Completado el 13/09/2026"
+          },
+          {
+            "t": "Planificación",
+            "d": "Iniciado el 13/09/2026"
+          },
+          {
+            "t": "Implementación",
+            "d": "En espera"
+          },
+          {
+            "t": "Verificación",
+            "d": "En espera"
+          },
+          {
+            "t": "Preauditoría",
+            "d": "En espera"
+          },
+          {
+            "t": "Certificación",
+            "d": "En espera"
+          },
+          {
+            "t": "Mantenimiento continuo",
+            "d": "En espera"
+          }
+        ],
+        "status": {
+          "done": "Completado",
+          "now": "En curso",
+          "todo": "No iniciado"
+        }
+      }
+    },
+    "time": {
+      "title": "Donde su equipo recupera tiempo.",
+      "lead": "La ganancia no viene de hacer la auditoría más rápido. Viene de no rehacer, en cada ciclo, el trabajo que ya se hizo.",
+      "evidence": {
+        "title": "Sin perseguir evidencias",
+        "text": "Cada evidencia queda en el control que demuestra, con responsable, estado y vigencia.",
+        "control": "Devolución de activos · A.5.11",
+        "items": [
+          {
+            "t": "Inventario de activos devueltos.csv",
+            "m": "Rafael Moura · hasta 01/10/2027",
+            "s": "Enviada"
+          },
+          {
+            "t": "Política de gestión de activos v4.pdf",
+            "m": "Rafael Moura · hasta 01/10/2027",
+            "s": "Enviada"
+          },
+          {
+            "t": "Checklist de offboarding firmado",
+            "m": "hasta 01/10/2027",
+            "s": "Borrador"
+          }
+        ]
+      },
+      "renewal": {
+        "title": "Sin sorpresas de vencimiento",
+        "text": "La evidencia vencida entra en una cola de renovación con 15 días de gracia, antes de que el control quede descubierto.",
+        "label": "EVIDENCIAS · RENOVACIÓN",
+        "item": "Política de gestión de activos v4",
+        "badge": "12 DÍAS",
+        "note": "Los controles en renovación cuentan en el score interno, pero no en lo que ve el auditor externo."
+      },
+      "report": {
+        "title": "Sin armar paquetes para el auditor",
+        "text": "Los informes de Readiness, SOA, Evidencias y Madurez salen listos, en PDF o Excel.",
+        "heading": "Audit Readiness Score",
+        "code": "ARS-RDN-20261003",
+        "label": "INFORME DE PREPARACIÓN",
+        "disclaimer": "USO INTERNO, NO ES UN CERTIFICADO DE CONFORMIDAD"
+      },
+      "moreLabel": "También en la plataforma",
+      "more": [
+        "Diagnóstico por requisito",
+        "Planes y acciones",
+        "SOA y aplicabilidad",
+        "Auditorías y CAPA",
+        "Registro de riesgos",
+        "LGPD y RoPA",
+        "Pista de auditoría"
       ]
     },
-    "capabilities": {
-      "eyebrow": "Capacidades",
-      "title": "Lo que entrega la plataforma",
-      "items": [
-        { "title": "Catálogo de más de 30 frameworks", "text": "Normas ISO y LGPD con requisitos estructurados, búsqueda y filtros." },
-        { "title": "Controles y SOA", "text": "Declare aplicabilidad, justifique exclusiones y mantenga el Statement of Applicability siempre vigente." },
-        { "title": "Gestión de actividades", "text": "Bandeja personal y vista kanban. Todo pendiente con responsable y plazo." },
-        { "title": "Evidencias trazables", "text": "Aprobación, rechazo con justificación, versionado y control de vigencia." },
-        { "title": "Score y cobertura", "text": "Cálculo ponderado por criticidad, con historial y tendencia en el tiempo." },
-        { "title": "Auditorías y CAPA", "text": "Ciclo completo: hallazgos, no conformidades y planes de acción correctiva." },
-        { "title": "Módulo LGPD", "text": "ROPA, EIPD, incidentes de privacidad y derechos de los titulares, integrados al modelo de cobertura." },
-        { "title": "Análisis de brechas con IA", "text": "La IA identifica y prioriza brechas. La decisión siempre es humana." },
-        { "title": "Informes exportables", "text": "Audit Readiness, SOA y evidencias consolidadas, listos para presentar al auditor." }
+    "about": {
+      "eyebrow": "Por qué creamos Audit Cockpits",
+      "quote": "Una auditoría no debería ser sinónimo de carreras. Pero, para muchas empresas, es cuando aparecen documentos faltantes, evidencias perdidas, controles desactualizados y riesgos sin seguimiento.",
+      "text": "Después de vivir este desafío en la práctica, nuestra fundadora creó Audit Cockpits para ayudar a las empresas a mantener su cumplimiento organizado y listo para las auditorías, no solo cuando llegan."
+    },
+    "market": {
+      "eyebrow": "Por qué importa",
+      "title": "La certificación se convirtió en un lenguaje común entre empresas, y entre países.",
+      "text": "Es la forma más rápida de que un comprador confíe en un proveedor que nunca auditó. Obtener el certificado abre puertas; mantenerlo vivo, ciclo tras ciclo, es donde se va el tiempo del equipo.",
+      "stats": [
+        {
+          "v": "1,47 M",
+          "t": "certificados ISO 9001 vigentes en el mundo en 2024."
+        },
+        {
+          "v": "96.709",
+          "t": "certificados ISO/IEC 27001 en 2024, unas 2,7 veces la cifra de 2019.¹"
+        },
+        {
+          "v": "18.536",
+          "t": "certificados ISO 9001 en Brasil, la segunda cifra más alta de América."
+        }
+      ],
+      "globeTitle": "Globo con los países que más certificados ISO/IEC 27001 tienen",
+      "globeLoading": "Cargando el globo",
+      "rankingLabel": "Dónde están los certificados ISO/IEC 27001",
+      "countries": {
+        "china": "China",
+        "india": "India",
+        "japan": "Japón",
+        "uk": "Reino Unido",
+        "usa": "EE. UU.",
+        "italy": "Italia",
+        "turkiye": "Türkiye",
+        "germany": "Alemania",
+        "brazil": "Brasil"
+      },
+      "rankingNote": "Brasil destacado en el globo: 18.536 certificados ISO 9001. Arrastre el globo para girarlo. Fuente: ISO Survey 2024.",
+      "bids": {
+        "label": "Licitaciones en Brasil",
+        "title": "La certificación suma puntos y, en casos justificados, puede exigirse.",
+        "text": "El Tribunal de Cuentas de la Unión (TCU) admite puntuar certificaciones en licitaciones de técnica y precio. Bajo la Ley 14.133/2021, el tribunal ya consideró regular exigir certificación ISO en la habilitación cuando la necesidad se demuestra técnicamente (Acórdão 1091/2025). La regla general sigue siendo no restringir la competencia."
+      },
+      "intl": {
+        "label": "Mercado internacional",
+        "title": "Los clientes del exterior piden pruebas, no promesas.",
+        "text": "En la Unión Europea, la NIS2 obliga a las entidades a gestionar la seguridad de la cadena de suministro (art. 21). En el Reino Unido, el gobierno central exige Cyber Essentials a los proveedores en contratos que involucran datos personales o sistemas de TI."
+      },
+      "sources": {
+        "label": "Fuentes",
+        "survey": "ISO Survey 2024 (ISO/IAF CertSearch), publicado en septiembre de 2025, <link>iso.org/the-iso-survey</link>. ¹ La edición 2024 pasó a usar la base IAF CertSearch; parte del crecimiento refleja una mejor cobertura de los datos.",
+        "tcu": "TCU, Licitações e Contratos, Habilitação técnica; Acórdão 1091/2025-Plenário, <link>licitacoesecontratos.tcu.gov.br</link>",
+        "nis2": "Directiva (UE) 2022/2555 (NIS2), art. 21(2)(d), seguridad de la cadena de suministro.",
+        "ppn": "UK Cabinet Office, Procurement Policy Note 014, Cyber Essentials Scheme, <link>gov.uk</link>"
+      }
+    },
+    "cert": {
+      "eyebrow": "Después de la certificación",
+      "title": "La certificación no cierra el trabajo. Inicia el próximo ciclo.",
+      "text": "Después de la preparación vienen la auditoría externa, el registro del resultado, el mantenimiento y la renovación. El auditor externo puede tener acceso propio, y el historial de cada ciclo queda guardado para el siguiente.",
+      "callout": "Quien decide la certificación es el organismo certificador. ARS organiza, registra y acompaña.",
+      "aria": "Etapas de certificación y mantenimiento en ARS, recreadas con datos de demostración",
+      "auditor": {
+        "title": "Score de preparación (vista del auditor)",
+        "badge": "Por debajo del mínimo",
+        "text": "42,0% de preparación externa; el mínimo para certificar es 85%.",
+        "value": "42,0%",
+        "min": "mínimo 85%"
+      },
+      "cycle": {
+        "title": "Ciclo de cumplimiento",
+        "badge": "Vigente",
+        "text": "ISO 27001 · Ciclo 2026/2027 · vigente hasta 03/10/2027",
+        "note": "Ciclo activo, la jornada puede completarse."
+      }
+    },
+    "coverage": {
+      "eyebrow": "Cobertura",
+      "title": "37 normas y marcos. 706 requisitos.",
+      "text": "Seguridad de la información, privacidad, calidad, continuidad, medio ambiente e inteligencia artificial.",
+      "soc2": "SOC 2 es un informe de atestación, no una certificación."
+    },
+    "radar": {
+      "eyebrow": "Boletín mensual",
+      "title": "ISO Radar",
+      "text": "Cuando una norma cambia, explicamos qué cambió, a quién afecta y qué conviene observar, siempre con el enlace a la fuente oficial. Una edición al mes, breve.",
+      "form": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "locale": "Idioma",
+        "consent": "Quiero recibir ISO Radar y leí la <link>Política de Privacidad</link>.",
+        "submit": "Recibir ISO Radar",
+        "success": "Listo. Le enviamos un enlace para confirmar su suscripción.",
+        "soon": "Las suscripciones abren pronto."
+      },
+      "source": "ISO.org",
+      "articles": [
+        {
+          "status": "Publicado",
+          "tone": "ok",
+          "std": "ISO 9001",
+          "t": "ISO 9001:2026 publicada: qué cambia y cómo planificar la transición"
+        },
+        {
+          "status": "En transición",
+          "tone": "warn",
+          "std": "ISO 14001",
+          "t": "ISO 14001:2026: nueva edición y plazos de transición por confirmar"
+        },
+        {
+          "status": "Publicado",
+          "tone": "ok",
+          "std": "ISO 9000",
+          "t": "ISO 9000:2026: el vocabulario que acompaña a la nueva 9001"
+        }
       ]
     },
-    "profiles": {
-      "eyebrow": "Para cada perfil",
-      "title": "Una respuesta para cada silla de la mesa",
-      "items": [
-        { "role": "Dirección ejecutiva", "text": "Score en tiempo real y visión consolidada, sin depender de la traducción de una consultoría." },
-        { "role": "Compliance y GRC", "text": "Un centro único que distribuye responsabilidades, exige plazos y mide cobertura por área." },
-        { "role": "DPO", "text": "ROPA, EIPD e incidentes en el mismo modelo de cobertura que las demás normas." },
-        { "role": "TI y Seguridad", "text": "Cola de actividades por responsable y alertas antes de que las evidencias venzan." },
-        { "role": "Recursos Humanos", "text": "Renovación controlada de capacitaciones y contratos: la plataforma reabre la actividad para el responsable." },
-        { "role": "Consultorías", "text": "Todos los clientes en un único entorno, con trazabilidad e informes automatizados." }
-      ]
-    },
-    "trust": {
-      "eyebrow": "Confianza verificable",
-      "title": "Construida para ser verificada, no solo utilizada",
-      "items": [
-        { "title": "Pista de auditoría inmutable", "text": "Registro append-only con hash encadenado. Quién lo hizo, cuándo y con qué justificación." },
-        { "title": "Cadena de custodia de evidencias", "text": "Envío, aprobación y versión: cada eslabón registrado y verificable." },
-        { "title": "Acceso del auditor externo", "text": "Acceso temporal y delimitado, con vigencia máxima de 72 horas." },
-        { "title": "Aislamiento por organización", "text": "Datos completamente aislados por tenant, con autenticación corporativa y URLs de evidencia firmadas." }
-      ]
-    },
-    "frameworks": {
-      "eyebrow": "Frameworks",
-      "title": "Las normas que mueven su mercado",
-      "text": "ISO 27001, ISO 9001, ISO 20000-1, ISO 22301, ISO 27701 y LGPD como normas ancla, dentro de un catálogo con más de 30 frameworks normativos.",
-      "viewAll": "Ver el catálogo completo"
-    },
-    "finalCta": {
-      "title": "Deje de estimar. Empiece a medir.",
-      "text": "Vea, en una demostración guiada, cómo su organización puede operar en estado permanente de preparación."
+    "cta": {
+      "title": "¿Vemos juntos cómo está su preparación?",
+      "text": "En la demostración, mostramos cómo ARS transforma requisitos, evidencias y acciones en una visión continua de la preparación, con la norma que le importa.",
+      "button": "Agendar una demostración",
+      "contact": "O hable directamente con nosotros:"
     }
   },
   "platform": {
@@ -180,9 +467,21 @@
     "howText": "El score es la razón ponderada entre controles cubiertos y controles aplicables. Cada control tiene un peso definido por su criticidad: un control crítico pesa cuatro veces más que uno de baja criticidad. Los controles declarados no aplicables en el SOA se excluyen del cálculo. Los controles bloqueados por una no conformidad mayor tienen su cobertura en cero hasta la resolución.",
     "bandsTitle": "Bandas de interpretación",
     "bands": [
-      { "range": "0 – 59%", "name": "No Auditable", "text": "Brechas críticas que resultarían en reprobación. La recomendación es no agendar auditoría externa en esta banda." },
-      { "range": "60 – 84%", "name": "Riesgo Moderado", "text": "Base sólida con brechas relevantes. Es posible agendar auditoría, con riesgo calculado de no conformidades." },
-      { "range": "85 – 100%", "name": "Audit Ready", "text": "Condiciones para recibir una auditoría externa con expectativa razonable de aprobación. El proceso interno se condujo con rigor." }
+      {
+        "range": "0 – 59%",
+        "name": "No Auditable",
+        "text": "Brechas críticas que resultarían en reprobación. La recomendación es no agendar auditoría externa en esta banda."
+      },
+      {
+        "range": "60 – 84%",
+        "name": "Riesgo Moderado",
+        "text": "Base sólida con brechas relevantes. Es posible agendar auditoría, con riesgo calculado de no conformidades."
+      },
+      {
+        "range": "85 – 100%",
+        "name": "Audit Ready",
+        "text": "Condiciones para recibir una auditoría externa con expectativa razonable de aprobación. El proceso interno se condujo con rigor."
+      }
     ],
     "decayTitle": "Un score que puede caer es un score en el que puede confiar",
     "decayText": "Las evidencias vencen. Las políticas necesitan renovación. Cuando un documento expira y no se renueva, el control pierde cobertura y el score baja automáticamente. Un score de 90% en septiembre no es lo mismo que un 90% en marzo si nada se actualizó. ARS es honesta al respecto, porque el auditor también lo será.",
@@ -195,92 +494,244 @@
     "heroText": "Cada framework se descompone en requisitos y controles, con búsqueda, filtros y taxonomía por categoría. La estructura es la misma para cualquier norma: lo que cambia es el contenido normativo.",
     "anchorTitle": "Normas certificables ancla",
     "anchors": [
-      { "code": "ISO 27001", "name": "Seguridad de la Información", "text": "El sistema de gestión de seguridad de la información más exigido del mercado." },
-      { "code": "ISO 9001", "name": "Calidad", "text": "La base de gestión de calidad reconocida en cualquier sector." },
-      { "code": "ISO 20000-1", "name": "Servicios de TI", "text": "Gestión de servicios de tecnología con procesos verificables." },
-      { "code": "ISO 22301", "name": "Continuidad de Negocio", "text": "Preparación ante interrupciones, del plan a la evidencia de prueba." },
-      { "code": "ISO 27701", "name": "Privacidad", "text": "Extensión de privacidad del SGSI, puente natural con la LGPD." },
-      { "code": "LGPD", "name": "Protección de Datos (Brasil)", "text": "Módulo dedicado con ROPA, EIPD, incidentes y derechos de los titulares." }
+      {
+        "code": "ISO 27001",
+        "name": "Seguridad de la Información",
+        "text": "El sistema de gestión de seguridad de la información más exigido del mercado."
+      },
+      {
+        "code": "ISO 9001",
+        "name": "Calidad",
+        "text": "La base de gestión de calidad reconocida en cualquier sector."
+      },
+      {
+        "code": "ISO 20000-1",
+        "name": "Servicios de TI",
+        "text": "Gestión de servicios de tecnología con procesos verificables."
+      },
+      {
+        "code": "ISO 22301",
+        "name": "Continuidad de Negocio",
+        "text": "Preparación ante interrupciones, del plan a la evidencia de prueba."
+      },
+      {
+        "code": "ISO 27701",
+        "name": "Privacidad",
+        "text": "Extensión de privacidad del SGSI, puente natural con la LGPD."
+      },
+      {
+        "code": "LGPD",
+        "name": "Protección de Datos (Brasil)",
+        "text": "Módulo dedicado con ROPA, EIPD, incidentes y derechos de los titulares."
+      }
     ],
     "catalogTitle": "Un catálogo que acompaña su crecimiento",
     "catalogText": "Además de las normas ancla, el catálogo incluye frameworks de medio ambiente, salud y seguridad ocupacional, dispositivos médicos, seguridad alimentaria, antisoborno e inteligencia artificial, entre otros. Una evidencia bien construida puede servir a más de una norma, y la plataforma fue diseñada para operar múltiples frameworks simultáneamente.",
     "catalogTableTitle": "El catálogo completo",
-    "catalogTableColumns": { "code": "Norma", "version": "Versión", "areas": "Áreas internas del framework" },
+    "catalogTableColumns": {
+      "code": "Norma",
+      "version": "Versión",
+      "areas": "Áreas internas del framework"
+    },
     "catalogTable": [
       {
         "area": "Seguridad de la Información",
         "items": [
-          { "code": "ISO 27001", "version": "2022", "areas": "A.5 Controles Organizacionales; A.6 Personas; A.7 Físicos; A.8 Tecnológicos" },
-          { "code": "ISO 27005", "version": "2022", "areas": "6 Contexto; 7 Evaluación de Riesgos; 8 Tratamiento; 9 Comunicación; 10 Monitoreo" },
-          { "code": "ISO 27017", "version": "2015", "areas": "CLD Controles de Nube; EXT Controles 27002 Extendidos para la Nube" }
+          {
+            "code": "ISO 27001",
+            "version": "2022",
+            "areas": "A.5 Controles Organizacionales; A.6 Personas; A.7 Físicos; A.8 Tecnológicos"
+          },
+          {
+            "code": "ISO 27005",
+            "version": "2022",
+            "areas": "6 Contexto; 7 Evaluación de Riesgos; 8 Tratamiento; 9 Comunicación; 10 Monitoreo"
+          },
+          {
+            "code": "ISO 27017",
+            "version": "2015",
+            "areas": "CLD Controles de Nube; EXT Controles 27002 Extendidos para la Nube"
+          }
         ]
       },
       {
         "area": "Privacidad",
         "items": [
-          { "code": "ISO 27018", "version": "2019", "areas": "A.1 Consentimiento; A.2 Legitimidad; A.3 Minimización; A.4 Transparencia; A.5 Seguridad" },
-          { "code": "ISO 27701", "version": "2019", "areas": "5 SGPI; 6 Orientación del SGPI; 7 Responsables de PII; 8 Encargados de PII" },
-          { "code": "LGPD", "version": "2018", "areas": "Cap.II Principios y Bases Legales; Cap.III Derechos de los Titulares; Cap.II-T Tratamiento; Cap.VII Seguridad e Incidentes; Cap.VI Gobernanza" }
+          {
+            "code": "ISO 27018",
+            "version": "2019",
+            "areas": "A.1 Consentimiento; A.2 Legitimidad; A.3 Minimización; A.4 Transparencia; A.5 Seguridad"
+          },
+          {
+            "code": "ISO 27701",
+            "version": "2019",
+            "areas": "5 SGPI; 6 Orientación del SGPI; 7 Responsables de PII; 8 Encargados de PII"
+          },
+          {
+            "code": "LGPD",
+            "version": "2018",
+            "areas": "Cap.II Principios y Bases Legales; Cap.III Derechos de los Titulares; Cap.II-T Tratamiento; Cap.VII Seguridad e Incidentes; Cap.VI Gobernanza"
+          }
         ]
       },
       {
         "area": "Calidad",
         "items": [
-          { "code": "ISO 9001", "version": "2015", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 10002", "version": "2018", "areas": "4 Principios Orientadores; 5 Estructura de Tratamiento; 8 Operación del Proceso" },
-          { "code": "ISO 10004", "version": "2018", "areas": "7 Planificación y Recolección; 8 Análisis y Uso; 9 Mantenimiento y Mejora" },
-          { "code": "ISO 13485", "version": "2016", "areas": "4 SGC; 5 Responsabilidad de la Dirección; 6 Recursos; 7 Producto; 8 Medición/Análisis/Mejora" },
-          { "code": "ISO 17025", "version": "2017", "areas": "4 Generales; 5 Estructurales; 6 Recursos; 7 Proceso; 8 Gestión" }
+          {
+            "code": "ISO 9001",
+            "version": "2015",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 10002",
+            "version": "2018",
+            "areas": "4 Principios Orientadores; 5 Estructura de Tratamiento; 8 Operación del Proceso"
+          },
+          {
+            "code": "ISO 10004",
+            "version": "2018",
+            "areas": "7 Planificación y Recolección; 8 Análisis y Uso; 9 Mantenimiento y Mejora"
+          },
+          {
+            "code": "ISO 13485",
+            "version": "2016",
+            "areas": "4 SGC; 5 Responsabilidad de la Dirección; 6 Recursos; 7 Producto; 8 Medición/Análisis/Mejora"
+          },
+          {
+            "code": "ISO 17025",
+            "version": "2017",
+            "areas": "4 Generales; 5 Estructurales; 6 Recursos; 7 Proceso; 8 Gestión"
+          }
         ]
       },
       {
         "area": "Gestión de Servicios",
         "items": [
-          { "code": "ISO 20000-1", "version": "2018", "areas": "4 Contexto y SGS; 5 Liderazgo; 6 Planificación; 8 Operación del Servicio; 9 Evaluación; 10 Mejora" }
+          {
+            "code": "ISO 20000-1",
+            "version": "2018",
+            "areas": "4 Contexto y SGS; 5 Liderazgo; 6 Planificación; 8 Operación del Servicio; 9 Evaluación; 10 Mejora"
+          }
         ]
       },
       {
         "area": "Continuidad de Negocio",
         "items": [
-          { "code": "ISO 22301", "version": "2019", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" }
+          {
+            "code": "ISO 22301",
+            "version": "2019",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          }
         ]
       },
       {
         "area": "Gestión de Riesgos",
         "items": [
-          { "code": "ISO 28000", "version": "2022", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 31000", "version": "2018", "areas": "4 Principios; 5 Marco; 6 Proceso" },
-          { "code": "ISO 39001", "version": "2012", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 45001", "version": "2018", "areas": "4 Contexto; 5 Liderazgo y Participación de los Trabajadores; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" }
+          {
+            "code": "ISO 28000",
+            "version": "2022",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 31000",
+            "version": "2018",
+            "areas": "4 Principios; 5 Marco; 6 Proceso"
+          },
+          {
+            "code": "ISO 39001",
+            "version": "2012",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 45001",
+            "version": "2018",
+            "areas": "4 Contexto; 5 Liderazgo y Participación de los Trabajadores; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          }
         ]
       },
       {
         "area": "Ambiental",
         "items": [
-          { "code": "ISO 14001", "version": "2015", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 20121", "version": "2012", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 50001", "version": "2018", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" }
+          {
+            "code": "ISO 14001",
+            "version": "2015",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 20121",
+            "version": "2012",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 50001",
+            "version": "2018",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          }
         ]
       },
       {
         "area": "Gobernanza",
         "items": [
-          { "code": "ISO 26000", "version": "2010", "areas": "4 Principios; 6 Materias Fundamentales; 7 Integración" },
-          { "code": "ISO 37001", "version": "2016", "areas": "4 Contexto; 5 Liderazgo; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 37301", "version": "2021", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 42001", "version": "2023", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" }
+          {
+            "code": "ISO 26000",
+            "version": "2010",
+            "areas": "4 Principios; 6 Materias Fundamentales; 7 Integración"
+          },
+          {
+            "code": "ISO 37001",
+            "version": "2016",
+            "areas": "4 Contexto; 5 Liderazgo; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 37301",
+            "version": "2021",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 42001",
+            "version": "2023",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          }
         ]
       },
       {
         "area": "General",
         "items": [
-          { "code": "ISO 21502", "version": "2020", "areas": "6 Prácticas Integradas; 7 Prácticas de Gestión por Área" },
-          { "code": "ISO 22000", "version": "2018", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación (PRPs/HACCP); 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 22005", "version": "2007", "areas": "4 Principios y Objetivos; 5 Sistema de Trazabilidad; 6 Implementación y Mejora" },
-          { "code": "ISO 34700", "version": "2016", "areas": "4 Plan de Bienestar Animal; 5 Cinco Libertades; 6 Operación y Monitoreo" },
-          { "code": "ISO 41001", "version": "2018", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 55001", "version": "2014", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" },
-          { "code": "ISO 56002", "version": "2019", "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora" }
+          {
+            "code": "ISO 21502",
+            "version": "2020",
+            "areas": "6 Prácticas Integradas; 7 Prácticas de Gestión por Área"
+          },
+          {
+            "code": "ISO 22000",
+            "version": "2018",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación (PRPs/HACCP); 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 22005",
+            "version": "2007",
+            "areas": "4 Principios y Objetivos; 5 Sistema de Trazabilidad; 6 Implementación y Mejora"
+          },
+          {
+            "code": "ISO 34700",
+            "version": "2016",
+            "areas": "4 Plan de Bienestar Animal; 5 Cinco Libertades; 6 Operación y Monitoreo"
+          },
+          {
+            "code": "ISO 41001",
+            "version": "2018",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 55001",
+            "version": "2014",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          },
+          {
+            "code": "ISO 56002",
+            "version": "2019",
+            "areas": "4 Contexto; 5 Liderazgo; 6 Planificación; 7 Apoyo; 8 Operación; 9 Evaluación; 10 Mejora"
+          }
         ]
       }
     ],
@@ -292,10 +743,22 @@
     "heroTitle": "Cumplimiento de la LGPD que resiste una fiscalización",
     "heroText": "El módulo LGPD de ARS integra el mapeo de datos personales al mismo modelo de cobertura de las demás normas, con la trazabilidad que la ANPD y los titulares exigen.",
     "sections": [
-      { "title": "ROPA: Registro de Operaciones", "text": "Mapee operaciones de tratamiento con bases legales, categorías de datos y de titulares. El registro que exige el Art. 37, siempre actualizado." },
-      { "title": "EIPD: Evaluación de Impacto", "text": "Evaluaciones de impacto vinculadas a las operaciones de alto riesgo, con historial y versionado." },
-      { "title": "Incidentes de privacidad", "text": "Registro y seguimiento de incidentes con pista completa, del reporte a la resolución." },
-      { "title": "Derechos de los titulares", "text": "Gestión de solicitudes de acceso, corrección, eliminación y portabilidad, con plazo y responsable." }
+      {
+        "title": "ROPA: Registro de Operaciones",
+        "text": "Mapee operaciones de tratamiento con bases legales, categorías de datos y de titulares. El registro que exige el Art. 37, siempre actualizado."
+      },
+      {
+        "title": "EIPD: Evaluación de Impacto",
+        "text": "Evaluaciones de impacto vinculadas a las operaciones de alto riesgo, con historial y versionado."
+      },
+      {
+        "title": "Incidentes de privacidad",
+        "text": "Registro y seguimiento de incidentes con pista completa, del reporte a la resolución."
+      },
+      {
+        "title": "Derechos de los titulares",
+        "text": "Gestión de solicitudes de acceso, corrección, eliminación y portabilidad, con plazo y responsable."
+      }
     ],
     "integratedTitle": "Integrada al resto del cumplimiento",
     "integratedText": "La LGPD no vive en una herramienta separada. Las evidencias de privacidad participan del mismo modelo de cobertura, el mismo score y la misma pista de auditoría, y una política de protección de datos bien construida contribuye también a la ISO 27701."
@@ -305,10 +768,22 @@
     "heroTitle": "De la auditoría interna al auditor externo, sin expedientes improvisados",
     "heroText": "ARS estructura el ciclo completo de auditoría: alcance, ejecución, hallazgos, no conformidades y planes de acción correctiva.",
     "sections": [
-      { "title": "Auditorías con alcance definido", "text": "Registre auditorías internas y externas con alcance delimitado por requisitos y controles." },
-      { "title": "Hallazgos clasificados", "text": "Conformidad, no conformidad, observación y oportunidad de mejora: cada hallazgo registrado con contexto y evidencia." },
-      { "title": "NC y CAPA obligatorios", "text": "Toda no conformidad exige un plan de acción correctiva con responsable y plazo. El sistema no deja hallazgos críticos sin tratamiento." },
-      { "title": "La sala del auditor externo", "text": "Acceso temporal y delimitado, con máximo 72 horas, para que el auditor verifique evidencias, pistas e historial directamente en la plataforma." }
+      {
+        "title": "Auditorías con alcance definido",
+        "text": "Registre auditorías internas y externas con alcance delimitado por requisitos y controles."
+      },
+      {
+        "title": "Hallazgos clasificados",
+        "text": "Conformidad, no conformidad, observación y oportunidad de mejora: cada hallazgo registrado con contexto y evidencia."
+      },
+      {
+        "title": "NC y CAPA obligatorios",
+        "text": "Toda no conformidad exige un plan de acción correctiva con responsable y plazo. El sistema no deja hallazgos críticos sin tratamiento."
+      },
+      {
+        "title": "La sala del auditor externo",
+        "text": "Acceso temporal y delimitado, con máximo 72 horas, para que el auditor verifique evidencias, pistas e historial directamente en la plataforma."
+      }
     ],
     "closing": "Cuando llega la fecha con la certificadora, no hay carrera de último minuto. Hay un informe exportado y un score para mostrar."
   },
@@ -317,11 +792,26 @@
     "heroTitle": "Una plataforma de cumplimiento debe ser ejemplar en su propio cumplimiento",
     "heroText": "La credibilidad de ARS ante los auditores depende de nuestra propia disciplina de seguridad. Y es verificable.",
     "sections": [
-      { "title": "Pista de auditoría inmutable", "text": "Cada acción relevante genera un registro append-only con hash encadenado. El historial no puede reescribirse por nadie." },
-      { "title": "Aislamiento absoluto por organización", "text": "Cada organización es un tenant aislado. Ninguna consulta cruza la frontera entre organizaciones." },
-      { "title": "Autenticación corporativa", "text": "Identidad gestionada por un proveedor OIDC con control de acceso basado en roles. Sin contraseñas improvisadas." },
-      { "title": "Evidencias protegidas", "text": "Archivos almacenados en storage de objetos con URLs firmadas de corta vigencia. Nada queda expuesto públicamente." },
-      { "title": "Privacidad por diseño", "text": "La plataforma practica la protección de datos que ayuda a implementar: minimización, consentimiento y retención definida." }
+      {
+        "title": "Pista de auditoría inmutable",
+        "text": "Cada acción relevante genera un registro append-only con hash encadenado. El historial no puede reescribirse por nadie."
+      },
+      {
+        "title": "Aislamiento absoluto por organización",
+        "text": "Cada organización es un tenant aislado. Ninguna consulta cruza la frontera entre organizaciones."
+      },
+      {
+        "title": "Autenticación corporativa",
+        "text": "Identidad gestionada por un proveedor OIDC con control de acceso basado en roles. Sin contraseñas improvisadas."
+      },
+      {
+        "title": "Evidencias protegidas",
+        "text": "Archivos almacenados en storage de objetos con URLs firmadas de corta vigencia. Nada queda expuesto públicamente."
+      },
+      {
+        "title": "Privacidad por diseño",
+        "text": "La plataforma practica la protección de datos que ayuda a implementar: minimización, consentimiento y retención definida."
+      }
     ]
   },
   "solutions": {
@@ -361,10 +851,22 @@
     "heroTitle": "Escale su consultoría sin escalar su equipo",
     "heroText": "Cada cliente en una hoja de cálculo diferente es un techo de crecimiento. ARS coloca a todos los clientes en un único entorno, con aislamiento completo entre ellos.",
     "sections": [
-      { "title": "Un entorno, todos los clientes", "text": "Arquitectura multiorganización con aislamiento absoluto de datos. Visión centralizada para la consultoría, entorno propio para cada cliente." },
-      { "title": "Su metodología, incorporada", "text": "El recorrido guiado de la plataforma lleva su metodología: diagnóstico, plan, ejecución y preparación para la auditoría, repetible en cada cliente." },
-      { "title": "Informes que se mantienen solos", "text": "El score y la cobertura se recalculan continuamente. El informe que presenta al cliente nunca está desactualizado." },
-      { "title": "Trazabilidad que protege", "text": "Cada recomendación, aprobación y entrega registrada en la pista de auditoría. La consultoría demuestra valor con datos, no con percepción." }
+      {
+        "title": "Un entorno, todos los clientes",
+        "text": "Arquitectura multiorganización con aislamiento absoluto de datos. Visión centralizada para la consultoría, entorno propio para cada cliente."
+      },
+      {
+        "title": "Su metodología, incorporada",
+        "text": "El recorrido guiado de la plataforma lleva su metodología: diagnóstico, plan, ejecución y preparación para la auditoría, repetible en cada cliente."
+      },
+      {
+        "title": "Informes que se mantienen solos",
+        "text": "El score y la cobertura se recalculan continuamente. El informe que presenta al cliente nunca está desactualizado."
+      },
+      {
+        "title": "Trazabilidad que protege",
+        "text": "Cada recomendación, aprobación y entrega registrada en la pista de auditoría. La consultoría demuestra valor con datos, no con percepción."
+      }
     ]
   },
   "about": {
@@ -380,11 +882,26 @@
     "missionText": "Hacer el cumplimiento accesible, continuo y previsible para cualquier organización, sin importar su tamaño, madurez o presupuesto.",
     "principlesTitle": "Principios que no negociamos",
     "principles": [
-      { "title": "Score antes que estado", "text": "Los números comunican más que las etiquetas. Donde una etiqueta diría \"en progreso\", ARS muestra \"67% cubierto\"." },
-      { "title": "La IA acelera, el humano decide", "text": "La inteligencia artificial elimina trabajo operativo y sugiere caminos. La decisión final siempre es humana." },
-      { "title": "Cobertura no es declaración", "text": "Un control marcado como implementado sin evidencia aprobada no cuenta. La realidad importa más que la intención." },
-      { "title": "La trazabilidad no es opcional", "text": "Toda acción relevante genera un registro inmutable. Es la base de la confianza ante los auditores." },
-      { "title": "El score cae si no se hace nada", "text": "La plataforma es honesta sobre el decaimiento. Un score alto no se mantiene solo, y ARS no finge que sí." }
+      {
+        "title": "Score antes que estado",
+        "text": "Los números comunican más que las etiquetas. Donde una etiqueta diría \"en progreso\", ARS muestra \"67% cubierto\"."
+      },
+      {
+        "title": "La IA acelera, el humano decide",
+        "text": "La inteligencia artificial elimina trabajo operativo y sugiere caminos. La decisión final siempre es humana."
+      },
+      {
+        "title": "Cobertura no es declaración",
+        "text": "Un control marcado como implementado sin evidencia aprobada no cuenta. La realidad importa más que la intención."
+      },
+      {
+        "title": "La trazabilidad no es opcional",
+        "text": "Toda acción relevante genera un registro inmutable. Es la base de la confianza ante los auditores."
+      },
+      {
+        "title": "El score cae si no se hace nada",
+        "text": "La plataforma es honesta sobre el decaimiento. Un score alto no se mantiene solo, y ARS no finge que sí."
+      }
     ]
   },
   "faq": {
@@ -431,10 +948,24 @@
       "company": "Empresa",
       "role": "Cargo",
       "employees": "Número de colaboradores",
-      "employeesOptions": ["1–50", "51–200", "201–500", "501–1000", "Más de 1000"],
+      "employeesOptions": [
+        "1–50",
+        "51–200",
+        "201–500",
+        "501–1000",
+        "Más de 1000"
+      ],
       "country": "País",
       "frameworks": "Frameworks de interés",
-      "frameworkOptions": ["ISO 27001", "ISO 9001", "ISO 20000-1", "ISO 22301", "ISO 27701", "LGPD", "Otro"],
+      "frameworkOptions": [
+        "ISO 27001",
+        "ISO 9001",
+        "ISO 20000-1",
+        "ISO 22301",
+        "ISO 27701",
+        "LGPD",
+        "Otro"
+      ],
       "message": "Mensaje (opcional)",
       "messagePlaceholder": "Cuéntenos brevemente el momento de cumplimiento de su organización",
       "submit": "Solicitar una demostración",
@@ -454,7 +985,6 @@
   },
   "legal": {
     "privacyTitle": "Política de Privacidad",
-    "cookiesTitle": "Política de Cookies",
     "termsTitle": "Términos de Uso",
     "placeholder": "[CONTENIDO PENDIENTE DE VALIDACIÓN JURÍDICA: este documento será publicado tras la revisión legal.]",
     "lastUpdated": "Última actualización"
@@ -463,5 +993,17 @@
     "title": "Página no encontrada",
     "text": "La dirección que busca no existe o fue movida.",
     "back": "Volver a la página de inicio"
+  },
+  "legacyHome": {
+    "finalCta": {
+      "title": "Deje de estimar. Empiece a medir.",
+      "text": "Vea, en una demostración guiada, cómo su organización puede operar en estado permanente de preparación."
+    },
+    "hero": {
+      "rulerLabel": "Audit Readiness Score",
+      "rulerBandLow": "No auditable",
+      "rulerBandMid": "Riesgo moderado",
+      "rulerBandHigh": "Audit Ready"
+    }
   }
 }

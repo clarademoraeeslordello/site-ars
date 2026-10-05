@@ -29,7 +29,7 @@ export default function LgpdPage({
 
 function Content() {
   const t = useTranslations("lgpd");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const sections = t.raw("sections") as { title: string; text: string }[];
 
   return (

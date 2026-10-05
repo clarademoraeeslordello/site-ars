@@ -29,7 +29,7 @@ export default function FrameworksPage({
 
 function Content() {
   const t = useTranslations("frameworks");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const anchors = t.raw("anchors") as { code: string; name: string; text: string }[];
   const catalogColumns = t.raw("catalogTableColumns") as {
     code: string;

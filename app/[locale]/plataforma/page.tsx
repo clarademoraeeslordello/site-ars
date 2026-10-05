@@ -28,7 +28,7 @@ export default function PlatformPage({
 
 function Content() {
   const t = useTranslations("platform");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const sections = t.raw("sections") as { title: string; text: string }[];
 
   return (

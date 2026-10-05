@@ -28,7 +28,7 @@ export default function SolutionsPage({
 
 function Content() {
   const t = useTranslations("solutions");
-  const th = useTranslations("home.finalCta");
+  const th = useTranslations("legacyHome.finalCta");
   const profiles = t.raw("profiles") as {
     role: string;
     pain: string;

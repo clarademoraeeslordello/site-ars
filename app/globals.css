@@ -1,32 +1,160 @@
 @import "tailwindcss";
 
-@theme {
-  /* ARS palette — black/ivory base, gold signature accent, silver support */
-  --color-ink: #101014;
-  --color-ink-soft: #26262c;
-  --color-paper: #faf8f4;
-  --color-paper-raised: #ffffff;
-  --color-gold: #8a6d1f;
-  --color-gold-bright: #c6a44a;
-  --color-gold-faint: #f3ecd9;
-  --color-silver: #6e6e73;
-  --color-hairline: #e5e1d8;
-  --color-hairline-dark: #3a3a40;
+/*
+ * Tokens herdados do app ARS (CALIBRE Workspace):
+ * Audit_Readiness_Score/frontend/app/globals.css. Mesmos nomes e valores.
+ */
+:root {
+  --bg: #f7f6f2; /* papel · página */
+  --card: #ffffff; /* superfície sobre o papel */
+  --bd: #e3e0d8; /* hairline quente */
+  --bd2: #efece3; /* divisor · trilho */
+  --tx: #1b1b1b; /* ink · texto primário */
+  --tx2: #4a4640; /* corpo */
+  --mut: #807b6e; /* texto secundário */
+  --mut2: #b0ab9c; /* texto muted */
+  --head: #faf7ef; /* painel sutil (tint dourado) */
+  --head-bd: #efe6cf;
+  --side: #161618; /* superfície escura institucional */
+  --hover: #f4f2ec;
+  --inp: #faf9f5; /* fundo de campo */
 
-  /* semantic (product indicators only, desaturated) */
-  --color-ok: #3d6b4f;
-  --color-risk: #a3542e;
-  --color-nc: #8c3a3a;
+  --gold: #a27f24; /* rótulos e links sobre papel (AA) */
+  --gold-deep: #8a6a14; /* hover de botão · score */
+  --gold-cta: #c4a24e; /* fundo sólido de CTA, texto escuro */
+  --gold-light: #e2c477; /* dourado sobre fundo escuro */
 
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-body: var(--font-archivo), system-ui, sans-serif;
+  --dark-card: #1f1f22;
+  --dark-bd: #2f2e2a;
+  --dark-bd2: #3a3933;
+  --dark-tx: #faf8f4;
+  --dark-tx2: #c9c5bb;
+  --dark-mut: #a9a499;
+  --dark-mut2: #8f8a7e;
+
+  --st-ok: #5f7040;
+  --st-ok-bg: #eef0e6;
+  --st-ok-bd: #cdd4bb;
+  --st-warn: #8a6a14;
+  --st-warn-bg: #f3ead6;
+  --st-warn-bd: #d9c8a0;
+  --st-neutral: #807b6e;
+  --st-neutral-bg: #eceae4;
+  --st-neutral-bd: #dcd9d1;
+  --st-crit: #9a2f26;
+  --st-crit-bg: #f7e7e4;
+}
+
+@theme inline {
+  --color-paper: var(--bg);
+  --color-card: var(--card);
+  --color-line: var(--bd);
+  --color-divider: var(--bd2);
+  --color-ink: var(--tx);
+  --color-body: var(--tx2);
+  --color-muted: var(--mut);
+  --color-subtle: var(--mut2);
+  --color-tint: var(--head);
+  --color-tint-line: var(--head-bd);
+  --color-dark: var(--side);
+  --color-hover: var(--hover);
+  --color-well: var(--inp);
+
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-cta: var(--gold-cta);
+  --color-gold-light: var(--gold-light);
+
+  --color-dark-card: var(--dark-card);
+  --color-dark-line: var(--dark-bd);
+  --color-dark-line-2: var(--dark-bd2);
+  --color-dark-ink: var(--dark-tx);
+  --color-dark-body: var(--dark-tx2);
+  --color-dark-muted: var(--dark-mut);
+  --color-dark-subtle: var(--dark-mut2);
+
+  --color-ok: var(--st-ok);
+  --color-ok-bg: var(--st-ok-bg);
+  --color-ok-line: var(--st-ok-bd);
+  --color-warn: var(--st-warn);
+  --color-warn-bg: var(--st-warn-bg);
+  --color-warn-line: var(--st-warn-bd);
+  --color-neutral: var(--st-neutral);
+  --color-neutral-bg: var(--st-neutral-bg);
+  --color-neutral-line: var(--st-neutral-bd);
+  --color-crit: var(--st-crit);
+  --color-crit-bg: var(--st-crit-bg);
+
+  /* Legado: usados pelas páginas antigas até a etapa 3. Não usar em código novo. */
+  --color-ink-soft: var(--tx2);
+  --color-paper-raised: var(--card);
+  --color-gold-bright: var(--gold-light);
+  --color-gold-faint: var(--head);
+  --color-silver: var(--mut);
+  --color-hairline: var(--bd);
+  --color-hairline-dark: var(--dark-bd);
   --font-data: var(--font-plex-mono), ui-monospace, monospace;
 
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --text-h1: clamp(36px, 4.8vw, 58px);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.01em;
+  --text-h2: clamp(28px, 3.2vw, 40px);
+  --text-h2--line-height: 1.15;
+  --text-h3: 21px;
+  --text-h3--line-height: 1.25;
+  --text-label: 11px;
+
+  --radius-control: 11px; /* botões, campos, badges */
+  --radius-panel: 14px; /* painéis internos */
+  --radius-card: 22px; /* cards */
+  --radius-sm: 11px;
+  --radius-md: 22px;
+
+  --shadow-card: 0 1px 2px rgba(16, 16, 20, 0.04), 0 8px 24px -12px rgba(16, 16, 20, 0.1);
+  --shadow-mock: 0 1px 2px rgba(16, 16, 20, 0.04), 0 30px 70px -40px rgba(16, 16, 20, 0.35);
+
   --breakpoint-xs: 23.4375rem;
+  --breakpoint-nav: 68.75rem; /* 1100px: menu completo no header */
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 28px;
+}
+
+@utility section-space {
+  padding-top: clamp(88px, 10vw, 128px);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility card-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -43,24 +171,30 @@ html {
 }
 
 body {
-  background: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--tx);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
 ::selection {
-  background: var(--color-gold-faint);
-  color: var(--color-ink);
+  background: var(--head);
+  color: var(--tx);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
 
-/* Readiness ruler — signature element */
+/* Readiness Ruler: entrada única de 1,2 s */
 @keyframes ruler-sweep {
   from {
     width: 0%;

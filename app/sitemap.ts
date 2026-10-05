@@ -1,15 +1,16 @@
 import type { MetadataRoute } from "next";
-import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
+import { routing, htmlLang, type AppPathname } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.auditreadinessscore.com";
-
-const PATHS = [
-  "",
+// Interim list of existing pages; step 4 (SEO) replaces this with the full route registry.
+const PATHS: AppPathname[] = [
+  "/",
   "/plataforma",
-  "/audit-readiness-score",
+  "/como-funciona",
   "/frameworks",
   "/lgpd",
-  "/auditorias",
+  "/certificacao-e-manutencao",
   "/seguranca",
   "/solucoes",
   "/consultorias",
@@ -18,16 +19,19 @@ const PATHS = [
   "/demonstracao",
 ];
 
+function url(href: AppPathname, locale: (typeof routing.locales)[number]) {
+  // @ts-expect-error static pathnames only (no params) in this list
+  const path = getPathname({ href, locale });
+  // trailingSlash: true in next.config, so every URL ends with "/".
+  return SITE_URL + (path.endsWith("/") ? path : `${path}/`);
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return PATHS.map((path) => ({
-    url: `${BASE_URL}/${routing.defaultLocale}${path}`,
-    lastModified: new Date(),
+    url: url(path, routing.defaultLocale),
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((locale) => [
-          locale === "pt-br" ? "pt-BR" : locale,
-          `${BASE_URL}/${locale}${path}`,
-        ])
+        routing.locales.map((locale) => [htmlLang[locale], url(path, locale)])
       ),
     },
   }));
