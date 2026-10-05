@@ -5,7 +5,9 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 type LocalizedPath = { pt: string; en: string; es: string };
 
-// Old URLs (PT with /pt-br prefix, renamed pages, PT slugs under /en and /es) and their new homes.
+// Renamed pages and PT slugs under /en and /es, and their new homes.
+// The old /pt-br prefix is not handled here: next.config matching ignores case and would also
+// catch the ARS app's /pt-BR links. next-intl strips /pt-br and middleware.ts sends /pt-BR to the app.
 const MOVED: { from: LocalizedPath; to: LocalizedPath }[] = [
   {
     from: { pt: "/audit-readiness-score", en: "/audit-readiness-score", es: "/audit-readiness-score" },
@@ -53,8 +55,6 @@ function movedRedirects() {
   const rules: { source: string; destination: string; permanent: true }[] = [];
   for (const { from, to } of MOVED) {
     // Destinations end with "/" (trailingSlash) so each old URL resolves in a single hop.
-    // /pt-br/<old> always moves to the unprefixed PT URL.
-    rules.push({ source: `/pt-br${from.pt}`, destination: `${to.pt}/`, permanent: true });
     if (from.pt !== to.pt) rules.push({ source: from.pt, destination: `${to.pt}/`, permanent: true });
     if (from.en !== to.en) rules.push({ source: `/en${from.en}`, destination: `/en${to.en}/`, permanent: true });
     if (from.es !== to.es) rules.push({ source: `/es${from.es}`, destination: `/es${to.es}/`, permanent: true });
@@ -68,8 +68,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...movedRedirects(),
-      { source: "/pt-br", destination: "/", permanent: true },
-      { source: "/pt-br/:path+", destination: "/:path+/", permanent: true },
     ];
   },
 };
