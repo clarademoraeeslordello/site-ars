@@ -851,6 +851,7 @@
     "count": "{count, plural, =0 {No articles} one {# article} other {# articles}}",
     "empty": "No articles published yet. As soon as the next change is reviewed, it shows up here.",
     "emptyFiltered": "No articles match these filters.",
+    "emptyStandard": "No articles about {standard} yet.",
     "clear": "Clear filters",
     "source": "Source",
     "sourceDate": "Source date",
@@ -871,6 +872,7 @@
     "back": "All ISO Radar articles",
     "dataNote": "Data: ISO Open Data, published by ISO under the ODC-BY licence. This content summarises and adds context; it does not reproduce the text of the standards.",
     "subscribeTitle": "Get the monthly edition",
-    "monitoring": "Monitored standards"
+    "monitoring": "Monitored standards",
+    "monitoringHint": "Click a standard to see only its articles."
   }
 }

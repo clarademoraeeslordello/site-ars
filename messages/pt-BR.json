@@ -851,6 +851,7 @@
     "count": "{count, plural, =0 {Nenhum artigo} one {# artigo} other {# artigos}}",
     "empty": "Ainda não há artigos publicados. Assim que a próxima mudança for revisada, ela aparece aqui.",
     "emptyFiltered": "Nenhum artigo com esses filtros.",
+    "emptyStandard": "Ainda não há artigos sobre a {standard}.",
     "clear": "Limpar filtros",
     "source": "Fonte",
     "sourceDate": "Data da fonte",
@@ -871,6 +872,7 @@
     "back": "Todos os artigos do ISO Radar",
     "dataNote": "Dados: ISO Open Data, publicados pela ISO sob licença ODC-BY. Este conteúdo resume e contextualiza; não reproduz o texto das normas.",
     "subscribeTitle": "Receba a edição mensal",
-    "monitoring": "Normas monitoradas"
+    "monitoring": "Normas monitoradas",
+    "monitoringHint": "Clique em uma norma para ver só os artigos dela."
   }
 }
