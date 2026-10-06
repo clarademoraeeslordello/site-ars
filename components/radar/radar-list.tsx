@@ -6,6 +6,9 @@ import { Link } from "@/i18n/navigation";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { cn } from "@/lib/utils";
 import { LIFECYCLE_TONE, formatDay, type Lifecycle } from "./format";
+import { useRadarFilter } from "./radar-filter";
+
+export const RADAR_LIST_ID = "radar-articles";
 
 export type RadarListItem = {
   slug: string;
@@ -35,34 +38,36 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
 
 export function RadarList({ items, dateLocale }: { items: RadarListItem[]; dateLocale: string }) {
   const t = useTranslations("radarPage");
-  const [standard, setStandard] = useState<string | null>(null);
+  // The standard is picked in the "monitored standards" chips beside the list.
+  const { standard, setStandard } = useRadarFilter();
   const [status, setStatus] = useState<Lifecycle | null>(null);
 
-  const standards = useMemo(() => [...new Set(items.map((i) => i.standard))].sort(), [items]);
   const statuses = useMemo(
     () => (["published", "in_transition", "under_review", "withdrawn"] as const).filter((s) => items.some((i) => i.lifecycle === s)),
     [items]
   );
   const visible = items.filter((i) => (!standard || i.standard === standard) && (!status || i.lifecycle === status));
 
-  if (!items.length) {
-    return <p className="m-0 rounded-card border border-line bg-card p-6 text-[15px] text-body">{t("empty")}</p>;
+  if (!items.length && !standard) {
+    return (
+      <p id={RADAR_LIST_ID} className="m-0 scroll-mt-24 rounded-card border border-line bg-card p-6 text-[15px] text-body">
+        {t("empty")}
+      </p>
+    );
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div id={RADAR_LIST_ID} className="flex scroll-mt-24 flex-col gap-6">
       <div role="group" aria-label={t("filters.label")} className="flex flex-col gap-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="eyebrow mr-1">{t("filters.standard")}</span>
-          <Chip active={!standard} onClick={() => setStandard(null)}>
-            {t("filters.all")}
-          </Chip>
-          {standards.map((s) => (
-            <Chip key={s} active={standard === s} onClick={() => setStandard(standard === s ? null : s)}>
-              {s}
+        {standard && (
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="eyebrow mr-1">{t("filters.standard")}</span>
+            <Chip active onClick={() => setStandard(null)}>
+              {standard} <span aria-hidden="true">×</span>
+              <span className="sr-only"> ({t("clear")})</span>
             </Chip>
-          ))}
-        </div>
+          </div>
+        )}
         {statuses.length > 1 && (
           <div className="flex flex-wrap items-center gap-2">
             <span className="eyebrow mr-1">{t("filters.status")}</span>
@@ -84,7 +89,7 @@ export function RadarList({ items, dateLocale }: { items: RadarListItem[]; dateL
 
       {visible.length === 0 ? (
         <p className="m-0 text-[15px] text-body">
-          {t("emptyFiltered")}{" "}
+          {standard && !status ? t("emptyStandard", { standard }) : t("emptyFiltered")}{" "}
           <button
             type="button"
             onClick={() => {
