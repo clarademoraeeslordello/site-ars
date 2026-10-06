@@ -30,6 +30,10 @@ const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
 });
 
+// Only the known locales exist: a path like /.env (skipped by the middleware, so never
+// rewritten to a locale) is a plain 404 instead of a 500 from rendering an unknown locale.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
