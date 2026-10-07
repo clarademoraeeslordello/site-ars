@@ -12,9 +12,9 @@ export function toDbLocale(locale: string): DbLocale {
   return locale === "en" || locale === "es" ? locale : "pt-BR";
 }
 
-export type DraftBody = {
-  title: string;
-  summary: string;
+export type DraftHeadline = { title: string; summary: string };
+
+export type DraftBody = DraftHeadline & {
   whatHappened: string;
   whatChanged: string;
   impact: string;
@@ -26,6 +26,12 @@ const HEADINGS: Record<DbLocale, [string, string, string, string]> = {
   en: ["What happened", "What changed", "Impact", "What to watch"],
   es: ["Qué pasó", "Qué cambió", "Impacto", "Qué observar"],
 };
+
+/** Language of a stored body, read from its first heading (null when it has none of ours). */
+export function bodyLocale(md: string): DbLocale | null {
+  const first = /^## (.+)$/m.exec(md)?.[1].trim();
+  return DB_LOCALES.find((l) => HEADINGS[l][0] === first) ?? null;
+}
 
 export function toMarkdown(body: DraftBody, locale: DbLocale) {
   const [a, b, c, d] = HEADINGS[locale];

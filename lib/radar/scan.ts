@@ -158,8 +158,10 @@ export async function runScan(): Promise<ScanResult> {
         };
         await db.insert(radarArticles).values(
           DB_LOCALES.map((locale) => {
-            const body = content[DRAFT_LOCALE[locale]];
-            return { ...shared, locale, title: body.title, summary: body.summary, bodyMd: toMarkdown(body, locale) };
+            const head = content[DRAFT_LOCALE[locale]];
+            // Spanish shows the English text (the page says so) under its own title and summary.
+            const bodyMd = locale === "pt-BR" ? toMarkdown(content["pt-br"], "pt-BR") : toMarkdown(content.en, "en");
+            return { ...shared, locale, title: head.title, summary: head.summary, bodyMd };
           })
         );
         drafted++;
