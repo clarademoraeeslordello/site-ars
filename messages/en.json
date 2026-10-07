@@ -863,6 +863,11 @@
     "toConfirm": "To be confirmed",
     "toConfirmNote": "Transition deadlines are set by accreditation bodies (IAF), not by ISO. We update this once there is a source.",
     "officialPage": "See the official page on ISO.org",
+    "textIn": {
+      "en": "This content is available in English.",
+      "es": "This content is available in Spanish.",
+      "pt-BR": "This content is available in Portuguese."
+    },
     "sections": {
       "whatHappened": "What happened",
       "whatChanged": "What changed",

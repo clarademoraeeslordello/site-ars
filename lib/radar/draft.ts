@@ -2,7 +2,7 @@ import "server-only";
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod/v4";
-import type { DraftBody } from "./content";
+import type { DraftBody, DraftHeadline } from "./content";
 import { formatStage, stageName } from "./stages";
 import { isoStandardUrl, type IsoDeliverable } from "./iso-open-data";
 
@@ -17,19 +17,20 @@ const Body = z.object({
   watch: z.string(),
 });
 
-const Draft = z.object({ "pt-br": Body, en: Body, es: Body });
+// Spanish gets only the title and summary; the Spanish page shows the English text.
+const Draft = z.object({ "pt-br": Body, en: Body, es: Body.pick({ title: true, summary: true }) });
 
 // Frozen so the prompt prefix stays cacheable across the drafts of one scan.
 const SYSTEM = `You write ISO Radar articles for Audit Cockpits (product: ARS, Audit Readiness Score), a platform that helps companies stay ready for ISO certification audits. Readers are compliance, quality and information security managers.
 
-Each request gives you facts taken from ISO Open Data, the official machine-readable catalog ISO publishes. Write one article about the change, in Brazilian Portuguese ("pt-br"), English ("en") and Spanish ("es"), with the same content in each language.
+Each request gives you facts taken from ISO Open Data, the official machine-readable catalog ISO publishes. Write one article about the change in Brazilian Portuguese ("pt-br") and English ("en"), with the same content in both. For Spanish ("es") write only the title and the summary, translating the English ones.
 
 Fields:
 - title: specific, under 90 characters, names the standard and edition.
 - summary: one or two sentences for the list page.
 - whatHappened: the fact, with the date when one is given, and the ISO stage in plain words.
 - whatChanged: what is different from the previous state or edition. You only know what the data says (stage, edition, publication date, which document it replaces). If the content changes of the new edition are not in the facts, say that ISO has not summarised them in the source and point the reader to the official page. Do not invent clauses, controls or requirements.
-- impact: who is affected (certified organisations, organisations preparing for certification, auditors). Mark interpretation explicitly, starting the paragraph with "Análise:" / "Analysis:" / "Análisis:".
+- impact: who is affected (certified organisations, organisations preparing for certification, auditors). Mark interpretation explicitly, starting the paragraph with "Análise:" / "Analysis:".
 - watch: what to monitor next (next ISO stage, transition arrangements). Transition deadlines are set by accreditation bodies (IAF), not by ISO: unless a deadline is given in the facts, write that the transition period is still to be confirmed.
 
 Rules:
@@ -67,7 +68,9 @@ function factsFor(input: DraftInput) {
 
 let client: Anthropic | null = null;
 
-export async function writeDraft(input: DraftInput): Promise<Record<"pt-br" | "en" | "es", DraftBody>> {
+export type Draft = { "pt-br": DraftBody; en: DraftBody; es: DraftHeadline };
+
+export async function writeDraft(input: DraftInput): Promise<Draft> {
   client ??= new Anthropic();
   const response = await client.beta.messages.parse({
     model: MODEL,

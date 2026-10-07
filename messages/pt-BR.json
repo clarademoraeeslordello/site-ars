@@ -863,6 +863,11 @@
     "toConfirm": "A confirmar",
     "toConfirmNote": "Prazos de transição são definidos pelos organismos de acreditação (IAF), não pela ISO. Atualizamos quando houver fonte.",
     "officialPage": "Ver a página oficial na ISO.org",
+    "textIn": {
+      "en": "Este conteúdo está disponível em inglês.",
+      "es": "Este conteúdo está disponível em espanhol.",
+      "pt-BR": "Este conteúdo está disponível em português."
+    },
     "sections": {
       "whatHappened": "O que aconteceu",
       "whatChanged": "O que mudou",
