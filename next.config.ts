@@ -22,10 +22,6 @@ const MOVED: { from: LocalizedPath; to: LocalizedPath }[] = [
     to: { pt: "/privacidade", en: "/privacy", es: "/privacidad" },
   },
   {
-    from: { pt: "/legal/cookies", en: "/legal/cookies", es: "/legal/cookies" },
-    to: { pt: "/privacidade", en: "/privacy", es: "/privacidad" },
-  },
-  {
     from: { pt: "/legal/termos", en: "/legal/termos", es: "/legal/termos" },
     to: { pt: "/termos", en: "/terms", es: "/terminos" },
   },
