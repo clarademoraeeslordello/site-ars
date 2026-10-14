@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { BrandIcon } from "@/components/brand/brand-icon";
 import { buttonClasses } from "@/components/ui/button";
 import { LanguageSwitcher } from "./language-switcher";
 import { MAIN_NAV } from "./nav-items";
@@ -44,15 +43,23 @@ export function SiteHeader() {
           aria-label={t("homeLabel")}
           className="flex flex-none items-center gap-2.5 whitespace-nowrap text-ink"
         >
-          <BrandIcon size={32} className="block flex-none rounded-[8px]" />
-          <span className="flex flex-col gap-[3px]">
-            <span className="font-display text-[18px] font-semibold leading-none tracking-[0.08em]">
-              Audit Cockpits
-            </span>
-            <span className="hidden font-mono text-[9px] font-medium leading-none tracking-[0.2em] text-gold xs:block">
-              COMPLIANCE INTELLIGENCE PLATFORM
-            </span>
-          </span>
+          {/* Logo files from the brand kit (never retype the name as text); symbol only below 375px. */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG from the brand kit */}
+          <img
+            src="/brand/ac-simbolo_fundo-claro.svg"
+            alt=""
+            width={36}
+            height={25}
+            className="block h-[25px] w-auto xs:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG from the brand kit */}
+          <img
+            src="/brand/ac-logo-horizontal_fundo-claro.svg"
+            alt=""
+            width={294}
+            height={21}
+            className="hidden h-[19px] w-auto xs:block nav:h-[21px]"
+          />
         </Link>
 
         <nav

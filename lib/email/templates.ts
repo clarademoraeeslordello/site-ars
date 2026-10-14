@@ -1,4 +1,5 @@
 import "server-only";
+import { SITE_URL } from "@/lib/site";
 
 /** HTML escaping for every dynamic value placed in an email. */
 export function esc(value: string) {
@@ -43,7 +44,7 @@ export function emailLayout({
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:32px 16px;">
 <tr><td align="center">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;">
-<tr><td style="padding:0 4px 16px;font:600 18px Georgia,serif;letter-spacing:.08em;color:#1b1b1b;">Audit Cockpits <span style="font:500 10px Arial,sans-serif;letter-spacing:.2em;color:#a27f24;">COMPLIANCE INTELLIGENCE PLATFORM</span></td></tr>
+<tr><td style="padding:0 0 16px;"><img src="${SITE_URL}/brand/ac-logo-horizontal_fundo-claro.png" width="240" alt="Audit Cockpits" style="display:block;border:0;width:240px;height:auto;"></td></tr>
 <tr><td style="background:#ffffff;border:1px solid #e3e0d8;border-radius:22px;padding:32px;">
 <h1 style="margin:0 0 16px;font:500 24px/1.25 Georgia,serif;color:#1b1b1b;">${esc(heading)}</h1>
 ${p}${button}

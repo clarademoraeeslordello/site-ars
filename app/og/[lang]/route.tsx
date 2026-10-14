@@ -4,6 +4,13 @@ import { loadGoogleFont } from "@/lib/og-font";
 import pt from "@/messages/pt-BR.json";
 import en from "@/messages/en.json";
 import es from "@/messages/es.json";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+// Horizontal logo for dark backgrounds, from the brand kit (public/brand).
+const LOGO = `data:image/svg+xml;base64,${readFileSync(
+  join(process.cwd(), "public/brand/ac-logo-horizontal_fundo-escuro.svg"),
+).toString("base64")}`;
 
 // Share image (1200×630) per locale: dark brand card with the Home headline.
 export const dynamic = "force-static";
@@ -22,8 +29,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ lang: s
   const eyebrow = m.hero.eyebrow;
 
   const [fraunces, plex] = await Promise.all([
-    loadGoogleFont("Fraunces", 500, `Audit Cockpits ${title}`),
-    loadGoogleFont("IBM Plex Mono", 500, `COMPLIANCE INTELLIGENCE PLATFORM ${eyebrow.toUpperCase()} auditcockpits.com`),
+    loadGoogleFont("Fraunces", 500, title),
+    loadGoogleFont("IBM Plex Mono", 500, `${eyebrow.toUpperCase()} auditcockpits.com`),
   ]);
   const fonts = [
     ...(fraunces ? [{ name: "Fraunces", data: fraunces, weight: 500 as const }] : []),
@@ -44,20 +51,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ lang: s
           padding: "64px 72px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <svg width="56" height="56" viewBox="0 0 32 32">
-            <rect width="32" height="32" rx="6" fill="#101014" />
-            <path d="M4 24 A12 12 0 0 1 28 24" stroke="#3a3a40" strokeWidth="1" fill="none" />
-            <path d="M26.7 18.5 A12 12 0 0 1 28 24" stroke="#c6a44a" strokeWidth="1.8" fill="none" strokeLinecap="round" />
-            <line x1="16" y1="24" x2="25.6" y2="19.8" stroke="#c6a44a" strokeWidth="1" strokeLinecap="round" />
-            <circle cx="16" cy="24" r="1.8" fill="#c6a44a" />
-            <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" strokeWidth="1.4" fill="none" strokeLinejoin="round" strokeLinecap="round" />
-          </svg>
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <span style={{ fontFamily: "Fraunces", fontSize: 30, letterSpacing: 1.2 }}>Audit Cockpits</span>
-            <span style={{ fontFamily: "Plex", fontSize: 14, letterSpacing: 4, color: "#e2c477" }}>COMPLIANCE INTELLIGENCE PLATFORM</span>
-          </div>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element -- brand kit logo rendered by next/og */}
+        <img src={LOGO} width={490} height={35} alt="Audit Cockpits" />
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <span style={{ fontFamily: "Plex", fontSize: 18, letterSpacing: 3, color: "#c4a24e", textTransform: "uppercase" }}>
