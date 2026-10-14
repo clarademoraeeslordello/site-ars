@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildMetadata } from "@/lib/seo";
-import { LegalDocument } from "@/components/marketing/legal-document";
+import { LegalDocument, legalTitle } from "@/components/marketing/legal-document";
+import { getLegalMeta } from "@/lib/legal/documents";
 
 export async function generateMetadata({
   params,
@@ -10,8 +11,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal" });
-  // noindex while the text is a placeholder pending legal review.
-  return buildMetadata({ locale, href: "/termos", title: t("termsTitle"), description: t("termsTitle"), noindex: true });
+  const title = legalTitle(getLegalMeta("termos", locale).title);
+  return buildMetadata({ locale, href: "/termos", title, description: t("description", { title }) });
 }
 
 export default async function TermsPage({
@@ -21,5 +22,5 @@ export default async function TermsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <LegalDocument locale={locale} titleKey="termsTitle" href="/termos" />;
+  return <LegalDocument locale={locale} slug="termos" href="/termos" />;
 }

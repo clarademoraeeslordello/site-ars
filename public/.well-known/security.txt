@@ -1,0 +1,6 @@
+Contact: mailto:dpo@auditcockpits.com
+Expires: 2027-10-11T00:00:00.000Z
+Preferred-Languages: pt, en, es
+Canonical: https://auditcockpits.com/.well-known/security.txt
+Canonical: https://app.auditcockpits.com/.well-known/security.txt
+Policy: https://auditcockpits.com/legal/divulgacao-responsavel

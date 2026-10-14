@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "privacidade",
+    "pt-BR": {
+      "title": "Política de Privacidade — Audit Cockpits",
+      "version": "2.1",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Privacy Policy — Audit Cockpits",
+      "version": "2.1",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "cookies",
+    "pt-BR": {
+      "title": "Política de Cookies — Audit Cockpits",
+      "version": "1.0",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Cookie Policy — Audit Cockpits",
+      "version": "1.0",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "termos",
+    "pt-BR": {
+      "title": "Termos de Uso — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Terms of Use — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "uso-aceitavel",
+    "pt-BR": {
+      "title": "Política de Uso Aceitável — Audit Cockpits",
+      "version": "1.0",
+      "updated": "2026-10-11"
+    },
+    "en": {
+      "title": "Acceptable Use Policy — Audit Cockpits",
+      "version": "1.0",
+      "updated": "2026-10-11"
+    }
+  },
+  {
+    "slug": "seguranca",
+    "pt-BR": {
+      "title": "Segurança no Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Security at Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "divulgacao-responsavel",
+    "pt-BR": {
+      "title": "Política de Divulgação Responsável de Vulnerabilidades — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Responsible Vulnerability Disclosure Policy — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "suboperadores",
+    "pt-BR": {
+      "title": "Suboperadores — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Subprocessors — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "dpa",
+    "pt-BR": {
+      "title": "Acordo de Tratamento de Dados Pessoais (DPA) — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Data Processing Agreement (DPA) — Audit Cockpits",
+      "version": "1.1",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "uso-de-ia",
+    "pt-BR": {
+      "title": "Política de Uso de Inteligência Artificial",
+      "version": "1.0",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Artificial Intelligence Use Policy",
+      "version": "1.0",
+      "updated": "2026-10-13"
+    }
+  },
+  {
+    "slug": "acessibilidade",
+    "pt-BR": {
+      "title": "Declaração de Acessibilidade — Audit Cockpits",
+      "version": "1.0",
+      "updated": "2026-10-13"
+    },
+    "en": {
+      "title": "Accessibility Statement — Audit Cockpits",
+      "version": "1.0",
+      "updated": "2026-10-13"
+    }
+  }
+]

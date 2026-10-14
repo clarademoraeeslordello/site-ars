@@ -22,4 +22,5 @@ export const FOOTER_NAV: { key: string; href: Href }[] = [
   { key: "about", href: "/sobre" },
   { key: "privacy", href: "/privacidade" },
   { key: "terms", href: "/termos" },
+  { key: "legal", href: "/legal" },
 ];
