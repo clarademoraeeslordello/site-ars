@@ -1,5 +1,5 @@
 /*
- * Institutional site database (Railway Postgres, separate from the ARS app).
+ * Institutional site database (Railway Postgres, separate from the Audit Cockpits app).
  * Model from docs/design-handoff/reference/"Fase 2 - Arquitetura do Site" section 06.
  *
  * Security notes:

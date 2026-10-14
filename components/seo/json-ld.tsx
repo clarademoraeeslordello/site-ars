@@ -1,5 +1,5 @@
 import { htmlLang, type Locale } from "@/i18n/routing";
-import { CONTACT, COMPANY_NAME, PRODUCT_NAME, SITE_URL } from "@/lib/site";
+import { CONTACT, COMPANY_NAME, PRODUCT_NAME, SITE_URL, TAGLINE } from "@/lib/site";
 
 /** Renders one JSON-LD block. "<" is escaped so content can never close the script tag. */
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
@@ -32,7 +32,7 @@ export function siteGraph(locale: Locale, homeUrl: string, description: string) 
           telephone: CONTACT.phone.replace(/[^\d+]/g, ""),
           availableLanguage: ["pt-BR", "en", "es"],
         },
-        brand: { "@type": "Brand", name: `${PRODUCT_NAME}, Audit Readiness Score` },
+        brand: { "@type": "Brand", name: PRODUCT_NAME },
       },
       {
         "@type": "WebSite",
@@ -61,12 +61,12 @@ export function breadcrumbList(items: { name: string; url: string }[]) {
   };
 }
 
-/** SoftwareApplication for the ARS product page. No price, rating or review (not available). */
+/** SoftwareApplication for the platform page. No price, rating or review (not available). */
 export function softwareApplication(locale: Locale, url: string, description: string) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: `${PRODUCT_NAME} · Audit Readiness Score`,
+    name: `${PRODUCT_NAME} · ${TAGLINE}`,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url,

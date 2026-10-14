@@ -1,4 +1,4 @@
-/** ARS instrument icon (docs/design-handoff/assets/brand/icon.svg), inline to avoid a request. */
+/** Audit Cockpits instrument icon (docs/design-handoff/assets/brand/icon.svg), inline to avoid a request. */
 export function BrandIcon({ size = 32, className }: { size?: number; className?: string }) {
   return (
     <svg

@@ -44,13 +44,13 @@ export function SiteHeader() {
           aria-label={t("homeLabel")}
           className="flex flex-none items-center gap-2.5 whitespace-nowrap text-ink"
         >
-          <BrandIcon size={32} className="block rounded-[8px]" />
+          <BrandIcon size={32} className="block flex-none rounded-[8px]" />
           <span className="flex flex-col gap-[3px]">
             <span className="font-display text-[18px] font-semibold leading-none tracking-[0.08em]">
-              ARS
+              Audit Cockpits
             </span>
-            <span className="font-mono text-[9px] font-medium leading-none tracking-[0.2em] text-gold">
-              AUDIT READINESS
+            <span className="hidden font-mono text-[9px] font-medium leading-none tracking-[0.2em] text-gold xs:block">
+              COMPLIANCE INTELLIGENCE PLATFORM
             </span>
           </span>
         </Link>

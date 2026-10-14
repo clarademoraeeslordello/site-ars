@@ -1,8 +1,8 @@
 {
   "meta": {
-    "shortTitle": "ARS · Audit Readiness Platform",
-    "title": "ARS · Audit Readiness Platform · Audit Cockpits",
-    "description": "ARS brings requirements, controls, evidence and actions together in one place and shows, at any moment, how far you are from your audit readiness target."
+    "shortTitle": "Audit Cockpits · Compliance Intelligence Platform",
+    "title": "Audit Cockpits · Compliance Intelligence Platform",
+    "description": "Audit Cockpits brings requirements, controls, evidence and actions together in one place and shows, at any moment, how far you are from your audit readiness target."
   },
   "nav": {
     "platform": "Platform",
@@ -19,7 +19,7 @@
     "resources": "Resources",
     "login": "Sign in",
     "bookDemo": "Book a demo",
-    "homeLabel": "ARS, home",
+    "homeLabel": "Audit Cockpits, home",
     "mainLabel": "Main",
     "certification": "Certification and maintenance"
   },
@@ -32,18 +32,18 @@
   },
   "home": {
     "meta": {
-      "title": "ARS · Audit Readiness Platform · Audit Cockpits",
-      "description": "ARS brings requirements, controls, evidence and actions together in one place, so your team reaches the audit knowing exactly where the company stands."
+      "title": "Audit Cockpits · Compliance Intelligence Platform",
+      "description": "Audit Cockpits brings requirements, controls, evidence and actions together in one place, so your team reaches the audit knowing exactly where the company stands."
     },
     "hero": {
       "eyebrow": "Audit readiness as a continuous operation",
       "title": "Walk into your audit knowing exactly where your company stands.",
-      "lead": "ARS brings requirements, controls, evidence and actions together in one place. Your team stops hunting for files and rebuilding history every cycle, and spends its time fixing what is actually missing.",
+      "lead": "Audit Cockpits brings requirements, controls, evidence and actions together in one place. Your team stops hunting for files and rebuilding history every cycle, and spends its time fixing what is actually missing.",
       "ctaDemo": "Book a demo",
       "ctaHow": "See how it works"
     },
     "live": {
-      "aria": "This week's activity in ARS, with demo data",
+      "aria": "This week's activity in Audit Cockpits, with demo data",
       "label": "This week · ISO 27001",
       "live": "live",
       "scoreLabel": "Audit Readiness Score",
@@ -73,8 +73,8 @@
       ]
     },
     "appMock": {
-      "aria": "ARS home screen, recreated with demo data",
-      "caption": "The ARS home screen, recreated with demo data.",
+      "aria": "Audit Cockpits home screen, recreated with demo data",
+      "caption": "Audit Cockpits home screen, recreated with demo data.",
       "tabs": [
         "Home",
         "Journeys",
@@ -133,7 +133,7 @@
       "head": {
         "q": "The question",
         "before": "How it usually goes",
-        "after": "With ARS"
+        "after": "With Audit Cockpits"
       },
       "items": [
         {
@@ -194,7 +194,7 @@
         }
       ],
       "journey": {
-        "aria": "ISO 27001 journey in ARS, recreated with demo data",
+        "aria": "ISO 27001 journey in Audit Cockpits, recreated with demo data",
         "back": "← BACK TO AUDITS",
         "label": "ISO 27001 · 2022",
         "title": "ISO 27001 · Certification Readiness",
@@ -273,7 +273,7 @@
         "title": "No assembling a package for the auditor",
         "text": "Readiness, SOA, Evidence and Maturity reports come out ready, in PDF or Excel.",
         "heading": "Audit Readiness Score",
-        "code": "ARS-RDN-20261003",
+        "code": "AC-RDN-20261003",
         "label": "READINESS REPORT",
         "disclaimer": "INTERNAL USE, NOT A CERTIFICATE OF CONFORMITY"
       },
@@ -348,8 +348,8 @@
       "eyebrow": "After certification",
       "title": "Certification does not end the work. It starts the next cycle.",
       "text": "After preparation come the external audit, recording the result, maintenance and renewal. The external auditor can have their own access, and each cycle's history is kept for the next one.",
-      "callout": "The certification body decides on certification. ARS organizes, records and tracks.",
-      "aria": "Certification and maintenance stages in ARS, recreated with demo data",
+      "callout": "The certification body decides on certification. Audit Cockpits organizes, records and tracks.",
+      "aria": "Certification and maintenance stages in Audit Cockpits, recreated with demo data",
       "auditor": {
         "title": "Readiness score (auditor view)",
         "badge": "Below minimum",
@@ -407,7 +407,7 @@
     },
     "cta": {
       "title": "Shall we look at your readiness together?",
-      "text": "In the demo, we show how ARS turns requirements, evidence and actions into a continuous view of readiness, using the standard that matters to you.",
+      "text": "In the demo, we show how Audit Cockpits turns requirements, evidence and actions into a continuous view of readiness, using the standard that matters to you.",
       "button": "Book a demo",
       "contact": "Or talk to us directly:"
     }
@@ -476,7 +476,7 @@
       "home": "Home",
       "breadcrumb": "Breadcrumb",
       "learnMore": "Learn more",
-      "demoCaption": "ARS screens recreated with demo data."
+      "demoCaption": "Audit Cockpits screens recreated with demo data."
     },
     "platform": {
       "meta": {
@@ -485,7 +485,7 @@
       },
       "eyebrow": "Platform",
       "title": "Requirements, controls, evidence and actions in one place.",
-      "lead": "ARS organizes compliance work around the standard that matters to you. Every piece is linked to the next, and the Audit Readiness Score shows, at any moment, how far you are from your readiness target.",
+      "lead": "Audit Cockpits organizes compliance work around the standard that matters to you. Every piece is linked to the next, and the Audit Readiness Score shows, at any moment, how far you are from your readiness target.",
       "score": {
         "eyebrow": "Audit Readiness Score",
         "title": "A calculated number, not an impression.",
@@ -535,18 +535,18 @@
       ],
       "certLink": {
         "title": "Certification and maintenance",
-        "text": "Preparation is only the beginning. See how ARS tracks the external audit, maintenance and renewal.",
+        "text": "Preparation is only the beginning. See how Audit Cockpits tracks the external audit, maintenance and renewal.",
         "cta": "See certification and maintenance"
       }
     },
     "how": {
       "meta": {
         "title": "How it works",
-        "description": "Requirement, control, evidence, gap, action and score: how ARS connects every piece and guides the seven-stage journey to the audit."
+        "description": "Requirement, control, evidence, gap, action and score: how Audit Cockpits connects every piece and guides the seven-stage journey to the audit."
       },
       "eyebrow": "How it works",
       "title": "From requirement to score, a chain that does not break.",
-      "lead": "Audit readiness depends on knowing, for each requirement of the standard, what meets it, what proves it and what is still missing. ARS keeps that chain connected from start to finish.",
+      "lead": "Audit readiness depends on knowing, for each requirement of the standard, what meets it, what proves it and what is still missing. Audit Cockpits keeps that chain connected from start to finish.",
       "chainTitle": "The chain",
       "chain": [
         {
@@ -609,15 +609,15 @@
       "faqTitle": "Frequently asked questions",
       "faq": [
         {
-          "q": "Does ARS issue the certificate?",
-          "a": "No. The certification body decides on certification. ARS organizes, records and tracks the preparation and the cycle that follows."
+          "q": "Does Audit Cockpits issue the certificate?",
+          "a": "No. The certification body decides on certification. Audit Cockpits organizes, records and tracks the preparation and the cycle that follows."
         },
         {
-          "q": "Does ARS replace the consultant or the auditor?",
-          "a": "No. ARS is the platform where the work happens. Consultants, internal auditors and the external auditor can work inside it."
+          "q": "Does Audit Cockpits replace the consultant or the auditor?",
+          "a": "No. Audit Cockpits is the platform where the work happens. Consultants, internal auditors and the external auditor can work inside it."
         },
         {
-          "q": "Which standards does ARS cover?",
+          "q": "Which standards does Audit Cockpits cover?",
           "a": "The catalog has 37 standards and frameworks, with 706 requirements, including ISO 27001, ISO 9001, ISO 14001, ISO 22301, ISO 27701, ISO 42001 and LGPD."
         },
         {
@@ -625,7 +625,7 @@
           "a": "It goes into a renewal queue with a 15-day grace period. During that time, the control still counts in the internal score, but not in what the external auditor sees."
         },
         {
-          "q": "Can the external auditor access ARS?",
+          "q": "Can the external auditor access Audit Cockpits?",
           "a": "Yes. The external auditor can have their own access, with a defined scope, to review what they need without waiting for files to be sent."
         }
       ]
@@ -633,13 +633,13 @@
     "cert": {
       "meta": {
         "title": "Certification and maintenance",
-        "description": "Prepare, audit, record, maintain and renew: how ARS tracks the full certification cycle. The certification body decides."
+        "description": "Prepare, audit, record, maintain and renew: how Audit Cockpits tracks the full certification cycle. The certification body decides."
       },
       "eyebrow": "Certification and maintenance",
       "title": "Certification is a cycle, not a date.",
       "lead": "After preparation come the external audit, recording the result, maintenance and renewal. Each cycle's history is kept for the next one.",
-      "callout": "The certification body decides on certification. ARS organizes, records and tracks.",
-      "cycleTitle": "The cycle in ARS",
+      "callout": "The certification body decides on certification. Audit Cockpits organizes, records and tracks.",
+      "cycleTitle": "The cycle in Audit Cockpits",
       "cycle": [
         {
           "t": "Prepare",
@@ -715,11 +715,11 @@
     "security": {
       "meta": {
         "title": "Security",
-        "description": "The principles ARS applies to your organization's compliance data: isolation, an immutable audit trail and verified evidence."
+        "description": "The principles Audit Cockpits applies to your organization's compliance data: isolation, an immutable audit trail and verified evidence."
       },
       "eyebrow": "Security",
       "title": "Traceability by default.",
-      "lead": "Compliance depends on reliable records. These are the principles ARS applies to your organization's data.",
+      "lead": "Compliance depends on reliable records. These are the principles Audit Cockpits applies to your organization's data.",
       "items": [
         {
           "t": "Data separated by organization",
@@ -731,7 +731,7 @@
         },
         {
           "t": "Evidence checked on upload",
-          "d": "On upload, ARS checks the file's real type, its size and the hash of its content."
+          "d": "On upload, Audit Cockpits checks the file's real type, its size and the hash of its content."
         },
         {
           "t": "Scoped auditor access",
@@ -751,29 +751,29 @@
     "about": {
       "meta": {
         "title": "About",
-        "description": "Audit Cockpits is the company behind ARS, the platform that keeps compliance organized and ready for audits."
+        "description": "Audit Cockpits is the company and the platform that keeps compliance organized and ready for audits."
       },
       "eyebrow": "About",
       "title": "Why we built Audit Cockpits",
       "quote": "An audit should not mean a scramble. Yet for many companies it is exactly when missing documents, lost evidence, outdated controls and untracked risks come to light.",
       "text": "After living through this challenge first-hand, our founder created Audit Cockpits to help companies keep their compliance organized and ready for audits, not only when an audit arrives.",
-      "namesTitle": "Audit Cockpits and ARS",
-      "names": "Audit Cockpits is the company. ARS, Audit Readiness Score, is the product: the platform that shows where the organization stands against the standard and what is missing to reach the readiness target.",
+      "namesTitle": "Audit Cockpits and the Audit Readiness Score",
+      "names": "Audit Cockpits is the name of the company and of the platform, a compliance intelligence platform. The Audit Readiness Score is its main indicator: it shows where the organization stands against the standard and what is missing to reach the readiness target.",
       "contactTitle": "Talk to us"
     },
     "demo": {
       "meta": {
         "title": "Book a demo",
-        "description": "See ARS with the standard that matters to you: requirements, evidence, actions and the Audit Readiness Score in one continuous view of readiness."
+        "description": "See Audit Cockpits with the standard that matters to you: requirements, evidence, actions and the Audit Readiness Score in one continuous view of readiness."
       },
       "eyebrow": "Demo",
       "title": "Shall we look at your readiness together?",
-      "lead": "In the demo, we show how ARS turns requirements, evidence and actions into a continuous view of readiness, using the standard that matters to you.",
+      "lead": "In the demo, we show how Audit Cockpits turns requirements, evidence and actions into a continuous view of readiness, using the standard that matters to you.",
       "nextTitle": "After you send it",
       "next": [
         "We receive your request by email.",
         "We agree on a time with you.",
-        "We show you ARS with the standard that matters to your organization."
+        "We show you Audit Cockpits with the standard that matters to your organization."
       ],
       "contactTitle": "Prefer to talk directly?"
     }

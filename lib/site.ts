@@ -7,7 +7,9 @@ export const SITE_URL = (
 export const APP_URL = "https://app.auditcockpits.com/";
 
 export const COMPANY_NAME = "Audit Cockpits";
-export const PRODUCT_NAME = "ARS";
+/** ADR-014: Audit Cockpits is the single name of the company and of the platform. */
+export const PRODUCT_NAME = COMPANY_NAME;
+export const TAGLINE = "Compliance Intelligence Platform";
 
 export const CONTACT = {
   email: "auditreadinessscore@gmail.com",

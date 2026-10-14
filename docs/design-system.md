@@ -1,4 +1,4 @@
-# ARS — Design System
+# Audit Cockpits — Design System
 
 Fonte de verdade visual do site institucional da Audit Readiness Score. Use este documento para aplicar a mesma identidade no produto (app da plataforma).
 

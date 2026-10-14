@@ -16,7 +16,7 @@ export function AdminShell({ email, active, children }: { email: string; active:
     <div className="mx-auto flex max-w-[1080px] flex-col gap-8 px-4 py-8 sm:px-7">
       <header className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-4">
         <nav className="flex items-center gap-6 text-[15px]">
-          <span className="font-display text-lg font-semibold tracking-[0.06em]">ARS · Painel</span>
+          <span className="font-display text-lg font-semibold tracking-[0.06em]">Audit Cockpits · Painel</span>
           {tab("radar", "/admin/radar", "ISO Radar")}
           {tab("newsletter", "/admin/newsletter", "Newsletter")}
         </nav>

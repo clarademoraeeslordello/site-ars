@@ -1,5 +1,5 @@
 /**
- * The ARS app used to answer on auditcockpits.com before it moved to app.auditcockpits.com.
+ * The Audit Cockpits app used to answer on auditcockpits.com before it moved to app.auditcockpits.com.
  * Old app links (invites, emails, bookmarks) still point at the apex, so these paths are sent
  * to the app instead of hitting the institutional site's 404.
  *
@@ -28,7 +28,7 @@ export const APP_SEGMENTS = [
 
 export const APP_API_PREFIXES = ["/api/sso", "/api/auth", "/api/audit-readiness", "/api/reports", "/api/csp-report"];
 
-/** True when a request path belongs to the ARS app rather than the institutional site. */
+/** True when a request path belongs to the Audit Cockpits app rather than the institutional site. */
 export function isAppPath(pathname: string): boolean {
   // Case-sensitive on purpose: the site uses lowercase pt-br (and no PT prefix at all).
   if (pathname === "/pt-BR" || pathname.startsWith("/pt-BR/")) return true;

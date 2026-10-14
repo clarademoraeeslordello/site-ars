@@ -1,8 +1,8 @@
 {
   "meta": {
-    "shortTitle": "ARS · Audit Readiness Platform",
-    "title": "ARS · Audit Readiness Platform · Audit Cockpits",
-    "description": "O ARS reúne requisitos, controles, evidências e ações em um só lugar e mostra, a qualquer momento, quanto falta para a meta de prontidão para auditoria."
+    "shortTitle": "Audit Cockpits · Compliance Intelligence Platform",
+    "title": "Audit Cockpits · Compliance Intelligence Platform",
+    "description": "O Audit Cockpits reúne requisitos, controles, evidências e ações em um só lugar e mostra, a qualquer momento, quanto falta para a meta de prontidão para auditoria."
   },
   "nav": {
     "platform": "Plataforma",
@@ -19,7 +19,7 @@
     "resources": "Recursos",
     "login": "Entrar",
     "bookDemo": "Agendar demonstração",
-    "homeLabel": "ARS, início",
+    "homeLabel": "Audit Cockpits, início",
     "mainLabel": "Principal",
     "certification": "Certificação e manutenção"
   },
@@ -32,18 +32,18 @@
   },
   "home": {
     "meta": {
-      "title": "ARS · Audit Readiness Platform · Audit Cockpits",
-      "description": "O ARS reúne requisitos, controles, evidências e ações em um só lugar. Sua equipe chega à auditoria sabendo exatamente onde a empresa está."
+      "title": "Audit Cockpits · Compliance Intelligence Platform",
+      "description": "O Audit Cockpits reúne requisitos, controles, evidências e ações em um só lugar. Sua equipe chega à auditoria sabendo exatamente onde a empresa está."
     },
     "hero": {
       "eyebrow": "A prontidão para auditoria como operação contínua",
       "title": "Chegue à auditoria sabendo exatamente onde sua empresa está.",
-      "lead": "O ARS reúne requisitos, controles, evidências e ações em um só lugar. Sua equipe para de procurar arquivos e de reconstruir o histórico a cada ciclo, e passa o tempo corrigindo o que realmente falta.",
+      "lead": "O Audit Cockpits reúne requisitos, controles, evidências e ações em um só lugar. Sua equipe para de procurar arquivos e de reconstruir o histórico a cada ciclo, e passa o tempo corrigindo o que realmente falta.",
       "ctaDemo": "Agendar demonstração",
       "ctaHow": "Ver como funciona"
     },
     "live": {
-      "aria": "Atividade da semana no ARS, com dados de demonstração",
+      "aria": "Atividade da semana no Audit Cockpits, com dados de demonstração",
       "label": "Esta semana · ISO 27001",
       "live": "ao vivo",
       "scoreLabel": "Audit Readiness Score",
@@ -73,8 +73,8 @@
       ]
     },
     "appMock": {
-      "aria": "Tela inicial do ARS, recriada com dados de demonstração",
-      "caption": "A tela inicial do ARS, recriada com dados de demonstração.",
+      "aria": "Tela inicial do Audit Cockpits, recriada com dados de demonstração",
+      "caption": "A tela inicial do Audit Cockpits, recriada com dados de demonstração.",
       "tabs": [
         "Início",
         "Jornadas",
@@ -133,7 +133,7 @@
       "head": {
         "q": "A pergunta",
         "before": "Como costuma ser",
-        "after": "Com o ARS"
+        "after": "Com o Audit Cockpits"
       },
       "items": [
         {
@@ -194,7 +194,7 @@
         }
       ],
       "journey": {
-        "aria": "Jornada ISO 27001 no ARS, recriada com dados de demonstração",
+        "aria": "Jornada ISO 27001 no Audit Cockpits, recriada com dados de demonstração",
         "back": "← VOLTAR PARA AUDITORIAS",
         "label": "ISO 27001 · 2022",
         "title": "ISO 27001 · Prontidão para Certificação",
@@ -273,7 +273,7 @@
         "title": "Sem montar pacote para o auditor",
         "text": "Relatórios de Readiness, SOA, Evidências e Maturidade saem prontos, em PDF ou Excel.",
         "heading": "Audit Readiness Score",
-        "code": "ARS-RDN-20261003",
+        "code": "AC-RDN-20261003",
         "label": "RELATÓRIO DE PRONTIDÃO",
         "disclaimer": "USO INTERNO, NÃO É UM CERTIFICADO DE CONFORMIDADE"
       },
@@ -348,8 +348,8 @@
       "eyebrow": "Depois da certificação",
       "title": "A certificação não encerra o trabalho. Ela começa o próximo ciclo.",
       "text": "Depois da preparação vêm a auditoria externa, o registro do resultado, a manutenção e a renovação. O auditor externo pode ter acesso próprio, e o histórico de cada ciclo fica guardado para o seguinte.",
-      "callout": "Quem decide a certificação é o organismo certificador. O ARS organiza, registra e acompanha.",
-      "aria": "Etapas de certificação e manutenção no ARS, recriadas com dados de demonstração",
+      "callout": "Quem decide a certificação é o organismo certificador. O Audit Cockpits organiza, registra e acompanha.",
+      "aria": "Etapas de certificação e manutenção no Audit Cockpits, recriadas com dados de demonstração",
       "auditor": {
         "title": "Score de prontidão (visão do auditor)",
         "badge": "Abaixo do mínimo",
@@ -407,7 +407,7 @@
     },
     "cta": {
       "title": "Vamos ver juntos como está a sua prontidão?",
-      "text": "Na demonstração, mostramos como o ARS transforma requisitos, evidências e ações em uma visão contínua de prontidão, usando a norma que importa para você.",
+      "text": "Na demonstração, mostramos como o Audit Cockpits transforma requisitos, evidências e ações em uma visão contínua de prontidão, usando a norma que importa para você.",
       "button": "Agendar demonstração",
       "contact": "Ou fale direto com a gente:"
     }
@@ -476,7 +476,7 @@
       "home": "Início",
       "breadcrumb": "Navegação estrutural",
       "learnMore": "Saiba mais",
-      "demoCaption": "Telas do ARS recriadas com dados de demonstração."
+      "demoCaption": "Telas do Audit Cockpits recriadas com dados de demonstração."
     },
     "platform": {
       "meta": {
@@ -485,7 +485,7 @@
       },
       "eyebrow": "Plataforma",
       "title": "Requisitos, controles, evidências e ações no mesmo lugar.",
-      "lead": "O ARS organiza o trabalho de conformidade em torno da norma que importa para você. Cada peça fica ligada à seguinte, e o Audit Readiness Score mostra, a qualquer momento, quanto falta para a meta de prontidão.",
+      "lead": "O Audit Cockpits organiza o trabalho de conformidade em torno da norma que importa para você. Cada peça fica ligada à seguinte, e o Audit Readiness Score mostra, a qualquer momento, quanto falta para a meta de prontidão.",
       "score": {
         "eyebrow": "Audit Readiness Score",
         "title": "Um número calculado, não uma impressão.",
@@ -535,18 +535,18 @@
       ],
       "certLink": {
         "title": "Certificação e manutenção",
-        "text": "A preparação é só o começo. Veja como o ARS acompanha a auditoria externa, a manutenção e a renovação.",
+        "text": "A preparação é só o começo. Veja como o Audit Cockpits acompanha a auditoria externa, a manutenção e a renovação.",
         "cta": "Ver certificação e manutenção"
       }
     },
     "how": {
       "meta": {
         "title": "Como funciona",
-        "description": "Requisito, controle, evidência, lacuna, ação e score: como o ARS liga cada peça e guia a jornada de sete etapas até a auditoria."
+        "description": "Requisito, controle, evidência, lacuna, ação e score: como o Audit Cockpits liga cada peça e guia a jornada de sete etapas até a auditoria."
       },
       "eyebrow": "Como funciona",
       "title": "Do requisito ao score, uma cadeia que não se perde.",
-      "lead": "A prontidão para auditoria depende de saber, para cada requisito da norma, o que o atende, o que comprova isso e o que ainda falta. O ARS mantém essa cadeia ligada do começo ao fim.",
+      "lead": "A prontidão para auditoria depende de saber, para cada requisito da norma, o que o atende, o que comprova isso e o que ainda falta. O Audit Cockpits mantém essa cadeia ligada do começo ao fim.",
       "chainTitle": "A cadeia",
       "chain": [
         {
@@ -609,15 +609,15 @@
       "faqTitle": "Perguntas frequentes",
       "faq": [
         {
-          "q": "O ARS emite o certificado?",
-          "a": "Não. Quem decide a certificação é o organismo certificador. O ARS organiza, registra e acompanha a preparação e o ciclo depois dela."
+          "q": "O Audit Cockpits emite o certificado?",
+          "a": "Não. Quem decide a certificação é o organismo certificador. O Audit Cockpits organiza, registra e acompanha a preparação e o ciclo depois dela."
         },
         {
-          "q": "O ARS substitui a consultoria ou o auditor?",
-          "a": "Não. O ARS é a plataforma onde o trabalho acontece. Consultores, auditores internos e o auditor externo podem trabalhar dentro dela."
+          "q": "O Audit Cockpits substitui a consultoria ou o auditor?",
+          "a": "Não. O Audit Cockpits é a plataforma onde o trabalho acontece. Consultores, auditores internos e o auditor externo podem trabalhar dentro dela."
         },
         {
-          "q": "Quais normas o ARS cobre?",
+          "q": "Quais normas o Audit Cockpits cobre?",
           "a": "O catálogo tem 37 normas e frameworks, com 706 requisitos, entre eles ISO 27001, ISO 9001, ISO 14001, ISO 22301, ISO 27701, ISO 42001 e LGPD."
         },
         {
@@ -625,7 +625,7 @@
           "a": "Ela entra numa fila de renovação com 15 dias de carência. Nesse período, o controle continua contando no score interno, mas não no que o auditor externo vê."
         },
         {
-          "q": "O auditor externo pode acessar o ARS?",
+          "q": "O auditor externo pode acessar o Audit Cockpits?",
           "a": "Sim. O auditor externo pode ter acesso próprio, com escopo definido, para consultar o que precisa sem depender de envio de arquivos."
         }
       ]
@@ -633,13 +633,13 @@
     "cert": {
       "meta": {
         "title": "Certificação e manutenção",
-        "description": "Preparar, auditar, registrar, manter e renovar: como o ARS acompanha o ciclo completo da certificação. O organismo certificador decide."
+        "description": "Preparar, auditar, registrar, manter e renovar: como o Audit Cockpits acompanha o ciclo completo da certificação. O organismo certificador decide."
       },
       "eyebrow": "Certificação e manutenção",
       "title": "A certificação é um ciclo, não uma data.",
       "lead": "Depois da preparação vêm a auditoria externa, o registro do resultado, a manutenção e a renovação. O histórico de cada ciclo fica guardado para o seguinte.",
-      "callout": "Quem decide a certificação é o organismo certificador. O ARS organiza, registra e acompanha.",
-      "cycleTitle": "O ciclo no ARS",
+      "callout": "Quem decide a certificação é o organismo certificador. O Audit Cockpits organiza, registra e acompanha.",
+      "cycleTitle": "O ciclo no Audit Cockpits",
       "cycle": [
         {
           "t": "Preparar",
@@ -715,11 +715,11 @@
     "security": {
       "meta": {
         "title": "Segurança",
-        "description": "Os princípios com que o ARS trata os dados de conformidade da sua organização: isolamento, trilha de auditoria imutável e evidências verificadas."
+        "description": "Os princípios com que o Audit Cockpits trata os dados de conformidade da sua organização: isolamento, trilha de auditoria imutável e evidências verificadas."
       },
       "eyebrow": "Segurança",
       "title": "Rastreabilidade por padrão.",
-      "lead": "Conformidade depende de registros confiáveis. Estes são os princípios com que o ARS trata os dados da sua organização.",
+      "lead": "Conformidade depende de registros confiáveis. Estes são os princípios com que o Audit Cockpits trata os dados da sua organização.",
       "items": [
         {
           "t": "Dados separados por organização",
@@ -731,7 +731,7 @@
         },
         {
           "t": "Evidências conferidas no envio",
-          "d": "No upload, o ARS confere o tipo real do arquivo, o tamanho e o hash do conteúdo."
+          "d": "No upload, o Audit Cockpits confere o tipo real do arquivo, o tamanho e o hash do conteúdo."
         },
         {
           "t": "Acesso do auditor com escopo",
@@ -751,29 +751,29 @@
     "about": {
       "meta": {
         "title": "Sobre",
-        "description": "Audit Cockpits é a empresa por trás do ARS, a plataforma que mantém a conformidade organizada e pronta para auditorias."
+        "description": "Audit Cockpits é a empresa e a plataforma que mantém a conformidade organizada e pronta para auditorias."
       },
       "eyebrow": "Sobre",
       "title": "Por que criamos o Audit Cockpits",
       "quote": "Auditoria não deveria ser sinônimo de correria. Mas, para muitas empresas, é quando surgem documentos faltantes, evidências perdidas, controles desatualizados e riscos sem acompanhamento.",
       "text": "Depois de viver esse desafio na prática, nossa fundadora criou o Audit Cockpits para ajudar empresas a manter sua conformidade organizada e pronta para auditorias, não apenas quando elas chegam.",
-      "namesTitle": "Audit Cockpits e ARS",
-      "names": "Audit Cockpits é a empresa. ARS, Audit Readiness Score, é o produto: a plataforma que mostra onde a organização está em relação à norma e o que falta para a meta de prontidão.",
+      "namesTitle": "Audit Cockpits e o Audit Readiness Score",
+      "names": "Audit Cockpits é o nome da empresa e da plataforma, uma plataforma de inteligência de conformidade. O Audit Readiness Score é o seu indicador principal: mostra onde a organização está em relação à norma e o que falta para a meta de prontidão.",
       "contactTitle": "Fale com a gente"
     },
     "demo": {
       "meta": {
         "title": "Agendar demonstração",
-        "description": "Veja o ARS com a norma que importa para você: requisitos, evidências, ações e o Audit Readiness Score numa visão contínua de prontidão."
+        "description": "Veja o Audit Cockpits com a norma que importa para você: requisitos, evidências, ações e o Audit Readiness Score numa visão contínua de prontidão."
       },
       "eyebrow": "Demonstração",
       "title": "Vamos ver juntos como está a sua prontidão?",
-      "lead": "Na demonstração, mostramos como o ARS transforma requisitos, evidências e ações em uma visão contínua de prontidão, usando a norma que importa para você.",
+      "lead": "Na demonstração, mostramos como o Audit Cockpits transforma requisitos, evidências e ações em uma visão contínua de prontidão, usando a norma que importa para você.",
       "nextTitle": "Depois do envio",
       "next": [
         "Recebemos o seu pedido por e-mail.",
         "Combinamos um horário com você.",
-        "Mostramos o ARS com a norma que importa para a sua organização."
+        "Mostramos o Audit Cockpits com a norma que importa para a sua organização."
       ],
       "contactTitle": "Prefere falar direto?"
     }
