@@ -8,7 +8,7 @@ const intl = createMiddleware(routing);
 // The only files served at the root. Any other first path segment with a dot (/.env,
 // /wp-config.php: scanner probes) would reach app/[locale] as an unknown locale and fail with
 // a 500, so it gets a plain 404 here.
-const ROOT_FILES = new Set(["/robots.txt", "/sitemap.xml", "/llms.txt", "/icon.svg"]);
+const ROOT_FILES = new Set(["/robots.txt", "/sitemap.xml", "/llms.txt", "/icon.svg", "/.well-known/security.txt"]);
 
 export default function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;

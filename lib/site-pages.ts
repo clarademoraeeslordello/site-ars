@@ -16,7 +16,8 @@ export const SITE_PAGES: { href: AppPathname; index: boolean; priority: number }
   { href: "/seguranca", index: true, priority: 0.6 },
   { href: "/sobre", index: true, priority: 0.6 },
   { href: "/demonstracao", index: true, priority: 0.7 },
-  // Placeholder text pending legal review: noindex until published.
-  { href: "/privacidade", index: false, priority: 0.2 },
-  { href: "/termos", index: false, priority: 0.2 },
+  // Legal documents (text exported from the platform repo, see lib/legal/documents.ts).
+  { href: "/privacidade", index: true, priority: 0.3 },
+  { href: "/termos", index: true, priority: 0.3 },
+  { href: "/legal", index: true, priority: 0.3 },
 ];

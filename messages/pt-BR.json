@@ -27,7 +27,8 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "label": "Rodapé",
-    "loginApp": "Entrar no ARS"
+    "loginApp": "Entrar no Audit Cockpits",
+    "legal": "Documentos legais"
   },
   "home": {
     "meta": {
@@ -455,9 +456,15 @@
     }
   },
   "legal": {
-    "privacyTitle": "Política de Privacidade",
-    "termsTitle": "Termos de Uso",
-    "placeholder": "[CONTEÚDO PENDENTE DE VALIDAÇÃO JURÍDICA: este documento será publicado após revisão legal.]"
+    "eyebrow": "Documentos legais",
+    "version": "Versão {version}",
+    "updated": "atualizada em {date}",
+    "toc": "Nesta página",
+    "allDocuments": "Documentos legais",
+    "indexLead": "Políticas, termos e compromissos da Audit Cockpits sobre privacidade, segurança e uso da plataforma.",
+    "contact": "Dúvidas sobre este documento ou sobre seus dados:",
+    "description": "{title} da Audit Cockpits.",
+    "esNotice": "Este documento está disponível em português e inglês."
   },
   "notFound": {
     "title": "Página não encontrada",

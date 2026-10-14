@@ -27,7 +27,7 @@ export function SiteFooter() {
               href={item.href}
               className="whitespace-nowrap text-body hover:text-ink"
             >
-              {item.key === "privacy" || item.key === "terms" ? t(item.key) : tn(item.key)}
+              {item.key === "privacy" || item.key === "terms" || item.key === "legal" ? t(item.key) : tn(item.key)}
             </Link>
           ))}
           <a href={APP_URL} data-track="app_login_click" data-track-location="footer" className="whitespace-nowrap text-body hover:text-ink">

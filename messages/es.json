@@ -27,7 +27,8 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "label": "Pie de página",
-    "loginApp": "Entrar en ARS"
+    "loginApp": "Entrar en Audit Cockpits",
+    "legal": "Documentos legales"
   },
   "home": {
     "meta": {
@@ -455,9 +456,15 @@
     }
   },
   "legal": {
-    "privacyTitle": "Política de Privacidad",
-    "termsTitle": "Términos de Uso",
-    "placeholder": "[CONTENIDO PENDIENTE DE VALIDACIÓN JURÍDICA: este documento será publicado tras la revisión legal.]"
+    "eyebrow": "Documentos legales",
+    "version": "Versión {version}",
+    "updated": "actualizada el {date}",
+    "toc": "En esta página",
+    "allDocuments": "Documentos legales",
+    "indexLead": "Políticas, términos y compromisos de Audit Cockpits sobre privacidad, seguridad y uso de la plataforma.",
+    "contact": "Preguntas sobre este documento o sus datos:",
+    "description": "{title} de Audit Cockpits.",
+    "esNotice": "Este documento está disponible en portugués e inglés. Mostramos la versión en inglés mientras preparamos la traducción al español; en caso de diferencia, prevalece el texto en portugués."
   },
   "notFound": {
     "title": "Página no encontrada",

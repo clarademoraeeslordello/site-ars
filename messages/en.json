@@ -27,7 +27,8 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "label": "Footer",
-    "loginApp": "Sign in to ARS"
+    "loginApp": "Sign in to Audit Cockpits",
+    "legal": "Legal documents"
   },
   "home": {
     "meta": {
@@ -455,9 +456,15 @@
     }
   },
   "legal": {
-    "privacyTitle": "Privacy Policy",
-    "termsTitle": "Terms of Use",
-    "placeholder": "[CONTENT PENDING LEGAL VALIDATION: this document will be published after legal review.]"
+    "eyebrow": "Legal documents",
+    "version": "Version {version}",
+    "updated": "updated on {date}",
+    "toc": "On this page",
+    "allDocuments": "Legal documents",
+    "indexLead": "Audit Cockpits policies, terms and commitments on privacy, security and use of the platform.",
+    "contact": "Questions about this document or your data:",
+    "description": "Audit Cockpits {title}.",
+    "esNotice": "This document is available in Portuguese and English."
   },
   "notFound": {
     "title": "Page not found",
