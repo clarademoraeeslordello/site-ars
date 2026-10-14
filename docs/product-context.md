@@ -1,4 +1,4 @@
-# Product Context — Audit Readiness Score (ARS)
+# Product Context — Audit Cockpits
 ### Compliance Intelligence Platform
 **Versão:** 2.0 — Consolidação Estratégica  
 **Classificação:** Documento oficial de produto. Referência para Produto, UX, Engenharia, IA, Growth, Investidores e Consultores de Compliance.
@@ -26,29 +26,29 @@
 
 ## 1. Product Vision
 
-### O que é a ARS
+### O que é o Audit Cockpits
 
-A ARS — Compliance Intelligence Platform — é uma plataforma SaaS B2B que transforma o processo de obtenção, manutenção e renovação de certificações normativas em uma jornada guiada, contínua e orientada a resultados mensuráveis.
+O Audit Cockpits — Compliance Intelligence Platform — é uma plataforma SaaS B2B que transforma o processo de obtenção, manutenção e renovação de certificações normativas em uma jornada guiada, contínua e orientada a resultados mensuráveis.
 
-A ARS não é um software de checklist. Não é uma ferramenta de auditoria tradicional. Não é um repositório de documentos com fluxo de aprovação. A ARS é uma Central de Comando de Compliance: o único lugar onde uma organização sabe, em tempo real, se está pronta para ser auditada — e o que precisa fazer caso não esteja.
+O Audit Cockpits não é um software de checklist. Não é uma ferramenta de auditoria tradicional. Não é um repositório de documentos com fluxo de aprovação. O Audit Cockpits é uma Central de Comando de Compliance: o único lugar onde uma organização sabe, em tempo real, se está pronta para ser auditada — e o que precisa fazer caso não esteja.
 
-### Por que ela existe
+### Por que ele existe
 
 A grande maioria das organizações que buscam certificações como ISO 27001, ISO 9001, ISO 20000-1, ISO 22301, ISO 27701 e LGPD — entre as mais de 30 normas do catálogo da plataforma — enfrenta o mesmo problema estrutural: o processo é opaco, fragmentado e dependente de conhecimento especializado que a maioria das empresas não possui internamente. O resultado é previsível — meses de esforço desorganizado, planilhas que ninguém consegue interpretar, consultorias caras e, frequentemente, reprovações em auditoria que poderiam ter sido evitadas.
 
-A ARS existe para acabar com essa opacidade. Para tornar a conformidade compreensível, guiada e previsível — da mesma forma que ferramentas como o Duolingo tornaram o aprendizado de idiomas acessível a qualquer pessoa, independente de experiência prévia.
+O Audit Cockpits existe para acabar com essa opacidade. Para tornar a conformidade compreensível, guiada e previsível — da mesma forma que ferramentas como o Duolingo tornaram o aprendizado de idiomas acessível a qualquer pessoa, independente de experiência prévia.
 
 ### Qual transformação gera
 
-A ARS transforma o compliance de um projeto pontual de alto estresse em uma capacidade organizacional contínua. Empresas que usam a ARS deixam de preparar uma organização para uma auditoria específica e passam a operar em estado permanente de prontidão. O processo de certificação, que antes era um evento traumático e dependente de consultores externos, torna-se uma jornada estruturada que a própria equipe consegue conduzir.
+O Audit Cockpits transforma o compliance de um projeto pontual de alto estresse em uma capacidade organizacional contínua. Empresas que usam o Audit Cockpits deixam de preparar uma organização para uma auditoria específica e passam a operar em estado permanente de prontidão. O processo de certificação, que antes era um evento traumático e dependente de consultores externos, torna-se uma jornada estruturada que a própria equipe consegue conduzir.
 
 ### Qual problema resolve
 
-O problema central é a **ausência de visibilidade operacional sobre o estado real do compliance**. Sem a ARS, nenhum gestor, diretor ou CEO consegue responder com precisão às cinco perguntas que determinam o resultado de uma auditoria:
+O problema central é a **ausência de visibilidade operacional sobre o estado real do compliance**. Sem o Audit Cockpits, nenhum gestor, diretor ou CEO consegue responder com precisão às cinco perguntas que determinam o resultado de uma auditoria:
 
 > *Onde estamos? O que falta? Quem precisa agir? Quando algo vence? Estamos prontos para auditoria?*
 
-A ARS resolve isso entregando essas respostas em tempo real, para todos os níveis da organização, de forma contextualizada ao perfil e à maturidade de cada empresa.
+O Audit Cockpits resolve isso entregando essas respostas em tempo real, para todos os níveis da organização, de forma contextualizada ao perfil e à maturidade de cada empresa.
 
 ---
 
@@ -56,15 +56,15 @@ A ARS resolve isso entregando essas respostas em tempo real, para todos os níve
 
 > **Tornar o compliance acessível, contínuo e previsível para qualquer organização — independente de tamanho, maturidade ou orçamento.**
 
-A ARS tem a missão de democratizar o acesso à conformidade normativa. Assim como a automação transformou a contabilidade e o RH, a ARS transforma o GRC de uma disciplina reservada a especialistas em uma capacidade operacional que qualquer equipe consegue desenvolver e manter.
+O Audit Cockpits tem a missão de democratizar o acesso à conformidade normativa. Assim como a automação transformou a contabilidade e o RH, o Audit Cockpits transforma o GRC de uma disciplina reservada a especialistas em uma capacidade operacional que qualquer equipe consegue desenvolver e manter.
 
 A missão se traduz em três compromissos concretos:
 
 **1. Clareza.** Qualquer colaborador, independente de formação técnica ou jurídica, deve entender o que precisa fazer e por quê. A plataforma jamais usa jargão onde uma linguagem simples resolve.
 
-**2. Continuidade.** Compliance não é um projeto com início, meio e fim. É uma operação viva. A ARS é projetada para funcionar como infraestrutura permanente de governança, não como ferramenta de sprint pré-auditoria.
+**2. Continuidade.** Compliance não é um projeto com início, meio e fim. É uma operação viva. O Audit Cockpits é projetado para funcionar como infraestrutura permanente de governança, não como ferramenta de sprint pré-auditoria.
 
-**3. Previsibilidade.** A organização deve saber, com antecedência calculada, quando estará pronta para uma auditoria. A ARS entrega uma data — não uma estimativa vaga.
+**3. Previsibilidade.** A organização deve saber, com antecedência calculada, quando estará pronta para uma auditoria. O Audit Cockpits entrega uma data — não uma estimativa vaga.
 
 ---
 
@@ -72,41 +72,41 @@ A missão se traduz em três compromissos concretos:
 
 ### Categoria do produto
 
-A ARS ocupa uma categoria emergente que ainda não tem nome consolidado no mercado: **Compliance Intelligence Platform**. É mais inteligente e guiada que as ferramentas de GRC tradicionais, mais robusta e auditável que as ferramentas de gestão de tarefas e mais acessível que as suítes enterprise como OneTrust e AuditBoard.
+O Audit Cockpits ocupa uma categoria emergente que ainda não tem nome consolidado no mercado: **Compliance Intelligence Platform**. É mais inteligente e guiada que as ferramentas de GRC tradicionais, mais robusta e auditável que as ferramentas de gestão de tarefas e mais acessível que as suítes enterprise como OneTrust e AuditBoard.
 
 ### Mercado-alvo
 
-O mercado endereçável primário da ARS é composto por empresas de médio porte nos setores de tecnologia, serviços, saúde e finanças que precisam de certificações ISO ou conformidade com a LGPD e não possuem equipe interna especializada para conduzir o processo sozinhas. O mercado secundário inclui consultorias de compliance que buscam uma plataforma para entregar seus serviços com mais escala e rastreabilidade.
+O mercado endereçável primário do Audit Cockpits é composto por empresas de médio porte nos setores de tecnologia, serviços, saúde e finanças que precisam de certificações ISO ou conformidade com a LGPD e não possuem equipe interna especializada para conduzir o processo sozinhas. O mercado secundário inclui consultorias de compliance que buscam uma plataforma para entregar seus serviços com mais escala e rastreabilidade.
 
 > **Cobertura de catálogo por setor (estado atual, jul/2026).** Tecnologia e serviços são plenamente atendidos hoje (ISO 27001, 27701, 20000-1, 9001, 22301, LGPD). **Saúde** é atendida em nível de cláusula por ISO 13485 (dispositivos médicos) e ISO 45001 (saúde e segurança ocupacional); normas de saúde regulatória setorial (ex: HIPAA, RDC/ANVISA) são **roadmap de conteúdo**. **Finanças** é atendida hoje apenas por normas transversais (segurança, privacidade e continuidade — 27001/27701/22301); normas financeiras setoriais (PCI-DSS, DORA, BACEN/CMN) ainda **não estão modeladas** e são roadmap. O motor é agnóstico de norma — a expansão é trabalho de conteúdo normativo, não de engenharia.
 
 ### Posicionamento competitivo
 
-A ARS se diferencia dos concorrentes por ser a única plataforma que combina três atributos simultaneamente: **acessibilidade para iniciantes**, **robustez para organizações maduras** e **inteligência artificial nativa** para acelerar cada etapa do processo.
+O Audit Cockpits se diferencia dos concorrentes por ser a única plataforma que combina três atributos simultaneamente: **acessibilidade para iniciantes**, **robustez para organizações maduras** e **inteligência artificial nativa** para acelerar cada etapa do processo.
 
 #### Análise conceitual dos concorrentes
 
 **OneTrust**
-Plataforma enterprise de GRC e privacidade. Extremamente completa, porém projetada para grandes corporações com times dedicados de compliance. Curva de implementação longa, custo elevado e interface densa tornam a ferramenta inacessível para PMEs. A ARS serve o mercado que o OneTrust ignora: empresas que ainda não têm maturidade para absorver sua complexidade.
+Plataforma enterprise de GRC e privacidade. Extremamente completa, porém projetada para grandes corporações com times dedicados de compliance. Curva de implementação longa, custo elevado e interface densa tornam a ferramenta inacessível para PMEs. O Audit Cockpits serve o mercado que o OneTrust ignora: empresas que ainda não têm maturidade para absorver sua complexidade.
 
 **AuditBoard**
-Focado em auditoria interna e SOX compliance para grandes empresas. Interface robusta para auditores experientes, mas sem o conceito de jornada guiada ou onboarding para iniciantes. Assume que o usuário já sabe o que fazer. A ARS não faz essa suposição.
+Focado em auditoria interna e SOX compliance para grandes empresas. Interface robusta para auditores experientes, mas sem o conceito de jornada guiada ou onboarding para iniciantes. Assume que o usuário já sabe o que fazer. O Audit Cockpits não faz essa suposição.
 
 **Vanta**
-Focado primariamente em SOC 2 e ISO 27001 para startups de tecnologia. Forte em automação de evidências via integrações técnicas (AWS, GitHub, etc.), mas com escopo restrito de normas e pouco suporte a processos manuais ou organizações não-tech. A ARS abrange um espectro mais amplo de normas e perfis de empresa.
+Focado primariamente em SOC 2 e ISO 27001 para startups de tecnologia. Forte em automação de evidências via integrações técnicas (AWS, GitHub, etc.), mas com escopo restrito de normas e pouco suporte a processos manuais ou organizações não-tech. O Audit Cockpits abrange um espectro mais amplo de normas e perfis de empresa.
 
 **Diligent**
-Suite de governança corporativa focada em boards e liderança executiva. Excelente para grandes empresas com comitês de auditoria formalizados. Distante do operacional de compliance. A ARS conecta a visão estratégica da liderança ao trabalho operacional de compliance de forma integrada, o que o Diligent não faz.
+Suite de governança corporativa focada em boards e liderança executiva. Excelente para grandes empresas com comitês de auditoria formalizados. Distante do operacional de compliance. O Audit Cockpits conecta a visão estratégica da liderança ao trabalho operacional de compliance de forma integrada, o que o Diligent não faz.
 
 ### Diferenciação central
 
-A ARS vence não por ter mais funcionalidades, mas por ser a única plataforma que **guia ativamente** o usuário durante todo o processo. Enquanto os concorrentes entregam ferramentas, a ARS entrega uma jornada.
+O Audit Cockpits vence não por ter mais funcionalidades, mas por ser a única plataforma que **guia ativamente** o usuário durante todo o processo. Enquanto os concorrentes entregam ferramentas, o Audit Cockpits entrega uma jornada.
 
 ---
 
 ## 4. Product Philosophy
 
-A filosofia da ARS é construída sobre seis princípios fundamentais que orientam cada decisão de produto, cada tela, cada notificação e cada interação com o usuário.
+A filosofia do Audit Cockpits é construída sobre seis princípios fundamentais que orientam cada decisão de produto, cada tela, cada notificação e cada interação com o usuário.
 
 ### Compliance deve ser compreensível
 
@@ -114,15 +114,15 @@ Nenhum usuário deve precisar de um consultor externo para entender o que a plat
 
 ### Compliance deve ser guiado
 
-A plataforma nunca abandona o usuário diante de uma tela em branco. Em cada momento da jornada, o sistema oferece o próximo passo mais inteligente — baseado no perfil da empresa, no estado atual do compliance e nas prioridades de alto impacto. A ARS funciona como um consultor silencioso que sempre sabe o que fazer a seguir.
+A plataforma nunca abandona o usuário diante de uma tela em branco. Em cada momento da jornada, o sistema oferece o próximo passo mais inteligente — baseado no perfil da empresa, no estado atual do compliance e nas prioridades de alto impacto. O Audit Cockpits funciona como um consultor silencioso que sempre sabe o que fazer a seguir.
 
 ### Compliance deve ser contínuo
 
-Conformidade não é um estado binário (certificado / não certificado). É um espectro dinâmico que sobe quando evidências são adicionadas e cai quando documentos vencem ou controles ficam descobertos. A ARS é projetada para ser usada todos os dias, não apenas nos meses que antecedem uma auditoria. O score de prontidão reflete a realidade em tempo real — incluindo o decaimento causado pela inatividade.
+Conformidade não é um estado binário (certificado / não certificado). É um espectro dinâmico que sobe quando evidências são adicionadas e cai quando documentos vencem ou controles ficam descobertos. O Audit Cockpits é projetado para ser usada todos os dias, não apenas nos meses que antecedem uma auditoria. O score de prontidão reflete a realidade em tempo real — incluindo o decaimento causado pela inatividade.
 
 ### Compliance deve ser colaborativo
 
-Compliance é um esporte coletivo. A maior parte das evidências vem de áreas que não são compliance — TI, RH, jurídico, operações. A ARS centraliza a comunicação, distribui responsabilidades com clareza (quem faz, quem aprova, quem é notificado) e elimina o ciclo improdutivo de e-mails e planilhas compartilhadas.
+Compliance é um esporte coletivo. A maior parte das evidências vem de áreas que não são compliance — TI, RH, jurídico, operações. O Audit Cockpits centraliza a comunicação, distribui responsabilidades com clareza (quem faz, quem aprova, quem é notificado) e elimina o ciclo improdutivo de e-mails e planilhas compartilhadas.
 
 ### Compliance deve ser rastreável
 
@@ -130,13 +130,13 @@ Cada ação na plataforma gera um registro imutável. Quem aprovou, quando aprov
 
 ### Compliance deve gerar previsibilidade
 
-O maior valor da ARS não é o score atual — é a previsão do score futuro. Com base no ritmo da equipe, nos prazos de expiração e nas lacunas identificadas, a plataforma projeta matematicamente quando a organização atingirá o estado de Audit Ready. Compliance deixa de ser uma caixa preta e passa a ser um projeto com data de entrega calculada.
+O maior valor do Audit Cockpits não é o score atual — é a previsão do score futuro. Com base no ritmo da equipe, nos prazos de expiração e nas lacunas identificadas, a plataforma projeta matematicamente quando a organização atingirá o estado de Audit Ready. Compliance deixa de ser uma caixa preta e passa a ser um projeto com data de entrega calculada.
 
 ---
 
 ## 5. As 5 Perguntas Centrais da Plataforma
 
-Toda tela, todo componente e toda funcionalidade da ARS deve ser capaz de contribuir para responder pelo menos uma destas cinco perguntas. Se uma funcionalidade não responde a nenhuma delas, sua existência no produto precisa ser justificada.
+Toda tela, todo componente e toda funcionalidade do Audit Cockpits deve ser capaz de contribuir para responder pelo menos uma destas cinco perguntas. Se uma funcionalidade não responde a nenhuma delas, sua existência no produto precisa ser justificada.
 
 ### 1. Onde estamos?
 
@@ -160,66 +160,66 @@ Esta é a pergunta definitiva do produto. A resposta não é um "sim" ou "não" 
 
 ---
 
-## 6. Problemas que a ARS Resolve
+## 6. Problemas que o Audit Cockpits Resolve
 
 ### CEOs e Fundadores
 Não sabem se a empresa está pronta para auditoria. Recebem relatórios de compliance inconsistentes e desatualizados. Dependem de consultores externos para ter uma visão do estado real. Não têm como justificar o investimento em compliance para o board sem dados concretos.
 
-**A ARS resolve:** dashboard executivo com score em tempo real, previsão de Audit Ready Date e visão consolidada de riscos para a liderança.
+**O Audit Cockpits resolve:** dashboard executivo com score em tempo real, previsão de Audit Ready Date e visão consolidada de riscos para a liderança.
 
 ### Diretores e VPs
 Precisam reportar o status de compliance para o CEO mas não têm visibilidade do que suas equipes estão fazendo. Não sabem quais áreas estão atrasando o processo. Ficam sabendo de problemas apenas quando é tarde demais.
 
-**A ARS resolve:** ranking de aderência por departamento, alertas de SLA vencido e notificações automáticas quando algo crítico regride.
+**O Audit Cockpits resolve:** ranking de aderência por departamento, alertas de SLA vencido e notificações automáticas quando algo crítico regride.
 
 ### Compliance Officers e GRC Managers
 Gerenciam o processo em planilhas Excel e e-mails. Dependem de cada gestor de área para coletar evidências. Não conseguem mostrar progresso de forma objetiva. Vivem em modo reativo — apagando incêndios em vez de construindo maturidade.
 
-**A ARS resolve:** plataforma central que distribui responsabilidades, automatiza cobranças, calcula cobertura por área e gera relatórios exportáveis para auditores externos.
+**O Audit Cockpits resolve:** plataforma central que distribui responsabilidades, automatiza cobranças, calcula cobertura por área e gera relatórios exportáveis para auditores externos.
 
 ### DPOs e responsáveis por LGPD
 Precisam manter o mapeamento de tratamento de dados atualizado, gerenciar solicitações de titulares e documentar bases legais — tudo em ferramentas desconectadas. Vivem com o risco de uma auditoria da ANPD sem saber exatamente qual é o estado de conformidade da empresa.
 
-**A ARS resolve:** módulo LGPD integrado ao modelo de cobertura geral, com ROPA, RIPD, gestão de incidentes e direitos dos titulares rastreáveis e auditáveis.
+**O Audit Cockpits resolve:** módulo LGPD integrado ao modelo de cobertura geral, com ROPA, RIPD, gestão de incidentes e direitos dos titulares rastreáveis e auditáveis.
 
 ### Times de TI e Segurança
 São os principais produtores de evidências de segurança da informação, mas não têm visibilidade de quais controles precisam de evidência e quais documentos estão vencendo. Recebem solicitações urgentes de compliance às vésperas de auditorias.
 
-**A ARS resolve:** fila personalizada de atividades por responsável, alertas antecipados de expiração e vinculação automática de evidências a controles via IA.
+**O Audit Cockpits resolve:** fila personalizada de atividades por responsável, alertas antecipados de expiração e vinculação automática de evidências a controles via IA.
 
 ### Recursos Humanos
 Responsáveis por evidências críticas como treinamentos de conscientização, contratos de confidencialidade e políticas de acesso — mas raramente têm clareza de quando esses documentos vencem ou precisam ser renovados.
 
-**A ARS resolve:** motor de renovação contínua que reabre automaticamente atividades para o responsável quando um documento entra na janela de expiração.
+**O Audit Cockpits resolve:** motor de renovação contínua que reabre automaticamente atividades para o responsável quando um documento entra na janela de expiração.
 
 ### Consultorias de Compliance
 Gerenciam múltiplos clientes com processos diferentes, cada um em uma planilha diferente. Dificuldade de escalar o serviço sem aumentar proporcionalmente a equipe. Entregam relatórios manuais que ficam desatualizados no mesmo dia.
 
-**A ARS resolve:** plataforma multi-tenant que permite à consultoria gerenciar todos os clientes em um único ambiente, com visibilidade centralizada e relatórios automatizados.
+**O Audit Cockpits resolve:** plataforma multi-tenant que permite à consultoria gerenciar todos os clientes em um único ambiente, com visibilidade centralizada e relatórios automatizados.
 
 ---
 
 ## 7. Diferenciais Estratégicos
 
-> Nota de estado: dos diferenciais abaixo, **Guided Compliance** (jornada guiada de auditoria com diagnóstico e geração de atividades), **Continuous Compliance** (Decay Effect, RenewalGrace) e o **Audit Readiness Engine** já estão implementados. **Cross-Mapping** existe no modelo de dados (`ControlRequirement`) mas a injeção automática de progresso multinorma ainda não está completa. **AI Compliance Copilot** está parcialmente entregue (apenas gap analysis). **CMM-ARS** está implementado no cálculo de maturidade. **Compliance Graph** é visão futura — não implementado.
+> Nota de estado: dos diferenciais abaixo, **Guided Compliance** (jornada guiada de auditoria com diagnóstico e geração de atividades), **Continuous Compliance** (Decay Effect, RenewalGrace) e o **Audit Readiness Engine** já estão implementados. **Cross-Mapping** existe no modelo de dados (`ControlRequirement`) mas a injeção automática de progresso multinorma ainda não está completa. **AI Compliance Copilot** está parcialmente entregue (apenas gap analysis). **CMM-Audit Cockpits** está implementado no cálculo de maturidade. **Compliance Graph** é visão futura — não implementado.
 
 ### Guided Compliance
-A ARS não entrega uma ferramenta — entrega uma jornada. Desde o onboarding com diagnóstico inicial até a preparação para auditoria externa, cada etapa do processo é guiada por orientações claras, próximos passos priorizados e linguagem acessível. O usuário nunca fica sem saber o que fazer a seguir.
+O Audit Cockpits não entrega uma ferramenta — entrega uma jornada. Desde o onboarding com diagnóstico inicial até a preparação para auditoria externa, cada etapa do processo é guiada por orientações claras, próximos passos priorizados e linguagem acessível. O usuário nunca fica sem saber o que fazer a seguir.
 
 ### Cross-Mapping de Controles
-Uma evidência pode satisfazer requisitos de múltiplas normas simultaneamente. A ARS identifica e mapeia essas sobreposições automaticamente. Ao anexar uma Política de Gestão de Identidade, o sistema injeta o progresso em ISO 27001, ISO 27701 e LGPD ao mesmo tempo — sem que o usuário precise fazer isso manualmente. Isso reduz drasticamente o volume de trabalho em empresas que precisam de múltiplas certificações.
+Uma evidência pode satisfazer requisitos de múltiplas normas simultaneamente. O Audit Cockpits identifica e mapeia essas sobreposições automaticamente. Ao anexar uma Política de Gestão de Identidade, o sistema injeta o progresso em ISO 27001, ISO 27701 e LGPD ao mesmo tempo — sem que o usuário precise fazer isso manualmente. Isso reduz drasticamente o volume de trabalho em empresas que precisam de múltiplas certificações.
 
 ### Continuous Compliance
-O compliance na ARS não é um projeto — é uma operação. O Score de Audit Readiness é um indicador vivo que sobe com a adição de evidências aprovadas e cai quando documentos vencem ou controles ficam descobertos. O "Decay Effect" garante que a plataforma reflita a realidade em tempo real, não o estado histórico mais favorável.
+O compliance no Audit Cockpits não é um projeto — é uma operação. O Score de Audit Readiness é um indicador vivo que sobe com a adição de evidências aprovadas e cai quando documentos vencem ou controles ficam descobertos. O "Decay Effect" garante que a plataforma reflita a realidade em tempo real, não o estado histórico mais favorável.
 
 ### AI Compliance Copilot
-A inteligência artificial na ARS não é um chatbot genérico — é uma camada de aceleração integrada ao fluxo de trabalho. O AI Evidence Assistant identifica automaticamente a quais controles um documento se aplica. O AI Gap Analysis calcula o impacto de cada ação pendente no score geral. O AI Readiness Advisor explica em linguagem de negócios por que o score mudou e o que fazer. O AI Policy Generator redige políticas em tempo real. Em cada caso, a IA remove o trabalho braçal e deixa o usuário focado nas decisões que requerem julgamento humano.
+A inteligência artificial no Audit Cockpits não é um chatbot genérico — é uma camada de aceleração integrada ao fluxo de trabalho. O AI Evidence Assistant identifica automaticamente a quais controles um documento se aplica. O AI Gap Analysis calcula o impacto de cada ação pendente no score geral. O AI Readiness Advisor explica em linguagem de negócios por que o score mudou e o que fazer. O AI Policy Generator redige políticas em tempo real. Em cada caso, a IA remove o trabalho braçal e deixa o usuário focado nas decisões que requerem julgamento humano.
 
 ### Audit Readiness Engine
 O coração da plataforma é um motor de cálculo que transforma dados operacionais em um número único e interpretável: o Audit Readiness Score. Esse número incorpora cobertura de controles, status de evidências, pesos por criticidade, proximidade de expiração e histórico de não-conformidades. Não é uma estimativa — é um cálculo determinístico que qualquer membro da equipe pode entender e qualquer auditor pode verificar.
 
-### Compliance Maturity Model (CMM-ARS)
-Diferente de ferramentas que tratam compliance como binário (conforme ou não conforme), a ARS adota um modelo de maturidade em cinco níveis que reflete a jornada real das organizações. Empresas não saem do zero para o Otimizado da noite para o dia — e a ARS celebra e orienta cada passo dessa progressão, tornando o progresso visível e motivador.
+### Compliance Maturity Model (CMM-Audit Cockpits)
+Diferente de ferramentas que tratam compliance como binário (conforme ou não conforme), o Audit Cockpits adota um modelo de maturidade em cinco níveis que reflete a jornada real das organizações. Empresas não saem do zero para o Otimizado da noite para o dia — e o Audit Cockpits celebra e orienta cada passo dessa progressão, tornando o progresso visível e motivador.
 
 ### Compliance Graph
 Uma representação visual em rede dos relacionamentos entre controles, evidências, riscos e normas. O Compliance Graph revela dependências ocultas — mostra que remover uma evidência pode derrubar três controles de duas normas diferentes, ou que um único documento novo pode fechar lacunas em múltiplos frameworks simultaneamente. É o mapa que transforma compliance de uma lista em um ecossistema.
@@ -229,7 +229,7 @@ Uma representação visual em rede dos relacionamentos entre controles, evidênc
 ## 8. Pilares do Produto
 
 ### Readiness
-O pilar central. Tudo na ARS contribui para a prontidão da organização para uma auditoria. O Audit Readiness Score é o indicador principal, calculado em tempo real e visível em todos os níveis da organização. Sem Readiness, os demais pilares perdem contexto.
+O pilar central. Tudo no Audit Cockpits contribui para a prontidão da organização para uma auditoria. O Audit Readiness Score é o indicador principal, calculado em tempo real e visível em todos os níveis da organização. Sem Readiness, os demais pilares perdem contexto.
 
 ### Coverage
 A cobertura mede o quanto dos requisitos normativos está efetivamente demonstrado por evidências aprovadas. A cobertura não é binária — é multidimensional: por norma, por área, por controle, por domínio e globalmente. Um alto nível de cobertura é condição necessária (mas não suficiente) para o Audit Readiness.
@@ -319,9 +319,9 @@ A plataforma armazena snapshots periódicos do score, permitindo a visualizaçã
 
 ---
 
-## 11. Governança de Maturidade — CMM-ARS
+## 11. Governança de Maturidade — CMM-Audit Cockpits
 
-O Compliance Maturity Model da ARS (CMM-ARS) é uma escala de cinco níveis que descreve a evolução da capacidade organizacional de compliance ao longo do tempo. Diferente do score de prontidão (que mede o estado atual), o modelo de maturidade mede a solidez estrutural do processo — a capacidade de manter e melhorar o compliance de forma sustentável.
+O Compliance Maturity Model do Audit Cockpits (CMM-Audit Cockpits) é uma escala de cinco níveis que descreve a evolução da capacidade organizacional de compliance ao longo do tempo. Diferente do score de prontidão (que mede o estado atual), o modelo de maturidade mede a solidez estrutural do processo — a capacidade de manter e melhorar o compliance de forma sustentável.
 
 ### Nível 1 — Inicial
 
@@ -367,7 +367,7 @@ O compliance é uma capacidade organizacional estratégica. Os processos são co
 
 ## 12. Métricas Estratégicas do Produto
 
-As métricas a seguir compõem o sistema de indicadores oficial da ARS. São os números que a plataforma calcula, monitora e entrega para diferentes audiências.
+As métricas a seguir compõem o sistema de indicadores oficial do Audit Cockpits. São os números que a plataforma calcula, monitora e entrega para diferentes audiências.
 
 ### Coverage Score
 Percentual de controles aplicáveis com pelo menos uma evidência aprovada e vigente. Calculado por norma, por área e globalmente. É o indicador de esforço realizado — quanto do trabalho de compliance foi efetivamente concluído e aprovado.
@@ -376,7 +376,7 @@ Percentual de controles aplicáveis com pelo menos uma evidência aprovada e vig
 O indicador principal da plataforma. Calculado com pesos por criticidade, reflete a prontidão real da organização para auditoria. Incorpora o Decay Effect de evidências vencidas e o impacto de NCs abertas. (Ver seção 10 para detalhes completos.)
 
 ### Maturity Score
-Nível atual no CMM-ARS (1–5), derivado do Audit Readiness Score e da consistência histórica do processo. Reflete não apenas onde a organização está, mas a solidez estrutural que a levou até ali.
+Nível atual no CMM-Audit Cockpits (1–5), derivado do Audit Readiness Score e da consistência histórica do processo. Reflete não apenas onde a organização está, mas a solidez estrutural que a levou até ali.
 
 ### Expiration Risk
 Índice de risco de expiração: percentual do score total em risco de decaimento nos próximos 30 e 60 dias, baseado nos documentos que entrarão na janela de renovação. Permite ação preventiva antes que o score caia.
@@ -397,7 +397,7 @@ Taxa histórica de auditorias internas concluídas sem NCs Maiores. Indicador pr
 
 ## 13. Modelo Mental do Usuário
 
-A ARS adota o princípio de **Progressive Disclosure** — a plataforma revela complexidade de forma progressiva, à medida que o usuário e a organização ganham maturidade. Nenhum recurso avançado é imposto sobre um usuário iniciante, e nenhum recurso básico é ocultado de um usuário experiente.
+O Audit Cockpits adota o princípio de **Progressive Disclosure** — a plataforma revela complexidade de forma progressiva, à medida que o usuário e a organização ganham maturidade. Nenhum recurso avançado é imposto sobre um usuário iniciante, e nenhum recurso básico é ocultado de um usuário experiente.
 
 ### First Mile — A Empresa Iniciante
 
@@ -409,7 +409,7 @@ O usuário chega à plataforma sem saber por onde começar. Nunca passou por uma
 
 **Pergunta central:** "Como manter tudo organizado à medida que cresce?"
 
-A organização já completou o ciclo inicial. Tem controles definidos, algumas evidências aprovadas e uma primeira auditoria interna concluída. Agora o desafio é diferente: a equipe cresceu, existem múltiplas áreas produzindo evidências e a coordenação está se tornando complexa. A plataforma revela os recursos de colaboração, os workflows de revisão entre áreas, os alarmes de expiração temporal e a visão de aderência por departamento. O compliance começa a ser distribuído — e a ARS orquestra essa distribuição.
+A organização já completou o ciclo inicial. Tem controles definidos, algumas evidências aprovadas e uma primeira auditoria interna concluída. Agora o desafio é diferente: a equipe cresceu, existem múltiplas áreas produzindo evidências e a coordenação está se tornando complexa. A plataforma revela os recursos de colaboração, os workflows de revisão entre áreas, os alarmes de expiração temporal e a visão de aderência por departamento. O compliance começa a ser distribuído — e o Audit Cockpits orquestra essa distribuição.
 
 ### Continuous GRC — A Empresa Estruturada
 
@@ -421,11 +421,11 @@ A organização já tem uma ou mais certificações ativas, um time de complianc
 
 ## 14. Dual Experience
 
-A ARS foi projetada para servir organizações em diferentes estágios de maturidade sem fragmentar o produto. A mesma plataforma oferece experiências adaptadas ao perfil de cada empresa.
+O Audit Cockpits foi projetado para servir organizações em diferentes estágios de maturidade sem fragmentar o produto. A mesma plataforma oferece experiências adaptadas ao perfil de cada empresa.
 
 ### Empresa Pequena — Fluxos Simplificados
 
-Uma empresa de 50 pessoas buscando sua primeira certificação ISO 27001 precisa de clareza, não de completude. A ARS entrega:
+Uma empresa de 50 pessoas buscando sua primeira certificação ISO 27001 precisa de clareza, não de completude. O Audit Cockpits entrega:
 
 - Onboarding com diagnóstico de 10 minutos que gera um Plano de Voo imediato
 - Interface focada em tarefas: "O que eu faço hoje?"
@@ -436,7 +436,7 @@ Uma empresa de 50 pessoas buscando sua primeira certificação ISO 27001 precisa
 
 ### Empresa Média — Fluxos Colaborativos
 
-Uma empresa de 500 pessoas em processo de renovação de certificação ISO 9001 e ISO 27001 precisa de coordenação entre áreas. A ARS entrega:
+Uma empresa de 500 pessoas em processo de renovação de certificação ISO 9001 e ISO 27001 precisa de coordenação entre áreas. O Audit Cockpits entrega:
 
 - Dashboard de ownership que mostra qual departamento está atrasando o processo
 - Workflows de revisão e aprovação com RACI contextual
@@ -447,7 +447,7 @@ Uma empresa de 500 pessoas em processo de renovação de certificação ISO 9001
 
 ### Empresa Estruturada — Fluxos Avançados
 
-Uma empresa com múltiplas certificações ativas, equipe dedicada de compliance e maturidade nível 4–5 precisa de inteligência e escala. A ARS entrega *(itens majoritariamente de visão futura — ver nota de estado no topo do documento)*:
+Uma empresa com múltiplas certificações ativas, equipe dedicada de compliance e maturidade nível 4–5 precisa de inteligência e escala. O Audit Cockpits entrega *(itens majoritariamente de visão futura — ver nota de estado no topo do documento)*:
 
 - Compliance Graph para visualização de dependências entre controles e normas
 - Analytics executivo com KPIs estratégicos para comitê de governança
@@ -462,7 +462,7 @@ Uma empresa com múltiplas certificações ativas, equipe dedicada de compliance
 
 Os princípios a seguir são permanentes. Orientam decisões de produto, UX, engenharia e comunicação. Não são features — são critérios.
 
-**1. Score antes de status.** Números comunicam mais que etiquetas. Onde uma etiqueta diz "em progresso", a ARS mostra "67% coberto".
+**1. Score antes de status.** Números comunicam mais que etiquetas. Onde uma etiqueta diz "em progresso", o Audit Cockpits mostra "67% coberto".
 
 **2. Próximo passo sempre visível.** Nenhuma tela termina sem indicar ao usuário o que fazer a seguir. O compliance nunca para porque o usuário não sabe por onde continuar.
 
@@ -470,23 +470,23 @@ Os princípios a seguir são permanentes. Orientam decisões de produto, UX, eng
 
 **4. Cobertura não é declaração.** Um controle marcado como "implementado" sem evidência aprovada não contribui para o score. A realidade importa mais que a intenção.
 
-**5. A IA acelera, o humano decide.** A inteligência artificial remove trabalho braçal e sugere caminhos. A decisão final — aprovar, rejeitar, excluir — é sempre humana. A ARS não automatiza compliance: automatiza o trabalho operacional que envolve compliance.
+**5. A IA acelera, o humano decide.** A inteligência artificial remove trabalho braçal e sugere caminhos. A decisão final — aprovar, rejeitar, excluir — é sempre humana. O Audit Cockpits não automatiza compliance: automatiza o trabalho operacional que envolve compliance.
 
 **6. Rastreabilidade não é opcional.** Toda ação relevante gera registro imutável. Isso não é uma funcionalidade de segurança — é a fundação da confiabilidade da plataforma perante auditores.
 
 **7. Complexidade revelada, não imposta.** Funcionalidades avançadas existem, mas não poluem a experiência de quem não precisa delas ainda. O Progressive Disclosure é um princípio de design, não uma feature.
 
-**8. O score cai se nada for feito.** A plataforma é honesta sobre o Decay Effect. Um score alto conquistado com esforço não se mantém sozinho — e a ARS não finge que sim.
+**8. O score cai se nada for feito.** A plataforma é honesta sobre o Decay Effect. Um score alto conquistado com esforço não se mantém sozinho — e o Audit Cockpits não finge que sim.
 
 **9. Ownership sempre explícito.** Toda pendência tem um nome. Toda evidência tem um responsável. Todo vencimento tem um dono. Compliance sem ownership é compliance sem resultado.
 
-**10. Multi-norma por padrão.** A ARS é projetada desde a fundação para suportar múltiplos frameworks simultaneamente. Nenhuma decisão de produto pode privilegiar uma norma ao custo de impossibilitar outra.
+**10. Multi-norma por padrão.** O Audit Cockpits é projetado desde a fundação para suportar múltiplos frameworks simultaneamente. Nenhuma decisão de produto pode privilegiar uma norma ao custo de impossibilitar outra.
 
 **11. Auditável por design.** A plataforma é construída para que o auditor externo possa verificar tudo — não apenas o resultado final, mas o processo que levou a ele. Cadeia de custódia, histórico de versões, trilha de aprovações.
 
 **12. Colaboração onde o trabalho acontece.** Discussões sobre compliance acontecem dentro da plataforma, contextualizadas ao controle ou evidência em questão. Não em e-mails. Não em WhatsApp. Não em reuniões sem registro.
 
-**13. Previsibilidade é o produto.** O maior valor que a ARS entrega não é o score atual — é a capacidade de prever quando a organização estará pronta. Uma data é mais útil que um percentual.
+**13. Previsibilidade é o produto.** O maior valor que o Audit Cockpits entrega não é o score atual — é a capacidade de prever quando a organização estará pronta. Uma data é mais útil que um percentual.
 
 **14. Falhas visíveis, não mascaradas.** Uma NC Maior não pode ser escondida atrás de um score alto. O sistema penaliza ativamente qualquer tentativa de mascarar falhas operacionais.
 
@@ -500,7 +500,7 @@ Os princípios a seguir são permanentes. Orientam decisões de produto, UX, eng
 
 > **Número de organizações que atingiram e mantiveram Audit Readiness Score ≥ 85% por 90 dias consecutivos.**
 
-Esta métrica captura o valor central da plataforma: não basta atingir 85% — é preciso manter. Organizações que sustentam esse patamar por 90 dias demonstraram que o compliance na ARS não foi um esforço pontual pré-auditoria, mas uma operação contínua. Elas são as clientes que renovam, indicam e servem de prova de conceito para o mercado.
+Esta métrica captura o valor central da plataforma: não basta atingir 85% — é preciso manter. Organizações que sustentam esse patamar por 90 dias demonstraram que o compliance no Audit Cockpits não foi um esforço pontual pré-auditoria, mas uma operação contínua. Elas são as clientes que renovam, indicam e servem de prova de conceito para o mercado.
 
 ### Métricas auxiliares
 
@@ -518,7 +518,7 @@ Esta métrica captura o valor central da plataforma: não basta atingir 85% — 
 
 ## 17. Success Definition
 
-Uma organização teve sucesso usando a ARS quando:
+Uma organização teve sucesso usando o Audit Cockpits quando:
 
 **Sucesso operacional:** Concluiu uma auditoria interna completa com todos os achados registrados e os CAPAs de não-conformidades com prazo e responsável definidos.
 
@@ -528,7 +528,7 @@ Uma organização teve sucesso usando a ARS quando:
 
 **Sucesso de independência:** Um membro da equipe interno — não necessariamente da área de compliance — consegue operar a plataforma, submeter evidências, entender o score e saber quais são os próximos passos sem precisar de treinamento adicional.
 
-**Sucesso estratégico:** A liderança da organização usa os dados do dashboard executivo da ARS em reuniões de governança como evidência do estado de conformidade da empresa — substituindo relatórios manuais e apresentações de consultoria.
+**Sucesso estratégico:** A liderança da organização usa os dados do dashboard executivo do Audit Cockpits em reuniões de governança como evidência do estado de conformidade da empresa — substituindo relatórios manuais e apresentações de consultoria.
 
 ---
 
@@ -542,21 +542,21 @@ Existe um momento que toda empresa em crescimento enfrenta, e que quase ninguém
 
 Nesse momento, começa uma corrida que dura meses. A empresa contrata uma consultoria. Reúne documentos espalhados em servidores, e-mails e mentes de colaboradores. Monta planilhas que ninguém sabe interpretar. Prepara um dossiê para o auditor externo que fica desatualizado no mesmo dia em que é finalizado. E depois de meses de esforço e tensão, há uma chance razoável de reprovação por detalhes que poderiam ter sido evitados com organização básica.
 
-A ARS existe para mudar essa história.
+O Audit Cockpits existe para mudar essa história.
 
-Nós acreditamos que compliance é uma capacidade que qualquer organização pode desenvolver — não um serviço prestado por especialistas inacessíveis. Assim como o Duolingo democratizou o aprendizado de idiomas ao torná-lo guiado, contínuo e medido, a ARS democratiza o compliance ao transformar requisitos normativos complexos em jornadas claras, tarefas executáveis e resultados mensuráveis.
+Nós acreditamos que compliance é uma capacidade que qualquer organização pode desenvolver — não um serviço prestado por especialistas inacessíveis. Assim como o Duolingo democratizou o aprendizado de idiomas ao torná-lo guiado, contínuo e medido, o Audit Cockpits democratiza o compliance ao transformar requisitos normativos complexos em jornadas claras, tarefas executáveis e resultados mensuráveis.
 
-A Central de Comando de Compliance da ARS entrega algo que nenhuma planilha, consultoria ou ferramenta tradicional de GRC consegue entregar de forma simples: a resposta em tempo real para a pergunta que realmente importa. **"Estamos prontos para ser auditados agora?"**
+A Central de Comando de Compliance do Audit Cockpits entrega algo que nenhuma planilha, consultoria ou ferramenta tradicional de GRC consegue entregar de forma simples: a resposta em tempo real para a pergunta que realmente importa. **"Estamos prontos para ser auditados agora?"**
 
 Não como uma estimativa. Não como uma percepção. Como um número calculado, ponderado pela criticidade de cada controle, corrigido pelo decaimento natural de evidências que vencem, e acompanhado de um plano claro do que fazer para melhorá-lo.
 
-O mercado que a ARS endereça é vasto e estruturalmente mal atendido. As ferramentas enterprise de GRC — OneTrust, AuditBoard, Diligent — foram construídas para grandes corporações com times dedicados e orçamentos de sete dígitos. As ferramentas simples de checklist não têm a robustez para suportar auditorias reais. E as consultorias de compliance, por mais competentes que sejam, não escalam.
+O mercado que o Audit Cockpits endereça é vasto e estruturalmente mal atendido. As ferramentas enterprise de GRC — OneTrust, AuditBoard, Diligent — foram construídas para grandes corporações com times dedicados e orçamentos de sete dígitos. As ferramentas simples de checklist não têm a robustez para suportar auditorias reais. E as consultorias de compliance, por mais competentes que sejam, não escalam.
 
-A ARS ocupa o espaço entre esses dois mundos: robusta o suficiente para suportar um catálogo de mais de 30 frameworks normativos simultaneamente — com ISO 27001, ISO 9001, ISO 20000-1, ISO 22301, ISO 27701 e LGPD como normas certificáveis-âncora — e simples o suficiente para ser operada por uma equipe que nunca passou por uma auditoria antes.
+O Audit Cockpits ocupa o espaço entre esses dois mundos: robusta o suficiente para suportar um catálogo de mais de 30 frameworks normativos simultaneamente — com ISO 27001, ISO 9001, ISO 20000-1, ISO 22301, ISO 27701 e LGPD como normas certificáveis-âncora — e simples o suficiente para ser operada por uma equipe que nunca passou por uma auditoria antes.
 
-Nossa tese é direta: as organizações que adotam a ARS não preparam uma auditoria — elas operam em estado permanente de prontidão. E quando a data com o auditor chega, elas não estressam. Elas simplesmente abrem a plataforma, exportam o relatório e mostram o score.
+Nossa tese é direta: as organizações que adotam o Audit Cockpits não preparam uma auditoria — elas operam em estado permanente de prontidão. E quando a data com o auditor chega, elas não estressam. Elas simplesmente abrem a plataforma, exportam o relatório e mostram o score.
 
 ---
 
-*Este documento é a referência oficial de Product Context da plataforma Audit Readiness Score (ARS).*  
+*Este documento é a referência oficial de Product Context da plataforma Audit Readiness Score (Audit Cockpits).*  
 *Versão 2.0 — Consolidação Estratégica com base no Blueprint UX/UI V3.2.*

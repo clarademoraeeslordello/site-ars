@@ -9,7 +9,7 @@ const tones: Record<Tone, string> = {
   neutral: "border-neutral-line bg-neutral-bg text-neutral",
 };
 
-/** Status pill: Archivo 600, uppercase, 11px radius, tone colors from the ARS app. */
+/** Status pill: Archivo 600, uppercase, 11px radius, tone colors from the Audit Cockpits app. */
 export function StatusBadge({
   tone,
   children,

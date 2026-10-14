@@ -22,8 +22,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ lang: s
   const eyebrow = m.hero.eyebrow;
 
   const [fraunces, plex] = await Promise.all([
-    loadGoogleFont("Fraunces", 500, `ARS ${title}`),
-    loadGoogleFont("IBM Plex Mono", 500, `ARS AUDIT READINESS ${eyebrow.toUpperCase()} auditcockpits.com`),
+    loadGoogleFont("Fraunces", 500, `Audit Cockpits ${title}`),
+    loadGoogleFont("IBM Plex Mono", 500, `COMPLIANCE INTELLIGENCE PLATFORM ${eyebrow.toUpperCase()} auditcockpits.com`),
   ]);
   const fonts = [
     ...(fraunces ? [{ name: "Fraunces", data: fraunces, weight: 500 as const }] : []),
@@ -54,8 +54,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ lang: s
             <path d="M11 31 L16 24 L21 31" stroke="#faf8f4" strokeWidth="1.4" fill="none" strokeLinejoin="round" strokeLinecap="round" />
           </svg>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <span style={{ fontFamily: "Fraunces", fontSize: 30, letterSpacing: 2.4 }}>ARS</span>
-            <span style={{ fontFamily: "Plex", fontSize: 14, letterSpacing: 4, color: "#e2c477" }}>AUDIT READINESS</span>
+            <span style={{ fontFamily: "Fraunces", fontSize: 30, letterSpacing: 1.2 }}>Audit Cockpits</span>
+            <span style={{ fontFamily: "Plex", fontSize: 14, letterSpacing: 4, color: "#e2c477" }}>COMPLIANCE INTELLIGENCE PLATFORM</span>
           </div>
         </div>
 

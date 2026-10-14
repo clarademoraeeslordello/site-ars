@@ -1,5 +1,5 @@
 /*
- * ARS product screens recreated in HTML/CSS with demo data (no screenshots).
+ * Audit Cockpits product screens recreated in HTML/CSS with demo data (no screenshots).
  * Each mock receives its copy from messages, so it renders in PT, EN and ES.
  */
 import { BrandIcon } from "@/components/brand/brand-icon";
@@ -17,7 +17,7 @@ type AppHomeCopy = {
 
 const KPI_COLORS = ["text-gold-deep", "text-ink", "text-crit"];
 
-/** ARS home screen: top bar, dark priority card, score card and three KPI cards. */
+/** Audit Cockpits home screen: top bar, dark priority card, score card and three KPI cards. */
 export function AppHomeMock({ copy }: { copy: AppHomeCopy }) {
   return (
     <div
@@ -29,9 +29,9 @@ export function AppHomeMock({ copy }: { copy: AppHomeCopy }) {
         <span className="flex flex-none items-center gap-2">
           <BrandIcon size={22} className="rounded-[5px]" />
           <span className="flex flex-col gap-0.5">
-            <span className="font-display text-xs font-semibold leading-none tracking-[0.08em]">ARS</span>
+            <span className="font-display text-xs font-semibold leading-none tracking-[0.08em]">Audit Cockpits</span>
             <span className="font-mono text-[7px] font-medium leading-none tracking-[0.2em] text-gold">
-              AUDIT READINESS
+              COMPLIANCE INTELLIGENCE PLATFORM
             </span>
           </span>
         </span>

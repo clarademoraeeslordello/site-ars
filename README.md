@@ -1,6 +1,6 @@
-# Site ARS — Audit Readiness Score
+# Site Audit Cockpits
 
-Site institucional e comercial da **Audit Readiness Score (ARS)** — Compliance Intelligence Platform. Trilíngue (PT-BR, EN, ES), orientado à solicitação de demonstração.
+Site institucional e comercial da **Audit Cockpits** — Compliance Intelligence Platform (marca definitiva, ADR-014 do repositório da plataforma; "ARS" é nome antigo e o "Audit Readiness Score" é só o nome do indicador). Trilíngue (PT-BR, EN, ES), orientado à solicitação de demonstração.
 
 ## Stack
 

@@ -20,7 +20,7 @@ export default function middleware(request: NextRequest) {
   if (pathname.split("/")[1].includes(".")) {
     return ROOT_FILES.has(pathname) ? NextResponse.next() : new NextResponse("Not found", { status: 404 });
   }
-  // Old ARS app links on the apex domain go to app.auditcockpits.com (path and query kept).
+  // Old Audit Cockpits app links on the apex domain go to app.auditcockpits.com (path and query kept).
   if (isAppPath(pathname)) {
     const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
     return NextResponse.redirect(`${APP_ORIGIN}${path}${search}`, 308);

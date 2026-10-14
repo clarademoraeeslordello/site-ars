@@ -38,11 +38,11 @@ export function GET() {
     ].join("\n");
 
   const body = [
-    "# Audit Cockpits · ARS, Audit Readiness Score",
+    "# Audit Cockpits · Compliance Intelligence Platform",
     "",
     `> ${en.home.meta.description}`,
     "",
-    "ARS organizes requirements, controls, evidence and actions for audit readiness. The certification body decides on certification; ARS organizes, records and tracks. ARS does not issue certificates and does not replace auditors or consultants.",
+    "Audit Cockpits organizes requirements, controls, evidence and actions for audit readiness. The certification body decides on certification; Audit Cockpits organizes, records and tracks. Audit Cockpits does not issue certificates and does not replace auditors or consultants.",
     "",
     section(pt as typeof pt, "pt-br", "Português (pt-BR)"),
     section(en as unknown as typeof pt, "en", "English"),

@@ -7,7 +7,7 @@ type LocalizedPath = { pt: string; en: string; es: string };
 
 // Renamed pages and PT slugs under /en and /es, and their new homes.
 // The old /pt-br prefix is not handled here: next.config matching ignores case and would also
-// catch the ARS app's /pt-BR links. next-intl strips /pt-br and middleware.ts sends /pt-BR to the app.
+// catch the Audit Cockpits app's /pt-BR links. next-intl strips /pt-br and middleware.ts sends /pt-BR to the app.
 const MOVED: { from: LocalizedPath; to: LocalizedPath }[] = [
   {
     from: { pt: "/audit-readiness-score", en: "/audit-readiness-score", es: "/audit-readiness-score" },

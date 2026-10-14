@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// 512×512 PNG of the ARS icon, used as the Organization logo in structured data
+// 512×512 PNG of the Audit Cockpits icon, used as the Organization logo in structured data
 // (search engines prefer a raster logo of at least 112px).
 export const dynamic = "force-static";
 
