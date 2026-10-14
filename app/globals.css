@@ -108,7 +108,7 @@
   --shadow-mock: 0 1px 2px rgba(16, 16, 20, 0.04), 0 30px 70px -40px rgba(16, 16, 20, 0.35);
 
   --breakpoint-xs: 23.4375rem;
-  --breakpoint-nav: 77.5rem; /* 1240px: menu completo no header (o logo "Audit Cockpits" + linha de marca ocupa ~270px) */
+  --breakpoint-nav: 80rem; /* 1280px: menu completo no header (o logo horizontal do brand kit ocupa ~294px) */
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }

@@ -16,7 +16,11 @@ export function AdminShell({ email, active, children }: { email: string; active:
     <div className="mx-auto flex max-w-[1080px] flex-col gap-8 px-4 py-8 sm:px-7">
       <header className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-4">
         <nav className="flex items-center gap-6 text-[15px]">
-          <span className="font-display text-lg font-semibold tracking-[0.06em]">Audit Cockpits · Painel</span>
+          <span className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element -- static SVG from the brand kit */}
+            <img src="/brand/ac-logo-horizontal_fundo-claro.svg" alt="Audit Cockpits" width={224} height={16} className="h-4 w-auto" />
+            <span className="font-display text-lg font-semibold">Painel</span>
+          </span>
           {tab("radar", "/admin/radar", "ISO Radar")}
           {tab("newsletter", "/admin/newsletter", "Newsletter")}
         </nav>
